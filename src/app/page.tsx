@@ -798,14 +798,31 @@ export default function PortfolioPage() {
               <div>
                 <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-amber-300 mb-3">
                   <Palette className="w-4 h-4" />
-                  <span>GRAPHIC DESIGN &amp; VISUAL BRANDING</span>
+                  <span>GRAPHIC DESIGN &amp; ADOBE CREATIVE SUITE</span>
                 </div>
                 <h3 className="font-display text-2xl font-bold text-white mb-2">
-                  Graphic Design Portfolio
+                  Graphic Design &amp; Visual Branding Portfolio
                 </h3>
-                <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                  Backed by a Diploma in Graphic Design (ATARI CITY Campus) and extensive freelance experience on Fiverr &amp; Upwork — crafting brand identities, social media visuals, posters, and UI assets.
+                <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                  Backed by a Diploma in Graphic Design (ATARI CITY Campus) and extensive freelance experience on Fiverr &amp; Upwork — crafting brand identities, social media visuals, posters, and UI assets using the Adobe Creative Suite.
                 </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {[
+                    "Adobe Photoshop",
+                    "Adobe Illustrator",
+                    "Adobe Lightroom",
+                    "Figma UI/UX",
+                    "Brand Identity & Logos",
+                    "Social & Print Media",
+                  ].map((tool) => (
+                    <span
+                      key={tool}
+                      className="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-amber-400/10 border border-amber-400/25 text-amber-200"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
               </div>
               <a
                 href={CORVENTO_ECOSYSTEM.graphicsPortfolioUrl}
@@ -823,14 +840,30 @@ export default function PortfolioPage() {
               <div>
                 <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-rose-300 mb-3">
                   <Video className="w-4 h-4" />
-                  <span>CONTENT CREATION &amp; REELS EDITING</span>
+                  <span>CONTENT CREATION, MOTION &amp; REELS EDITING</span>
                 </div>
                 <h3 className="font-display text-2xl font-bold text-white mb-2">
                   Corvento Tech YouTube &amp; Reel Edits
                 </h3>
-                <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                  Producing and editing high-retention short-form reels, product showcases, and educational technology content for Corvento Technologies (@corventotech) and digital brands.
+                <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                  Producing and editing high-retention short-form reels, motion graphics, product showcases, and educational technology content for Corvento Technologies (@corventotech) and digital brands.
                 </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {[
+                    "Adobe Premiere Pro",
+                    "Adobe After Effects",
+                    "Short-Form Reels Editing",
+                    "Motion Graphics",
+                    "YouTube Production",
+                  ].map((tool) => (
+                    <span
+                      key={tool}
+                      className="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-rose-500/10 border border-rose-400/25 text-rose-200"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
               </div>
               <a
                 href={CORVENTO_ECOSYSTEM.youtubeUrl}
@@ -901,7 +934,7 @@ export default function PortfolioPage() {
                 <div>
                   {/* Top Meta Row */}
                   <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3.5">
                       <div className="flex items-center -space-x-2">
                         <img
                           src={project.logo}
@@ -911,18 +944,28 @@ export default function PortfolioPage() {
                         {project.secondaryLogo && (
                           <img
                             src={project.secondaryLogo}
-                            alt="Partner / Community Logo"
+                            alt="Parent / Community Logo"
                             className="w-11 h-11 rounded-xl object-cover border-2 border-[#0B0E17] bg-white flex-shrink-0"
                           />
                         )}
                       </div>
                       <div>
-                        <span className="font-mono text-xs text-sky-400">
-                          {project.role}
-                        </span>
-                        <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="font-mono text-xs text-sky-400">
+                            {project.role}
+                          </span>
+                          {project.poweredBy && (
+                            <span className="font-mono text-[11px] px-2.5 py-0.5 rounded-full bg-sky-400/15 text-sky-300 border border-sky-400/30 font-semibold">
+                              {project.poweredBy}
+                            </span>
+                          )}
+                        </div>
+                        <h3 className="font-display text-xl sm:text-2xl font-bold text-white mt-0.5">
                           {project.title}
                         </h3>
+                        <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
+                          {project.subtitle}
+                        </p>
                       </div>
                     </div>
 

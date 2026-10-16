@@ -26,6 +26,7 @@ export interface FeaturedProject {
   featured?: boolean;
   logo: string;
   secondaryLogo?: string;
+  poweredBy?: string;
   accentColor: string;
   metrics: { label: string; value: string }[];
   stack: string[];
@@ -318,16 +319,20 @@ export const SKILL_GROUPS: SkillGroup[] = [
   {
     id: "uiux-creative",
     code: "06",
-    title: "UI/UX, Graphic Design & Video",
-    subtitle: "Brand design, short-form reel editing & growth",
+    title: "UI/UX, Adobe Suite & Video",
+    subtitle: "Graphic design, Adobe Creative Cloud, brand identity & reels",
     accent: "#A78BFA",
     skills: [
-      { name: "Figma UI/UX", highlight: true },
       { name: "Adobe Photoshop", highlight: true },
       { name: "Adobe Illustrator", highlight: true },
+      { name: "Adobe Premiere Pro", highlight: true },
+      { name: "Adobe After Effects", highlight: true },
+      { name: "Adobe Lightroom" },
+      { name: "Figma (UI/UX Prototyping)", highlight: true },
       { name: "Short-Form Reel & Video Editing", highlight: true },
-      { name: "YouTube & Social Media Growth" },
-      { name: "Fiverr & Upwork Client Delivery" },
+      { name: "Brand Identity & Logo Design", highlight: true },
+      { name: "Social Media & Campaign Visuals" },
+      { name: "Canva & Print Media Design" },
     ],
   },
 ];
@@ -337,23 +342,26 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     id: "danuma-ai",
     index: "01",
     title: "DanumaAI — AI-Powered Educational Ecosystem",
-    subtitle: "Multi-Platform EdTech Suite (Web, Android Play Store & Telegram)",
-    role: "Founder & Lead Developer (Corvento Technologies)",
+    subtitle:
+      "Powered by Corvento Technologies • Web App, Google Play Store App & Telegram AI Bot",
+    role: "Founder & Lead Developer (Powered by Corvento Technologies)",
     period: "2026 – Present",
     category: "AI & RAG Systems",
     featured: true,
     logo: "/DanumaAI.jpg",
-    secondaryLogo: "/DanumaAI-fullLogo.webp",
+    secondaryLogo: "/CorventoTechLogo.jpg",
+    poweredBy: "Powered by Corvento Technologies",
     accentColor: "#38BDF8",
     metrics: [
-      { label: "App Downloads", value: "3,200+" },
-      { label: "Registered Students", value: "1,500+" },
-      { label: "Platforms", value: "Web • Android • TG" },
-      { label: "Curriculum", value: "Grade 6 – A/L" },
+      { label: "Play Store Downloads", value: "3,200+" },
+      { label: "Active Students", value: "1,500+" },
+      { label: "3-Platform Ecosystem", value: "Web • Play Store • TG Bot" },
+      { label: "Master Entity", value: "Corvento Tech" },
     ],
     stack: [
-      "Next.js",
-      "React Native (Expo)",
+      "Next.js Web App",
+      "React Native (Expo Play Store App)",
+      "Telegram Bot API & OAuth",
       "Python",
       "MongoDB Atlas",
       "NextAuth.js",
@@ -361,46 +369,46 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
       "RAG & Vector Search",
     ],
     overview:
-      "Flagship educational product built and operated under Corvento Technologies to assist Sri Lankan students with automated syllabus explanations, step-by-step past-paper analysis, mind-map generation, and trilingual (Sinhala, Tamil, English) learning workflows.",
+      "Flagship AI educational ecosystem powered by Corvento Technologies, operating seamlessly across a full-featured Web App (danumaai.lk), an official Google Play Store Android App (3,200+ downloads), and an interactive Telegram AI Bot (@DanumaAI_Bot). Assists Sri Lankan students with automated syllabus explanations, step-by-step past-paper analysis, mind-map generation, and trilingual (Sinhala, Tamil, English) learning workflows.",
     highlights: [
-      "Architected Retrieval-Augmented Generation (RAG) workflows and image-based problem solving for Technology-stream (ET, SFT, ICT) and national curricula.",
-      "Published the native Android application to the Google Play Store with thousands of active downloads alongside Web and Telegram Bot access.",
-      "Built a custom contextual ad-placement engine enabling tuition educators to integrate relevant promotional material directly into the study platform.",
+      "Powered and operated by Corvento Technologies as a unified 3-platform ecosystem: Web Platform, Google Play Store Android App, and interactive Telegram Bot.",
+      "Architected Retrieval-Augmented Generation (RAG) workflows and multimodal image-based problem solving for Technology-stream (ET, SFT, ICT) and national curricula.",
+      "Built a custom contextual ad-placement engine enabling tuition educators to integrate targeted promotional material directly into the student learning experience.",
     ],
     links: [
       { label: "Launch Web App", url: "https://danumaai.lk/", type: "web" },
       {
-        label: "Google Play Store",
+        label: "Google Play Store App",
         url: "https://play.google.com/store/apps/details?id=com.Lycoryx.danumaai",
         type: "playstore",
       },
       {
-        label: "Telegram Bot",
+        label: "Telegram AI Bot (@DanumaAI_Bot)",
         url: "https://t.me/DanumaAI_Bot",
         type: "telegram",
       },
     ],
     architecture: [
       {
-        layer: "CLIENT TIER",
-        title: "Cross-Platform Omni-Channel Interface",
-        tech: "Next.js 16 + React 19 + Expo Android + Telegram Bot",
+        layer: "OMNI-CHANNEL CLIENT TIER",
+        title: "Web App + Google Play Android App + Telegram Bot",
+        tech: "Next.js 16 + React Native (Expo) + Telegram Bot API",
         detail:
-          "Unified student experience across desktop web, mobile Android app on Google Play, and instant Telegram bot commands.",
+          "Powered by Corvento Technologies — delivers a unified student experience across desktop/mobile web, the Google Play Store Android app, and instant Telegram bot queries.",
       },
       {
         layer: "IDENTITY & EDGE",
-        title: "Multi-Provider Auth & Session Guard",
-        tech: "NextAuth.js + Google OAuth2 + Telegram Login",
+        title: "Multi-Provider Auth & Cross-Platform Sync",
+        tech: "NextAuth.js + Google OAuth2 + Telegram OAuth",
         detail:
-          "Seamless cross-device student identity synchronization with quota tracking and resilient session handling.",
+          "Seamless cross-device student identity synchronization linking Web, Android app, and Telegram Bot sessions with real-time quota tracking.",
       },
       {
         layer: "AI & RAG ENGINE",
         title: "Curriculum-Aware Neural Pipeline",
         tech: "Gemini API + Vector Embeddings + Vision OCR",
         detail:
-          "Retrieves syllabus-grounded context for Sinhala/Tamil/English queries, solves uploaded past-paper diagrams, and synthesizes mind-maps.",
+          "Retrieves syllabus-grounded context for Sinhala/Tamil/English queries, solves uploaded past-paper diagrams, and synthesizes interactive mind-maps.",
       },
       {
         layer: "DATA & MONETIZATION",
@@ -421,6 +429,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     category: "Full-Stack Web",
     logo: "/QuzziygramLogo.png",
     secondaryLogo: "/eduChannel-circleLogo.png",
+    poweredBy: "Operated under Education Channel TG",
     accentColor: "#34D399",
     metrics: [
       { label: "Core Features", value: "Chats • Forums • Quizzes" },
@@ -517,10 +526,12 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     index: "04",
     title: "MemoAI — Scalable Community AI Bot & Dashboard",
     subtitle: "High-Concurrency Discord AI Assistant & OAuth2 Web Playground",
-    role: "Creator & Backend Developer (Corvento Technologies)",
+    role: "Creator & Backend Developer (Powered by Corvento Technologies)",
     period: "2022 – 2026",
     category: "Bots & Distributed",
     logo: "/MemoAI.png",
+    secondaryLogo: "/CorventoTechLogo.jpg",
+    poweredBy: "Powered by Corvento Technologies",
     accentColor: "#C084FC",
     metrics: [
       { label: "Historical Users", value: "206,600+" },
@@ -536,7 +547,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
       "Discord OAuth2",
     ],
     overview:
-      "An AI assistant bot and management dashboard operated under Corvento Technologies (formerly Lycoryx), providing conversational utilities, vision testing, and image generation to online communities.",
+      "An AI assistant bot and management dashboard powered by Corvento Technologies (formerly Lycoryx), providing conversational utilities, vision testing, and image generation to online communities.",
     highlights: [
       "Handled asynchronous request pipelines and rate-limiting across 2,150+ connected Discord servers reaching over 200,000 cumulative users.",
       "Built Discord OAuth2 authentication workflows, prompt sandboxing, and web management dashboards.",
@@ -618,32 +629,35 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
   {
     id: "creative-design-reels",
     index: "06",
-    title: "Creative Design, Visual Branding & Reel Production",
-    subtitle: "Graphic Design Portfolio, Brand Identity Systems & Short-Form Video Edits",
+    title: "Creative Design, Adobe Suite & Reel Production",
+    subtitle: "Adobe Photoshop, Illustrator, Premiere Pro, After Effects & Brand Identity",
     role: "Creative Director & Designer (Corvento & Freelance)",
     period: "2022 – Present",
     category: "Creative & Media",
     logo: "/CorventoTechLogo.jpg",
+    poweredBy: "Powered by Corvento Technologies & Global Freelance",
     accentColor: "#FBBF24",
     metrics: [
-      { label: "Credential", value: "Graphic Design Diploma" },
+      { label: "Creative Suite", value: "Adobe Ps • Ai • Pr • Ae" },
       { label: "Video & Reels", value: "@corventotech" },
-      { label: "Freelance", value: "Fiverr & Upwork" },
+      { label: "Credential", value: "Graphic Design Diploma" },
     ],
     stack: [
       "Adobe Photoshop",
       "Adobe Illustrator",
-      "Figma",
-      "Reel & Video Editing",
+      "Adobe Premiere Pro",
+      "Adobe After Effects",
+      "Adobe Lightroom",
+      "Figma UI/UX",
+      "Short-Form Reel Editing",
       "Brand Identity Design",
-      "Social Media Visuals",
     ],
     overview:
-      "Alongside software engineering, I design complete visual identities, promotional graphics, UI/UX prototypes, and high-retention short-form video/reel edits for Corvento Technologies (@corventotech) and freelance clients.",
+      "Alongside software engineering, I design complete visual identities, promotional graphics, UI/UX prototypes, and high-retention short-form video/reel edits using the Adobe Creative Suite (Photoshop, Illustrator, Premiere Pro, After Effects, Lightroom) and Figma for Corvento Technologies (@corventotech) and international freelance clients.",
     highlights: [
-      "Curated a comprehensive Graphic Design portfolio spanning brand logos, social media campaigns, educational posters, and product visuals.",
-      "Produce and edit engaging technology reels and digital content for the Corvento Technologies YouTube and social channels.",
-      "Delivered custom graphic design and web design packages for clients on Fiverr, Upwork, and local businesses.",
+      "Curated a comprehensive Graphic Design portfolio built with Adobe Photoshop and Adobe Illustrator spanning brand logos, social media campaigns, educational posters, and UI assets.",
+      "Produce and edit engaging technology reels, motion graphics, and digital content using Adobe Premiere Pro and After Effects for the Corvento Technologies YouTube (@corventotech) and social channels.",
+      "Delivered custom graphic design, branding, and web UI packages for clients on Fiverr, Upwork, and local businesses.",
     ],
     links: [
       {
