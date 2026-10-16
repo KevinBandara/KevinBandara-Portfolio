@@ -101,10 +101,18 @@ export const metadata: Metadata = {
     username: "KevinBandara",
     images: [
       {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        type: "image/png",
+        alt: "Kevin Bandara — Full-Stack Software Developer, AI Systems Builder & Founder of Corvento Technologies",
+      },
+      {
         url: "/KevinPortrait.jpg",
         width: 1344,
         height: 1680,
-        alt: "Kevin Bandara — Full-Stack Software Developer & Founder of Corvento Technologies",
+        type: "image/jpeg",
+        alt: "Kevin Bandara — Official Portrait",
       },
     ],
   },
@@ -113,7 +121,7 @@ export const metadata: Metadata = {
     title: "Kevin Bandara | Full-Stack Developer, AI Builder & Founder of Corvento",
     description:
       "Founder of Corvento Technologies, creator of DanumaAI & MemoAI, and Full-Stack Software Engineer in Colombo, Sri Lanka. Direct: +94 71 851 1165.",
-    images: ["/KevinPortrait.jpg"],
+    images: ["/twitter-image"],
   },
 };
 
