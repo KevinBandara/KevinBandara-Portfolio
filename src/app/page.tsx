@@ -24,10 +24,13 @@ import {
   X,
   Users,
   Award,
+  Palette,
+  Video,
 } from "lucide-react";
 import ThreeHeroCanvas, { ThreeSceneMode } from "@/components/ThreeHeroCanvas";
 import TiltCard from "@/components/TiltCard";
 import ArchitectureModal from "@/components/ArchitectureModal";
+import HireMeModal from "@/components/HireMeModal";
 import {
   HERO_DATA,
   CORVENTO_ECOSYSTEM,
@@ -71,6 +74,7 @@ export default function PortfolioPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [activeArchProject, setActiveArchProject] =
     useState<FeaturedProject | null>(null);
+  const [hireModalOpen, setHireModalOpen] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -111,6 +115,7 @@ export default function PortfolioPage() {
     "AI & RAG Systems",
     "Full-Stack Web",
     "Bots & Distributed",
+    "Creative & Media",
   ];
 
   const filteredProjects =
@@ -126,6 +131,10 @@ export default function PortfolioPage() {
         return <Smartphone className="w-3.5 h-3.5" />;
       case "telegram":
         return <Send className="w-3.5 h-3.5" />;
+      case "drive":
+        return <Palette className="w-3.5 h-3.5" />;
+      case "youtube":
+        return <Video className="w-3.5 h-3.5" />;
       default:
         return <Globe className="w-3.5 h-3.5" />;
     }
@@ -232,13 +241,14 @@ export default function PortfolioPage() {
               >
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl font-mono text-xs font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all shadow-lg shadow-sky-500/20"
+              <button
+                type="button"
+                onClick={() => setHireModalOpen(true)}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl font-mono text-xs font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all shadow-lg shadow-sky-500/20 cursor-pointer"
               >
-                <Mail className="w-3.5 h-3.5" />
-                <span>Let&apos;s Talk</span>
-              </a>
+                <Briefcase className="w-3.5 h-3.5" />
+                <span>Hire Kevin</span>
+              </button>
             </div>
 
             {/* Mobile Hamburger */}
@@ -290,13 +300,16 @@ export default function PortfolioPage() {
                     <Linkedin className="w-4 h-4" />
                   </a>
                 </div>
-                <a
-                  href="#contact"
-                  onClick={() => setMobileMenuOpen(false)}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setHireModalOpen(true);
+                  }}
                   className="flex-1 text-center py-2.5 rounded-xl font-mono text-xs font-semibold bg-sky-400 text-slate-950"
                 >
-                  Connect Now
-                </a>
+                  Hire Kevin (Fast-Track)
+                </button>
               </div>
             </div>
           )}
@@ -304,7 +317,7 @@ export default function PortfolioPage() {
       </header>
 
       {/* =====================================================================
-          HERO SECTION — SPACIOUS, UNCROWDED, CLEAR PORTRAIT + 3D WEBGL
+          HERO SECTION — COMMANDING PORTRAIT + 3D WEBGL + FAST-TRACK HIRE
          ===================================================================== */}
       <section
         id="hero"
@@ -326,15 +339,19 @@ export default function PortfolioPage() {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left 7 Columns: Clean Executive Introduction */}
             <div className="lg:col-span-7 space-y-7">
               {/* Status & Location Pill */}
               <div className="flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono">
+                <button
+                  type="button"
+                  onClick={() => setHireModalOpen(true)}
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 text-xs font-mono transition-colors cursor-pointer"
+                >
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                   <span>{HERO_DATA.status}</span>
-                </div>
+                </button>
                 <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 text-xs font-mono">
                   <MapPin className="w-3.5 h-3.5 text-sky-400" />
                   <span>{HERO_DATA.location}</span>
@@ -343,7 +360,7 @@ export default function PortfolioPage() {
 
               {/* Main Display Title */}
               <div className="space-y-4">
-                <h1 className="font-display text-5xl sm:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.04]">
+                <h1 className="font-display text-5xl sm:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.03]">
                   Kevin{" "}
                   <span className="bg-gradient-to-r from-sky-300 via-indigo-300 to-emerald-300 bg-clip-text text-transparent">
                     Bandara
@@ -373,25 +390,32 @@ export default function PortfolioPage() {
                 >
                   DanumaAI
                 </a>{" "}
-                &amp; <span className="text-indigo-300 font-semibold">MemoAI</span>.
+                &amp;{" "}
+                <span className="text-indigo-300 font-semibold">MemoAI</span>,
+                and Senior Web Developer at{" "}
+                <span className="text-emerald-300 font-semibold">
+                  Quizzygram
+                </span>
+                .
               </p>
 
               {/* Primary CTA Cluster */}
               <div className="flex flex-wrap items-center gap-3.5 pt-1">
-                <a
-                  href="#projects"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-mono text-xs sm:text-sm font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all shadow-xl shadow-sky-500/20"
+                <button
+                  type="button"
+                  onClick={() => setHireModalOpen(true)}
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-mono text-xs sm:text-sm font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all shadow-xl shadow-sky-500/25 cursor-pointer"
                 >
-                  <Layers className="w-4 h-4" />
-                  <span>View Featured Work</span>
-                </a>
+                  <Briefcase className="w-4 h-4" />
+                  <span>Hire Kevin (Fast-Track)</span>
+                </button>
 
                 <a
-                  href="#ventures"
+                  href="#projects"
                   className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-mono text-xs sm:text-sm font-medium bg-white/[0.06] hover:bg-white/12 text-white border border-white/15 hover:border-sky-400/40 transition-all"
                 >
-                  <Sparkles className="w-4 h-4 text-sky-400" />
-                  <span>Corvento &amp; 74K+ Media Network</span>
+                  <Layers className="w-4 h-4 text-sky-400" />
+                  <span>Explore Projects</span>
                 </a>
 
                 <button
@@ -449,14 +473,24 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            {/* Right 5 Columns: Clean, Unobstructed Portrait Frame (Face Clearly Visible!) */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            {/* Right 5 Columns: BIGGER, COMMANDING HERO PORTRAIT SHOWCASE */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end relative">
+              {/* Luminous Aura Glow behind Portrait */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -inset-4 rounded-[36px] opacity-35 blur-2xl"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(56,189,248,0.45), rgba(129,140,248,0.35), rgba(16,185,129,0.25))",
+                }}
+              />
+
               <TiltCard
-                maxTilt={6}
-                className="w-full max-w-[400px] rounded-3xl glass-panel p-4 border border-white/15 shadow-2xl"
+                maxTilt={5}
+                className="relative w-full max-w-[490px] xl:max-w-[530px] rounded-[28px] glass-panel p-3.5 sm:p-4 border border-sky-400/30 shadow-2xl"
               >
-                {/* Clean Unobstructed Portrait Photo — No Boxes Covering the Face! */}
-                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-slate-950 border border-white/10">
+                {/* Large Editorial Portrait Frame */}
+                <div className="relative w-full h-[460px] sm:h-[540px] lg:h-[560px] rounded-2xl overflow-hidden bg-slate-950 border border-white/10">
                   <img
                     src={HERO_DATA.portraits[activePortrait].src}
                     alt={HERO_DATA.portraits[activePortrait].title}
@@ -466,18 +500,18 @@ export default function PortfolioPage() {
                     }}
                     className="w-full h-full object-cover transition-all duration-500"
                   />
-                  {/* Subtle bottom gradient only at the very bottom 15% */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#06070B]/80 to-transparent" />
+                  {/* Subtle bottom gradient only at the very bottom 12% */}
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#06070B]/85 to-transparent" />
                 </div>
 
                 {/* Clean Caption & Photo Toggle BELOW the Image */}
-                <div className="pt-4 px-1 flex items-center justify-between gap-3">
+                <div className="pt-3.5 px-1.5 flex items-center justify-between gap-3">
                   <div className="min-w-0">
-                    <div className="font-display font-bold text-sm text-white truncate">
+                    <div className="font-display font-bold text-base text-white truncate">
                       {HERO_DATA.portraits[activePortrait].title}
                     </div>
-                    <div className="font-mono text-[11px] text-slate-400 truncate">
-                      Founder @ Corvento • UCSC BIT
+                    <div className="font-mono text-xs text-sky-300 truncate">
+                      {HERO_DATA.portraits[activePortrait].caption}
                     </div>
                   </div>
 
@@ -493,7 +527,7 @@ export default function PortfolioPage() {
                             : "bg-white/5 text-slate-300 hover:bg-white/15"
                         }`}
                       >
-                        0{idx + 1}
+                        Photo 0{idx + 1}
                       </button>
                     ))}
                   </div>
@@ -554,29 +588,37 @@ export default function PortfolioPage() {
                 </p>
               ))}
 
-              <div className="pt-4 flex flex-wrap gap-4">
-                <div className="px-4 py-3 rounded-2xl bg-white/[0.03] border border-white/10">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-sky-400 block">
-                    Academic Path
+              <div className="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/10">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-sky-400 block">
+                    University
                   </span>
-                  <span className="text-sm font-semibold text-white">
-                    BIT Undergraduate @ UCSC
+                  <span className="text-xs sm:text-sm font-semibold text-white mt-0.5 block">
+                    BIT @ UCSC
                   </span>
                 </div>
-                <div className="px-4 py-3 rounded-2xl bg-white/[0.03] border border-white/10">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-indigo-400 block">
+                <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/10">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-indigo-400 block">
                     Parent Venture
                   </span>
-                  <span className="text-sm font-semibold text-white">
-                    Founder @ Corvento Technologies
+                  <span className="text-xs sm:text-sm font-semibold text-white mt-0.5 block">
+                    Corvento Tech
                   </span>
                 </div>
-                <div className="px-4 py-3 rounded-2xl bg-white/[0.03] border border-white/10">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-emerald-400 block">
-                    Discipline Beyond Code
+                <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/10">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-emerald-400 block">
+                    Global Freelance
                   </span>
-                  <span className="text-sm font-semibold text-white">
-                    Black Belt in Taekwondo
+                  <span className="text-xs sm:text-sm font-semibold text-white mt-0.5 block">
+                    Fiverr &amp; Upwork
+                  </span>
+                </div>
+                <div className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/10">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-amber-400 block">
+                    Martial Arts
+                  </span>
+                  <span className="text-xs sm:text-sm font-semibold text-white mt-0.5 block">
+                    Black Belt TKD
                   </span>
                 </div>
               </div>
@@ -605,7 +647,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* =====================================================================
-          SECTION 02: CORVENTO TECHNOLOGIES & 74K+ WHATSAPP MEDIA ECOSYSTEM
+          SECTION 02: CORVENTO TECHNOLOGIES, 74K+ WHATSAPP NETWORK & CREATIVE STUDIO
          ===================================================================== */}
       <section
         id="ventures"
@@ -617,7 +659,7 @@ export default function PortfolioPage() {
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-sky-400 mb-3">
                 <Sparkles className="w-4 h-4" />
-                <span>02 // ENTREPRENEURSHIP &amp; DIGITAL ECOSYSTEM</span>
+                <span>02 // ENTREPRENEURSHIP, MEDIA &amp; CREATIVE ECOSYSTEM</span>
               </div>
               <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">
                 Corvento Technologies
@@ -625,7 +667,8 @@ export default function PortfolioPage() {
               <p className="text-base sm:text-lg text-slate-300 mt-3 leading-relaxed">
                 The single master venture founded and operated by Kevin Bandara to build and run{" "}
                 <strong className="text-white">DanumaAI</strong>,{" "}
-                <strong className="text-white">MemoAI</strong>, and an active{" "}
+                <strong className="text-white">MemoAI</strong>,{" "}
+                <strong className="text-sky-300">@corventotech</strong> YouTube/Reels, and an active{" "}
                 <strong className="text-emerald-300">
                   74,000+ subscriber WhatsApp digital media &amp; education network
                 </strong>
@@ -683,7 +726,7 @@ export default function PortfolioPage() {
           </div>
 
           {/* WhatsApp Channels Network under Corvento (74K+ Subscribers) */}
-          <div>
+          <div className="mb-14">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
               <div>
                 <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
@@ -741,11 +784,64 @@ export default function PortfolioPage() {
                     rel="noopener noreferrer"
                     className="w-full py-2.5 px-4 rounded-xl font-mono text-xs font-semibold bg-white/[0.06] hover:bg-emerald-500 hover:text-slate-950 text-white border border-white/10 hover:border-emerald-400 transition-all flex items-center justify-center gap-2"
                   >
-                    <span>View WhatsApp Channel</span>
+                    <span>Open WhatsApp Channel</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </a>
                 </TiltCard>
               ))}
+            </div>
+          </div>
+
+          {/* Graphic Design Portfolio & YouTube / Reels Production Bar */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-amber-400/25">
+              <div>
+                <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-amber-300 mb-3">
+                  <Palette className="w-4 h-4" />
+                  <span>GRAPHIC DESIGN &amp; VISUAL BRANDING</span>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-white mb-2">
+                  Graphic Design Portfolio
+                </h3>
+                <p className="text-sm text-slate-300 leading-relaxed mb-6">
+                  Backed by a Diploma in Graphic Design (ATARI CITY Campus) and extensive freelance experience on Fiverr &amp; Upwork — crafting brand identities, social media visuals, posters, and UI assets.
+                </p>
+              </div>
+              <a
+                href={CORVENTO_ECOSYSTEM.graphicsPortfolioUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl font-mono text-xs font-semibold bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all self-start"
+              >
+                <Palette className="w-4 h-4" />
+                <span>View Graphic Design Portfolio (Google Drive)</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
+
+            <div className="glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-rose-400/25">
+              <div>
+                <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-rose-300 mb-3">
+                  <Video className="w-4 h-4" />
+                  <span>CONTENT CREATION &amp; REELS EDITING</span>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-white mb-2">
+                  Corvento Tech YouTube &amp; Reel Edits
+                </h3>
+                <p className="text-sm text-slate-300 leading-relaxed mb-6">
+                  Producing and editing high-retention short-form reels, product showcases, and educational technology content for Corvento Technologies (@corventotech) and digital brands.
+                </p>
+              </div>
+              <a
+                href={CORVENTO_ECOSYSTEM.youtubeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl font-mono text-xs font-semibold bg-rose-500 hover:bg-rose-400 text-white transition-all self-start"
+              >
+                <Video className="w-4 h-4" />
+                <span>Visit @corventotech on YouTube</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
         </div>
@@ -764,10 +860,10 @@ export default function PortfolioPage() {
             <div>
               <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-sky-400 mb-3">
                 <Boxes className="w-4 h-4" />
-                <span>03 // FEATURED SOFTWARE PLATFORMS</span>
+                <span>03 // FEATURED SOFTWARE &amp; CREATIVE WORK</span>
               </div>
               <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">
-                Engineered Products
+                Engineered Platforms
               </h2>
             </div>
 
@@ -790,7 +886,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          {/* Clean 2-Column Project Grid (Flagship spans 2 cols, others sit cleanly in 2 cols) */}
+          {/* Clean 2-Column Project Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {filteredProjects.map((project) => (
               <TiltCard
@@ -806,11 +902,20 @@ export default function PortfolioPage() {
                   {/* Top Meta Row */}
                   <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
                     <div className="flex items-center gap-3">
-                      <img
-                        src={project.logo}
-                        alt={project.title}
-                        className="w-14 h-14 rounded-2xl object-cover border border-white/15 bg-slate-900 flex-shrink-0"
-                      />
+                      <div className="flex items-center -space-x-2">
+                        <img
+                          src={project.logo}
+                          alt={project.title}
+                          className="w-14 h-14 rounded-2xl object-cover border border-white/15 bg-slate-900 flex-shrink-0"
+                        />
+                        {project.secondaryLogo && (
+                          <img
+                            src={project.secondaryLogo}
+                            alt="Partner / Community Logo"
+                            className="w-11 h-11 rounded-xl object-cover border-2 border-[#0B0E17] bg-white flex-shrink-0"
+                          />
+                        )}
+                      </div>
                       <div>
                         <span className="font-mono text-xs text-sky-400">
                           {project.role}
@@ -840,7 +945,7 @@ export default function PortfolioPage() {
                         className="p-3.5 rounded-2xl bg-black/40 border border-white/10"
                       >
                         <div
-                          className="font-display text-lg sm:text-xl font-bold"
+                          className="font-display text-base sm:text-xl font-bold"
                           style={{ color: project.accentColor }}
                         >
                           {m.value}
@@ -947,11 +1052,20 @@ export default function PortfolioPage() {
                 <div className="glass-panel rounded-3xl p-6 sm:p-8 transition-all">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                     <div className="flex items-center gap-4">
-                      <img
-                        src={exp.logo}
-                        alt={exp.company}
-                        className="w-13 h-13 rounded-2xl object-cover bg-slate-900 border border-white/15 flex-shrink-0"
-                      />
+                      <div className="flex items-center -space-x-2">
+                        <img
+                          src={exp.logo}
+                          alt={exp.company}
+                          className="w-13 h-13 rounded-2xl object-cover bg-slate-900 border border-white/15 flex-shrink-0"
+                        />
+                        {exp.secondaryLogo && (
+                          <img
+                            src={exp.secondaryLogo}
+                            alt="Community Logo"
+                            className="w-10 h-10 rounded-xl object-cover bg-white border-2 border-[#0B0E17] flex-shrink-0"
+                          />
+                        )}
+                      </div>
                       <div>
                         <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
                           {exp.role}
@@ -983,15 +1097,34 @@ export default function PortfolioPage() {
                     ))}
                   </ul>
 
-                  <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
-                    {exp.technologies.map((t) => (
-                      <span
-                        key={t}
-                        className="font-mono text-xs px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-slate-300"
-                      >
-                        {t}
-                      </span>
-                    ))}
+                  <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10">
+                    <div className="flex flex-wrap gap-2">
+                      {exp.technologies.map((t) => (
+                        <span
+                          key={t}
+                          className="font-mono text-xs px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-slate-300"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+
+                    {exp.links && exp.links.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {exp.links.map((l) => (
+                          <a
+                            key={l.url}
+                            href={l.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-400/15 hover:bg-sky-400/25 text-sky-300 border border-sky-400/30 font-mono text-xs transition-colors"
+                          >
+                            <span>{l.label}</span>
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -1127,16 +1260,40 @@ export default function PortfolioPage() {
       </section>
 
       {/* =====================================================================
-          SECTION 07: CONTACT & DIRECT DISPATCH
+          SECTION 07: CONTACT & RECRUITER FAST-TRACK
          ===================================================================== */}
       <section id="contact" className="relative py-28 sm:py-36">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Top Fast-Track Recruiter Callout Banner */}
+          <div className="mb-14 rounded-3xl glass-panel p-6 sm:p-8 border border-sky-400/30 bg-gradient-to-r from-sky-500/10 via-indigo-500/10 to-emerald-500/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-emerald-300 mb-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                <span>HIRING MANAGERS, RECRUITERS &amp; CLIENTS</span>
+              </div>
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
+                Looking to Hire a Full-Stack / AI Engineer?
+              </h3>
+              <p className="text-sm sm:text-base text-slate-300 mt-1 max-w-2xl">
+                Use the Recruiter Fast-Track to copy my complete candidate brief for your team or launch a pre-filled role inquiry in one click.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setHireModalOpen(true)}
+              className="px-6 py-4 rounded-2xl font-mono text-xs sm:text-sm font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all shadow-xl shadow-sky-500/25 flex items-center gap-2 flex-shrink-0 cursor-pointer"
+            >
+              <Briefcase className="w-4 h-4" />
+              <span>Open Hiring Fast-Track</span>
+            </button>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left 6 Cols: Direct Contact Channels */}
             <div className="lg:col-span-6 space-y-6">
               <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-sky-400">
                 <Terminal className="w-4 h-4" />
-                <span>07 // GET IN TOUCH</span>
+                <span>07 // DIRECT CONTACT</span>
               </div>
 
               <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
@@ -1148,7 +1305,7 @@ export default function PortfolioPage() {
                 <strong className="text-white">
                   Software Engineering, Full-Stack Developer, Next.js/React, and AI Application Developer
                 </strong>{" "}
-                opportunities, freelance engineering, and strategic collaborations.
+                roles, Fiverr/Upwork freelance contracts, and creative partnerships.
               </p>
 
               {/* Direct Channel Cards */}
@@ -1299,11 +1456,11 @@ export default function PortfolioPage() {
                       <option value="AI Systems & RAG Engineering">
                         AI Systems &amp; RAG Engineering
                       </option>
-                      <option value="Next.js / React / Backend Project">
-                        Next.js / React / Backend Project
+                      <option value="Freelance Web / App Project (Direct / Fiverr / Upwork)">
+                        Freelance Web / App Project (Direct / Fiverr / Upwork)
                       </option>
-                      <option value="Corvento Media & Partnership">
-                        Corvento Media &amp; Partnership
+                      <option value="Graphic Design, Branding & Reel Edits">
+                        Graphic Design, Branding &amp; Reel Edits
                       </option>
                     </select>
                   </div>
@@ -1339,6 +1496,20 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      {/* Floating Bottom-Right Quick Hire Pill for Recruiters & Companies */}
+      <div className="fixed bottom-5 right-5 z-40">
+        <button
+          type="button"
+          onClick={() => setHireModalOpen(true)}
+          className="flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#0B0E17]/90 hover:bg-sky-400 text-white hover:text-slate-950 border border-sky-400/40 shadow-2xl shadow-sky-500/20 backdrop-blur-md transition-all group cursor-pointer"
+        >
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 group-hover:bg-slate-950 animate-pulse" />
+          <span className="font-mono text-xs font-semibold">
+            Hire Kevin • Fast-Track
+          </span>
+        </button>
+      </div>
+
       {/* Footer */}
       <footer className="border-t border-white/10 bg-[#040508] py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -1357,7 +1528,7 @@ export default function PortfolioPage() {
             </span>
           </div>
 
-          <div className="flex items-center gap-5 font-mono text-xs text-slate-400">
+          <div className="flex items-center gap-5 font-mono text-xs text-slate-400 flex-wrap justify-center">
             <a
               href={HERO_DATA.github}
               target="_blank"
@@ -1375,18 +1546,28 @@ export default function PortfolioPage() {
               LinkedIn
             </a>
             <a
+              href={HERO_DATA.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-sky-300 transition-colors"
+            >
+              YouTube
+            </a>
+            <a
+              href={HERO_DATA.graphicsDrive}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-sky-300 transition-colors"
+            >
+              Design Portfolio
+            </a>
+            <a
               href="https://danumaai.lk/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-sky-300 transition-colors"
             >
               DanumaAI
-            </a>
-            <a
-              href={`mailto:${HERO_DATA.email}`}
-              className="hover:text-sky-300 transition-colors"
-            >
-              Email
             </a>
           </div>
         </div>
@@ -1396,6 +1577,12 @@ export default function PortfolioPage() {
       <ArchitectureModal
         project={activeArchProject}
         onClose={() => setActiveArchProject(null)}
+      />
+
+      {/* Interactive Hire Kevin Fast-Track Modal */}
+      <HireMeModal
+        isOpen={hireModalOpen}
+        onClose={() => setHireModalOpen(false)}
       />
     </div>
   );

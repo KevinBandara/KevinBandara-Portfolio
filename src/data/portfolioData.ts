@@ -1,7 +1,7 @@
 export interface ProjectLink {
   label: string;
   url: string;
-  type: "web" | "playstore" | "telegram" | "github";
+  type: "web" | "playstore" | "telegram" | "github" | "drive" | "youtube";
 }
 
 export interface ArchitectureNode {
@@ -18,7 +18,11 @@ export interface FeaturedProject {
   subtitle: string;
   role: string;
   period: string;
-  category: "AI & RAG Systems" | "Full-Stack Web" | "Bots & Distributed";
+  category:
+    | "AI & RAG Systems"
+    | "Full-Stack Web"
+    | "Bots & Distributed"
+    | "Creative & Media";
   featured?: boolean;
   logo: string;
   secondaryLogo?: string;
@@ -59,9 +63,11 @@ export interface ExperienceItem {
   location: string;
   type: string;
   logo: string;
+  secondaryLogo?: string;
   description: string;
   achievements: string[];
   technologies: string[];
+  links?: { label: string; url: string }[];
 }
 
 export interface EducationItem {
@@ -77,12 +83,15 @@ export const HERO_DATA = {
   name: "Kevin Bandara",
   title: "Full-Stack Software Developer, AI Systems Builder & Tech Entrepreneur",
   tagline:
-    "Architecting production web platforms, AI-driven educational ecosystems, scalable backend infrastructure, and high-reach digital media networks.",
+    "Building production web platforms, AI-driven educational technology, scalable backend infrastructure, and high-reach digital media ecosystems.",
   location: "Colombo, Sri Lanka",
   status: "Open to Software Engineering & Full-Stack Developer Roles",
   email: "kevinbandara0000@gmail.com",
   github: "https://github.com/KevinBandara",
   linkedin: "https://www.linkedin.com/in/kevinbandara",
+  youtube: "https://www.youtube.com/@corventotech",
+  graphicsDrive:
+    "https://drive.google.com/drive/folders/184pMfdN0AlFBfXTEU8eSFVQzaEWJ4IJ5?usp=drive_link",
   domainPrimary: "https://kevinbandara.is-a.dev",
   domainVercel: "https://kevinbandara.vercel.app",
   repoUrl: "https://github.com/KevinBandara/KevinBandara-Portfolio",
@@ -91,13 +100,13 @@ export const HERO_DATA = {
       src: "/KevinPortrait.jpg",
       title: "Kevin Bandara",
       caption: "Full-Stack Software Engineer & Founder of Corvento Technologies",
-      objectPosition: "center 28%",
+      objectPosition: "center 24%",
     },
     {
       src: "/MyPic.png",
-      title: "Kevin Bandara — BMICH Recognition",
-      caption: "Academic & Professional Recognition at BMICH Colombo",
-      objectPosition: "28% 22%",
+      title: "Kevin Bandara — BMICH Colombo",
+      caption: "Academic & Professional Recognition Ceremony",
+      objectPosition: "28% 20%",
     },
   ],
   telemetry: [
@@ -127,22 +136,25 @@ export const HERO_DATA = {
 export const CORVENTO_ECOSYSTEM = {
   name: "Corvento Technologies",
   tagline:
-    "The Master Technology & Digital Media Venture Founded by Kevin Bandara",
+    "The Single Master Venture Entity Founded & Operated by Kevin Bandara",
+  youtubeUrl: "https://www.youtube.com/@corventotech",
+  graphicsPortfolioUrl:
+    "https://drive.google.com/drive/folders/184pMfdN0AlFBfXTEU8eSFVQzaEWJ4IJ5?usp=drive_link",
   lineage: [
     {
-      era: "Phase 01",
+      era: "Origin Identity",
       name: "Asteroid Technologies",
-      desc: "Initial technology studio identity created for early software experiments and community systems.",
+      desc: "Initial technology studio identity created for early software experiments, community servers, and digital tools.",
     },
     {
-      era: "Phase 02",
+      era: "Expansion Phase",
       name: "Lycoryx Technologies",
-      desc: "Expanded into AI product development, launching MemoAI (200K+ users) and the first release of DanumaAI.",
+      desc: "Scaled into AI application development — launching MemoAI (200K+ users across Discord) and the initial release of DanumaAI.",
     },
     {
-      era: "Present Master Entity",
+      era: "Master Entity (Present)",
       name: "Corvento Technologies",
-      desc: "The unified parent organization operating DanumaAI, MemoAI, proprietary web platforms, and a 74,000+ subscriber digital media network.",
+      desc: "The unified parent company operating DanumaAI, MemoAI, proprietary web platforms, YouTube/Reels media (@corventotech), and a 74,000+ follower WhatsApp channel network.",
     },
   ],
   channels: [
@@ -195,27 +207,27 @@ export const CORVENTO_ECOSYSTEM = {
 export const ABOUT_DATA = {
   headline: "Software Engineer. AI Builder. Technology Entrepreneur.",
   paragraphs: [
-    "I am a software developer and technology entrepreneur from Colombo, Sri Lanka with hands-on experience taking digital products from architecture to live production. I specialize in building full-stack web applications, integrating modern AI workflows (RAG, Gemini API, OpenAI), and engineering scalable backend systems with Next.js, Node.js, and MongoDB.",
-    "Beyond writing clean, maintainable code, I founded Corvento Technologies (evolved from Asteroid Technologies and Lycoryx Technologies) — operating software products like DanumaAI and MemoAI alongside a 74,000+ subscriber WhatsApp digital media network. I manage everything from cloud deployments and Google Play Store releases to product monetization, user acquisition, and daily content operations.",
+    "I am a software developer, creative technologist, and entrepreneur from Colombo, Sri Lanka with hands-on experience taking digital products from architecture to live production. I specialize in building full-stack web applications, integrating modern AI workflows (RAG, Gemini API, OpenAI), and engineering scalable backend systems with Next.js, Node.js, and MongoDB.",
+    "Beyond writing clean, maintainable code, I founded Corvento Technologies (evolved from Asteroid Technologies and Lycoryx Technologies) as the master entity operating DanumaAI, MemoAI, and a 74,000+ subscriber WhatsApp media network. Alongside leading Senior Web Development at Quizzygram and commercial operations at Past Papers Wiki, I have delivered international freelance engineering and creative projects on Fiverr and Upwork.",
   ],
   pillars: [
     {
-      code: "01 // AI & RAG SYSTEMS",
-      title: "Production AI Engineering",
+      code: "01 // AI & FULL-STACK",
+      title: "Production Web & AI Systems",
       description:
-        "Architecting Retrieval-Augmented Generation (RAG) workflows, vector search, and multimodal vision solvers using Gemini and OpenAI APIs.",
+        "Architecting RAG pipelines, Gemini/OpenAI workflows, Next.js web platforms, and Google Play Android apps serving thousands of active users.",
     },
     {
-      code: "02 // FULL-STACK PLATFORMS",
-      title: "Web, Mobile & Bot Ecosystems",
+      code: "02 // ENTREPRENEURSHIP",
+      title: "Corvento Ecosystem & 74K+ Reach",
       description:
-        "Delivering cohesive applications across Next.js App Router, React Native (Expo) on Google Play, and high-concurrency Discord/Telegram bots.",
+        "Building and operating proprietary software ventures, contextual ad engines, and daily digital media channels with 74,000+ subscribers.",
     },
     {
-      code: "03 // VENTURE & DISTRIBUTION",
-      title: "Product Growth & Media Scale",
+      code: "03 // CREATIVE & FREELANCE",
+      title: "Global Freelance, Design & Reels",
       description:
-        "Combining engineering with entrepreneurship — growing owned audiences of 74K+ subscribers, building contextual ad engines, and driving commercial operations.",
+        "Delivering full-stack solutions on Fiverr & Upwork alongside graphic design, brand identities, and high-retention video/reel production.",
     },
   ],
 };
@@ -260,7 +272,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
     id: "backend-distributed",
     code: "03",
     title: "Backend & Distributed Systems",
-    subtitle: "Scalable APIs, message queues & bot architectures",
+    subtitle: "Scalable APIs, real-time chat & bot architectures",
     accent: "#34D399",
     skills: [
       { name: "RESTful APIs", highlight: true },
@@ -269,7 +281,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
       { name: "Docker", highlight: true },
       { name: "Microservices", highlight: true },
       { name: "Discord.js", highlight: true },
-      { name: "Telegram Bot API" },
+      { name: "Telegram Bot & WebApp APIs" },
     ],
   },
   {
@@ -306,16 +318,16 @@ export const SKILL_GROUPS: SkillGroup[] = [
   {
     id: "uiux-creative",
     code: "06",
-    title: "UI/UX, Product & Growth",
-    subtitle: "Design systems, branding & monetization",
+    title: "UI/UX, Graphic Design & Video",
+    subtitle: "Brand design, short-form reel editing & growth",
     accent: "#A78BFA",
     skills: [
-      { name: "Figma", highlight: true },
+      { name: "Figma UI/UX", highlight: true },
       { name: "Adobe Photoshop", highlight: true },
       { name: "Adobe Illustrator", highlight: true },
-      { name: "Contextual Ad Systems" },
-      { name: "Digital Media Operations" },
-      { name: "Technical SEO" },
+      { name: "Short-Form Reel & Video Editing", highlight: true },
+      { name: "YouTube & Social Media Growth" },
+      { name: "Fiverr & Upwork Client Delivery" },
     ],
   },
 ];
@@ -349,7 +361,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
       "RAG & Vector Search",
     ],
     overview:
-      "Flagship educational product under Corvento Technologies built to assist Sri Lankan students with automated syllabus explanations, step-by-step past-paper analysis, mind-map generation, and trilingual (Sinhala, Tamil, English) learning workflows.",
+      "Flagship educational product built and operated under Corvento Technologies to assist Sri Lankan students with automated syllabus explanations, step-by-step past-paper analysis, mind-map generation, and trilingual (Sinhala, Tamil, English) learning workflows.",
     highlights: [
       "Architected Retrieval-Augmented Generation (RAG) workflows and image-based problem solving for Technology-stream (ET, SFT, ICT) and national curricula.",
       "Published the native Android application to the Google Play Store with thousands of active downloads alongside Web and Telegram Bot access.",
@@ -400,61 +412,109 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     ],
   },
   {
-    id: "past-papers-wiki",
+    id: "quizzygram",
     index: "02",
-    title: "Past Papers Wiki — Custom Booking Engine",
-    subtitle: "Automated Reservation & Scheduling Architecture",
-    role: "Full-Stack Architect",
+    title: "Quizzygram — Interactive Social Learning & Quiz Platform",
+    subtitle: "Telegram-Style Real-Time Chats, Forums, Channels, Quizzes & Competitions",
+    role: "Senior Web Developer (Education Channel Ecosystem)",
+    period: "2025 – Present",
+    category: "Full-Stack Web",
+    logo: "/QuzziygramLogo.png",
+    secondaryLogo: "/eduChannel-circleLogo.png",
+    accentColor: "#34D399",
+    metrics: [
+      { label: "Core Features", value: "Chats • Forums • Quizzes" },
+      { label: "Gamification", value: "Live Competitions" },
+      { label: "Community Origin", value: "Education Channel TG" },
+    ],
+    stack: [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Real-Time Chats & Channels",
+      "RESTful APIs",
+      "Tailwind CSS",
+    ],
+    overview:
+      "Developed as part of the Education Channel Telegram community ecosystem, Quizzygram is an interactive educational web platform combining Telegram-style real-time chats, student discussion forums, topic channels, timed quizzes, and live leaderboard competitions.",
+    highlights: [
+      "Engineered Telegram-inspired real-time chat interfaces, subject channels, and structured community discussion forums for students.",
+      "Built interactive quiz engines, timed exam challenges, and competitive leaderboards to drive student engagement.",
+      "Optimized responsive frontend modules, API integrations, and client-side state stability as Senior Web Developer.",
+    ],
+    links: [
+      {
+        label: "Education Channel Community (TG)",
+        url: "https://t.me/Educationatgangstersquad",
+        type: "telegram",
+      },
+    ],
+    architecture: [
+      {
+        layer: "SOCIAL & COMMUNITY UI",
+        title: "Telegram-Style Channels, Forums & Chat Modules",
+        tech: "React.js + Next.js + Tailwind CSS",
+        detail:
+          "Responsive multi-pane interface supporting topic channels, thread-based student forums, and real-time messaging workflows.",
+      },
+      {
+        layer: "GAMIFICATION ENGINE",
+        title: "Interactive Quizzes & Live Competitions",
+        tech: "Timed Assessment State + Leaderboard API",
+        detail:
+          "Handles timed question delivery, instant score evaluation, and competitive student rankings.",
+      },
+    ],
+  },
+  {
+    id: "past-papers-wiki",
+    index: "03",
+    title: "Past Papers Wiki — Custom Internal Booking Engine",
+    subtitle: "Automated Reservation & Scheduling System for PastPapers.Wiki",
+    role: "Full-Stack Architect & Commercial Operations",
     period: "2025 – Present",
     category: "Full-Stack Web",
     logo: "/paperwiki logo.jpeg",
     accentColor: "#818CF8",
     metrics: [
-      { label: "Platform Audience", value: "140K+ Users" },
-      { label: "Architecture", value: "Next.js + Node" },
-      { label: "State Handling", value: "Zero-Conflict" },
+      { label: "Main Platform Reach", value: "140K+ Users" },
+      { label: "System Type", value: "Custom Booking Engine" },
+      { label: "State Handling", value: "Zero-Conflict Slots" },
     ],
     stack: ["Next.js", "Node.js", "MongoDB", "REST APIs", "Tailwind CSS"],
     overview:
-      "Engineered an automated, dependable booking and scheduling architecture tailored for the Past Papers Wiki platform.",
+      "Engineered a custom internal booking and scheduling architecture tailored for the Past Papers Wiki organization to automate commercial ad-slot reservations, educator onboarding, and campaign management.",
     highlights: [
-      "Designed seamless reservation and management workflows with robust validation and atomic backend state handling.",
-      "Streamlined commercial ad-slot scheduling and partner onboarding across Sri Lanka's largest past-paper archive.",
+      "Designed seamless internal reservation and scheduling workflows with strict conflict validation and atomic backend state handling.",
+      "Aligned technical booking infrastructure with commercial operations and partner outreach for the public PastPapers.Wiki platform.",
     ],
     links: [
       {
-        label: "Visit PastPapers.Wiki",
+        label: "Official Public Site (pastpapers.wiki)",
         url: "https://pastpapers.wiki/",
         type: "web",
       },
     ],
     architecture: [
       {
-        layer: "PRESENTATION LAYER",
-        title: "Interactive Booking & Admin Portal",
+        layer: "OPERATIONS PORTAL",
+        title: "Internal Booking & Campaign Scheduler",
         tech: "Next.js + Tailwind CSS",
         detail:
-          "Real-time calendar slot selector and commercial operations dashboard for managing educator and client reservations.",
+          "Dedicated reservation interface built for managing commercial slots, educator campaigns, and onboarding schedules.",
       },
       {
         layer: "API & VALIDATION",
         title: "Reservation Controller & Conflict Engine",
-        tech: "Node.js + RESTful APIs",
+        tech: "Node.js + RESTful APIs + MongoDB",
         detail:
-          "Enforces strict schema validation, prevents double-booking race conditions, and handles lifecycle state transitions.",
-      },
-      {
-        layer: "PERSISTENCE LAYER",
-        title: "Document Store & Audit Logs",
-        tech: "MongoDB Atlas",
-        detail:
-          "Stores booking records, client onboarding metadata, and commercial operation logs.",
+          "Enforces strict slot validation, prevents double-booking, and tracks campaign lifecycle states.",
       },
     ],
   },
   {
     id: "memo-ai",
-    index: "03",
+    index: "04",
     title: "MemoAI — Scalable Community AI Bot & Dashboard",
     subtitle: "High-Concurrency Discord AI Assistant & OAuth2 Web Playground",
     role: "Creator & Backend Developer (Corvento Technologies)",
@@ -499,22 +559,15 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
       {
         layer: "ASYNC PIPELINE",
         title: "Concurrency & Rate-Limiting Middleware",
-        tech: "Node.js Async Queues + Token Bucket",
+        tech: "Node.js Async Queues + OpenAI API + MongoDB",
         detail:
           "Protects downstream LLM & image generation endpoints from burst community traffic.",
-      },
-      {
-        layer: "AI & DATA LAYER",
-        title: "LLM Inference & Guild Persistence",
-        tech: "OpenAI API + MongoDB",
-        detail:
-          "Executes conversational chat, vision analysis, and image synthesis with persistent MongoDB storage.",
       },
     ],
   },
   {
     id: "kev-thash-sweet-treats",
-    index: "04",
+    index: "05",
     title: "Kev & Thash Sweet Treats — Bilingual E-Commerce Platform",
     subtitle: "Custom Confectionery Storefront with English/Sinhala i18n & WhatsApp Ordering",
     role: "Full-Stack Developer",
@@ -560,12 +613,64 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
         detail:
           "Zero-latency category switching with full English and Sinhala localization.",
       },
+    ],
+  },
+  {
+    id: "creative-design-reels",
+    index: "06",
+    title: "Creative Design, Visual Branding & Reel Production",
+    subtitle: "Graphic Design Portfolio, Brand Identity Systems & Short-Form Video Edits",
+    role: "Creative Director & Designer (Corvento & Freelance)",
+    period: "2022 – Present",
+    category: "Creative & Media",
+    logo: "/CorventoTechLogo.jpg",
+    accentColor: "#FBBF24",
+    metrics: [
+      { label: "Credential", value: "Graphic Design Diploma" },
+      { label: "Video & Reels", value: "@corventotech" },
+      { label: "Freelance", value: "Fiverr & Upwork" },
+    ],
+    stack: [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Figma",
+      "Reel & Video Editing",
+      "Brand Identity Design",
+      "Social Media Visuals",
+    ],
+    overview:
+      "Alongside software engineering, I design complete visual identities, promotional graphics, UI/UX prototypes, and high-retention short-form video/reel edits for Corvento Technologies (@corventotech) and freelance clients.",
+    highlights: [
+      "Curated a comprehensive Graphic Design portfolio spanning brand logos, social media campaigns, educational posters, and product visuals.",
+      "Produce and edit engaging technology reels and digital content for the Corvento Technologies YouTube and social channels.",
+      "Delivered custom graphic design and web design packages for clients on Fiverr, Upwork, and local businesses.",
+    ],
+    links: [
       {
-        layer: "CONVERSION ENGINE",
-        title: "Direct WhatsApp Order Serializer",
-        tech: "Custom URI Builder + JSON-LD SEO",
+        label: "Graphic Design Portfolio (Google Drive)",
+        url: "https://drive.google.com/drive/folders/184pMfdN0AlFBfXTEU8eSFVQzaEWJ4IJ5?usp=drive_link",
+        type: "drive",
+      },
+      {
+        label: "Corvento Tech YouTube & Reels",
+        url: "https://www.youtube.com/@corventotech",
+        type: "youtube",
+      },
+    ],
+    architecture: [
+      {
+        layer: "BRAND & VISUAL DESIGN",
+        title: "Identity Systems, Posters & UI Assets",
+        tech: "Adobe Illustrator + Photoshop + Figma",
         detail:
-          "Converts selected menu items into pre-formatted WhatsApp order dispatches.",
+          "High-impact visual design across tech ventures, educational campaigns, and commercial client brands.",
+      },
+      {
+        layer: "MOTION & REEL PRODUCTION",
+        title: "Short-Form Video & Tech Content Editing",
+        tech: "Reels Editing + Audio Sync + Visual Storytelling",
+        detail:
+          "Fast-paced, high-retention video edits published across YouTube (@corventotech) and social channels.",
       },
     ],
   },
@@ -581,11 +686,11 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     type: "Venture & Product Engineering",
     logo: "/CorventoTechLogo.jpg",
     description:
-      "Founded and scaled the master technology entity operating DanumaAI, MemoAI, proprietary web platforms, and a 74,000+ subscriber WhatsApp digital media network. Evolved the company identity from Asteroid Technologies to Lycoryx Technologies, and now Corvento Technologies.",
+      "Founded and scaled the single master technology entity operating DanumaAI, MemoAI, proprietary web platforms, YouTube/Reels media (@corventotech), and a 74,000+ subscriber WhatsApp digital media network. Evolved the company identity from Asteroid Technologies to Lycoryx Technologies, and now Corvento Technologies.",
     achievements: [
       "Architected and launched DanumaAI across Web, Google Play Store (Android), and Telegram Bot with RAG workflows and a custom educator ad engine.",
       "Built and operated MemoAI, scaling asynchronous Discord.js and OpenAI pipelines to 206,000+ historical users across 2,157+ servers.",
-      "Grew and actively manage 4 high-engagement WhatsApp channels (Achievers Hub, Lanka Diaries, Sarasavi Sihinaya, Sarasavi Pin Bima) reaching 74,000+ subscribers.",
+      "Grew and actively manage 4 daily-updated WhatsApp channels (Achievers Hub, Lanka Diaries, Sarasavi Sihinaya, Sarasavi Pin Bima) reaching 74,000+ followers.",
     ],
     technologies: [
       "Next.js",
@@ -594,24 +699,46 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
       "Node.js",
       "MongoDB Atlas",
       "Gemini & OpenAI APIs",
-      "Digital Media Ops",
+      "Digital Media & Reels",
+    ],
+    links: [
+      { label: "DanumaAI Web", url: "https://danumaai.lk/" },
+      {
+        label: "Corvento YouTube",
+        url: "https://www.youtube.com/@corventotech",
+      },
     ],
   },
   {
     id: "quizzygram",
     role: "Senior Web Developer",
-    company: "Quizzygram",
+    company: "Quizzygram — Under Education Channel Community",
     period: "2025 – Present",
     location: "Sri Lanka",
     type: "Software Engineering",
     logo: "/QuzziygramLogo.png",
+    secondaryLogo: "/eduChannel-circleLogo.png",
     description:
-      "Developing and optimizing responsive web modules, API integrations, and frontend runtime stability for interactive educational systems.",
+      "Served as Senior Web Developer for Quizzygram, established and operated under the Education Channel Telegram community. Engineered interactive social-learning web modules combining Telegram-style chats, forums, channels, quizzes, and live student competitions.",
     achievements: [
-      "Engineered modular React and Next.js web interfaces with strict responsiveness and low-latency state management.",
-      "Integrated RESTful backend APIs and improved production frontend reliability.",
+      "Developed Telegram-style real-time chat workflows, structured student forums, and educational channel feeds for the Quizzygram web platform.",
+      "Engineered interactive quiz systems, timed assessments, and live competition leaderboards.",
+      "Collaborated within the Education Channel ecosystem to scale student engagement and frontend reliability.",
     ],
-    technologies: ["Next.js", "React.js", "TypeScript", "REST APIs", "Tailwind CSS"],
+    technologies: [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Real-Time Chats & Forums",
+      "Quiz & Competition Engine",
+      "Tailwind CSS",
+    ],
+    links: [
+      {
+        label: "Education Channel TG Community",
+        url: "https://t.me/Educationatgangstersquad",
+      },
+    ],
   },
   {
     id: "paperwikipedia",
@@ -622,28 +749,56 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     type: "Operations & Architecture",
     logo: "/paperwiki logo.jpeg",
     description:
-      "Managing user onboarding workflows, digital operations, commercial outreach, and custom booking engine architecture for Sri Lanka's largest past-paper platform.",
+      "Managing user onboarding workflows, digital operations, commercial outreach, and custom internal booking engine architecture for Past Papers Wiki (pastpapers.wiki).",
     achievements: [
-      "Engineered the custom Next.js, Node.js, and MongoDB booking engine to automate reservation and campaign scheduling.",
-      "Led partner acquisition, educator onboarding workflows, and revenue operations.",
+      "Architected the custom Next.js, Node.js, and MongoDB internal booking engine to automate reservation and campaign scheduling.",
+      "Led partner acquisition, educator onboarding workflows, and commercial sales operations.",
     ],
-    technologies: ["Next.js", "Node.js", "MongoDB", "Commercial Operations"],
+    technologies: [
+      "Next.js",
+      "Node.js",
+      "MongoDB",
+      "Commercial Operations & Sales",
+      "REST APIs",
+    ],
+    links: [
+      { label: "Official Public Website", url: "https://pastpapers.wiki/" },
+    ],
   },
   {
     id: "freelance",
-    role: "Freelance Full-Stack Developer",
-    company: "Independent Client Engineering",
+    role: "Freelance Full-Stack Developer & Creative Designer",
+    company: "Fiverr, Upwork & Direct Client Contracts",
     period: "2022 – Present",
-    location: "Colombo, Sri Lanka",
-    type: "Client Delivery",
+    location: "Remote / Worldwide",
+    type: "Global Freelance Delivery",
     logo: "/LycoryxTech.jpg",
     description:
-      "Delivering custom web applications, bilingual e-commerce platforms, dynamic landing pages, and backend systems for diverse clients.",
+      "Delivering custom full-stack web applications, dynamic landing pages, backend APIs, graphic design assets, and short-form video/reel edits for international and local clients on Fiverr, Upwork, and direct engagements.",
     achievements: [
-      "Delivered production platforms including Kev & Thash Sweet Treats (Next.js/TypeScript) and relational Laravel MVC management systems.",
-      "Handled end-to-end client requirements, UI/UX design, database modeling, and cloud deployment.",
+      "Completed diverse freelance projects on Fiverr and Upwork spanning Next.js/React web apps, Laravel MVC portals, and custom business websites.",
+      "Delivered production e-commerce storefronts such as Kev & Thash Sweet Treats with bilingual (EN/SI) localization and WhatsApp automation.",
+      "Provided end-to-end brand identity design, graphic design, and promotional reel editing for digital brands.",
     ],
-    technologies: ["Next.js", "TypeScript", "Laravel", "PHP", "MySQL", "MongoDB"],
+    technologies: [
+      "Fiverr & Upwork",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Laravel",
+      "Graphic Design",
+      "Reel Editing",
+    ],
+    links: [
+      {
+        label: "Graphic Design Portfolio (Drive)",
+        url: "https://drive.google.com/drive/folders/184pMfdN0AlFBfXTEU8eSFVQzaEWJ4IJ5?usp=drive_link",
+      },
+      {
+        label: "Kev & Thash Live Site",
+        url: "https://kev-thash-sweet-treats.vercel.app/",
+      },
+    ],
   },
 ];
 
@@ -654,7 +809,7 @@ export const EDUCATION_DATA: EducationItem[] = [
     institution:
       "University of Colombo School of Computing (UCSC) via OpenArc Campus",
     status: "Undergraduate",
-    badge: "Degree Program",
+    badge: "University Degree",
     details: [
       "Reading for the Bachelor of Information Technology (BIT) degree at UCSC.",
       "Focus on Software Engineering, Full-Stack Systems, Databases, and Network Architecture.",
@@ -675,7 +830,7 @@ export const EDUCATION_DATA: EducationItem[] = [
     degree: "Pearson Diploma in English",
     institution: "ESOFT Metro Campus",
     status: "Completed",
-    badge: "Professional Communication",
+    badge: "Professional English",
     details: [
       "Advanced academic and professional English communication, business writing, and presentation skills.",
     ],
@@ -685,7 +840,7 @@ export const EDUCATION_DATA: EducationItem[] = [
     degree: "Laravel Web Development Certificate",
     institution: "CodeXPress",
     status: "Certified",
-    badge: "Backend & MVC",
+    badge: "Full-Stack MVC",
     details: [
       "Full-stack MVC web application development using PHP, Laravel, relational SQL schemas, and RESTful routing.",
     ],
@@ -695,7 +850,7 @@ export const EDUCATION_DATA: EducationItem[] = [
     degree: "Diploma in Graphic Design",
     institution: "ATARI CITY Campus",
     status: "Completed",
-    badge: "UI/UX & Brand Design",
+    badge: "Visual & UI Design",
     details: [
       "Visual identity systems, digital illustration, UI composition, Adobe Photoshop, and Adobe Illustrator.",
     ],
@@ -705,7 +860,7 @@ export const EDUCATION_DATA: EducationItem[] = [
     degree: "G.C.E. Advanced Level (Technology Stream)",
     institution: "Isipathana College, Colombo",
     status: "Completed",
-    badge: "Secondary Education",
+    badge: "Secondary Alma Mater",
     details: [
       "Engineering Technology (ET), Science for Technology (SFT), and Information & Communication Technology (ICT — English Medium).",
     ],
