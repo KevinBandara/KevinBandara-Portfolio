@@ -1,24 +1,26 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://kevinbandara.is-a.dev";
+
   return [
     {
-      url: "https://kevinbandara.is-a.dev",
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1.0,
+      images: [
+        `${baseUrl}/KevinPortrait.jpg`,
+        `${baseUrl}/MyPic.png`,
+        `${baseUrl}/CorventoTechLogo.jpg`,
+        `${baseUrl}/DanumaAI.jpg`,
+      ],
     },
     {
-      url: "https://kevinbandara.is-a.dev/llms.txt",
+      url: `${baseUrl}/llms.txt`,
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://kevinbandara.vercel.app",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.8,
     },
   ];
 }
