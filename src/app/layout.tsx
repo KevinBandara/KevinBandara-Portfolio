@@ -74,6 +74,9 @@ export const metadata: Metadata = {
       "en-LK": "https://kevinbandara.is-a.dev",
     },
   },
+  verification: {
+    google: "6qwDJInh5NR8LxrsFrhyiZPDxCzJoNy9pP87ZH2aGm0",
+  },
   robots: {
     index: true,
     follow: true,
