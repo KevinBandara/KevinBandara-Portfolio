@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import {
   X,
   Mail,
+  Phone,
+  MessageCircle,
   Check,
   Copy,
   Briefcase,
@@ -57,7 +59,7 @@ const ENGAGEMENT_OPTIONS = [
   {
     id: "creative",
     title: "Graphic Design, Branding & Reel Editing",
-    subtitle: "Brand Logos, Social Media Campaigns, UI/UX & Short-Form Video Edits",
+    subtitle: "Adobe Photoshop, Illustrator, Premiere Pro, After Effects & UI/UX",
     badge: "Creative Studio",
     icon: Palette,
     subject: "Creative Inquiry — Graphic Design / Brand Identity / Reel Edits",
@@ -70,6 +72,7 @@ export default function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
   const [selectedId, setSelectedId] = useState<string>("fulltime");
   const [copiedSummary, setCopiedSummary] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -89,16 +92,17 @@ export default function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
     const summary = `Candidate: Kevin Bandara
 Role: Full-Stack Software Developer, AI Systems Builder & Tech Entrepreneur
 Location: Colombo, Sri Lanka (Open to Onsite, Hybrid & Remote)
+Phone / WhatsApp: ${HERO_DATA.phoneIntl} (${HERO_DATA.phone})
 Email: ${HERO_DATA.email}
 Portfolio: https://kevinbandara.is-a.dev | https://kevinbandara.vercel.app
 LinkedIn: ${HERO_DATA.linkedin}
 GitHub: ${HERO_DATA.github}
 
 Key Highlights:
-- Founder & Lead Developer @ Corvento Technologies: Built DanumaAI (Web, Google Play Store Android App, Telegram Bot) with Next.js, Expo, Python, MongoDB Atlas & Gemini API RAG; created MemoAI (206,000+ historical users across 2,157+ Discord servers); operates 4 WhatsApp channels with 74,000+ subscribers.
+- Founder & Lead Developer @ Corvento Technologies: Built DanumaAI (Web, Google Play Store Android App, Telegram Bot) powered by Corvento Technologies with Next.js, Expo, Python, MongoDB Atlas & Gemini API RAG; created MemoAI (206,000+ historical users across 2,157+ Discord servers); operates 4 WhatsApp channels with 74,000+ subscribers.
 - Senior Web Developer @ Quizzygram (Education Channel Community): Engineered Telegram-style chats, forums, channels, quizzes & live competitions.
 - Full-Stack Architect & Commercial Ops @ Past Papers Wiki (140K+ users): Engineered custom internal booking & scheduling engine.
-- Global Freelancer (Fiverr, Upwork & Direct): Delivered bilingual e-commerce platforms, Laravel MVC systems, graphic design & video reels.
+- Global Freelancer & Creative Director (Fiverr, Upwork & Direct): Delivered bilingual e-commerce platforms, Laravel MVC systems, Adobe Creative Suite graphic design & video reels.
 - Education: BIT Undergraduate @ UCSC | Pearson Diploma in Software Engineering (ESOFT) | Pearson Diploma in English (ESOFT) | Laravel Certificate (CodeXPress) | Diploma in Graphic Design (ATARI CITY Campus) | G.C.E. A/L Tech Stream (Isipathana College).`;
 
     navigator.clipboard.writeText(summary);
@@ -112,11 +116,24 @@ Key Highlights:
     setTimeout(() => setCopiedEmail(false), 2500);
   };
 
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText(HERO_DATA.phoneIntl);
+    setCopiedPhone(true);
+    setTimeout(() => setCopiedPhone(false), 2500);
+  };
+
   const handleInstantEmail = () => {
     const mailto = `mailto:${HERO_DATA.email}?subject=${encodeURIComponent(
       selectedOption.subject
     )}&body=${encodeURIComponent(selectedOption.template)}`;
     window.location.href = mailto;
+  };
+
+  const handleInstantWhatsApp = () => {
+    const url = `${HERO_DATA.whatsappUrl}?text=${encodeURIComponent(
+      selectedOption.template
+    )}`;
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -219,8 +236,8 @@ Key Highlights:
               Gemini &amp; OpenAI RAG, Google Play Android Apps, Telegram &amp; Discord Bots
             </div>
             <div className="p-2.5 rounded-xl bg-black/40 border border-white/5">
-              <strong className="text-white block">Academic &amp; Proven:</strong>
-              UCSC BIT + Pearson SE &amp; English Diplomas (ESOFT) + 200K+ Users Reached
+              <strong className="text-white block">Academic &amp; Creative:</strong>
+              UCSC BIT + Pearson SE &amp; English Diplomas + Adobe Creative Cloud Suite
             </div>
           </div>
         </div>
@@ -231,48 +248,74 @@ Key Highlights:
             2. Instant Connect &amp; Recruiter Actions:
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <button
+              type="button"
+              onClick={handleInstantWhatsApp}
+              className="py-3.5 px-4 rounded-xl font-mono text-xs sm:text-sm font-semibold bg-emerald-400 hover:bg-emerald-300 text-slate-950 transition-all shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>WhatsApp Direct</span>
+            </button>
+
             <button
               type="button"
               onClick={handleInstantEmail}
-              className="py-3.5 px-5 rounded-xl font-mono text-xs sm:text-sm font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all shadow-lg shadow-sky-500/20 flex items-center justify-center gap-2 cursor-pointer"
+              className="py-3.5 px-4 rounded-xl font-mono text-xs sm:text-sm font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all shadow-lg shadow-sky-500/20 flex items-center justify-center gap-2 cursor-pointer"
             >
               <Send className="w-4 h-4" />
-              <span>Open Pre-Filled Hiring Email</span>
+              <span>Pre-Filled Email</span>
             </button>
 
             <button
               type="button"
               onClick={handleCopyRecruiterBrief}
-              className="py-3.5 px-5 rounded-xl font-mono text-xs sm:text-sm font-medium bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-200 border border-indigo-400/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
+              className="py-3.5 px-4 rounded-xl font-mono text-xs sm:text-sm font-medium bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-200 border border-indigo-400/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               {copiedSummary ? (
                 <>
                   <Check className="w-4 h-4 text-emerald-400" />
-                  <span className="text-emerald-300">
-                    Candidate Brief Copied!
-                  </span>
+                  <span className="text-emerald-300">Brief Copied!</span>
                 </>
               ) : (
                 <>
                   <Copy className="w-4 h-4" />
-                  <span>Copy Recruiter Summary (ATS/Slack)</span>
+                  <span>Copy Recruiter Brief</span>
                 </>
               )}
             </button>
           </div>
 
           <div className="pt-3 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 text-xs font-mono text-slate-400">
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-sky-400" />
-              <span className="text-slate-200">{HERO_DATA.email}</span>
-              <button
-                type="button"
-                onClick={handleCopyEmail}
-                className="px-2 py-0.5 rounded bg-white/10 hover:bg-white/20 text-white cursor-pointer"
-              >
-                {copiedEmail ? "Copied!" : "Copy"}
-              </button>
+            <div className="flex flex-wrap items-center gap-4">
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                <a
+                  href={HERO_DATA.phoneHref}
+                  className="text-slate-200 hover:text-white"
+                >
+                  {HERO_DATA.phoneIntl}
+                </a>
+                <button
+                  type="button"
+                  onClick={handleCopyPhone}
+                  className="px-2 py-0.5 rounded bg-white/10 hover:bg-white/20 text-white cursor-pointer"
+                >
+                  {copiedPhone ? "Copied!" : "Copy"}
+                </button>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-sky-400" />
+                <span className="text-slate-200">{HERO_DATA.email}</span>
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  className="px-2 py-0.5 rounded bg-white/10 hover:bg-white/20 text-white cursor-pointer"
+                >
+                  {copiedEmail ? "Copied!" : "Copy"}
+                </button>
+              </div>
             </div>
 
             <div className="flex items-center gap-4">
@@ -282,7 +325,7 @@ Key Highlights:
                 rel="noopener noreferrer"
                 className="text-sky-300 hover:text-white inline-flex items-center gap-1"
               >
-                <span>LinkedIn Message</span>
+                <span>LinkedIn</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
               <a

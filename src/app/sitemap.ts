@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: "https://kevinbandara.is-a.dev/llms.txt",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: "https://kevinbandara.vercel.app",
       lastModified: new Date(),
       changeFrequency: "weekly",
