@@ -21,44 +21,136 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kevin Bandara | Full-Stack Software Developer & AI Systems Builder",
+  metadataBase: new URL("https://kevinbandara.is-a.dev"),
+  title: {
+    default:
+      "Kevin Bandara — Full-Stack Software Developer, AI Systems Builder & Tech Entrepreneur",
+    template: "%s | Kevin Bandara",
+  },
   description:
-    "Official portfolio of Kevin Bandara — Full-Stack Software Developer, AI Systems Builder, and Founder of Corvento Technologies & DanumaAI in Colombo, Sri Lanka. Specializing in Next.js, TypeScript, RAG, Gemini API, Node.js, and MongoDB.",
+    "Official portfolio of Kevin Bandara — Full-Stack Software Developer, AI Systems Builder, and Founder of Corvento Technologies in Colombo, Sri Lanka. Creator of DanumaAI, MemoAI (200K+ users), and operator of a 74K+ subscriber digital media network.",
   keywords: [
     "Kevin Bandara",
+    "Kevin Bandara Sri Lanka",
+    "Kevin Bandara Portfolio",
+    "kevinbandara.is-a.dev",
+    "kevinbandara.vercel.app",
+    "Corvento Technologies",
+    "DanumaAI Founder",
+    "MemoAI Creator",
+    "Lycoryx Technologies",
+    "Asteroid Technologies",
     "Full-Stack Software Developer Sri Lanka",
     "AI Systems Builder",
-    "DanumaAI",
-    "Corvento Technologies",
-    "MemoAI",
     "Next.js Developer Colombo",
-    "RAG Engineer",
     "UCSC BIT",
+    "ESOFT Pearson Diploma Software Engineering",
   ],
-  authors: [{ name: "Kevin Bandara", url: "https://github.com/KevinBandara" }],
+  authors: [
+    { name: "Kevin Bandara", url: "https://kevinbandara.is-a.dev" },
+    { name: "Kevin Bandara", url: "https://github.com/KevinBandara" },
+  ],
   creator: "Kevin Bandara",
+  publisher: "Kevin Bandara",
+  alternates: {
+    canonical: "https://kevinbandara.is-a.dev",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Kevin Bandara — Full-Stack Software Developer & AI Systems Builder",
+    title:
+      "Kevin Bandara — Full-Stack Software Developer, AI Systems Builder & Tech Entrepreneur",
     description:
-      "Building production web platforms, AI-driven educational technology (DanumaAI), and scalable backend infrastructure.",
-    type: "website",
+      "Building production web platforms, AI-driven educational technology (DanumaAI), scalable backend infrastructure, and digital media ecosystems under Corvento Technologies.",
+    url: "https://kevinbandara.is-a.dev",
+    siteName: "Kevin Bandara Portfolio",
+    type: "profile",
     locale: "en_US",
     images: [
       {
-        url: "/MyPic1.png",
-        width: 1200,
-        height: 630,
-        alt: "Kevin Bandara — Software Developer & AI Systems Builder",
+        url: "/KevinPortrait.jpg",
+        width: 1344,
+        height: 1680,
+        alt: "Kevin Bandara — Full-Stack Software Developer & Founder of Corvento Technologies",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kevin Bandara | Full-Stack Developer & AI Systems Builder",
+    title: "Kevin Bandara | Full-Stack Developer & Tech Entrepreneur",
     description:
-      "Building production web platforms, AI-driven educational technology, and scalable backend infrastructure.",
-    images: ["/MyPic1.png"],
+      "Founder of Corvento Technologies, creator of DanumaAI & MemoAI, and Full-Stack Software Engineer in Colombo, Sri Lanka.",
+    images: ["/KevinPortrait.jpg"],
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://kevinbandara.is-a.dev/#person",
+      name: "Kevin Bandara",
+      jobTitle:
+        "Full-Stack Software Developer, AI Systems Builder & Technology Entrepreneur",
+      description:
+        "Full-Stack Software Developer, AI Systems Builder, and Founder of Corvento Technologies from Colombo, Sri Lanka. Creator of DanumaAI and MemoAI.",
+      url: "https://kevinbandara.is-a.dev",
+      image: "https://kevinbandara.is-a.dev/KevinPortrait.jpg",
+      email: "mailto:kevinbandara0000@gmail.com",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Colombo",
+        addressCountry: "LK",
+      },
+      alumniOf: [
+        {
+          "@type": "CollegeOrUniversity",
+          name: "University of Colombo School of Computing (UCSC)",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "ESOFT Metro Campus",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "Isipathana College, Colombo",
+        },
+      ],
+      worksFor: {
+        "@type": "Organization",
+        "@id": "https://kevinbandara.is-a.dev/#corvento",
+        name: "Corvento Technologies",
+        alternateName: ["Lycoryx Technologies", "Asteroid Technologies"],
+        url: "https://danumaai.lk",
+      },
+      sameAs: [
+        "https://kevinbandara.is-a.dev",
+        "https://kevinbandara.vercel.app",
+        "https://github.com/KevinBandara",
+        "https://www.linkedin.com/in/kevinbandara",
+        "https://danumaai.lk",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://kevinbandara.is-a.dev/#website",
+      url: "https://kevinbandara.is-a.dev",
+      name: "Kevin Bandara — Official Portfolio",
+      publisher: {
+        "@id": "https://kevinbandara.is-a.dev/#person",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -71,6 +163,12 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} dark`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="antialiased bg-[#06070B] text-slate-50 selection:bg-sky-400/30 selection:text-white">
         {children}
       </body>
