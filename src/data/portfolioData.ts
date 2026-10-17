@@ -252,7 +252,7 @@ export const ABOUT_DATA = {
     "Full-Stack Software Engineer, AI Product Architect & Digital Entrepreneur from Colombo, Sri Lanka.",
   paragraphs: [
     "I am R.M. Kevin Sharada Bandara (Rathnayaka Mudiyanselage Kevin Sharada Bandara), a full-stack software developer, AI systems builder, creative designer, and tech entrepreneur based in Colombo, Sri Lanka. Currently reading for my Bachelor of Information Technology (BIT) degree at the University of Colombo School of Computing (UCSC), I specialize in building production web and mobile platforms using Next.js, React, React Native (Expo), Node.js, Python, PHP/Laravel, MongoDB, and PostgreSQL, alongside applied AI workflows powered by Retrieval-Augmented Generation (RAG), Gemini API, and OpenAI.",
-    "My journey in technology began early during my years at Isipathana College, Colombo — where I competed in national ICT, AI & Robotics competitions (winning FUTURA '23 and placing 8th among 500 competitors at ICBT), served as a Prefect and House Captain, played school rugby, and earned my 1st Poom Taekwondo Black Belt from Kukkiwon. In 2020, I launched my first multiplayer gaming network (BlackWolf Minecraft Server) under Asteroid Technologies, which later evolved into Lycoryx Technologies (scaling MemoAI to 250,000+ users across 2,157+ Discord servers) and today operates as Corvento Technologies.",
+    "My journey in technology began early during my years at Isipathana College, Colombo — where I competed in national ICT, AI & Robotics competitions (winning FUTURA '23 and placing 8th among 500 competitors at ICBT), played school rugby, and earned my 1st Poom Taekwondo Black Belt from Kukkiwon. In 2020, I launched my first multiplayer gaming network (BlackWolf Minecraft Server) under Asteroid Technologies, which later evolved into Lycoryx Technologies (scaling MemoAI to 250,000+ users across 2,157+ Discord servers) and today operates as Corvento Technologies.",
     "Through Corvento Technologies, I architected and launched DanumaAI across Web, Google Play Store (5,000+ downloads), and Telegram Bot (serving 2,000+ active students), while managing a 116,000+ subscriber educational media ecosystem across WhatsApp (74,000+ followers) and Telegram (42,000+ active students). Alongside my own ventures, I work as Senior Web Developer at Quizzygram, Sales & Operations Manager and Internal Booking Architect at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and an international freelancer on Fiverr and Upwork.",
   ],
   profileFacts: [
@@ -951,7 +951,7 @@ export const EDUCATION_DATA: EducationItem[] = [
     logo: "/isipathana-logo.png",
     details: [
       "G.C.E. A/L (Technology Stream: ICT English Medium, SFT, ET) & G.C.E. O/L with 4 Distinctions (A) including ICT (English Medium) and 4 Very Good Passes (B) including Mathematics & Science.",
-      "Active member of the ICT and Robotics Society, School Rugby Player (2016–2018), Prefect, and House Captain.",
+      "Active member of the ICT and Robotics Society and School Rugby Player (2016–2018).",
     ],
   },
 

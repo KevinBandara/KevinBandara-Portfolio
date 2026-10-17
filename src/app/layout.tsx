@@ -223,7 +223,7 @@ const jsonLd = {
         "1st Poom Black Belt & 1st RTC Open Taekwondo Championship — Kukkiwon & Sri Lanka Taekwondo Federation (2016–2020)",
         "2nd Runner-Up (Rapid Chess Challenge), 8th Place & Coaching Award in Chess — DGD Chess Club (2018)",
         "3rd Place — Seylan Bank Art Competition (2018) & Little Picasso Art Competition (BOC & Ministry of Education, 2018)",
-        "School Prefect, House Captain & College Rugby Player — Isipathana College",
+        "College Rugby Player & Inter-House Sports Meet Honours — Isipathana College",
       ],
       alumniOf: [
         {
