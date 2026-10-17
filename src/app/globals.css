@@ -11,6 +11,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 88px;
   background-color: #06070b;
   color: #f8fafc;
 }
@@ -36,6 +37,23 @@ body {
   font-family: var(--font-mono), monospace;
 }
 
+/* Global tactile click & hover micro-interactions */
+button,
+a {
+  transition:
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.25s ease,
+    opacity 0.22s ease;
+}
+
+button:active,
+a.btn-press:active {
+  transform: scale(0.96) translateY(1px);
+}
+
 /* Subtle Swiss architectural grid background */
 .swiss-grid-bg {
   background-size: 64px 64px;
@@ -44,7 +62,7 @@ body {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
 }
 
-/* Specular card borders */
+/* Specular card borders + smooth hover lift */
 .glass-panel {
   background: rgba(12, 14, 20, 0.78);
   backdrop-filter: blur(16px);
@@ -52,16 +70,24 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.7),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  transition:
+    border-color 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.32s ease;
 }
 
 .glass-panel:hover {
-  border-color: rgba(56, 189, 248, 0.32);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 24px 60px -12px rgba(2, 132, 199, 0.16),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
 }
 
+/* Smooth modal & element fade-in */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.98) translateY(6px);
+    transform: scale(0.97) translateY(8px);
   }
   to {
     opacity: 1;
@@ -70,7 +96,79 @@ body {
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Smooth entrance for Hero & switched tabs/photos */
+@keyframes fadeUpSmooth {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUpSmooth 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes tabSwitchFade {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.animate-tab-switch {
+  animation: tabSwitchFade 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes photoCrossfade {
+  from {
+    opacity: 0.25;
+    transform: scale(1.03);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+
+.animate-photo-switch {
+  animation: photoCrossfade 0.48s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Scroll-triggered reveal utility */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Custom sleek scrollbar */

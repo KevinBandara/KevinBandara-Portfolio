@@ -159,15 +159,15 @@ Key Highlights:
               className="w-14 h-14 rounded-2xl object-cover object-[center_24%] border-2 border-sky-400/50 flex-shrink-0"
             />
             <div>
-              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-mono text-[11px]">
+              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-[11px] font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Recruiter &amp; Client Fast-Track</span>
+                <span>Available for Engineering Roles &amp; Projects</span>
               </div>
               <h3
                 id="hire-modal-title"
                 className="font-display text-2xl sm:text-3xl font-bold text-white mt-1"
               >
-                Hire Kevin Bandara
+                Work With Kevin Bandara
               </h3>
             </div>
           </div>

@@ -143,18 +143,28 @@ export const HERO_DATA = {
     },
     {
       value: "116K+",
-      label: "Digital Community Reach",
-      detail: "74K+ WhatsApp & 42K+ Telegram Networks",
+      label: "Educational Media Reach",
+      detail: "74K+ WhatsApp & 42K+ Telegram Subscribers",
     },
     {
       value: "5,000+",
-      label: "DanumaAI App Installs",
+      label: "DanumaAI App Downloads",
       detail: "Google Play Store, Web & Telegram Bot",
     },
     {
-      value: "45+",
-      label: "Verified Certificates, Diplomas & Awards",
-      detail: "UCSC, UoM CODL, Pearson ESOFT, PSD, ATARI & Kukkiwon",
+      value: "2,000+",
+      label: "Active DanumaAI Students",
+      detail: "Daily AI Study Notes & Past-Paper QA",
+    },
+    {
+      value: "7+",
+      label: "Degree & Accredited Diplomas",
+      detail: "UCSC BIT, Pearson ESOFT, ATARI & Oxborn",
+    },
+    {
+      value: "48",
+      label: "Documented Credentials & Awards",
+      detail: "UoM CODL, CodeXpress, PSD, Kukkiwon & Rotaract",
     },
   ],
 };
@@ -162,32 +172,32 @@ export const HERO_DATA = {
 export const CORVENTO_ECOSYSTEM = {
   name: "Corvento Technologies",
   tagline:
-    "The Single Master Venture Entity Founded & Operated by Kevin Bandara",
+    "Founded & Operated by Kevin Bandara — Software Engineering, AI Products & Digital Media",
   youtubeUrl: "https://www.youtube.com/@corventotech",
   graphicsPortfolioUrl:
     "https://drive.google.com/drive/folders/184pMfdN0AlFBfXTEU8eSFVQzaEWJ4IJ5?usp=drive_link",
   lineage: [
     {
-      era: "Phase 01 • Origin Studio",
+      era: "2020 – 2022 • Origin Studio",
       name: "Asteroid Technologies",
       logo: "/AsteroidTechLogo.jpg",
       secondaryLogo: "/BlackWolfMC-Logo.jpg",
-      status: "Evolved",
-      desc: "Initial technology studio identity created to launch the BlackWolf Minecraft Server, gaming communities, and early web utilities.",
+      status: "Foundation Era",
+      desc: "Initial technology studio identity created to launch and administer the BlackWolf Minecraft multiplayer network, community servers, and early web utilities.",
     },
     {
-      era: "Phase 02 • AI Scaling Era",
+      era: "2022 – 2025 • AI Scaling Era",
       name: "Lycoryx Technologies",
       logo: "/LycoryxTech.jpg",
-      status: "Rebranded",
-      desc: "Expanded into high-concurrency AI products — scaling MemoAI to 250,000+ community members across 2,157+ Discord servers and launching the first release of DanumaAI.",
+      status: "AI Expansion",
+      desc: "Expanded into high-concurrency AI products — scaling MemoAI to 250,000+ community members across 2,157+ Discord servers and engineering the first release of DanumaAI.",
     },
     {
-      era: "Phase 03 • Master Entity (Present)",
+      era: "2025 – Present • Flagship Entity",
       name: "Corvento Technologies",
       logo: "/CorventoTechLogo.jpg",
-      status: "Active Master Entity",
-      desc: "The unified parent company powering DanumaAI (Web, Play Store & Telegram Bot), @corventotech YouTube/Reels, and a 116,000+ subscriber WhatsApp & Telegram educational media ecosystem.",
+      status: "Current Parent Company",
+      desc: "The unified parent company powering DanumaAI (Web, Google Play Store & Telegram Bot), @corventotech YouTube/Reels, and a 116,000+ subscriber WhatsApp & Telegram educational media ecosystem.",
     },
   ],
   channels: [
@@ -239,29 +249,84 @@ export const CORVENTO_ECOSYSTEM = {
 
 export const ABOUT_DATA = {
   headline:
-    "Bridging Full-Stack Software Engineering, AI Systems, and Digital Entrepreneurship.",
+    "Full-Stack Software Engineer, AI Product Architect & Digital Entrepreneur from Colombo, Sri Lanka.",
   paragraphs: [
-    "I am a software developer, creative designer, and entrepreneur from Colombo, Sri Lanka with hands-on experience taking digital products from architecture to live production. Currently reading for my Bachelor of Information Technology (BIT) at the University of Colombo School of Computing (UCSC), I specialize in full-stack web engineering (Next.js, React, Node.js, Laravel, MongoDB, PostgreSQL) and applied AI workflows (RAG, Gemini API, OpenAI).",
-    "Beyond writing code, I founded Corvento Technologies (evolved from Asteroid Technologies and Lycoryx Technologies) to build products like DanumaAI (5,000+ downloads, 2,000+ active students) and operate a 74,000+ WhatsApp & 42,000+ Telegram educational media network. I also serve as Senior Web Developer for Quizzygram, Sales & Operations Manager at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and an international freelancer on Fiverr and Upwork.",
+    "I am R.M. Kevin Sharada Bandara (Rathnayaka Mudiyanselage Kevin Sharada Bandara), a full-stack software developer, AI systems builder, creative designer, and tech entrepreneur based in Colombo, Sri Lanka. Currently reading for my Bachelor of Information Technology (BIT) degree at the University of Colombo School of Computing (UCSC), I specialize in building production web and mobile platforms using Next.js, React, React Native (Expo), Node.js, Python, PHP/Laravel, MongoDB, and PostgreSQL, alongside applied AI workflows powered by Retrieval-Augmented Generation (RAG), Gemini API, and OpenAI.",
+    "My journey in technology began early during my years at Isipathana College, Colombo — where I competed in national ICT, AI & Robotics competitions (winning FUTURA '23 and placing 8th among 500 competitors at ICBT), served as a Prefect and House Captain, played school rugby, and earned my 1st Poom Taekwondo Black Belt from Kukkiwon. In 2020, I launched my first multiplayer gaming network (BlackWolf Minecraft Server) under Asteroid Technologies, which later evolved into Lycoryx Technologies (scaling MemoAI to 250,000+ users across 2,157+ Discord servers) and today operates as Corvento Technologies.",
+    "Through Corvento Technologies, I architected and launched DanumaAI across Web, Google Play Store (5,000+ downloads), and Telegram Bot (serving 2,000+ active students), while managing a 116,000+ subscriber educational media ecosystem across WhatsApp (74,000+ followers) and Telegram (42,000+ active students). Alongside my own ventures, I work as Senior Web Developer at Quizzygram, Sales & Operations Manager and Internal Booking Architect at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and an international freelancer on Fiverr and Upwork.",
+  ],
+  profileFacts: [
+    { label: "Full Legal Name", value: "R.M. Kevin Sharada Bandara" },
+    { label: "Name Denoted by Initials", value: "Rathnayaka Mudiyanselage" },
+    { label: "Date of Birth", value: "November 06, 2007" },
+    { label: "Base Location", value: "Colombo, Sri Lanka" },
+    { label: "University Education", value: "BIT @ UCSC (University of Colombo)" },
+    { label: "Secondary School", value: "Isipathana College, Colombo" },
+    { label: "Founded Company", value: "Corvento Technologies" },
+    { label: "Languages", value: "English (Fluent) & Sinhala (Native)" },
   ],
   pillars: [
     {
-      code: "Full-Stack & AI",
-      title: "Production Web, Mobile & RAG Systems",
+      code: "01 • Engineering & AI",
+      title: "Full-Stack Web, Mobile & RAG Systems",
       description:
-        "Building Next.js web apps, Expo Android apps on Google Play, and Gemini/OpenAI RAG bots serving thousands of active users.",
+        "Shipping Next.js web platforms, Google Play Store Android apps (React Native/Expo), Laravel MVC systems, and Gemini/OpenAI RAG pipelines serving thousands of active users.",
     },
     {
-      code: "Ventures & Media",
-      title: "Corvento Ecosystem & 116K+ Audience",
+      code: "02 • Ventures & Operations",
+      title: "Corvento Ecosystem & 116K+ Media Reach",
       description:
-        "Operating proprietary software products, contextual educator ad engines, and daily WhatsApp/Telegram networks reaching 116,000+ learners.",
+        "Founding and scaling software products (DanumaAI, MemoAI), custom booking & ad-placement engines, and daily WhatsApp/Telegram networks reaching 116,000+ Sri Lankan students.",
     },
     {
-      code: "Creative & Global",
+      code: "03 • Creative & Global Delivery",
       title: "Adobe Creative Suite, Reels & Freelance",
       description:
-        "Scholarship-winning graphic designer & video editor delivering brand identities, motion reels, and full-stack apps on Fiverr & Upwork.",
+        "Scholarship-winning graphic designer & certified video editor (Premiere Pro, After Effects, Photoshop, Illustrator, Figma) delivering global projects on Fiverr & Upwork.",
+    },
+  ],
+  milestones: [
+    {
+      year: "2013 – 2020",
+      title: "Early Honours, Chess, Rugby & Kukkiwon 1st Poom Black Belt",
+      subtitle: "Isipathana College, Kukkiwon, DGD Chess Club & IWMS",
+      detail:
+        "Completed 11 IWMS Spoken & Written English examinations (Preliminary to Transitional & Grade 1), earned 2nd Runner-Up & Coaching Award in Chess, won 3rd Place in the Seylan Bank Art Competition, played school rugby for Isipathana College, and achieved the 1st Poom Taekwondo Black Belt certified by Kukkiwon (World Taekwondo HQ).",
+    },
+    {
+      year: "2020 – 2022",
+      title: "Asteroid Technologies & BlackWolf Minecraft Network",
+      subtitle: "First Venture & Multiplayer Infrastructure",
+      detail:
+        "Founded Asteroid Technologies and launched the BlackWolf Minecraft Server — configuring Linux VPS infrastructure, Java PaperMC/Spigot plugins, in-game economies, and Discord community integrations.",
+    },
+    {
+      year: "2022 – 2024",
+      title: "Pearson Diplomas, UoM CODL Certifications & ICT Championship",
+      subtitle: "ESOFT Metro Campus, University of Moratuwa & Isipathana College",
+      detail:
+        "Earned Pearson Assured Diplomas in Software Engineering (DTEC), Information Technology (DITEC), and English at ESOFT; completed 3 coding certificates from the University of Moratuwa (Python, Front-End Web Dev, Web Design); won 1st Place at the FUTURA '23 Quiz; and placed 8th among 500 competitors at the ICBT AI & Robotics Competition.",
+    },
+    {
+      year: "2022 – Apr 2025",
+      title: "Lycoryx Technologies & Scaling MemoAI to 250,000+ Users",
+      subtitle: "2,157+ Discord Servers & OAuth2 Web Playground",
+      detail:
+        "Built and scaled MemoAI under Lycoryx Technologies using Node.js, Express, Discord.js, MongoDB, and OpenAI APIs — reaching over 250,000+ community members across 2,157+ servers before concluding operations in April 2025 due to LLM hosting costs at scale.",
+    },
+    {
+      year: "2025 – Present",
+      title: "Senior Web Developer, Booking Architect & Creative Certifications",
+      subtitle: "Quizzygram, Past Papers Wiki, CodeXpress, PSD Academy & ATARI",
+      detail:
+        "Joined Quizzygram as Senior Web Developer (building Telegram-style chats, forums, channels & live quizzes) and Past Papers Wiki as Sales & Operations Manager + Internal Booking Engine Architect; completed Laravel certification at CodeXpress, Premiere Pro & After Effects certifications at PSD Academy, and an Academic Merit Scholarship Diploma in Graphic Design at ATARI City Campus.",
+    },
+    {
+      year: "2026 – Present",
+      title: "Corvento Technologies, DanumaAI Flagship, MAOS Office & UCSC BIT",
+      subtitle: "5,000+ App Downloads, 116K+ Media Network & University Degree",
+      detail:
+        "Launched DanumaAI under Corvento Technologies across Web, Google Play Store (5,000+ downloads), and Telegram Bot (2,000+ active students); expanded owned WhatsApp & Telegram educational channels to 116,000+ subscribers; joined MAOS Office as Digital Operations Coordinator; and commenced the Bachelor of Information Technology (BIT) degree at UCSC.",
     },
   ],
 };
@@ -1166,3 +1231,63 @@ export const ACHIEVEMENTS_DATA: AchievementItem[] = [
       "Contributed to a community sustainability initiative that successfully planted 300 native plants.",
   },
 ];
+
+export interface CredentialRegistryItem {
+  no: number;
+  title: string;
+  institution: string;
+  date: string;
+  domain: "IT & Software" | "Creative & Media" | "English & Speech" | "Sports & Chess" | "Competitions & Volunteering";
+}
+
+export const COMPLETE_CREDENTIAL_ARCHIVE: CredentialRegistryItem[] = [
+  { no: 1, title: "Assured Diploma in Information Technology (DITEC)", institution: "Pearson / ESOFT Metro Campus", date: "Oct 2023", domain: "IT & Software" },
+  { no: 2, title: "Academic Transcript — Assured Diploma in IT (DITEC)", institution: "ESOFT Metro Campus", date: "08-Oct-2023", domain: "IT & Software" },
+  { no: 3, title: "Pearson Assured Diploma in Software Engineering (DTEC)", institution: "Pearson / ESOFT Metro Campus", date: "2023", domain: "IT & Software" },
+  { no: 4, title: "Certificate in Information Technology", institution: "ESOFT Metro Campus", date: "25-Dec-2022", domain: "IT & Software" },
+  { no: 5, title: "Pearson Assured Diploma in English", institution: "ESOFT Metro Campus", date: "28-Feb-2024", domain: "English & Speech" },
+  { no: 6, title: "Front-End Web Development Certificate", institution: "CODL — University of Moratuwa", date: "2023", domain: "IT & Software" },
+  { no: 7, title: "Web Design for Beginners Certificate", institution: "CODL — University of Moratuwa", date: "2023", domain: "IT & Software" },
+  { no: 8, title: "Python for Beginners Certificate", institution: "CODL — University of Moratuwa", date: "2023", domain: "IT & Software" },
+  { no: 9, title: "Laravel Web Development Certificate", institution: "CodeXpress Academy", date: "2025", domain: "IT & Software" },
+  { no: 10, title: "Graphic Designing Program (01 Year Diploma)", institution: "ATARI City Campus", date: "06-Apr-2026", domain: "Creative & Media" },
+  { no: 11, title: "Graphic Designing Academic Transcript (Level 02)", institution: "ATARI City Campus", date: "2026", domain: "Creative & Media" },
+  { no: 12, title: "Certificate of Academic Merit Scholarship", institution: "ATARI City Campus", date: "2025", domain: "Creative & Media" },
+  { no: 13, title: "Photoshop & Graphic Design Certificate", institution: "ITD Institute SL", date: "2024", domain: "Creative & Media" },
+  { no: 14, title: "Video Editing (Adobe Premiere Pro) Certificate", institution: "PSD Academy", date: "23-Aug-2025", domain: "Creative & Media" },
+  { no: 15, title: "Video Editing (Adobe Premiere Pro) Academic Transcript", institution: "PSD Academy", date: "23-Aug-2025", domain: "Creative & Media" },
+  { no: 16, title: "Adobe After Effects Motion Graphics Certificate", institution: "PSD Academy", date: "13-Dec-2025", domain: "Creative & Media" },
+  { no: 17, title: "Video Editing After Effects Academic Transcript", institution: "PSD Academy", date: "13-Dec-2025", domain: "Creative & Media" },
+  { no: 18, title: "FUTURA '23 ICT & Robotics Quiz Competition (Winner)", institution: "Isipathana College, Colombo", date: "2023", domain: "Competitions & Volunteering" },
+  { no: 19, title: "8th Place among 500 Competitors — AI & Robotics Competition", institution: "Isipathana College at ICBT Campus", date: "2024", domain: "Competitions & Volunteering" },
+  { no: 20, title: "Apeiro '21 Interschool Quiz (Top 50)", institution: "Kingswood Research Unit", date: "2021", domain: "Competitions & Volunteering" },
+  { no: 21, title: "New Media & Digital Broadcast Workshop", institution: "Ada Derana & Isipathana College", date: "09-Aug-2023", domain: "Creative & Media" },
+  { no: 22, title: "Project Plantara '25 — Environmental Volunteering", institution: "Rotaract Club (University of Colombo)", date: "2025", domain: "Competitions & Volunteering" },
+  { no: 23, title: "Stellata 3.0 Article Writing Competition", institution: "Rotaract (RY 25/26)", date: "2025 / 2026", domain: "Competitions & Volunteering" },
+  { no: 24, title: "Taekwondo 1st Poom Black Belt Certificate", institution: "Kukkiwon & Sri Lanka Taekwondo Federation", date: "19-Jan-2020", domain: "Sports & Chess" },
+  { no: 25, title: "Taekwondo 1st Gup Certificate", institution: "Sri Lanka Taekwondo Federation", date: "04-Aug-2019", domain: "Sports & Chess" },
+  { no: 26, title: "1st RTC Open Taekwondo Championship", institution: "Kukkiwon", date: "16-Sep-2018", domain: "Sports & Chess" },
+  { no: 27, title: "Taekwondo Red Belt Certificate", institution: "Sri Lanka Taekwondo Federation", date: "24-Jun-2018", domain: "Sports & Chess" },
+  { no: 28, title: "Taekwondo Blue Belt Certificate", institution: "Sri Lanka Taekwondo Federation", date: "17-Dec-2017", domain: "Sports & Chess" },
+  { no: 29, title: "Taekwondo Green Belt Certificate", institution: "Sri Lanka Taekwondo Federation", date: "18-Jun-2017", domain: "Sports & Chess" },
+  { no: 30, title: "Taekwondo Yellow Belt Certificate", institution: "Sri Lanka Taekwondo Federation", date: "03-Dec-2016", domain: "Sports & Chess" },
+  { no: 31, title: "Rapid Chess Challenge (2nd Runner-Up)", institution: "DGD Chess Club", date: "24-Oct-2018", domain: "Sports & Chess" },
+  { no: 32, title: "Rapid Chess Tournament (8th Place)", institution: "DGD Chess Club", date: "2018", domain: "Sports & Chess" },
+  { no: 33, title: "Coaching Award in Chess", institution: "DGD Chess Club", date: "2018", domain: "Sports & Chess" },
+  { no: 34, title: "Rapid Chess Tournament Certificate", institution: "DGD Chess Club", date: "24-Oct-2018", domain: "Sports & Chess" },
+  { no: 35, title: "Rapid Chess Challenge Certificate", institution: "DGD Chess Club", date: "22-Jul-2018", domain: "Sports & Chess" },
+  { no: 36, title: "National Art Competition (3rd Place)", institution: "Seylan Bank", date: "06-Oct-2018", domain: "Competitions & Volunteering" },
+  { no: 37, title: "Little Picasso Art Competition", institution: "Bank of Ceylon (BOC) & Ministry of Education", date: "2018", domain: "Competitions & Volunteering" },
+  { no: 38, title: "Isiwara Siththam Art Exhibition", institution: "Isipathana College, Colombo", date: "2013", domain: "Competitions & Volunteering" },
+  { no: 39, title: "Inter-House Sports Meet Honours", institution: "Isipathana College, Colombo", date: "17-Feb-2017", domain: "Sports & Chess" },
+  { no: 40, title: "Diploma & Certificate Course in Spoken English", institution: "Oxborn College", date: "Completed", domain: "English & Speech" },
+  { no: 41, title: "Diploma in English 7 Boxes", institution: "Dr. Lakshitha Prasad", date: "2026", domain: "English & Speech" },
+  { no: 42, title: "Written English Grade One Certificate", institution: "Institute of Western Music & Speech (IWMS)", date: "2019", domain: "English & Speech" },
+  { no: 43, title: "Spoken English Transitional Certificate & Marks", institution: "Institute of Western Music & Speech (IWMS)", date: "2019", domain: "English & Speech" },
+  { no: 44, title: "Paper Work Written English (Transitional)", institution: "Institute of Western Music & Speech (IWMS)", date: "29-Jun-2019", domain: "English & Speech" },
+  { no: 45, title: "Graded Examinations Certificate & Practical Marks", institution: "Institute of Western Music & Speech (IWMS)", date: "2018", domain: "English & Speech" },
+  { no: 46, title: "Paper Work Written English", institution: "Institute of Western Music & Speech (IWMS)", date: "29-May-2018", domain: "English & Speech" },
+  { no: 47, title: "Spoken English Elementary Certificate & Marks", institution: "Institute of Western Music & Speech (IWMS)", date: "2017", domain: "English & Speech" },
+  { no: 48, title: "Spoken English Preliminary Certificate & Marks", institution: "Institute of Western Music & Speech (IWMS)", date: "2016", domain: "English & Speech" },
+];
+

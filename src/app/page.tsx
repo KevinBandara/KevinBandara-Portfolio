@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Mail,
   MapPin,
@@ -8,7 +8,6 @@ import {
   Copy,
   Check,
   Sparkles,
-  Layers,
   Cpu,
   Terminal,
   Smartphone,
@@ -18,22 +17,22 @@ import {
   Briefcase,
   ArrowUpRight,
   ArrowRight,
-  Orbit,
   Boxes,
   Menu,
   X,
   Users,
-  Award,
   Palette,
   Video,
   Phone,
   MessageCircle,
   Trophy,
-  HeartHandshake,
   ShieldCheck,
   FileDown,
+  UserCheck,
+  History,
+  BookOpen,
 } from "lucide-react";
-import ThreeHeroCanvas, { ThreeSceneMode } from "@/components/ThreeHeroCanvas";
+import ThreeHeroCanvas from "@/components/ThreeHeroCanvas";
 import TiltCard from "@/components/TiltCard";
 import ArchitectureModal from "@/components/ArchitectureModal";
 import HireMeModal from "@/components/HireMeModal";
@@ -46,6 +45,7 @@ import {
   EXPERIENCE_DATA,
   EDUCATION_DATA,
   ACHIEVEMENTS_DATA,
+  COMPLETE_CREDENTIAL_ARCHIVE,
   FeaturedProject,
 } from "@/data/portfolioData";
 
@@ -76,12 +76,12 @@ function Linkedin({ className = "w-4 h-4" }: { className?: string }) {
 }
 
 export default function PortfolioPage() {
-  const [sceneMode, setSceneMode] = useState<ThreeSceneMode>("neural");
   const [activePortrait, setActivePortrait] = useState<number>(0);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [credentialTab, setCredentialTab] = useState<
-    "all" | "diplomas" | "certificates" | "awards"
+    "all" | "diplomas" | "certificates" | "awards" | "registry"
   >("all");
+  const [registryFilter, setRegistryFilter] = useState<string>("All");
   const [activeArchProject, setActiveArchProject] =
     useState<FeaturedProject | null>(null);
   const [hireModalOpen, setHireModalOpen] = useState(false);
@@ -95,6 +95,31 @@ export default function PortfolioPage() {
     "Software Engineering / Full-Stack Role"
   );
   const [messageBody, setMessageBody] = useState("");
+
+  // Lightweight IntersectionObserver for smooth scroll-triggered fade-ins
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const elements = document.querySelectorAll(".reveal-on-scroll");
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [selectedCategory, credentialTab, registryFilter]);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(HERO_DATA.email);
@@ -137,12 +162,27 @@ export default function PortfolioPage() {
     (e) => e.category === "certificate"
   );
 
+  const registryDomains = [
+    "All",
+    "IT & Software",
+    "Creative & Media",
+    "English & Speech",
+    "Sports & Chess",
+    "Competitions & Volunteering",
+  ];
+
+  const filteredRegistry =
+    registryFilter === "All"
+      ? COMPLETE_CREDENTIAL_ARCHIVE
+      : COMPLETE_CREDENTIAL_ARCHIVE.filter((r) => r.domain === registryFilter);
+
   const navItems = [
+    { label: "About & Story", href: "#about" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
-    { label: "Corvento & Media", href: "#ventures" },
+    { label: "Ventures & Media", href: "#ventures" },
     { label: "Skills", href: "#skills" },
-    { label: "Credentials & Awards", href: "#credentials" },
+    { label: "Credentials (48)", href: "#credentials" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -178,10 +218,10 @@ export default function PortfolioPage() {
       {/* =====================================================================
           STICKY EXECUTIVE NAVBAR
          ===================================================================== */}
-      <header className="fixed top-0 inset-x-0 z-50 border-b border-white/[0.07] bg-[#06070B]/80 backdrop-blur-xl">
+      <header className="fixed top-0 inset-x-0 z-50 border-b border-white/[0.07] bg-[#06070B]/85 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
           {/* Personal Monogram & Name */}
-          <a href="#top" className="flex items-center gap-3 group">
+          <a href="#top" className="flex items-center gap-3 group btn-press">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-400/20 via-indigo-500/15 to-emerald-400/15 border border-sky-400/40 flex items-center justify-center font-display font-extrabold text-sm text-sky-300 group-hover:border-sky-300 transition-all shadow-lg shadow-sky-500/10">
               KB
             </div>
@@ -196,12 +236,12 @@ export default function PortfolioPage() {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden xl:flex items-center gap-1">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.05] transition-colors"
+                className="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.05] transition-colors btn-press"
               >
                 {item.label}
               </a>
@@ -215,7 +255,7 @@ export default function PortfolioPage() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"
-              className="p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] text-slate-300 hover:text-white border border-white/10 transition-colors"
+              className="p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] hover:-translate-y-0.5 text-slate-300 hover:text-white border border-white/10 transition-all btn-press"
             >
               <Github className="w-4 h-4" />
             </a>
@@ -224,7 +264,7 @@ export default function PortfolioPage() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
-              className="p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] text-slate-300 hover:text-white border border-white/10 transition-colors"
+              className="p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] hover:-translate-y-0.5 text-slate-300 hover:text-white border border-white/10 transition-all btn-press"
             >
               <Linkedin className="w-4 h-4" />
             </a>
@@ -233,18 +273,18 @@ export default function PortfolioPage() {
               download="Kevin-Sharada-Bandara-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white/[0.07] hover:bg-white/15 text-white border border-white/15 transition-all flex items-center gap-1.5"
+              className="px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white/[0.07] hover:bg-white/15 hover:-translate-y-0.5 text-white border border-white/15 transition-all flex items-center gap-1.5 btn-press"
             >
               <FileDown className="w-3.5 h-3.5 text-sky-400" />
-              <span>CV / Resume</span>
+              <span>Resume (PDF)</span>
             </a>
             <button
               type="button"
               onClick={() => setHireModalOpen(true)}
-              className="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all shadow-lg shadow-sky-500/20 flex items-center gap-1.5 cursor-pointer"
+              className="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-sky-400 hover:bg-sky-300 hover:-translate-y-0.5 text-slate-950 transition-all shadow-lg shadow-sky-500/20 flex items-center gap-1.5 cursor-pointer"
             >
               <Briefcase className="w-3.5 h-3.5" />
-              <span>Hire Kevin</span>
+              <span>Work With Kevin</span>
             </button>
           </div>
 
@@ -253,7 +293,7 @@ export default function PortfolioPage() {
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Menu"
-            className="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-200"
+            className="xl:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-200"
           >
             {mobileMenuOpen ? (
               <X className="w-5 h-5" />
@@ -265,13 +305,13 @@ export default function PortfolioPage() {
 
         {/* Mobile Dropdown Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-white/10 bg-[#090B12]/95 backdrop-blur-2xl px-4 py-5 space-y-2">
+          <div className="xl:hidden border-t border-white/10 bg-[#090B12]/95 backdrop-blur-2xl px-4 py-5 space-y-2 animate-tab-switch">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-white/5"
+                className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-white/5 btn-press"
               >
                 {item.label}
               </a>
@@ -285,22 +325,22 @@ export default function PortfolioPage() {
                 }}
                 className="flex-1 py-2.5 rounded-xl text-center text-xs font-semibold bg-sky-400 text-slate-950 cursor-pointer"
               >
-                Hire Kevin
+                Work With Kevin
               </button>
               <a
                 href={HERO_DATA.resumeUrl}
                 download="Kevin-Sharada-Bandara-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-2.5 rounded-xl text-center text-xs font-semibold bg-white/10 text-white border border-white/15"
+                className="flex-1 py-2.5 rounded-xl text-center text-xs font-semibold bg-white/10 text-white border border-white/15 btn-press"
               >
-                Download CV
+                Resume (PDF)
               </a>
               <a
                 href={HERO_DATA.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-2.5 rounded-xl text-center text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+                className="flex-1 py-2.5 rounded-xl text-center text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 btn-press"
               >
                 WhatsApp
               </a>
@@ -310,323 +350,520 @@ export default function PortfolioPage() {
       </header>
 
       {/* =====================================================================
-          HERO SECTION: PHOTO FIRST (LEFT ON DESKTOP, TOP ON MOBILE) + BIO
+          HERO SECTION: PHOTO FIRST AT THE TOP (BOTH MOBILE & DESKTOP),
+          FOLLOWED BY NAME, HEADLINE, BIO, ACTIONS & 6-METRIC STRIP
          ===================================================================== */}
       <section
         id="top"
-        className="relative min-h-screen pt-24 sm:pt-32 pb-16 flex flex-col justify-between overflow-hidden border-b border-white/10"
+        className="relative pt-28 sm:pt-36 pb-20 overflow-hidden border-b border-white/10"
       >
-        {/* Interactive 3D WebGL Background */}
-        <ThreeHeroCanvas mode={sceneMode} />
+        {/* Ambient WebGL Background */}
+        <ThreeHeroCanvas mode="neural" />
 
         {/* Soft Ambient Gradient Vignette */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#06070B]/40 via-[#06070B]/55 to-[#06070B]"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#06070B]/35 via-[#06070B]/65 to-[#06070B]"
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            {/* COLUMN 1 (FIRST ON ALL SCREENS): COMMANDING PORTRAIT */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-start relative order-1">
-              {/* Luminous Aura Glow behind Portrait */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -inset-4 rounded-[36px] opacity-35 blur-2xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(56,189,248,0.45), rgba(129,140,248,0.35), rgba(16,185,129,0.25))",
-                }}
-              />
-
-              <TiltCard
-                maxTilt={5}
-                className="relative w-full max-w-[460px] xl:max-w-[500px] rounded-[28px] glass-panel p-3.5 sm:p-4 border border-sky-400/30 shadow-2xl"
-              >
-                {/* Large Portrait Image */}
-                <div className="relative w-full h-[430px] sm:h-[510px] lg:h-[530px] rounded-2xl overflow-hidden bg-slate-950 border border-white/10">
-                  <img
-                    src={HERO_DATA.portraits[activePortrait].src}
-                    alt={HERO_DATA.portraits[activePortrait].title}
-                    style={{
-                      objectPosition:
-                        HERO_DATA.portraits[activePortrait].objectPosition,
-                    }}
-                    className="w-full h-full object-cover transition-all duration-500"
-                  />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#06070B]/85 to-transparent" />
-                </div>
-
-                {/* Clean Caption & Photo Switcher Below Image */}
-                <div className="pt-3.5 px-1.5 flex items-center justify-between gap-3">
-                  <div className="min-w-0">
-                    <div className="font-display font-bold text-base text-white truncate">
-                      {HERO_DATA.portraits[activePortrait].title}
-                    </div>
-                    <div className="text-xs text-sky-300 truncate">
-                      {HERO_DATA.portraits[activePortrait].caption}
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-1.5 flex-shrink-0">
-                    {HERO_DATA.portraits.map((p, idx) => (
-                      <button
-                        key={p.src}
-                        type="button"
-                        onClick={() => setActivePortrait(idx)}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
-                          activePortrait === idx
-                            ? "bg-sky-400 text-slate-950 font-semibold"
-                            : "bg-white/5 text-slate-300 hover:bg-white/15"
-                        }`}
-                      >
-                        Photo {idx + 1}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </TiltCard>
-            </div>
-
-            {/* COLUMN 2: PERSONAL INTRODUCTION, BIO & ACTIONS */}
-            <div className="lg:col-span-7 space-y-6 order-2">
-              {/* Availability & Location Pills */}
-              <div className="flex flex-wrap items-center gap-2.5">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-emerald-500/12 text-emerald-300 border border-emerald-500/30">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>{HERO_DATA.status}</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/[0.04] text-slate-300 border border-white/10">
-                  <MapPin className="w-3.5 h-3.5 text-sky-400" />
-                  <span>{HERO_DATA.location}</span>
-                </span>
-              </div>
-
-              {/* Clean, Executive Personal Headline */}
-              <div className="space-y-2.5">
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <p className="text-sky-400 font-medium text-base sm:text-lg tracking-wide">
-                    {HERO_DATA.greeting}
-                  </p>
-                  <span className="text-xs font-medium text-slate-400 px-2.5 py-0.5 rounded-md bg-white/[0.03] border border-white/10">
-                    {HERO_DATA.fullName}
-                  </span>
-                </div>
-                <h1 className="font-display text-4xl sm:text-6xl lg:text-[64px] font-extrabold tracking-tight text-white leading-[1.05]">
-                  {HERO_DATA.name}
-                </h1>
-                <p className="font-display text-xl sm:text-2xl lg:text-[26px] font-semibold text-slate-200 leading-snug pt-1">
-                  Full-Stack Software Engineer,{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-indigo-300 to-emerald-300">
-                    AI Systems Builder &amp; Tech Entrepreneur
-                  </span>
-                </p>
-              </div>
-
-              {/* Concise, High-Impact Summary */}
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
-                {HERO_DATA.tagline} Founder of{" "}
-                <strong className="text-white font-semibold">
-                  Corvento Technologies
-                </strong>{" "}
-                (powering{" "}
-                <strong className="text-sky-300 font-semibold">DanumaAI</strong>{" "}
-                &amp; a{" "}
-                <strong className="text-emerald-300 font-semibold">
-                  116,000+ subscriber WhatsApp &amp; Telegram media network
-                </strong>
-                ), Senior Web Developer at{" "}
-                <strong className="text-white font-semibold">Quizzygram</strong>
-                , and BIT Undergraduate at{" "}
-                <strong className="text-white font-semibold">UCSC</strong>.
-              </p>
-
-              {/* Quick Identity Highlights */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1">
-                <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center gap-2.5">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          {/* STEP 1 (FIRST ON ALL DEVICES): COMMANDING TOP PORTRAIT STAGE */}
+          <div className="flex flex-col items-center justify-center animate-fade-up">
+            <div className="relative w-full max-w-5xl flex items-center justify-center">
+              {/* Left Desktop Identity Card (Floating beside top portrait on lg+) */}
+              <div className="hidden lg:flex flex-col gap-3 w-64 mr-8">
+                <div className="glass-panel rounded-2xl p-4 border border-white/10 flex items-center gap-3.5">
                   <img
                     src="/uoc-logo.png"
-                    alt="UCSC / University of Colombo"
-                    loading="lazy"
-                    decoding="async"
-                    className="w-8 h-8 rounded-lg object-contain bg-white/95 p-0.5 flex-shrink-0"
+                    alt="University of Colombo School of Computing"
+                    className="w-11 h-11 rounded-xl object-contain bg-white p-1 flex-shrink-0"
                   />
                   <div className="min-w-0">
-                    <span className="text-[11px] text-slate-400 block truncate">
-                      University Degree
+                    <span className="text-[11px] font-medium text-sky-300 block">
+                      University Undergraduate
                     </span>
-                    <span className="text-xs sm:text-sm font-semibold text-white block truncate">
+                    <span className="text-sm font-bold text-white block truncate">
                       BIT @ UCSC
+                    </span>
+                    <span className="text-[11px] text-slate-400 block truncate">
+                      University of Colombo
                     </span>
                   </div>
                 </div>
-                <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center gap-2.5">
+
+                <div className="glass-panel rounded-2xl p-4 border border-white/10 flex items-center gap-3.5">
+                  <img
+                    src="/isipathana-logo.png"
+                    alt="Isipathana College Colombo"
+                    className="w-11 h-11 rounded-xl object-contain bg-white p-1 flex-shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <span className="text-[11px] font-medium text-emerald-300 block">
+                      Secondary Education
+                    </span>
+                    <span className="text-sm font-bold text-white block truncate">
+                      Isipathana College
+                    </span>
+                    <span className="text-[11px] text-slate-400 block truncate">
+                      Prefect • House Captain • Rugby
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Center Commanding High-Portrait Card */}
+              <div className="relative w-full max-w-[380px] sm:max-w-[430px]">
+                {/* Luminous Aura Glow behind Portrait */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -inset-4 rounded-[36px] opacity-40 blur-2xl"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(56,189,248,0.5), rgba(129,140,248,0.38), rgba(16,185,129,0.3))",
+                  }}
+                />
+
+                <TiltCard
+                  maxTilt={5}
+                  className="relative w-full rounded-[30px] glass-panel p-3.5 sm:p-4 border border-sky-400/35 shadow-2xl"
+                >
+                  <div className="relative w-full h-[410px] sm:h-[470px] rounded-2xl overflow-hidden bg-slate-950 border border-white/10">
+                    <img
+                      key={HERO_DATA.portraits[activePortrait].src}
+                      src={HERO_DATA.portraits[activePortrait].src}
+                      alt={HERO_DATA.portraits[activePortrait].title}
+                      style={{
+                        objectPosition:
+                          HERO_DATA.portraits[activePortrait].objectPosition,
+                      }}
+                      className="w-full h-full object-cover animate-photo-switch"
+                    />
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#06070B]/90 via-[#06070B]/30 to-transparent" />
+                  </div>
+
+                  {/* Caption & Photo Switcher Below Image */}
+                  <div className="pt-3.5 px-1.5 flex items-center justify-between gap-3">
+                    <div
+                      key={`caption-${activePortrait}`}
+                      className="min-w-0 text-left animate-tab-switch"
+                    >
+                      <div className="font-display font-bold text-base text-white truncate">
+                        {HERO_DATA.portraits[activePortrait].title}
+                      </div>
+                      <div className="text-xs text-sky-300 truncate">
+                        {HERO_DATA.portraits[activePortrait].caption}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-1.5 flex-shrink-0">
+                      {HERO_DATA.portraits.map((p, idx) => (
+                        <button
+                          key={p.src}
+                          type="button"
+                          onClick={() => setActivePortrait(idx)}
+                          className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
+                            activePortrait === idx
+                              ? "bg-sky-400 text-slate-950 font-semibold shadow-md shadow-sky-500/20"
+                              : "bg-white/5 text-slate-300 hover:bg-white/15"
+                          }`}
+                        >
+                          Photo {idx + 1}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </TiltCard>
+              </div>
+
+              {/* Right Desktop Identity Card (Floating beside top portrait on lg+) */}
+              <div className="hidden lg:flex flex-col gap-3 w-64 ml-8">
+                <div className="glass-panel rounded-2xl p-4 border border-white/10 flex items-center gap-3.5">
                   <img
                     src="/CorventoTechLogo.jpg"
                     alt="Corvento Technologies"
-                    loading="lazy"
-                    decoding="async"
-                    className="w-8 h-8 rounded-lg object-cover border border-white/15 flex-shrink-0"
+                    className="w-11 h-11 rounded-xl object-cover border border-white/15 flex-shrink-0"
                   />
                   <div className="min-w-0">
-                    <span className="text-[11px] text-slate-400 block truncate">
-                      Founded Venture
+                    <span className="text-[11px] font-medium text-sky-300 block">
+                      Founder &amp; Lead Developer
                     </span>
-                    <span className="text-xs sm:text-sm font-semibold text-white block truncate">
+                    <span className="text-sm font-bold text-white block truncate">
                       Corvento Tech
                     </span>
+                    <span className="text-[11px] text-slate-400 block truncate">
+                      DanumaAI &amp; 116K+ Media Network
+                    </span>
                   </div>
                 </div>
-                <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/10 col-span-2 sm:col-span-1">
-                  <span className="text-[11px] text-slate-400 block">
-                    Global Freelance
-                  </span>
-                  <span className="text-xs sm:text-sm font-semibold text-white mt-0.5 block">
-                    Fiverr &amp; Upwork
-                  </span>
-                </div>
-              </div>
 
-              {/* Primary CTA Buttons */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
-                <button
-                  type="button"
-                  onClick={() => setHireModalOpen(true)}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all shadow-xl shadow-sky-500/25 cursor-pointer"
-                >
-                  <Briefcase className="w-4 h-4" />
-                  <span>Hire Kevin — Fast-Track</span>
-                </button>
-
-                <a
-                  href={HERO_DATA.resumeUrl}
-                  download="Kevin-Sharada-Bandara-Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-sm font-semibold bg-white hover:bg-slate-200 text-slate-950 transition-all shadow-lg"
-                >
-                  <FileDown className="w-4 h-4" />
-                  <span>Download Resume (PDF)</span>
-                </a>
-
-                <a
-                  href={HERO_DATA.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl text-sm font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/35 transition-all"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>WhatsApp: {HERO_DATA.phone}</span>
-                </a>
-
-                <button
-                  type="button"
-                  onClick={handleCopyEmail}
-                  className="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl text-sm bg-white/[0.03] hover:bg-white/[0.08] text-slate-200 border border-white/10 transition-all cursor-pointer"
-                >
-                  {copiedEmail ? (
-                    <>
-                      <Check className="w-4 h-4 text-emerald-400" />
-                      <span className="text-emerald-300">Email Copied!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-4 h-4 text-slate-400" />
-                      <span>{HERO_DATA.email}</span>
-                    </>
-                  )}
-                </button>
-              </div>
-
-              {/* Subtle 3D Scene Switcher */}
-              <div className="pt-1">
-                <div className="inline-flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl bg-[#0B0E17]/80 backdrop-blur-md border border-white/10">
-                  <div className="flex items-center gap-1.5 px-2.5 py-1 text-xs text-slate-400">
-                    <Orbit
-                      className="w-3.5 h-3.5 text-sky-400 animate-spin"
-                      style={{ animationDuration: "10s" }}
-                    />
-                    <span>3D Background:</span>
+                <div className="glass-panel rounded-2xl p-4 border border-white/10 flex items-center gap-3.5">
+                  <img
+                    src="/DanumaAI.jpg"
+                    alt="DanumaAI"
+                    className="w-11 h-11 rounded-xl object-cover border border-white/15 flex-shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <span className="text-[11px] font-medium text-emerald-300 block">
+                      Flagship AI Product
+                    </span>
+                    <span className="text-sm font-bold text-white block truncate">
+                      DanumaAI Platform
+                    </span>
+                    <span className="text-[11px] text-slate-400 block truncate">
+                      5,000+ Downloads • 2,000+ Students
+                    </span>
                   </div>
-                  {(
-                    [
-                      { id: "neural", label: "Neural Core" },
-                      { id: "orbital", label: "Orbital Ring" },
-                      { id: "matrix", label: "Vector Grid" },
-                    ] as { id: ThreeSceneMode; label: string }[]
-                  ).map((m) => (
-                    <button
-                      key={m.id}
-                      type="button"
-                      onClick={() => setSceneMode(m.id)}
-                      className={`px-3 py-1 rounded-xl text-xs font-medium transition-all cursor-pointer ${
-                        sceneMode === m.id
-                          ? "bg-sky-400/20 text-sky-300 border border-sky-400/40"
-                          : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
-                      }`}
-                    >
-                      {m.label}
-                    </button>
-                  ))}
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Bottom Impact Metrics Strip */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 rounded-2xl glass-panel overflow-hidden divide-y sm:divide-y-0 sm:divide-x divide-white/10">
-            {HERO_DATA.telemetry.map((item, idx) => (
-              <div
-                key={idx}
-                className="p-6 hover:bg-white/[0.02] transition-colors"
-              >
-                <div className="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight flex items-baseline gap-2">
-                  <span>{item.value}</span>
-                  <span className="w-2 h-2 rounded-full bg-sky-400" />
-                </div>
-                <div className="text-sm font-semibold text-sky-300 mt-1">
-                  {item.label}
-                </div>
-                <div className="text-xs text-slate-400 mt-0.5">
-                  {item.detail}
-                </div>
+          {/* STEP 2 (BELOW PHOTO ON BOTH MOBILE & DESKTOP): EXECUTIVE NAME, HEADLINE, BIO & CTAs */}
+          <div
+            className="max-w-4xl mx-auto text-center mt-10 sm:mt-12 space-y-6 animate-fade-up"
+            style={{ animationDelay: "100ms" }}
+          >
+            {/* Availability & Location Pills */}
+            <div className="flex flex-wrap items-center justify-center gap-2.5">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-emerald-500/12 text-emerald-300 border border-emerald-500/30">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>{HERO_DATA.status}</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-white/[0.04] text-slate-300 border border-white/10">
+                <MapPin className="w-3.5 h-3.5 text-sky-400" />
+                <span>{HERO_DATA.location}</span>
+              </span>
+            </div>
+
+            {/* Full Name & Title */}
+            <div className="space-y-3">
+              <div className="flex flex-wrap items-center justify-center gap-2.5">
+                <span className="text-sky-400 font-semibold text-base sm:text-lg">
+                  {HERO_DATA.greeting}
+                </span>
+                <span className="text-xs sm:text-sm font-medium text-slate-300 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10">
+                  {HERO_DATA.fullName} ({HERO_DATA.legalName})
+                </span>
               </div>
-            ))}
+
+              <h1 className="font-display text-5xl sm:text-7xl lg:text-[78px] font-extrabold tracking-tight text-white leading-[1.03]">
+                {HERO_DATA.name}
+              </h1>
+
+              <p className="font-display text-xl sm:text-3xl lg:text-[32px] font-bold text-slate-200 leading-snug pt-1">
+                Full-Stack Software Engineer,{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-indigo-300 to-emerald-300">
+                  AI Systems Builder &amp; Tech Entrepreneur
+                </span>
+              </p>
+            </div>
+
+            {/* Executive Summary */}
+            <p className="text-base sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
+              {HERO_DATA.tagline} Founder of{" "}
+              <strong className="text-white font-semibold">
+                Corvento Technologies
+              </strong>{" "}
+              (powering{" "}
+              <strong className="text-sky-300 font-semibold">DanumaAI</strong>{" "}
+              across Web, Google Play Store &amp; Telegram Bot, plus a{" "}
+              <strong className="text-emerald-300 font-semibold">
+                116,000+ subscriber WhatsApp &amp; Telegram educational media network
+              </strong>
+              ), Senior Web Developer at{" "}
+              <strong className="text-white font-semibold">Quizzygram</strong>,
+              Sales &amp; Booking Architect at{" "}
+              <strong className="text-white font-semibold">
+                Past Papers Wiki
+              </strong>
+              , Digital Operations Coordinator at{" "}
+              <strong className="text-white font-semibold">MAOS Office</strong>,
+              and BIT Undergraduate at{" "}
+              <strong className="text-white font-semibold">
+                UCSC (University of Colombo)
+              </strong>
+              .
+            </p>
+
+            {/* Primary CTA Buttons */}
+            <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
+              <button
+                type="button"
+                onClick={() => setHireModalOpen(true)}
+                className="inline-flex items-center gap-2 px-7 py-4 rounded-2xl text-sm sm:text-base font-semibold bg-sky-400 hover:bg-sky-300 hover:-translate-y-0.5 text-slate-950 transition-all shadow-xl shadow-sky-500/25 cursor-pointer"
+              >
+                <Briefcase className="w-4 h-4" />
+                <span>Work With Kevin</span>
+              </button>
+
+              <a
+                href={HERO_DATA.resumeUrl}
+                download="Kevin-Sharada-Bandara-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl text-sm sm:text-base font-semibold bg-white hover:bg-slate-200 hover:-translate-y-0.5 text-slate-950 transition-all shadow-lg btn-press"
+              >
+                <FileDown className="w-4 h-4" />
+                <span>Download Resume (PDF)</span>
+              </a>
+
+              <a
+                href={HERO_DATA.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-4 rounded-2xl text-sm sm:text-base font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 hover:-translate-y-0.5 text-emerald-300 border border-emerald-500/35 transition-all btn-press"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp: {HERO_DATA.phone}</span>
+              </a>
+
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                className="inline-flex items-center gap-2 px-5 py-4 rounded-2xl text-sm sm:text-base bg-white/[0.04] hover:bg-white/[0.09] hover:-translate-y-0.5 text-slate-200 border border-white/10 transition-all cursor-pointer"
+              >
+                {copiedEmail ? (
+                  <>
+                    <Check className="w-4 h-4 text-emerald-400" />
+                    <span className="text-emerald-300">Email Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4 text-slate-400" />
+                    <span>{HERO_DATA.email}</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+
+          {/* STEP 3: 6-METRIC IMPACT TELEMETRY STRIP */}
+          <div
+            className="w-full pt-14 animate-fade-up"
+            style={{ animationDelay: "180ms" }}
+          >
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 rounded-3xl glass-panel overflow-hidden divide-y md:divide-y-0 md:divide-x divide-white/10 border border-white/15">
+              {HERO_DATA.telemetry.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="p-5 sm:p-6 hover:bg-white/[0.03] transition-colors text-center sm:text-left"
+                >
+                  <div className="font-display text-2xl sm:text-3xl xl:text-4xl font-extrabold text-white tracking-tight flex items-baseline justify-center sm:justify-start gap-1.5">
+                    <span>{item.value}</span>
+                    <span className="w-2 h-2 rounded-full bg-sky-400 flex-shrink-0" />
+                  </div>
+                  <div className="text-xs sm:text-sm font-semibold text-sky-300 mt-1">
+                    {item.label}
+                  </div>
+                  <div className="text-[11px] text-slate-400 mt-0.5 leading-snug">
+                    {item.detail}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* =====================================================================
-          SECTION 01: PROFESSIONAL WORK EXPERIENCE (CLEAN VERTICAL FLOW)
+          SECTION 01: ABOUT KEVIN, PERSONAL PROFILE & 2013–2026 MILESTONE CHRONICLE
+         ===================================================================== */}
+      <section
+        id="about"
+        className="relative py-24 sm:py-32 border-b border-white/10"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="mb-14 reveal-on-scroll">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-sky-400/10 text-sky-300 border border-sky-400/25 mb-3">
+              <UserCheck className="w-3.5 h-3.5" />
+              <span>Executive Biography &amp; Personal Story</span>
+            </span>
+            <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight max-w-4xl leading-tight">
+              {ABOUT_DATA.headline}
+            </h2>
+          </div>
+
+          {/* Bio Paragraphs + Personal Profile Card */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start mb-16">
+            <div className="lg:col-span-7 space-y-5 reveal-on-scroll">
+              {ABOUT_DATA.paragraphs.map((p, idx) => (
+                <p
+                  key={idx}
+                  className="text-base sm:text-lg text-slate-300 leading-relaxed"
+                >
+                  {p}
+                </p>
+              ))}
+
+              {/* 3 Core Pillars */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                {ABOUT_DATA.pillars.map((pillar) => (
+                  <div
+                    key={pillar.code}
+                    className="glass-panel rounded-2xl p-5 border border-white/10 hover:-translate-y-0.5"
+                  >
+                    <div className="text-xs font-bold text-sky-400 mb-1.5">
+                      {pillar.code}
+                    </div>
+                    <h3 className="font-display text-base font-bold text-white mb-1.5">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      {pillar.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Personal Identity & Quick Facts Card */}
+            <div
+              className="lg:col-span-5 glass-panel rounded-3xl p-6 sm:p-8 border border-sky-400/30 reveal-on-scroll"
+              style={{ "--reveal-delay": "90ms" } as React.CSSProperties}
+            >
+              <div className="flex items-center gap-4 pb-5 mb-5 border-b border-white/10">
+                <img
+                  src="/KevinPortrait.jpg"
+                  alt="R.M. Kevin Sharada Bandara"
+                  className="w-16 h-16 rounded-2xl object-cover object-[center_24%] border-2 border-sky-400/50 flex-shrink-0"
+                />
+                <div>
+                  <span className="text-xs font-semibold text-sky-400 uppercase tracking-wider">
+                    Personal Profile
+                  </span>
+                  <h3 className="font-display text-xl font-bold text-white">
+                    {HERO_DATA.fullName}
+                  </h3>
+                  <p className="text-xs text-slate-400">
+                    {HERO_DATA.legalName}
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-3.5">
+                {ABOUT_DATA.profileFacts.map((fact) => (
+                  <div
+                    key={fact.label}
+                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-3 border-b border-white/[0.06] last:border-0 last:pb-0"
+                  >
+                    <span className="text-xs font-medium text-slate-400">
+                      {fact.label}
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-white sm:text-right">
+                      {fact.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 pt-5 border-t border-white/10 flex flex-wrap gap-2.5">
+                <a
+                  href={HERO_DATA.resumeUrl}
+                  download="Kevin-Sharada-Bandara-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-3 px-4 rounded-xl text-xs font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 text-center transition-all flex items-center justify-center gap-2 btn-press"
+                >
+                  <FileDown className="w-4 h-4" />
+                  <span>Download Official CV</span>
+                </a>
+                <a
+                  href={HERO_DATA.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-3 px-4 rounded-xl text-xs font-semibold bg-white/[0.06] hover:bg-white/15 text-white border border-white/10 transition-all flex items-center justify-center gap-1.5 btn-press"
+                >
+                  <Linkedin className="w-3.5 h-3.5 text-sky-400" />
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* 2013 – 2026 Chronological Milestone Grid */}
+          <div className="reveal-on-scroll">
+            <div className="flex items-center gap-2.5 mb-8">
+              <History className="w-5 h-5 text-sky-400" />
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
+                Journey &amp; Evolution (2013 — 2026)
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {ABOUT_DATA.milestones.map((m, idx) => (
+                <div
+                  key={m.year}
+                  style={
+                    {
+                      "--reveal-delay": `${(idx % 3) * 75}ms`,
+                    } as React.CSSProperties
+                  }
+                  className="glass-panel rounded-3xl p-6 sm:p-7 border border-white/10 hover:border-sky-400/35 hover:-translate-y-0.5 flex flex-col justify-between reveal-on-scroll"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="px-3 py-1 rounded-full text-xs font-bold bg-sky-400/15 text-sky-300 border border-sky-400/30">
+                        {m.year}
+                      </span>
+                      <span className="text-xs font-mono text-slate-500">
+                        0{idx + 1}
+                      </span>
+                    </div>
+                    <h4 className="font-display text-lg sm:text-xl font-bold text-white mb-1">
+                      {m.title}
+                    </h4>
+                    <p className="text-xs font-semibold text-indigo-300 mb-3">
+                      {m.subtitle}
+                    </p>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    {m.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          SECTION 02: PROFESSIONAL WORK EXPERIENCE
          ===================================================================== */}
       <section
         id="experience"
         className="relative py-24 sm:py-32 border-b border-white/10 swiss-grid-bg"
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-14">
+          <div className="mb-14 reveal-on-scroll">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-sky-400/10 text-sky-300 border border-sky-400/25 mb-3">
               <Briefcase className="w-3.5 h-3.5" />
-              <span>Career &amp; Leadership Journey</span>
+              <span>Career &amp; Leadership Roles</span>
             </span>
             <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
               Work Experience
             </h2>
             <p className="text-base sm:text-lg text-slate-300 mt-2 max-w-2xl">
-              My professional roles across software engineering, venture building, digital operations, and international freelance delivery.
+              Software engineering, venture leadership, digital broadcast operations, and international client delivery.
             </p>
           </div>
 
           {/* Vertical Timeline Flow */}
           <div className="relative pl-6 sm:pl-10 border-l-2 border-white/15 space-y-10">
-            {EXPERIENCE_DATA.map((exp) => (
-              <div key={exp.id} className="relative group">
+            {EXPERIENCE_DATA.map((exp, idx) => (
+              <div
+                key={exp.id}
+                className="relative group reveal-on-scroll"
+                style={
+                  {
+                    "--reveal-delay": `${Math.min(idx * 65, 260)}ms`,
+                  } as React.CSSProperties
+                }
+              >
                 {/* Timeline Node Dot */}
                 <div className="absolute -left-[31px] sm:-left-[47px] top-7 w-4 h-4 rounded-full bg-[#06070B] border-2 border-sky-400 group-hover:scale-125 group-hover:bg-sky-400 transition-all" />
 
-                <div className="glass-panel rounded-3xl p-6 sm:p-8 transition-all">
+                <div className="glass-panel rounded-3xl p-6 sm:p-8 transition-all hover:-translate-y-0.5">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                     <div className="flex items-center gap-4">
                       <div className="flex items-center -space-x-2">
@@ -635,7 +872,7 @@ export default function PortfolioPage() {
                           alt={exp.company}
                           loading="lazy"
                           decoding="async"
-                          className="w-13 h-13 rounded-2xl object-cover bg-slate-900 border border-white/15 flex-shrink-0"
+                          className="w-14 h-14 rounded-2xl object-cover bg-slate-900 border border-white/15 flex-shrink-0"
                         />
                         {exp.secondaryLogo && (
                           <img
@@ -699,7 +936,7 @@ export default function PortfolioPage() {
                             href={l.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-400/15 hover:bg-sky-400/25 text-sky-300 border border-sky-400/30 text-xs font-semibold transition-colors"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-400/15 hover:bg-sky-400/25 hover:-translate-y-0.5 text-sky-300 border border-sky-400/30 text-xs font-semibold transition-all btn-press"
                           >
                             <span>{l.label}</span>
                             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -716,7 +953,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* =====================================================================
-          SECTION 02: FEATURED SOFTWARE PROJECTS & ARCHIVED VENTURES
+          SECTION 03: FEATURED SOFTWARE PROJECTS & PAST VENTURES
          ===================================================================== */}
       <section
         id="projects"
@@ -724,17 +961,17 @@ export default function PortfolioPage() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header + Category Filter */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14 reveal-on-scroll">
             <div>
               <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-sky-400/10 text-sky-300 border border-sky-400/25 mb-3">
                 <Boxes className="w-3.5 h-3.5" />
-                <span>Software Engineering &amp; Product Portfolio</span>
+                <span>Software Engineering &amp; Product Systems</span>
               </span>
               <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
                 Featured Projects
               </h2>
               <p className="text-base sm:text-lg text-slate-300 mt-2 max-w-2xl">
-                Active production platforms, client architectures, and historical community ventures.
+                Production AI platforms, full-stack web applications, custom booking engines, and community infrastructure.
               </p>
             </div>
 
@@ -747,8 +984,8 @@ export default function PortfolioPage() {
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                     selectedCategory === cat
-                      ? "bg-sky-400 text-slate-950 shadow-lg shadow-sky-500/20"
-                      : "bg-white/[0.04] text-slate-300 hover:bg-white/10 border border-white/10"
+                      ? "bg-sky-400 text-slate-950 shadow-lg shadow-sky-500/20 -translate-y-0.5"
+                      : "bg-white/[0.04] text-slate-300 hover:bg-white/10 hover:-translate-y-0.5 border border-white/10"
                   }`}
                 >
                   {cat}
@@ -757,8 +994,11 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          {/* Clean 2-Column Project Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Clean 2-Column Project Grid with Smooth Tab Crossfade */}
+          <div
+            key={selectedCategory}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-tab-switch"
+          >
             {filteredProjects.map((project) => (
               <TiltCard
                 key={project.id}
@@ -896,7 +1136,7 @@ export default function PortfolioPage() {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-sky-400 hover:bg-sky-300 hover:-translate-y-0.5 text-slate-950 transition-all btn-press"
                       >
                         {getLinkIcon(link.type)}
                         <span>{link.label}</span>
@@ -907,10 +1147,10 @@ export default function PortfolioPage() {
                     <button
                       type="button"
                       onClick={() => setActiveArchProject(project)}
-                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white/[0.05] hover:bg-white/10 text-slate-200 border border-white/15 transition-all cursor-pointer"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white/[0.05] hover:bg-white/10 hover:-translate-y-0.5 text-slate-200 border border-white/15 transition-all cursor-pointer"
                     >
                       <Terminal className="w-3.5 h-3.5 text-sky-400" />
-                      <span>System Architecture</span>
+                      <span>Technical Architecture</span>
                     </button>
                   </div>
                 </div>
@@ -921,7 +1161,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* =====================================================================
-          SECTION 03: CORVENTO TECHNOLOGIES, 74K+ WHATSAPP NETWORK & CREATIVE STUDIO
+          SECTION 04: CORVENTO TECHNOLOGIES, 116K+ MEDIA NETWORK & CREATIVE STUDIO
          ===================================================================== */}
       <section
         id="ventures"
@@ -929,7 +1169,7 @@ export default function PortfolioPage() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14 reveal-on-scroll">
             <div className="max-w-3xl">
               <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-sky-400/10 text-sky-300 border border-sky-400/25 mb-3">
                 <Sparkles className="w-3.5 h-3.5" />
@@ -939,11 +1179,11 @@ export default function PortfolioPage() {
                 Corvento Technologies Ecosystem
               </h2>
               <p className="text-base sm:text-lg text-slate-300 mt-3 leading-relaxed">
-                Founded and operated by Kevin Bandara as the master parent entity powering{" "}
+                Founded and operated by Kevin Bandara — powering{" "}
                 <strong className="text-white">DanumaAI</strong>,{" "}
                 <strong className="text-sky-300">@corventotech</strong> YouTube/Reels, and an active{" "}
                 <strong className="text-emerald-300">
-                  74,000+ subscriber WhatsApp digital media &amp; education network
+                  116,000+ subscriber WhatsApp (74K+) &amp; Telegram (42K+) educational network
                 </strong>
                 .
               </p>
@@ -956,7 +1196,7 @@ export default function PortfolioPage() {
                 alt="Asteroid Technologies"
                 loading="lazy"
                 decoding="async"
-                className="w-11 h-11 rounded-xl object-cover border border-white/10 opacity-85"
+                className="w-11 h-11 rounded-xl object-cover border border-white/10 opacity-85 hover:opacity-100 hover:scale-105 transition-all"
                 title="Origin: Asteroid Technologies"
               />
               <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
@@ -965,7 +1205,7 @@ export default function PortfolioPage() {
                 alt="Lycoryx Technologies"
                 loading="lazy"
                 decoding="async"
-                className="w-11 h-11 rounded-xl object-cover border border-white/10 opacity-85"
+                className="w-11 h-11 rounded-xl object-cover border border-white/10 opacity-85 hover:opacity-100 hover:scale-105 transition-all"
                 title="Expansion: Lycoryx Technologies"
               />
               <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
@@ -974,8 +1214,8 @@ export default function PortfolioPage() {
                 alt="Corvento Technologies"
                 loading="lazy"
                 decoding="async"
-                className="w-14 h-14 rounded-xl object-cover border-2 border-sky-400/50 shadow-lg shadow-sky-500/20"
-                title="Present Master Entity: Corvento Technologies"
+                className="w-14 h-14 rounded-xl object-cover border-2 border-sky-400/50 shadow-lg shadow-sky-500/20 hover:scale-105 transition-all"
+                title="Corvento Technologies"
               />
             </div>
           </div>
@@ -985,10 +1225,15 @@ export default function PortfolioPage() {
             {CORVENTO_ECOSYSTEM.lineage.map((step, idx) => (
               <div
                 key={step.name}
-                className={`rounded-3xl p-6 border transition-all ${
+                style={
+                  {
+                    "--reveal-delay": `${idx * 80}ms`,
+                  } as React.CSSProperties
+                }
+                className={`rounded-3xl p-6 border transition-all hover:-translate-y-0.5 reveal-on-scroll ${
                   idx === 2
                     ? "glass-panel border-sky-400/40 bg-sky-500/[0.05]"
-                    : "bg-white/[0.02] border-white/10"
+                    : "bg-white/[0.02] border-white/10 hover:border-white/20"
                 }`}
               >
                 <div className="flex items-center justify-between gap-3 mb-4">
@@ -1037,7 +1282,7 @@ export default function PortfolioPage() {
 
           {/* WhatsApp Channels Network under Corvento (74K+ Subscribers) */}
           <div className="mb-14">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 reveal-on-scroll">
               <div>
                 <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
                   Owned WhatsApp Broadcast Network
@@ -1048,7 +1293,7 @@ export default function PortfolioPage() {
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold self-start sm:self-auto">
                 <Users className="w-4 h-4" />
-                <span>74,000+ Total Subscribers</span>
+                <span>74,000+ WhatsApp Subscribers</span>
               </div>
             </div>
 
@@ -1057,7 +1302,7 @@ export default function PortfolioPage() {
                 <TiltCard
                   key={channel.id}
                   maxTilt={5}
-                  className="glass-panel rounded-3xl p-6 flex flex-col justify-between group"
+                  className="glass-panel rounded-3xl p-6 flex flex-col justify-between group reveal-on-scroll"
                 >
                   <div>
                     <div className="flex items-start justify-between gap-3 mb-5">
@@ -1094,7 +1339,7 @@ export default function PortfolioPage() {
                     href={channel.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-white/[0.06] hover:bg-emerald-500 hover:text-slate-950 text-white border border-white/10 hover:border-emerald-400 transition-all flex items-center justify-center gap-2"
+                    className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-white/[0.06] hover:bg-emerald-500 hover:text-slate-950 text-white border border-white/10 hover:border-emerald-400 transition-all flex items-center justify-center gap-2 btn-press"
                   >
                     <span>Open WhatsApp Channel</span>
                     <ArrowUpRight className="w-4 h-4" />
@@ -1106,7 +1351,7 @@ export default function PortfolioPage() {
 
           {/* Graphic Design Portfolio & YouTube / Reels Production Bar */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-amber-400/25">
+            <div className="glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-amber-400/25 reveal-on-scroll">
               <div>
                 <div className="inline-flex items-center gap-2 text-xs font-semibold text-amber-300 mb-3">
                   <Palette className="w-4 h-4" />
@@ -1139,7 +1384,7 @@ export default function PortfolioPage() {
                 href={CORVENTO_ECOSYSTEM.graphicsPortfolioUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl text-xs font-semibold bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all self-start"
+                className="inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl text-xs font-semibold bg-amber-400 hover:bg-amber-300 hover:-translate-y-0.5 text-slate-950 transition-all self-start btn-press"
               >
                 <Palette className="w-4 h-4" />
                 <span>Open Graphic Design Portfolio (Google Drive)</span>
@@ -1147,7 +1392,7 @@ export default function PortfolioPage() {
               </a>
             </div>
 
-            <div className="glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-rose-400/25">
+            <div className="glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-rose-400/25 reveal-on-scroll">
               <div>
                 <div className="inline-flex items-center gap-2 text-xs font-semibold text-rose-300 mb-3">
                   <Video className="w-4 h-4" />
@@ -1180,7 +1425,7 @@ export default function PortfolioPage() {
                 href={CORVENTO_ECOSYSTEM.youtubeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl text-xs font-semibold bg-rose-500 hover:bg-rose-400 text-white transition-all self-start"
+                className="inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl text-xs font-semibold bg-rose-500 hover:bg-rose-400 hover:-translate-y-0.5 text-white transition-all self-start btn-press"
               >
                 <Video className="w-4 h-4" />
                 <span>Watch @corventotech on YouTube</span>
@@ -1192,14 +1437,14 @@ export default function PortfolioPage() {
       </section>
 
       {/* =====================================================================
-          SECTION 04: CORE TECHNICAL & CREATIVE SKILLS
+          SECTION 05: CORE TECHNICAL & CREATIVE SKILLS
          ===================================================================== */}
       <section
         id="skills"
         className="relative py-24 sm:py-32 border-b border-white/10"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-14">
+          <div className="mb-14 reveal-on-scroll">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-sky-400/10 text-sky-300 border border-sky-400/25 mb-3">
               <Cpu className="w-3.5 h-3.5" />
               <span>Technical &amp; Creative Stack</span>
@@ -1210,10 +1455,15 @@ export default function PortfolioPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SKILL_GROUPS.map((group) => (
+            {SKILL_GROUPS.map((group, idx) => (
               <div
                 key={group.id}
-                className="glass-panel rounded-3xl p-6 sm:p-7 flex flex-col justify-between"
+                style={
+                  {
+                    "--reveal-delay": `${(idx % 3) * 75}ms`,
+                  } as React.CSSProperties
+                }
+                className="glass-panel rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-0.5 reveal-on-scroll"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
@@ -1240,7 +1490,7 @@ export default function PortfolioPage() {
                   {group.skills.map((skill) => (
                     <span
                       key={skill.name}
-                      className={`text-xs px-3 py-1.5 rounded-xl transition-colors ${
+                      className={`text-xs px-3 py-1.5 rounded-xl transition-all hover:-translate-y-0.5 ${
                         skill.highlight
                           ? "bg-white/[0.08] text-white border border-white/15 font-medium"
                           : "bg-white/[0.03] text-slate-300 border border-white/5"
@@ -1257,31 +1507,31 @@ export default function PortfolioPage() {
       </section>
 
       {/* =====================================================================
-          SECTION 05: EDUCATION, 14+ DIPLOMAS/CERTIFICATES, AWARDS & SPORTS
+          SECTION 06: EDUCATION, DIPLOMAS, CERTIFICATES, AWARDS & 48-CREDENTIAL ARCHIVE
          ===================================================================== */}
       <section
         id="credentials"
         className="relative py-24 sm:py-32 border-b border-white/10 swiss-grid-bg"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14 reveal-on-scroll">
             <div>
               <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-sky-400/10 text-sky-300 border border-sky-400/25 mb-3">
                 <GraduationCap className="w-3.5 h-3.5" />
-                <span>Academic Foundation, Certifications &amp; Honours</span>
+                <span>Academic Degrees, Certifications &amp; Honours</span>
               </span>
               <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
                 Education, Diplomas &amp; Achievements
               </h2>
               <p className="text-base sm:text-lg text-slate-300 mt-2 max-w-2xl">
-                Organized clearly across University Degrees, 6 Accredited Diplomas, 8 Professional Certificates, and 45+ Documented Honours, Transcripts, Competitions &amp; Sports.
+                University undergraduate studies, Pearson Assured &amp; accredited diplomas, university coding certificates, and national competition &amp; athletic honours.
               </p>
             </div>
 
-            {/* Clean Filter Tabs so it never feels crowded */}
+            {/* Category Tabs */}
             <div className="flex flex-wrap gap-2">
               {[
-                { id: "all", label: "All Overview" },
+                { id: "all", label: "All Credentials" },
                 {
                   id: "diplomas",
                   label: `Degrees & Diplomas (${degreesAndDiplomas.length})`,
@@ -1292,7 +1542,11 @@ export default function PortfolioPage() {
                 },
                 {
                   id: "awards",
-                  label: `Awards, Sports & Volunteering (${ACHIEVEMENTS_DATA.length})`,
+                  label: `Honours & Sports (${ACHIEVEMENTS_DATA.length})`,
+                },
+                {
+                  id: "registry",
+                  label: `Full 48-Credential Archive (${COMPLETE_CREDENTIAL_ARCHIVE.length})`,
                 },
               ].map((t) => (
                 <button
@@ -1300,13 +1554,18 @@ export default function PortfolioPage() {
                   type="button"
                   onClick={() =>
                     setCredentialTab(
-                      t.id as "all" | "diplomas" | "certificates" | "awards"
+                      t.id as
+                        | "all"
+                        | "diplomas"
+                        | "certificates"
+                        | "awards"
+                        | "registry"
                     )
                   }
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                     credentialTab === t.id
-                      ? "bg-sky-400 text-slate-950 shadow-lg shadow-sky-500/20"
-                      : "bg-white/[0.04] text-slate-300 hover:bg-white/10 border border-white/10"
+                      ? "bg-sky-400 text-slate-950 shadow-lg shadow-sky-500/20 -translate-y-0.5"
+                      : "bg-white/[0.04] text-slate-300 hover:bg-white/10 hover:-translate-y-0.5 border border-white/10"
                   }`}
                 >
                   {t.label}
@@ -1317,7 +1576,10 @@ export default function PortfolioPage() {
 
           {/* SUB-BLOCK A: DEGREES & DIPLOMAS */}
           {(credentialTab === "all" || credentialTab === "diplomas") && (
-            <div className="mb-14">
+            <div
+              key={`diplomas-${credentialTab}`}
+              className="mb-16 animate-tab-switch"
+            >
               <div className="flex items-center gap-2.5 mb-6">
                 <GraduationCap className="w-5 h-5 text-sky-400" />
                 <h3 className="font-display text-2xl font-bold text-white">
@@ -1329,7 +1591,7 @@ export default function PortfolioPage() {
                 {degreesAndDiplomas.map((edu) => (
                   <div
                     key={edu.id}
-                    className={`glass-panel rounded-3xl p-6 flex flex-col justify-between border ${
+                    className={`glass-panel rounded-3xl p-6 flex flex-col justify-between border hover:-translate-y-0.5 ${
                       edu.id === "ucsc-bit"
                         ? "border-sky-400/40 bg-sky-500/[0.04]"
                         : "border-white/10"
@@ -1373,7 +1635,10 @@ export default function PortfolioPage() {
 
           {/* SUB-BLOCK B: PROFESSIONAL CERTIFICATES */}
           {(credentialTab === "all" || credentialTab === "certificates") && (
-            <div className="mb-14">
+            <div
+              key={`certs-${credentialTab}`}
+              className="mb-16 animate-tab-switch"
+            >
               <div className="flex items-center gap-2.5 mb-6">
                 <ShieldCheck className="w-5 h-5 text-emerald-400" />
                 <h3 className="font-display text-2xl font-bold text-white">
@@ -1381,11 +1646,11 @@ export default function PortfolioPage() {
                 </h3>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {certificatesList.map((cert) => (
                   <div
                     key={cert.id}
-                    className="rounded-2xl p-5 bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 transition-all flex flex-col justify-between"
+                    className="rounded-2xl p-5 bg-white/[0.03] hover:bg-white/[0.06] hover:-translate-y-0.5 border border-white/10 hover:border-sky-400/30 transition-all flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-center justify-between gap-2 mb-3">
@@ -1425,7 +1690,10 @@ export default function PortfolioPage() {
 
           {/* SUB-BLOCK C: COMPETITIONS, SPORTS & VOLUNTEERING */}
           {(credentialTab === "all" || credentialTab === "awards") && (
-            <div>
+            <div
+              key={`awards-${credentialTab}`}
+              className="mb-16 animate-tab-switch"
+            >
               <div className="flex items-center gap-2.5 mb-6">
                 <Trophy className="w-5 h-5 text-amber-400" />
                 <h3 className="font-display text-2xl font-bold text-white">
@@ -1452,7 +1720,7 @@ export default function PortfolioPage() {
                   return (
                     <div
                       key={item.id}
-                      className="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/10"
+                      className="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/10 hover:-translate-y-0.5"
                     >
                       <div>
                         <div className="flex items-center justify-between gap-2 mb-3.5">
@@ -1492,26 +1760,98 @@ export default function PortfolioPage() {
               </div>
             </div>
           )}
+
+          {/* SUB-BLOCK D: COMPLETE 48-CREDENTIAL ARCHIVE REGISTRY */}
+          {(credentialTab === "all" || credentialTab === "registry") && (
+            <div
+              key={`registry-${credentialTab}`}
+              className="animate-tab-switch pt-4"
+            >
+              <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-white/15">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 mb-6 border-b border-white/10">
+                  <div>
+                    <div className="flex items-center gap-2 text-xs font-semibold text-sky-400 mb-1">
+                      <BookOpen className="w-4 h-4" />
+                      <span>Complete Verified Index (2013 — 2026)</span>
+                    </div>
+                    <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
+                      All 48 Documented Diplomas, Transcripts, Certificates &amp; Awards
+                    </h3>
+                  </div>
+
+                  {/* Domain Filter Pills */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {registryDomains.map((dom) => (
+                      <button
+                        key={dom}
+                        type="button"
+                        onClick={() => setRegistryFilter(dom)}
+                        className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                          registryFilter === dom
+                            ? "bg-sky-400 text-slate-950"
+                            : "bg-white/[0.04] text-slate-300 hover:bg-white/10 border border-white/10"
+                        }`}
+                      >
+                        {dom}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div
+                  key={registryFilter}
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 animate-tab-switch"
+                >
+                  {filteredRegistry.map((item) => (
+                    <div
+                      key={item.no}
+                      className="p-4 rounded-2xl bg-black/40 hover:bg-white/[0.04] border border-white/[0.08] hover:border-sky-400/30 transition-all flex items-start gap-3"
+                    >
+                      <span className="w-8 h-8 rounded-lg bg-sky-400/15 border border-sky-400/30 text-sky-300 font-mono text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+                        #{String(item.no).padStart(2, "0")}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-[11px] font-semibold text-sky-400 truncate">
+                            {item.domain}
+                          </span>
+                          <span className="text-[11px] text-slate-400 flex-shrink-0">
+                            {item.date}
+                          </span>
+                        </div>
+                        <h4 className="text-xs sm:text-sm font-bold text-white mt-0.5 leading-snug">
+                          {item.title}
+                        </h4>
+                        <p className="text-xs text-slate-400 mt-0.5 truncate">
+                          {item.institution}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
       {/* =====================================================================
-          SECTION 06: DIRECT CONTACT & HIRING FAST-TRACK
+          SECTION 07: DIRECT CONTACT & COLLABORATION
          ===================================================================== */}
       <section id="contact" className="relative py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Top Fast-Track Banner for Companies & Recruiters */}
-          <div className="mb-14 rounded-3xl p-6 sm:p-9 bg-gradient-to-r from-sky-500/15 via-indigo-500/15 to-emerald-500/15 border border-sky-400/35 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          {/* Top Banner for Companies & Clients */}
+          <div className="mb-14 rounded-3xl p-6 sm:p-9 bg-gradient-to-r from-sky-500/15 via-indigo-500/15 to-emerald-500/15 border border-sky-400/35 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 reveal-on-scroll">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold mb-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Hiring Fast-Track for Companies &amp; Clients</span>
+                <span>Open for Engineering Roles &amp; Client Projects</span>
               </div>
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
                 Looking to hire a Full-Stack / AI Engineer or Creative Technologist?
               </h3>
               <p className="text-sm sm:text-base text-slate-300 mt-1">
-                Download Kevin&apos;s official Resume (PDF) or open the 1-click Hiring Fast-Track to message on WhatsApp, copy a candidate brief, or launch a pre-filled role inquiry.
+                Download my official Resume (PDF) or connect directly via WhatsApp, email, or LinkedIn.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3">
@@ -1520,7 +1860,7 @@ export default function PortfolioPage() {
                 download="Kevin-Sharada-Bandara-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-4 rounded-2xl text-sm font-semibold bg-white hover:bg-slate-200 text-slate-950 transition-all shadow-lg flex items-center gap-2 whitespace-nowrap"
+                className="px-5 py-4 rounded-2xl text-sm font-semibold bg-white hover:bg-slate-200 hover:-translate-y-0.5 text-slate-950 transition-all shadow-lg flex items-center gap-2 whitespace-nowrap btn-press"
               >
                 <FileDown className="w-4 h-4" />
                 <span>Download Resume (PDF)</span>
@@ -1528,10 +1868,10 @@ export default function PortfolioPage() {
               <button
                 type="button"
                 onClick={() => setHireModalOpen(true)}
-                className="px-6 py-4 rounded-2xl text-sm font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all shadow-xl shadow-sky-500/25 flex items-center gap-2 whitespace-nowrap cursor-pointer"
+                className="px-6 py-4 rounded-2xl text-sm font-semibold bg-sky-400 hover:bg-sky-300 hover:-translate-y-0.5 text-slate-950 transition-all shadow-xl shadow-sky-500/25 flex items-center gap-2 whitespace-nowrap cursor-pointer"
               >
                 <Briefcase className="w-4 h-4" />
-                <span>Open Hiring Fast-Track</span>
+                <span>Work With Kevin</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>
@@ -1539,7 +1879,7 @@ export default function PortfolioPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left 6 Cols: Direct Contact Info */}
-            <div className="lg:col-span-6 space-y-6">
+            <div className="lg:col-span-6 space-y-6 reveal-on-scroll">
               <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-sky-400/10 text-sky-300 border border-sky-400/25">
                 <Mail className="w-3.5 h-3.5" />
                 <span>Direct Contact</span>
@@ -1559,7 +1899,7 @@ export default function PortfolioPage() {
 
               {/* Direct Channel Cards */}
               <div className="space-y-3 pt-2">
-                <div className="glass-panel rounded-2xl p-4 flex items-center justify-between gap-4">
+                <div className="glass-panel rounded-2xl p-4 flex items-center justify-between gap-4 hover:-translate-y-0.5">
                   <div className="flex items-center gap-3.5 min-w-0">
                     <div className="w-11 h-11 rounded-xl bg-sky-400/15 border border-sky-400/30 flex items-center justify-center text-sky-300 flex-shrink-0">
                       <Mail className="w-5 h-5" />
@@ -1594,7 +1934,7 @@ export default function PortfolioPage() {
                 </div>
 
                 {/* Direct Phone & WhatsApp Card */}
-                <div className="glass-panel rounded-2xl p-4 flex items-center justify-between gap-4">
+                <div className="glass-panel rounded-2xl p-4 flex items-center justify-between gap-4 hover:-translate-y-0.5">
                   <div className="flex items-center gap-3.5 min-w-0">
                     <div className="w-11 h-11 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-300 flex-shrink-0">
                       <Phone className="w-5 h-5" />
@@ -1615,7 +1955,7 @@ export default function PortfolioPage() {
                     href={HERO_DATA.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-500/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 border border-emerald-400/30 transition-all flex items-center gap-1.5 flex-shrink-0"
+                    className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-500/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 border border-emerald-400/30 transition-all flex items-center gap-1.5 flex-shrink-0 btn-press"
                   >
                     <MessageCircle className="w-3.5 h-3.5" />
                     <span>WhatsApp</span>
@@ -1627,7 +1967,7 @@ export default function PortfolioPage() {
                     href={HERO_DATA.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="glass-panel rounded-2xl p-4 flex items-center justify-between group"
+                    className="glass-panel rounded-2xl p-4 flex items-center justify-between group hover:-translate-y-0.5 btn-press"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-indigo-500/15 border border-indigo-400/30 flex items-center justify-center text-indigo-300">
@@ -1647,7 +1987,7 @@ export default function PortfolioPage() {
                     href={HERO_DATA.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="glass-panel rounded-2xl p-4 flex items-center justify-between group"
+                    className="glass-panel rounded-2xl p-4 flex items-center justify-between group hover:-translate-y-0.5 btn-press"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white">
@@ -1667,7 +2007,10 @@ export default function PortfolioPage() {
             </div>
 
             {/* Right 6 Cols: Quick Message Dispatch */}
-            <div className="lg:col-span-6">
+            <div
+              className="lg:col-span-6 reveal-on-scroll"
+              style={{ "--reveal-delay": "90ms" } as React.CSSProperties}
+            >
               <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-white/15">
                 <h3 className="font-display text-xl font-bold text-white mb-6">
                   Send a Direct Message
@@ -1688,7 +2031,7 @@ export default function PortfolioPage() {
                         value={senderName}
                         onChange={(e) => setSenderName(e.target.value)}
                         placeholder="e.g. Sarah Jenkins"
-                        className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 focus:border-sky-400 focus:outline-none text-sm text-white placeholder-slate-500"
+                        className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 focus:border-sky-400 focus:outline-none text-sm text-white placeholder-slate-500 transition-colors"
                       />
                     </div>
                     <div>
@@ -1704,7 +2047,7 @@ export default function PortfolioPage() {
                         value={senderOrg}
                         onChange={(e) => setSenderOrg(e.target.value)}
                         placeholder="e.g. Acme Engineering"
-                        className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 focus:border-sky-400 focus:outline-none text-sm text-white placeholder-slate-500"
+                        className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 focus:border-sky-400 focus:outline-none text-sm text-white placeholder-slate-500 transition-colors"
                       />
                     </div>
                   </div>
@@ -1720,7 +2063,7 @@ export default function PortfolioPage() {
                       id="inquiry-type"
                       value={inquiryType}
                       onChange={(e) => setInquiryType(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-[#090B11] border border-white/10 focus:border-sky-400 focus:outline-none text-sm text-white"
+                      className="w-full px-4 py-3 rounded-xl bg-[#090B11] border border-white/10 focus:border-sky-400 focus:outline-none text-sm text-white transition-colors"
                     >
                       <option value="Software Engineering / Full-Stack Role">
                         Software Engineering / Full-Stack Role
@@ -1750,13 +2093,13 @@ export default function PortfolioPage() {
                       value={messageBody}
                       onChange={(e) => setMessageBody(e.target.value)}
                       placeholder="Tell me about the role, team, or project..."
-                      className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 focus:border-sky-400 focus:outline-none text-sm text-white placeholder-slate-500 resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 focus:border-sky-400 focus:outline-none text-sm text-white placeholder-slate-500 resize-none transition-colors"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 px-6 rounded-xl text-sm font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all shadow-lg shadow-sky-500/20 flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-3.5 px-6 rounded-xl text-sm font-semibold bg-sky-400 hover:bg-sky-300 hover:-translate-y-0.5 text-slate-950 transition-all shadow-lg shadow-sky-500/20 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Send className="w-4 h-4" />
                     <span>Send Message</span>
@@ -1773,10 +2116,10 @@ export default function PortfolioPage() {
         <button
           type="button"
           onClick={() => setHireModalOpen(true)}
-          className="flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#0B0E17]/90 hover:bg-sky-400 text-white hover:text-slate-950 border border-sky-400/40 shadow-2xl shadow-sky-500/20 backdrop-blur-md transition-all group cursor-pointer"
+          className="flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#0B0E17]/90 hover:bg-sky-400 hover:-translate-y-0.5 text-white hover:text-slate-950 border border-sky-400/40 shadow-2xl shadow-sky-500/20 backdrop-blur-md transition-all group cursor-pointer"
         >
           <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 group-hover:bg-slate-950 animate-pulse" />
-          <span className="text-xs font-semibold">Hire Kevin • Fast-Track</span>
+          <span className="text-xs font-semibold">Work With Kevin</span>
         </button>
       </div>
 
@@ -1852,13 +2195,13 @@ export default function PortfolioPage() {
         </div>
       </footer>
 
-      {/* Interactive System Architecture Modal */}
+      {/* Interactive Technical Architecture Modal */}
       <ArchitectureModal
         project={activeArchProject}
         onClose={() => setActiveArchProject(null)}
       />
 
-      {/* Interactive Hire Kevin Fast-Track Modal */}
+      {/* Interactive Work With Kevin Modal */}
       <HireMeModal
         isOpen={hireModalOpen}
         onClose={() => setHireModalOpen(false)}

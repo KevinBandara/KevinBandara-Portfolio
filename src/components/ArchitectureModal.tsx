@@ -84,10 +84,10 @@ export default function ArchitectureModal({
             </div>
             <div>
               <div className="flex items-center gap-2.5 flex-wrap">
-                <span className="font-mono text-xs uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-sky-500/15 text-sky-300 border border-sky-400/30">
-                  SYS_ARCH // {project.index}
+                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-sky-500/15 text-sky-300 border border-sky-400/30">
+                  Technical Architecture
                 </span>
-                <span className="font-mono text-xs text-slate-400">
+                <span className="text-xs text-slate-400">
                   {project.role} • {project.period}
                 </span>
               </div>
