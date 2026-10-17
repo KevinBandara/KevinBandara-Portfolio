@@ -330,12 +330,27 @@ export default function ThreeHeroCanvas({
     window.addEventListener("resize", handleResize);
     renderer.domElement.addEventListener("pointerdown", handlePointerDown);
 
-    // Animation loop
+    // Animation loop (auto-paused when scrolled out of viewport for 60fps scroll & Lighthouse score)
     let animationFrameId: number;
+    let isHeroVisible = true;
     const clock = new THREE.Clock();
+
+    let visibilityObserver: IntersectionObserver | null = null;
+    if ("IntersectionObserver" in window) {
+      visibilityObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            isHeroVisible = entry.isIntersecting;
+          });
+        },
+        { threshold: 0.01 }
+      );
+      visibilityObserver.observe(container);
+    }
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
+      if (!isHeroVisible) return;
 
       const elapsed = clock.getElapsedTime();
       const activeMode = modeRef.current;
@@ -423,6 +438,7 @@ export default function ThreeHeroCanvas({
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      if (visibilityObserver) visibilityObserver.disconnect();
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("pointerup", handlePointerUp);
       window.removeEventListener("scroll", handleScroll);
@@ -435,8 +451,8 @@ export default function ThreeHeroCanvas({
   return (
     <div
       ref={containerRef}
-      className="w-full h-full cursor-grab active:cursor-grabbing select-none"
-      aria-label="Interactive 3D AI Systems Architecture Visualization"
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 w-full h-full select-none opacity-80"
     />
   );
 }

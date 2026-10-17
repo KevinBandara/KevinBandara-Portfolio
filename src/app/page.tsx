@@ -32,12 +32,16 @@ import {
   History,
   BookOpen,
 } from "lucide-react";
-import ThreeHeroCanvas from "@/components/ThreeHeroCanvas";
+import dynamic from "next/dynamic";
 import TiltCard from "@/components/TiltCard";
 import ArchitectureModal from "@/components/ArchitectureModal";
 import HireMeModal from "@/components/HireMeModal";
 import { FeaturedProject } from "@/data/portfolioData";
 import { getLocalizedPortfolio, Language } from "@/data/sinhalaTranslations";
+
+const ThreeHeroCanvas = dynamic(() => import("@/components/ThreeHeroCanvas"), {
+  ssr: false,
+});
 
 function Github({ className = "w-4 h-4" }: { className?: string }) {
   return (
@@ -68,6 +72,7 @@ function Linkedin({ className = "w-4 h-4" }: { className?: string }) {
 export default function PortfolioPage() {
   const [lang, setLang] = useState<Language>("en");
   const [activePortrait, setActivePortrait] = useState<number>(0);
+  const [photoSwitched, setPhotoSwitched] = useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [credentialTab, setCredentialTab] = useState<
     "all" | "diplomas" | "certificates" | "awards" | "registry"
@@ -100,7 +105,7 @@ export default function PortfolioPage() {
     registry,
   } = getLocalizedPortfolio(lang);
 
-  // Lightweight IntersectionObserver for smooth scroll-triggered fade-ins
+  // Lightweight IntersectionObserver for smooth scroll-triggered fade-ins & slide-ups
   useEffect(() => {
     if (typeof window === "undefined") return;
     const elements = document.querySelectorAll(".reveal-on-scroll");
@@ -118,7 +123,7 @@ export default function PortfolioPage() {
           }
         });
       },
-      { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+      { threshold: 0.06, rootMargin: "0px 0px -24px 0px" }
     );
 
     elements.forEach((el) => observer.observe(el));
@@ -439,17 +444,19 @@ export default function PortfolioPage() {
 
         <div
           key={`hero-${lang}`}
-          className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full animate-tab-switch"
+          className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
         >
           {/* STEP 1 (FIRST ON ALL DEVICES): COMMANDING TOP PORTRAIT STAGE */}
-          <div className="flex flex-col items-center justify-center animate-fade-up">
+          <div className="flex flex-col items-center justify-center">
             <div className="relative w-full max-w-5xl flex items-center justify-center">
               {/* Left Desktop Identity Card (Floating beside top portrait on lg+) */}
-              <div className="hidden lg:flex flex-col gap-3 w-64 mr-8">
+              <div className="hidden lg:flex flex-col gap-3 w-64 mr-8 animate-fade-up">
                 <div className="glass-panel rounded-2xl p-4 border border-white/10 flex items-center gap-3.5">
                   <img
                     src="/uoc-logo.png"
                     alt="University of Colombo School of Computing"
+                    width={44}
+                    height={44}
                     className="w-11 h-11 rounded-xl object-contain bg-white p-1 flex-shrink-0"
                   />
                   <div className="min-w-0">
@@ -469,6 +476,8 @@ export default function PortfolioPage() {
                   <img
                     src="/isipathana-logo.png"
                     alt="Isipathana College Colombo"
+                    width={44}
+                    height={44}
                     className="w-11 h-11 rounded-xl object-contain bg-white p-1 flex-shrink-0"
                   />
                   <div className="min-w-0">
@@ -485,7 +494,7 @@ export default function PortfolioPage() {
                 </div>
               </div>
 
-              {/* Center Commanding High-Portrait Card */}
+              {/* Center Commanding High-Portrait Card (LCP Optimized for Google PageSpeed Insights) */}
               <div className="relative w-full max-w-[380px] sm:max-w-[430px]">
                 {/* Luminous Aura Glow behind Portrait */}
                 <div
@@ -506,11 +515,17 @@ export default function PortfolioPage() {
                       key={hero.portraits[activePortrait].src}
                       src={hero.portraits[activePortrait].src}
                       alt={hero.portraits[activePortrait].title}
+                      width={430}
+                      height={470}
+                      fetchPriority="high"
+                      decoding="async"
                       style={{
                         objectPosition:
                           hero.portraits[activePortrait].objectPosition,
                       }}
-                      className="w-full h-full object-cover animate-photo-switch"
+                      className={`w-full h-full object-cover ${
+                        photoSwitched ? "animate-photo-switch" : ""
+                      }`}
                     />
                     <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#06070B]/90 via-[#06070B]/30 to-transparent" />
                   </div>
@@ -534,7 +549,10 @@ export default function PortfolioPage() {
                         <button
                           key={p.src}
                           type="button"
-                          onClick={() => setActivePortrait(idx)}
+                          onClick={() => {
+                            setPhotoSwitched(true);
+                            setActivePortrait(idx);
+                          }}
                           className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
                             activePortrait === idx
                               ? "bg-sky-400 text-slate-950 font-semibold shadow-md shadow-sky-500/20"
@@ -550,11 +568,13 @@ export default function PortfolioPage() {
               </div>
 
               {/* Right Desktop Identity Card (Floating beside top portrait on lg+) */}
-              <div className="hidden lg:flex flex-col gap-3 w-64 ml-8">
+              <div className="hidden lg:flex flex-col gap-3 w-64 ml-8 animate-fade-up">
                 <div className="glass-panel rounded-2xl p-4 border border-white/10 flex items-center gap-3.5">
                   <img
                     src="/CorventoTechLogo.jpg"
                     alt="Corvento Technologies"
+                    width={44}
+                    height={44}
                     className="w-11 h-11 rounded-xl object-cover border border-white/15 flex-shrink-0"
                   />
                   <div className="min-w-0">
@@ -574,6 +594,8 @@ export default function PortfolioPage() {
                   <img
                     src="/DanumaAI.jpg"
                     alt="DanumaAI"
+                    width={44}
+                    height={44}
                     className="w-11 h-11 rounded-xl object-cover border border-white/15 flex-shrink-0"
                   />
                   <div className="min-w-0">
@@ -593,10 +615,7 @@ export default function PortfolioPage() {
           </div>
 
           {/* STEP 2 (BELOW PHOTO ON BOTH MOBILE & DESKTOP): EXECUTIVE NAME, HEADLINE, BIO & CTAs */}
-          <div
-            className="max-w-4xl mx-auto text-center mt-10 sm:mt-12 space-y-6 animate-fade-up"
-            style={{ animationDelay: "100ms" }}
-          >
+          <div className="max-w-4xl mx-auto text-center mt-10 sm:mt-12 space-y-6 animate-fade-up">
             {/* Availability & Location Pills */}
             <div className="flex flex-wrap items-center justify-center gap-2.5">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-emerald-500/12 text-emerald-300 border border-emerald-500/30">
@@ -740,10 +759,7 @@ export default function PortfolioPage() {
           </div>
 
           {/* STEP 3: 6-METRIC IMPACT TELEMETRY STRIP */}
-          <div
-            className="w-full pt-14 animate-fade-up"
-            style={{ animationDelay: "180ms" }}
-          >
+          <div className="w-full pt-14 reveal-on-scroll">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 rounded-3xl glass-panel overflow-hidden divide-y md:divide-y-0 md:divide-x divide-white/10 border border-white/15">
               {hero.telemetry.map((item, idx) => (
                 <div
@@ -800,10 +816,15 @@ export default function PortfolioPage() {
 
               {/* 3 Core Pillars */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-                {about.pillars.map((pillar) => (
+                {about.pillars.map((pillar, pIdx) => (
                   <div
                     key={pillar.code}
-                    className="glass-panel rounded-2xl p-5 border border-white/10 hover:-translate-y-0.5"
+                    style={
+                      {
+                        "--reveal-delay": `${pIdx * 80}ms`,
+                      } as React.CSSProperties
+                    }
+                    className="glass-panel rounded-2xl p-5 border border-white/10 hover:-translate-y-0.5 reveal-on-scroll"
                   >
                     <div className="text-xs font-bold text-sky-400 mb-1.5">
                       {pillar.code}
@@ -828,6 +849,10 @@ export default function PortfolioPage() {
                 <img
                   src="/KevinPortrait.jpg"
                   alt="R.M. Kevin Sharada Bandara"
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                  decoding="async"
                   className="w-16 h-16 rounded-2xl object-cover object-[center_24%] border-2 border-sky-400/50 flex-shrink-0"
                 />
                 <div>
@@ -1094,21 +1119,31 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          {/* Clean 2-Column Project Grid with Smooth Tab Crossfade */}
+          {/* Clean 2-Column Project Grid with Smooth Scroll Reveal & Tab Crossfade */}
           <div
             key={`${selectedCategory}-${lang}`}
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-tab-switch"
           >
-            {filteredProjects.map((project) => (
-              <TiltCard
+            {filteredProjects.map((project, pIdx) => (
+              <div
                 key={project.id}
-                maxTilt={4}
-                className={`glass-panel rounded-3xl p-7 sm:p-9 flex flex-col justify-between border transition-all ${
-                  project.featured
-                    ? "lg:col-span-2 border-sky-400/35 bg-gradient-to-br from-[#0D121F]/90 via-[#0B0E17]/95 to-[#111324]/90"
-                    : "border-white/10"
+                style={
+                  {
+                    "--reveal-delay": `${(pIdx % 2) * 85}ms`,
+                  } as React.CSSProperties
+                }
+                className={`reveal-on-scroll ${
+                  project.featured ? "lg:col-span-2" : ""
                 }`}
               >
+                <TiltCard
+                  maxTilt={4}
+                  className={`h-full glass-panel rounded-3xl p-7 sm:p-9 flex flex-col justify-between border transition-all ${
+                    project.featured
+                      ? "border-sky-400/35 bg-gradient-to-br from-[#0D121F]/90 via-[#0B0E17]/95 to-[#111324]/90"
+                      : "border-white/10"
+                  }`}
+                >
                 <div>
                   {/* Top Meta Row */}
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-6">
@@ -1255,6 +1290,7 @@ export default function PortfolioPage() {
                   </div>
                 </div>
               </TiltCard>
+              </div>
             ))}
           </div>
         </div>
@@ -1692,7 +1728,7 @@ export default function PortfolioPage() {
               key={`diplomas-${credentialTab}-${lang}`}
               className="mb-16 animate-tab-switch"
             >
-              <div className="flex items-center gap-2.5 mb-6">
+              <div className="flex items-center gap-2.5 mb-6 reveal-on-scroll">
                 <GraduationCap className="w-5 h-5 text-sky-400" />
                 <h3 className="font-display text-2xl font-bold text-white">
                   {ui.diplomasHeading}
@@ -1700,10 +1736,15 @@ export default function PortfolioPage() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {degreesAndDiplomas.map((edu) => (
+                {degreesAndDiplomas.map((edu, idx) => (
                   <div
                     key={edu.id}
-                    className={`glass-panel rounded-3xl p-6 flex flex-col justify-between border hover:-translate-y-0.5 ${
+                    style={
+                      {
+                        "--reveal-delay": `${(idx % 3) * 70}ms`,
+                      } as React.CSSProperties
+                    }
+                    className={`glass-panel rounded-3xl p-6 flex flex-col justify-between border hover:-translate-y-0.5 reveal-on-scroll ${
                       edu.id === "ucsc-bit"
                         ? "border-sky-400/40 bg-sky-500/[0.04]"
                         : "border-white/10"
@@ -1716,6 +1757,8 @@ export default function PortfolioPage() {
                             <img
                               src={edu.logo}
                               alt={edu.institution}
+                              width={36}
+                              height={36}
                               loading="lazy"
                               decoding="async"
                               className="w-9 h-9 rounded-lg object-contain bg-white p-1 border border-white/20 flex-shrink-0"
@@ -1751,7 +1794,7 @@ export default function PortfolioPage() {
               key={`certs-${credentialTab}-${lang}`}
               className="mb-16 animate-tab-switch"
             >
-              <div className="flex items-center gap-2.5 mb-6">
+              <div className="flex items-center gap-2.5 mb-6 reveal-on-scroll">
                 <ShieldCheck className="w-5 h-5 text-emerald-400" />
                 <h3 className="font-display text-2xl font-bold text-white">
                   {ui.certsHeading}
@@ -1759,10 +1802,15 @@ export default function PortfolioPage() {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {certificatesList.map((cert) => (
+                {certificatesList.map((cert, idx) => (
                   <div
                     key={cert.id}
-                    className="rounded-2xl p-5 bg-white/[0.03] hover:bg-white/[0.06] hover:-translate-y-0.5 border border-white/10 hover:border-sky-400/30 transition-all flex flex-col justify-between"
+                    style={
+                      {
+                        "--reveal-delay": `${(idx % 4) * 65}ms`,
+                      } as React.CSSProperties
+                    }
+                    className="rounded-2xl p-5 bg-white/[0.03] hover:bg-white/[0.06] hover:-translate-y-0.5 border border-white/10 hover:border-sky-400/30 transition-all flex flex-col justify-between reveal-on-scroll"
                   >
                     <div>
                       <div className="flex items-center justify-between gap-2 mb-3">
@@ -1771,6 +1819,8 @@ export default function PortfolioPage() {
                             <img
                               src={cert.logo}
                               alt={cert.institution}
+                              width={32}
+                              height={32}
                               loading="lazy"
                               decoding="async"
                               className="w-8 h-8 rounded-lg object-contain bg-white p-1 border border-white/20 flex-shrink-0"
@@ -1806,7 +1856,7 @@ export default function PortfolioPage() {
               key={`awards-${credentialTab}-${lang}`}
               className="mb-16 animate-tab-switch"
             >
-              <div className="flex items-center gap-2.5 mb-6">
+              <div className="flex items-center gap-2.5 mb-6 reveal-on-scroll">
                 <Trophy className="w-5 h-5 text-amber-400" />
                 <h3 className="font-display text-2xl font-bold text-white">
                   {ui.awardsHeading}
@@ -1814,7 +1864,7 @@ export default function PortfolioPage() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {achievements.map((item) => {
+                {achievements.map((item, idx) => {
                   const badgeStyle =
                     item.category === "competition"
                       ? "bg-amber-400/15 text-amber-300 border-amber-400/30"
@@ -1832,7 +1882,12 @@ export default function PortfolioPage() {
                   return (
                     <div
                       key={item.id}
-                      className="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/10 hover:-translate-y-0.5"
+                      style={
+                        {
+                          "--reveal-delay": `${(idx % 3) * 70}ms`,
+                        } as React.CSSProperties
+                      }
+                      className="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/10 hover:-translate-y-0.5 reveal-on-scroll"
                     >
                       <div>
                         <div className="flex items-center justify-between gap-2 mb-3.5">
@@ -1841,6 +1896,8 @@ export default function PortfolioPage() {
                               <img
                                 src={item.logo}
                                 alt={item.organization}
+                                width={32}
+                                height={32}
                                 loading="lazy"
                                 decoding="async"
                                 className="w-8 h-8 rounded-lg object-contain bg-white p-1 border border-white/20 flex-shrink-0"
@@ -1877,7 +1934,7 @@ export default function PortfolioPage() {
           {(credentialTab === "all" || credentialTab === "registry") && (
             <div
               key={`registry-${credentialTab}-${lang}`}
-              className="animate-tab-switch pt-4"
+              className="animate-tab-switch pt-4 reveal-on-scroll"
             >
               <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-white/15">
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 mb-6 border-b border-white/10">
