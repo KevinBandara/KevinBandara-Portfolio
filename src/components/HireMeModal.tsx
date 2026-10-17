@@ -259,7 +259,7 @@ Key Highlights:
               className="py-3.5 px-4 rounded-xl font-mono text-xs sm:text-sm font-semibold bg-white hover:bg-slate-200 text-slate-950 transition-all shadow-lg flex items-center justify-center gap-2"
             >
               <FileDown className="w-4 h-4" />
-              <span>Download CV (PDF)</span>
+              <span>Download Resume</span>
             </a>
 
             <button
