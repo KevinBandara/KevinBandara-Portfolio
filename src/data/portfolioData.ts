@@ -18,10 +18,12 @@ export interface FeaturedProject {
   subtitle: string;
   role: string;
   period: string;
+  statusBadge?: string;
+  statusTone?: "active" | "archived" | "client";
   category:
-    | "AI & RAG Systems"
+    | "AI & EdTech"
     | "Full-Stack Web"
-    | "Bots & Distributed"
+    | "Archived Ventures"
     | "Creative & Media";
   featured?: boolean;
   logo: string;
@@ -75,20 +77,31 @@ export interface EducationItem {
   id: string;
   degree: string;
   institution: string;
-  status: string;
-  details: string[];
+  year: string;
+  category: "degree" | "diploma" | "certificate";
   badge: string;
+  details: string[];
+}
+
+export interface AchievementItem {
+  id: string;
+  title: string;
+  organization: string;
+  year: string;
+  category: "competition" | "sports" | "volunteering";
+  highlight: string;
 }
 
 export const HERO_DATA = {
   name: "Kevin Bandara",
-  title: "Full-Stack Software Developer, AI Systems Builder & Tech Entrepreneur",
+  greeting: "Hello, I'm",
+  title: "Full-Stack Software Engineer, AI Systems Builder & Tech Entrepreneur",
   tagline:
-    "Building production web platforms, AI-driven educational technology, scalable backend infrastructure, and high-reach digital media ecosystems.",
+    "I architect and ship production web platforms, AI-powered educational applications, and high-reach digital media ecosystems from Colombo, Sri Lanka.",
   location: "Colombo, Sri Lanka",
   nationality: "Sri Lankan",
   religion: "Buddhist",
-  status: "Open to Software Engineering & Full-Stack Developer Roles",
+  status: "Available for Software Engineering & Full-Stack Roles",
   email: "kevinbandara0000@gmail.com",
   phone: "071 851 1165",
   phoneIntl: "+94 71 851 1165",
@@ -118,7 +131,7 @@ export const HERO_DATA = {
   ],
   telemetry: [
     {
-      value: "200K+",
+      value: "206K+",
       label: "Cumulative Software Users",
       detail: "Across MemoAI, DanumaAI & Web Platforms",
     },
@@ -130,12 +143,12 @@ export const HERO_DATA = {
     {
       value: "3,200+",
       label: "DanumaAI App Installs",
-      detail: "Google Play Store, Web & Telegram Suite",
+      detail: "Google Play Store, Web & Telegram Bot",
     },
     {
-      value: "2,150+",
-      label: "Connected Communities",
-      detail: "High-concurrency Discord & Telegram pipelines",
+      value: "15+",
+      label: "Diplomas, Certificates & Awards",
+      detail: "UCSC, UoM, Pearson ESOFT, ATARI & ICBT",
     },
   ],
 };
@@ -149,19 +162,25 @@ export const CORVENTO_ECOSYSTEM = {
     "https://drive.google.com/drive/folders/184pMfdN0AlFBfXTEU8eSFVQzaEWJ4IJ5?usp=drive_link",
   lineage: [
     {
-      era: "Origin Identity",
+      era: "Phase 01 • Origin Studio",
       name: "Asteroid Technologies",
-      desc: "Initial technology studio identity created for early software experiments, community servers, and digital tools.",
+      logo: "/BlackWolfMC-Logo.jpg",
+      status: "Evolved",
+      desc: "Initial technology studio identity created to launch the BlackWolf Minecraft Server, gaming communities, and early web utilities.",
     },
     {
-      era: "Expansion Phase",
+      era: "Phase 02 • AI Scaling Era",
       name: "Lycoryx Technologies",
-      desc: "Scaled into AI application development — launching MemoAI (200K+ users across Discord) and the initial release of DanumaAI.",
+      logo: "/LycoryxTech.jpg",
+      status: "Rebranded",
+      desc: "Expanded into high-concurrency AI products — scaling MemoAI to 206,600+ users across 2,157+ Discord servers and launching the first release of DanumaAI.",
     },
     {
-      era: "Master Entity (Present)",
+      era: "Phase 03 • Master Entity (Present)",
       name: "Corvento Technologies",
-      desc: "The unified parent company operating DanumaAI, MemoAI, proprietary web platforms, YouTube/Reels media (@corventotech), and a 74,000+ follower WhatsApp channel network.",
+      logo: "/CorventoTechLogo.jpg",
+      status: "Active Master Entity",
+      desc: "The unified parent company powering DanumaAI (Web, Play Store & Telegram Bot), @corventotech YouTube/Reels, and a 74,000+ subscriber WhatsApp media network.",
     },
   ],
   channels: [
@@ -184,7 +203,7 @@ export const CORVENTO_ECOSYSTEM = {
       logo: "/LankaDiaries.jpg",
       category: "Digital Media & Lifestyle",
       description:
-        "Curated stories, cultural highlights, and daily digital content from the heart of Sri Lanka.",
+        "Curated stories, cultural highlights, and daily digital content from across Sri Lanka.",
     },
     {
       id: "sarasavi-sihinaya",
@@ -212,29 +231,30 @@ export const CORVENTO_ECOSYSTEM = {
 };
 
 export const ABOUT_DATA = {
-  headline: "Software Engineer. AI Builder. Technology Entrepreneur.",
+  headline:
+    "Bridging Full-Stack Software Engineering, AI Systems, and Digital Entrepreneurship.",
   paragraphs: [
-    "I am a software developer, creative technologist, and entrepreneur from Colombo, Sri Lanka with hands-on experience taking digital products from architecture to live production. I specialize in building full-stack web applications, integrating modern AI workflows (RAG, Gemini API, OpenAI), and engineering scalable backend systems with Next.js, Node.js, and MongoDB.",
-    "Beyond writing clean, maintainable code, I founded Corvento Technologies (evolved from Asteroid Technologies and Lycoryx Technologies) as the master entity operating DanumaAI, MemoAI, and a 74,000+ subscriber WhatsApp media network. Alongside leading Senior Web Development at Quizzygram and commercial operations at Past Papers Wiki, I have delivered international freelance engineering and creative projects on Fiverr and Upwork.",
+    "I am a software developer, creative designer, and entrepreneur from Colombo, Sri Lanka with hands-on experience taking digital products from architecture to live production. Currently reading for my Bachelor of Information Technology (BIT) at the University of Colombo School of Computing (UCSC), I specialize in full-stack web engineering (Next.js, React, Node.js, Laravel, MongoDB) and applied AI workflows (RAG, Gemini API, OpenAI).",
+    "Beyond writing code, I founded Corvento Technologies (evolved from Asteroid Technologies and Lycoryx Technologies) to build products like DanumaAI and operate a 74,000+ subscriber WhatsApp educational & media network. I also serve as Senior Web Developer for Quizzygram, Sales Manager & Booking System Architect at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and an international freelancer on Fiverr and Upwork.",
   ],
   pillars: [
     {
-      code: "01 // AI & FULL-STACK",
-      title: "Production Web & AI Systems",
+      code: "Full-Stack & AI",
+      title: "Production Web, Mobile & RAG Systems",
       description:
-        "Architecting RAG pipelines, Gemini/OpenAI workflows, Next.js web platforms, and Google Play Android apps serving thousands of active users.",
+        "Building Next.js web apps, Expo Android apps on Google Play, and Gemini/OpenAI RAG bots serving thousands of active users.",
     },
     {
-      code: "02 // ENTREPRENEURSHIP",
-      title: "Corvento Ecosystem & 74K+ Reach",
+      code: "Ventures & Media",
+      title: "Corvento Ecosystem & 74K+ Audience",
       description:
-        "Building and operating proprietary software ventures, contextual ad engines, and daily digital media channels with 74,000+ subscribers.",
+        "Operating proprietary software products, contextual educator ad engines, and daily WhatsApp broadcast channels reaching 74,000+ followers.",
     },
     {
-      code: "03 // CREATIVE & FREELANCE",
-      title: "Global Freelance, Design & Reels",
+      code: "Creative & Global",
+      title: "Adobe Creative Suite, Reels & Freelance",
       description:
-        "Delivering full-stack solutions on Fiverr & Upwork alongside graphic design, brand identities, and high-retention video/reel production.",
+        "Scholarship-winning graphic designer & video editor delivering brand identities, motion reels, and full-stack apps on Fiverr & Upwork.",
     },
   ],
 };
@@ -253,17 +273,17 @@ export const SKILL_GROUPS: SkillGroup[] = [
       { name: "Next.js (App Router)", highlight: true },
       { name: "React.js", highlight: true },
       { name: "React Native (Expo)", highlight: true },
-      { name: "Node.js", highlight: true },
-      { name: "Express.js", highlight: true },
-      { name: "Tailwind CSS", highlight: true },
+      { name: "Node.js & Express.js", highlight: true },
       { name: "PHP & Laravel", highlight: true },
+      { name: "Tailwind CSS", highlight: true },
+      { name: "HTML5 & CSS3" },
     ],
   },
   {
     id: "ai-engineering",
     code: "02",
-    title: "AI Engineering",
-    subtitle: "LLM pipelines, RAG & multimodal intelligence",
+    title: "AI & LLM Engineering",
+    subtitle: "RAG pipelines, vector search & multimodal AI",
     accent: "#818CF8",
     skills: [
       { name: "Gemini API", highlight: true },
@@ -271,24 +291,24 @@ export const SKILL_GROUPS: SkillGroup[] = [
       { name: "Retrieval-Augmented Generation (RAG)", highlight: true },
       { name: "Vector Search", highlight: true },
       { name: "Prompt Engineering", highlight: true },
-      { name: "Multimodal Image Solving" },
-      { name: "AI Chatbots & Agents" },
+      { name: "Vision OCR & Image Problem Solving" },
+      { name: "AI Agents & Chatbots" },
     ],
   },
   {
     id: "backend-distributed",
     code: "03",
     title: "Backend & Distributed Systems",
-    subtitle: "Scalable APIs, real-time chat & bot architectures",
+    subtitle: "APIs, queues, real-time chat & bot infrastructure",
     accent: "#34D399",
     skills: [
       { name: "RESTful APIs", highlight: true },
-      { name: "Redis", highlight: true },
-      { name: "BullMQ", highlight: true },
+      { name: "Redis & BullMQ", highlight: true },
       { name: "Docker", highlight: true },
       { name: "Microservices", highlight: true },
+      { name: "Telegram Bot & WebApp APIs", highlight: true },
       { name: "Discord.js", highlight: true },
-      { name: "Telegram Bot & WebApp APIs" },
+      { name: "Game Server Infrastructure" },
     ],
   },
   {
@@ -298,7 +318,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
     subtitle: "Cloud data stores, identity & security",
     accent: "#F472B6",
     skills: [
-      { name: "MongoDB / MongoDB Atlas", highlight: true },
+      { name: "MongoDB & MongoDB Atlas", highlight: true },
       { name: "NextAuth.js", highlight: true },
       { name: "JWT", highlight: true },
       { name: "Google OAuth 2.0", highlight: true },
@@ -310,8 +330,8 @@ export const SKILL_GROUPS: SkillGroup[] = [
   {
     id: "devops-tooling",
     code: "05",
-    title: "DevOps & Tooling",
-    subtitle: "Cloud hosting, mobile publishing & testing",
+    title: "DevOps, Cloud & Operations",
+    subtitle: "Deployment, mobile publishing & digital operations",
     accent: "#FBBF24",
     skills: [
       { name: "Git & GitHub", highlight: true },
@@ -325,20 +345,18 @@ export const SKILL_GROUPS: SkillGroup[] = [
   {
     id: "uiux-creative",
     code: "06",
-    title: "UI/UX, Adobe Suite & Video",
-    subtitle: "Graphic design, Adobe Creative Cloud, brand identity & reels",
+    title: "Adobe Creative Suite, UI/UX & Video",
+    subtitle: "Certified in Premiere Pro, After Effects, Photoshop & Graphic Design",
     accent: "#A78BFA",
     skills: [
-      { name: "Adobe Photoshop", highlight: true },
+      { name: "Adobe Photoshop (Certified)", highlight: true },
       { name: "Adobe Illustrator", highlight: true },
-      { name: "Adobe Premiere Pro", highlight: true },
-      { name: "Adobe After Effects", highlight: true },
+      { name: "Adobe Premiere Pro (Certified)", highlight: true },
+      { name: "Adobe After Effects (Certified)", highlight: true },
       { name: "Adobe Lightroom" },
       { name: "Figma (UI/UX Prototyping)", highlight: true },
       { name: "Short-Form Reel & Video Editing", highlight: true },
       { name: "Brand Identity & Logo Design", highlight: true },
-      { name: "Social Media & Campaign Visuals" },
-      { name: "Canva & Print Media Design" },
     ],
   },
 ];
@@ -350,9 +368,11 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     title: "DanumaAI — AI-Powered Educational Ecosystem",
     subtitle:
       "Powered by Corvento Technologies • Web App, Google Play Store App & Telegram AI Bot",
-    role: "Founder & Lead Developer (Powered by Corvento Technologies)",
+    role: "Founder & Lead Developer",
     period: "2026 – Present",
-    category: "AI & RAG Systems",
+    statusBadge: "Active Flagship • Live",
+    statusTone: "active",
+    category: "AI & EdTech",
     featured: true,
     logo: "/DanumaAI.jpg",
     secondaryLogo: "/CorventoTechLogo.jpg",
@@ -362,7 +382,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
       { label: "Play Store Downloads", value: "3,200+" },
       { label: "Active Students", value: "1,500+" },
       { label: "3-Platform Ecosystem", value: "Web • Play Store • TG Bot" },
-      { label: "Master Entity", value: "Corvento Tech" },
+      { label: "Parent Entity", value: "Corvento Tech" },
     ],
     stack: [
       "Next.js Web App",
@@ -377,7 +397,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     overview:
       "Flagship AI educational ecosystem powered by Corvento Technologies, operating seamlessly across a full-featured Web App (danumaai.lk), an official Google Play Store Android App (3,200+ downloads), and an interactive Telegram AI Bot (@DanumaAI_Bot). Assists Sri Lankan students with automated syllabus explanations, step-by-step past-paper analysis, mind-map generation, and trilingual (Sinhala, Tamil, English) learning workflows.",
     highlights: [
-      "Powered and operated by Corvento Technologies as a unified 3-platform ecosystem: Web Platform, Google Play Store Android App, and interactive Telegram Bot.",
+      "Powered and operated by Corvento Technologies across 3 synchronized platforms: Web App, Google Play Store Android App, and interactive Telegram Bot.",
       "Architected Retrieval-Augmented Generation (RAG) workflows and multimodal image-based problem solving for Technology-stream (ET, SFT, ICT) and national curricula.",
       "Built a custom contextual ad-placement engine enabling tuition educators to integrate targeted promotional material directly into the student learning experience.",
     ],
@@ -429,18 +449,21 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     id: "quizzygram",
     index: "02",
     title: "Quizzygram — Interactive Social Learning & Quiz Platform",
-    subtitle: "Telegram-Style Real-Time Chats, Forums, Channels, Quizzes & Competitions",
-    role: "Senior Web Developer (Education Channel Ecosystem)",
+    subtitle:
+      "Telegram-Style Real-Time Chats, Forums, Channels, Quizzes & Competitions",
+    role: "Senior Web Developer",
     period: "2025 – Present",
+    statusBadge: "Educational Channel SL",
+    statusTone: "client",
     category: "Full-Stack Web",
     logo: "/QuzziygramLogo.png",
     secondaryLogo: "/eduChannel-circleLogo.png",
-    poweredBy: "Operated under Education Channel TG",
+    poweredBy: "Educational Channel SL (Telegram Community)",
     accentColor: "#34D399",
     metrics: [
       { label: "Core Features", value: "Chats • Forums • Quizzes" },
       { label: "Gamification", value: "Live Competitions" },
-      { label: "Community Origin", value: "Education Channel TG" },
+      { label: "Community Hub", value: "Education Channel TG" },
     ],
     stack: [
       "Next.js",
@@ -451,15 +474,15 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
       "Tailwind CSS",
     ],
     overview:
-      "Developed as part of the Education Channel Telegram community ecosystem, Quizzygram is an interactive educational web platform combining Telegram-style real-time chats, student discussion forums, topic channels, timed quizzes, and live leaderboard competitions.",
+      "Overseeing web development as Senior Web Developer for Quizzygram (quizzygram.com), integrated with one of Sri Lanka's prominent educational Telegram communities (Educational Channel SL). Engineered Telegram-inspired real-time chats, student discussion forums, topic channels, timed quizzes, and live leaderboard competitions.",
     highlights: [
-      "Engineered Telegram-inspired real-time chat interfaces, subject channels, and structured community discussion forums for students.",
+      "Engineered Telegram-style real-time chat interfaces, subject channels, and structured community discussion forums for students.",
       "Built interactive quiz engines, timed exam challenges, and competitive leaderboards to drive student engagement.",
       "Optimized responsive frontend modules, API integrations, and client-side state stability as Senior Web Developer.",
     ],
     links: [
       {
-        label: "Education Channel Community (TG)",
+        label: "Educational Channel SL (Telegram)",
         url: "https://t.me/Educationatgangstersquad",
         type: "telegram",
       },
@@ -486,8 +509,10 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     index: "03",
     title: "Past Papers Wiki — Custom Internal Booking Engine",
     subtitle: "Automated Reservation & Scheduling System for PastPapers.Wiki",
-    role: "Full-Stack Architect & Commercial Operations",
+    role: "Full-Stack Architect & Sales Manager",
     period: "2025 – Present",
+    statusBadge: "Active Internal System",
+    statusTone: "client",
     category: "Full-Stack Web",
     logo: "/paperwiki logo.jpeg",
     accentColor: "#818CF8",
@@ -498,10 +523,10 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     ],
     stack: ["Next.js", "Node.js", "MongoDB", "REST APIs", "Tailwind CSS"],
     overview:
-      "Engineered a custom internal booking and scheduling architecture tailored for the Past Papers Wiki organization to automate commercial ad-slot reservations, educator onboarding, and campaign management.",
+      "Engineered a custom internal booking and scheduling architecture for Past Papers Wiki (pastpapers.wiki) to automate commercial ad-slot reservations, educator onboarding, and campaign management alongside coordinating online sales.",
     highlights: [
       "Designed seamless internal reservation and scheduling workflows with strict conflict validation and atomic backend state handling.",
-      "Aligned technical booking infrastructure with commercial operations and partner outreach for the public PastPapers.Wiki platform.",
+      "Coordinate online sales, partner outreach, and distribution of past examination resources for students across Sri Lanka.",
     ],
     links: [
       {
@@ -528,67 +553,15 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     ],
   },
   {
-    id: "memo-ai",
-    index: "04",
-    title: "MemoAI — Scalable Community AI Bot & Dashboard",
-    subtitle: "High-Concurrency Discord AI Assistant & OAuth2 Web Playground",
-    role: "Creator & Backend Developer (Powered by Corvento Technologies)",
-    period: "2022 – 2026",
-    category: "Bots & Distributed",
-    logo: "/MemoAI.png",
-    secondaryLogo: "/CorventoTechLogo.jpg",
-    poweredBy: "Powered by Corvento Technologies",
-    accentColor: "#C084FC",
-    metrics: [
-      { label: "Historical Users", value: "206,600+" },
-      { label: "Discord Servers", value: "2,157+" },
-      { label: "Dashboard", value: "Discord OAuth2" },
-    ],
-    stack: [
-      "Node.js",
-      "Express.js",
-      "Discord.js",
-      "MongoDB",
-      "OpenAI API",
-      "Discord OAuth2",
-    ],
-    overview:
-      "An AI assistant bot and management dashboard powered by Corvento Technologies (formerly Lycoryx), providing conversational utilities, vision testing, and image generation to online communities.",
-    highlights: [
-      "Handled asynchronous request pipelines and rate-limiting across 2,150+ connected Discord servers reaching over 200,000 cumulative users.",
-      "Built Discord OAuth2 authentication workflows, prompt sandboxing, and web management dashboards.",
-    ],
-    links: [
-      {
-        label: "Web Playground Repo",
-        url: "https://github.com/KevinBandara/MemoAI-Web-Playground",
-        type: "github",
-      },
-    ],
-    architecture: [
-      {
-        layer: "GATEWAY & WEB TIER",
-        title: "Discord Shards + Express Web Playground",
-        tech: "Discord.js + Express.js + OAuth2",
-        detail:
-          "Processes slash commands across 2,150+ guilds while serving an authenticated web dashboard.",
-      },
-      {
-        layer: "ASYNC PIPELINE",
-        title: "Concurrency & Rate-Limiting Middleware",
-        tech: "Node.js Async Queues + OpenAI API + MongoDB",
-        detail:
-          "Protects downstream LLM & image generation endpoints from burst community traffic.",
-      },
-    ],
-  },
-  {
     id: "kev-thash-sweet-treats",
-    index: "05",
+    index: "04",
     title: "Kev & Thash Sweet Treats — Bilingual E-Commerce Platform",
-    subtitle: "Custom Confectionery Storefront with English/Sinhala i18n & WhatsApp Ordering",
+    subtitle:
+      "Custom Confectionery Storefront with English/Sinhala i18n & WhatsApp Ordering",
     role: "Full-Stack Developer",
     period: "2025 – Present",
+    statusBadge: "Live Production",
+    statusTone: "active",
     category: "Full-Stack Web",
     logo: "/KevAndThashLogo.png",
     accentColor: "#F472B6",
@@ -633,64 +606,102 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     ],
   },
   {
-    id: "creative-design-reels",
-    index: "06",
-    title: "Creative Design, Adobe Suite & Reel Production",
-    subtitle: "Adobe Photoshop, Illustrator, Premiere Pro, After Effects & Brand Identity",
-    role: "Creative Director & Designer (Corvento & Freelance)",
-    period: "2022 – Present",
-    category: "Creative & Media",
-    logo: "/CorventoTechLogo.jpg",
-    poweredBy: "Powered by Corvento Technologies & Global Freelance",
-    accentColor: "#FBBF24",
+    id: "memo-ai",
+    index: "05",
+    title: "MemoAI — Scalable Community AI Bot & Web Playground",
+    subtitle:
+      "Scaled to 206,600+ Users Across 2,157+ Discord Servers (Discontinued April 2025)",
+    role: "Creator & Backend Developer",
+    period: "2022 – Apr 2025",
+    statusBadge: "Sunset Apr 2025 (Financial Scaling Costs)",
+    statusTone: "archived",
+    category: "Archived Ventures",
+    logo: "/MemoAI.png",
+    secondaryLogo: "/CorventoTechLogo.jpg",
+    poweredBy: "Corvento / Lycoryx Archive",
+    accentColor: "#C084FC",
     metrics: [
-      { label: "Creative Suite", value: "Adobe Ps • Ai • Pr • Ae" },
-      { label: "Video & Reels", value: "@corventotech" },
-      { label: "Credential", value: "Graphic Design Diploma" },
+      { label: "Historical Users", value: "206,600+" },
+      { label: "Discord Servers", value: "2,157+" },
+      { label: "Status", value: "Sunset Apr 2025" },
     ],
     stack: [
-      "Adobe Photoshop",
-      "Adobe Illustrator",
-      "Adobe Premiere Pro",
-      "Adobe After Effects",
-      "Adobe Lightroom",
-      "Figma UI/UX",
-      "Short-Form Reel Editing",
-      "Brand Identity Design",
+      "Node.js",
+      "Express.js",
+      "Discord.js",
+      "MongoDB",
+      "OpenAI API",
+      "Discord OAuth2",
     ],
     overview:
-      "Alongside software engineering, I design complete visual identities, promotional graphics, UI/UX prototypes, and high-retention short-form video/reel edits using the Adobe Creative Suite (Photoshop, Illustrator, Premiere Pro, After Effects, Lightroom) and Figma for Corvento Technologies (@corventotech) and international freelance clients.",
+      "An AI assistant bot and Discord OAuth2 web management dashboard built under Lycoryx / Corvento Technologies that scaled to over 206,600 users across 2,157+ servers. Discontinued in April 2025 due to high LLM API and financial hosting costs at scale.",
     highlights: [
-      "Curated a comprehensive Graphic Design portfolio built with Adobe Photoshop and Adobe Illustrator spanning brand logos, social media campaigns, educational posters, and UI assets.",
-      "Produce and edit engaging technology reels, motion graphics, and digital content using Adobe Premiere Pro and After Effects for the Corvento Technologies YouTube (@corventotech) and social channels.",
-      "Delivered custom graphic design, branding, and web UI packages for clients on Fiverr, Upwork, and local businesses.",
+      "Engineered asynchronous request pipelines and rate-limiting middleware across 2,157+ connected Discord servers reaching 206,600+ users.",
+      "Built Discord OAuth2 authentication workflows, prompt sandboxing, and web management dashboards before concluding operations in April 2025 due to financial scaling constraints.",
     ],
     links: [
       {
-        label: "Graphic Design Portfolio (Google Drive)",
-        url: "https://drive.google.com/drive/folders/184pMfdN0AlFBfXTEU8eSFVQzaEWJ4IJ5?usp=drive_link",
-        type: "drive",
-      },
-      {
-        label: "Corvento Tech YouTube & Reels",
-        url: "https://www.youtube.com/@corventotech",
-        type: "youtube",
+        label: "Web Playground Repo (GitHub)",
+        url: "https://github.com/KevinBandara/MemoAI-Web-Playground",
+        type: "github",
       },
     ],
     architecture: [
       {
-        layer: "BRAND & VISUAL DESIGN",
-        title: "Identity Systems, Posters & UI Assets",
-        tech: "Adobe Illustrator + Photoshop + Figma",
+        layer: "GATEWAY & WEB TIER",
+        title: "Discord Shards + Express Web Playground",
+        tech: "Discord.js + Express.js + OAuth2",
         detail:
-          "High-impact visual design across tech ventures, educational campaigns, and commercial client brands.",
+          "Processed slash commands across 2,157+ guilds while serving an authenticated web dashboard.",
       },
       {
-        layer: "MOTION & REEL PRODUCTION",
-        title: "Short-Form Video & Tech Content Editing",
-        tech: "Reels Editing + Audio Sync + Visual Storytelling",
+        layer: "ASYNC PIPELINE",
+        title: "Concurrency & Rate-Limiting Middleware",
+        tech: "Node.js Async Queues + OpenAI API + MongoDB",
         detail:
-          "Fast-paced, high-retention video edits published across YouTube (@corventotech) and social channels.",
+          "Managed high-volume community LLM and image generation requests prior to April 2025 sunset.",
+      },
+    ],
+  },
+  {
+    id: "blackwolf-mc",
+    index: "06",
+    title: "BlackWolf Minecraft Server — Multiplayer Game Infrastructure",
+    subtitle:
+      "Custom Multiplayer Server Network, Community Economy & Plugin Ecosystem",
+    role: "Founder & Server Administrator (Asteroid Technologies)",
+    period: "2020 – 2022",
+    statusBadge: "Archived Gaming Venture",
+    statusTone: "archived",
+    category: "Archived Ventures",
+    logo: "/BlackWolfMC-Logo.jpg",
+    poweredBy: "Asteroid Technologies Origin",
+    accentColor: "#F59E0B",
+    metrics: [
+      { label: "Studio Era", value: "Asteroid Tech" },
+      { label: "Infrastructure", value: "Custom MC Network" },
+      { label: "Status", value: "Completed / Archived" },
+    ],
+    stack: [
+      "Java / Spigot / PaperMC",
+      "Linux VPS Administration",
+      "Server Plugins & Configs",
+      "Discord Community Integration",
+    ],
+    overview:
+      "Founded and operated the BlackWolf Minecraft multiplayer network during the Asteroid Technologies era. Managed dedicated Linux game server hosting, custom plugin configurations, in-game economy balancing, and Discord community synchronization before transitioning focus to AI and full-stack software.",
+    highlights: [
+      "Configured and optimized multiplayer Minecraft server performance, custom plugins, anti-cheat security, and automated backups.",
+      "Built and moderated an active player community on Discord, laying the operational foundation for Asteroid Technologies (now Corvento Technologies).",
+    ],
+    links: [],
+    architecture: [
+      {
+        layer: "GAME SERVER TIER",
+        title: "PaperMC / Spigot Multiplayer Node",
+        tech: "Linux VPS + Java Runtime + Custom Plugins",
+        detail:
+          "Low-latency multiplayer world management, permissions hierarchy, and custom gameplay mechanics.",
       },
     ],
   },
@@ -706,11 +717,11 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     type: "Venture & Product Engineering",
     logo: "/CorventoTechLogo.jpg",
     description:
-      "Founded and scaled the single master technology entity operating DanumaAI, MemoAI, proprietary web platforms, YouTube/Reels media (@corventotech), and a 74,000+ subscriber WhatsApp digital media network. Evolved the company identity from Asteroid Technologies to Lycoryx Technologies, and now Corvento Technologies.",
+      "Founded and scaled the single master technology entity powering DanumaAI (Web, Play Store, Telegram Bot), @corventotech YouTube/Reels, and a 74,000+ subscriber WhatsApp digital media network. Evolved the company from Asteroid Technologies (BlackWolf MC) to Lycoryx Technologies (MemoAI — 206K+ users, sunset Apr 2025), and now Corvento Technologies.",
     achievements: [
-      "Architected and launched DanumaAI across Web, Google Play Store (Android), and Telegram Bot with RAG workflows and a custom educator ad engine.",
-      "Built and operated MemoAI, scaling asynchronous Discord.js and OpenAI pipelines to 206,000+ historical users across 2,157+ servers.",
-      "Grew and actively manage 4 daily-updated WhatsApp channels (Achievers Hub, Lanka Diaries, Sarasavi Sihinaya, Sarasavi Pin Bima) reaching 74,000+ followers.",
+      "Architected and launched DanumaAI (Powered by Corvento Technologies) across Web, Google Play Store (3,200+ downloads), and Telegram Bot with Gemini RAG workflows.",
+      "Grew and manage 4 daily-updated WhatsApp broadcast channels (Achievers Hub, Lanka Diaries, Sarasavi Sihinaya, Sarasavi Pin Bima) reaching 74,000+ subscribers.",
+      "Previously built and scaled MemoAI to 206,600+ users across 2,157+ Discord servers before concluding operations in April 2025 due to financial scaling costs.",
     ],
     technologies: [
       "Next.js",
@@ -719,7 +730,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
       "Node.js",
       "MongoDB Atlas",
       "Gemini & OpenAI APIs",
-      "Digital Media & Reels",
+      "Adobe Creative Suite",
     ],
     links: [
       { label: "DanumaAI Web", url: "https://danumaai.lk/" },
@@ -730,20 +741,40 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     ],
   },
   {
+    id: "maos-office",
+    role: "Digital Operations Coordinator",
+    company: "MAOS Office",
+    period: "Oct 2026 – Present",
+    location: "Remote • Part-Time",
+    type: "Digital Operations",
+    logo: "/AchieversHub.jpg",
+    description:
+      "Managing digital academic resource distribution, student communications, and broadcast channel optimization for online learning programs.",
+    achievements: [
+      "Manage and distribute academic resources across 3 official educational WhatsApp broadcast channels.",
+      "Coordinate student communications, announcements, and optimize broadcast reach for online learning programs.",
+    ],
+    technologies: [
+      "Digital Operations",
+      "WhatsApp Broadcast Systems",
+      "Student Communications",
+      "Audience Analytics",
+    ],
+  },
+  {
     id: "quizzygram",
     role: "Senior Web Developer",
-    company: "Quizzygram — Under Education Channel Community",
+    company: "quizzygram.com (Educational Channel SL)",
     period: "2025 – Present",
-    location: "Sri Lanka",
+    location: "Remote • Part-Time",
     type: "Software Engineering",
     logo: "/QuzziygramLogo.png",
     secondaryLogo: "/eduChannel-circleLogo.png",
     description:
-      "Served as Senior Web Developer for Quizzygram, established and operated under the Education Channel Telegram community. Engineered interactive social-learning web modules combining Telegram-style chats, forums, channels, quizzes, and live student competitions.",
+      "Overseeing web development for Quizzygram, a social-learning platform integrated with one of Sri Lanka's prominent educational Telegram communities (Educational Channel SL).",
     achievements: [
-      "Developed Telegram-style real-time chat workflows, structured student forums, and educational channel feeds for the Quizzygram web platform.",
-      "Engineered interactive quiz systems, timed assessments, and live competition leaderboards.",
-      "Collaborated within the Education Channel ecosystem to scale student engagement and frontend reliability.",
+      "Engineered Telegram-style real-time chat workflows, structured student forums, and educational channel feeds.",
+      "Developed interactive quiz engines, timed assessments, and live competition leaderboards.",
     ],
     technologies: [
       "Next.js",
@@ -755,59 +786,57 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     ],
     links: [
       {
-        label: "Education Channel TG Community",
+        label: "Educational Channel SL (TG)",
         url: "https://t.me/Educationatgangstersquad",
       },
     ],
   },
   {
     id: "paperwikipedia",
-    role: "Commercial Operations / Sales & Full-Stack Architect",
-    company: "PaperWikipedia (Past Papers Wiki)",
+    role: "Sales Manager & Full-Stack Booking Architect",
+    company: "Past Papers Wiki (pastpapers.wiki)",
     period: "2025 – Present",
-    location: "Sri Lanka",
-    type: "Operations & Architecture",
+    location: "Remote • Part-Time",
+    type: "Sales & System Architecture",
     logo: "/paperwiki logo.jpeg",
     description:
-      "Managing user onboarding workflows, digital operations, commercial outreach, and custom internal booking engine architecture for Past Papers Wiki (pastpapers.wiki).",
+      "Coordinating the distribution and online sales of past examination papers and educational resources for students across Sri Lanka, while architecting the custom internal booking system.",
     achievements: [
-      "Architected the custom Next.js, Node.js, and MongoDB internal booking engine to automate reservation and campaign scheduling.",
-      "Led partner acquisition, educator onboarding workflows, and commercial sales operations.",
+      "Coordinate online sales, partner outreach, and nationwide educational resource distribution for Past Papers Wiki.",
+      "Architected the custom Next.js, Node.js, and MongoDB internal booking engine to automate advertising slot reservations and campaign scheduling.",
     ],
     technologies: [
+      "Online Sales & Operations",
       "Next.js",
       "Node.js",
       "MongoDB",
-      "Commercial Operations & Sales",
       "REST APIs",
     ],
     links: [
-      { label: "Official Public Website", url: "https://pastpapers.wiki/" },
+      { label: "Official Website (pastpapers.wiki)", url: "https://pastpapers.wiki/" },
     ],
   },
   {
     id: "freelance",
-    role: "Freelance Full-Stack Developer & Creative Designer",
-    company: "Fiverr, Upwork & Direct Client Contracts",
+    role: "Freelance Web Developer & Graphics Designer",
+    company: "Fiverr, Upwork & Direct Clients",
     period: "2022 – Present",
-    location: "Remote / Worldwide",
-    type: "Global Freelance Delivery",
+    location: "Remote • Self-Employed",
+    type: "Global Freelance",
     logo: "/LycoryxTech.jpg",
     description:
-      "Delivering custom full-stack web applications, dynamic landing pages, backend APIs, graphic design assets, and short-form video/reel edits for international and local clients on Fiverr, Upwork, and direct engagements.",
+      "Delivering custom full-stack web applications, bilingual e-commerce storefronts, brand identities, graphic design, and short-form video/reel edits on Fiverr, Upwork, and direct client contracts.",
     achievements: [
-      "Completed diverse freelance projects on Fiverr and Upwork spanning Next.js/React web apps, Laravel MVC portals, and custom business websites.",
-      "Delivered production e-commerce storefronts such as Kev & Thash Sweet Treats with bilingual (EN/SI) localization and WhatsApp automation.",
-      "Provided end-to-end brand identity design, graphic design, and promotional reel editing for digital brands.",
+      "Completed international and local freelance projects on Fiverr and Upwork spanning Next.js/React web platforms, Laravel MVC systems, and e-commerce sites.",
+      "Built production storefronts such as Kev & Thash Sweet Treats with English/Sinhala localization and WhatsApp ordering.",
+      "Created brand identities, social media visuals, and motion reel edits using Adobe Photoshop, Illustrator, Premiere Pro, and After Effects.",
     ],
     technologies: [
       "Fiverr & Upwork",
-      "Next.js",
-      "TypeScript",
-      "Node.js",
+      "Next.js & React",
       "Laravel",
-      "Graphic Design",
-      "Reel Editing",
+      "Adobe Photoshop & Illustrator",
+      "Premiere Pro & After Effects",
     ],
     links: [
       {
@@ -823,66 +852,250 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
 ];
 
 export const EDUCATION_DATA: EducationItem[] = [
+  // Degrees & Secondary Education
   {
     id: "ucsc-bit",
     degree: "Bachelor of Information Technology (BIT)",
     institution:
       "University of Colombo School of Computing (UCSC) via OpenArc Campus",
-    status: "Undergraduate",
-    badge: "University Degree",
+    year: "Present",
+    category: "degree",
+    badge: "University Undergraduate",
     details: [
-      "Reading for the Bachelor of Information Technology (BIT) degree at UCSC.",
-      "Focus on Software Engineering, Full-Stack Systems, Databases, and Network Architecture.",
-    ],
-  },
-  {
-    id: "esoft-se",
-    degree: "Pearson Diploma in Software Engineering",
-    institution: "ESOFT Metro Campus",
-    status: "Completed",
-    badge: "Software Engineering",
-    details: [
-      "Comprehensive training in software development lifecycles, object-oriented programming, database design, and system architecture.",
-    ],
-  },
-  {
-    id: "esoft-english",
-    degree: "Pearson Diploma in English",
-    institution: "ESOFT Metro Campus",
-    status: "Completed",
-    badge: "Professional English",
-    details: [
-      "Advanced academic and professional English communication, business writing, and presentation skills.",
-    ],
-  },
-  {
-    id: "codexpress-laravel",
-    degree: "Laravel Web Development Certificate",
-    institution: "CodeXPress",
-    status: "Certified",
-    badge: "Full-Stack MVC",
-    details: [
-      "Full-stack MVC web application development using PHP, Laravel, relational SQL schemas, and RESTful routing.",
-    ],
-  },
-  {
-    id: "atari-graphic-design",
-    degree: "Diploma in Graphic Design",
-    institution: "ATARI CITY Campus",
-    status: "Completed",
-    badge: "Visual & UI Design",
-    details: [
-      "Visual identity systems, digital illustration, UI composition, Adobe Photoshop, and Adobe Illustrator.",
+      "Reading for the Bachelor of Information Technology (BIT) degree at the University of Colombo School of Computing (UCSC).",
+      "Core focus on Software Engineering, Full-Stack Systems, Database Management, and Network Architecture.",
     ],
   },
   {
     id: "isipathana-al",
     degree: "G.C.E. Advanced Level (Technology Stream)",
     institution: "Isipathana College, Colombo",
-    status: "Completed",
-    badge: "Secondary Alma Mater",
+    year: "Completed",
+    category: "degree",
+    badge: "Alma Mater",
     details: [
       "Engineering Technology (ET), Science for Technology (SFT), and Information & Communication Technology (ICT — English Medium).",
+      "Active member of the ICT and Robotics Society, School Rugby Player (2016–2018), Prefect, and House Captain.",
     ],
+  },
+
+  // Diplomas (5)
+  {
+    id: "esoft-se-diploma",
+    degree: "Pearson Assured Diploma in Software Engineering (DTEC)",
+    institution: "ESOFT Metro Campus",
+    year: "2023",
+    category: "diploma",
+    badge: "Pearson Assured",
+    details: [
+      "Comprehensive diploma in Software Engineering lifecycles, object-oriented programming, relational databases, and system design.",
+    ],
+  },
+  {
+    id: "esoft-english-diploma",
+    degree: "Pearson Assured Diploma in English",
+    institution: "ESOFT Metro Campus",
+    year: "2024",
+    category: "diploma",
+    badge: "Pearson Assured",
+    details: [
+      "Advanced academic and professional English communication, business writing, and presentation mastery.",
+    ],
+  },
+  {
+    id: "atari-graphic-diploma",
+    degree: "Diploma in Graphic Designing & Multimedia",
+    institution: "ATARI City Campus",
+    year: "2026",
+    category: "diploma",
+    badge: "Merit Scholarship Recipient",
+    details: [
+      "Awarded the ATARI City Campus Scholarship based on academic excellence and merit (2025). Focused on visual branding, multimedia design, and UI composition.",
+    ],
+  },
+  {
+    id: "oxborn-spoken-english",
+    degree: "Diploma in Spoken English",
+    institution: "Oxborn College",
+    year: "2026",
+    category: "diploma",
+    badge: "Diploma",
+    details: [
+      "Professional spoken fluency, executive communication, and public speaking.",
+    ],
+  },
+  {
+    id: "english-7-boxes",
+    degree: "Diploma in English 7 Boxes",
+    institution: "Dr. Lakshitha Prasad",
+    year: "2026",
+    category: "diploma",
+    badge: "Diploma",
+    details: [
+      "Structured English grammar, professional syntax, and applied communication framework.",
+    ],
+  },
+
+  // Professional Certificates (7)
+  {
+    id: "uom-frontend",
+    degree: "Certificate in Front-End Web Development",
+    institution: "University of Moratuwa",
+    year: "2023",
+    category: "certificate",
+    badge: "University of Moratuwa",
+    details: [
+      "Modern front-end architecture, responsive UI engineering, JavaScript DOM, and web standards.",
+    ],
+  },
+  {
+    id: "uom-web-design",
+    degree: "Certificate in Web Design for Beginners",
+    institution: "University of Moratuwa",
+    year: "2023",
+    category: "certificate",
+    badge: "University of Moratuwa",
+    details: [
+      "Foundations of web design, HTML5/CSS3 layout systems, and user interface design principles.",
+    ],
+  },
+  {
+    id: "codexpress-laravel",
+    degree: "Certificate in Laravel Web Development",
+    institution: "CodeXpress Academy",
+    year: "2025",
+    category: "certificate",
+    badge: "Full-Stack MVC",
+    details: [
+      "Full-stack PHP & Laravel MVC web application development, RESTful routing, authentication, and SQL database modeling.",
+    ],
+  },
+  {
+    id: "psd-premiere-pro",
+    degree: "Certificate in Adobe Premiere Pro",
+    institution: "PSD Academy",
+    year: "2025",
+    category: "certificate",
+    badge: "Video Production",
+    details: [
+      "Professional non-linear video editing, timeline mastering, audio synchronization, and high-retention reel production.",
+    ],
+  },
+  {
+    id: "psd-after-effects",
+    degree: "Certificate in Adobe After Effects",
+    institution: "PSD Academy",
+    year: "2025",
+    category: "certificate",
+    badge: "Motion Graphics",
+    details: [
+      "Motion graphics, visual effects compositing, kinetic typography, and dynamic video animations.",
+    ],
+  },
+  {
+    id: "itd-photoshop",
+    degree: "Certifications in Photoshop & Graphics Design",
+    institution: "ITD Institute",
+    year: "2024",
+    category: "certificate",
+    badge: "Graphic Design",
+    details: [
+      "Advanced digital imaging, composite manipulation, poster design, and brand visual creation in Adobe Photoshop.",
+    ],
+  },
+  {
+    id: "esoft-it-cert",
+    degree: "Certificate in Information Technology",
+    institution: "ESOFT Campus",
+    year: "2022",
+    category: "certificate",
+    badge: "IT Foundations",
+    details: [
+      "Core computing fundamentals, software applications, networking basics, and information systems.",
+    ],
+  },
+];
+
+export const ACHIEVEMENTS_DATA: AchievementItem[] = [
+  {
+    id: "atari-scholarship",
+    title: "Recipient of the Academic Merit Scholarship",
+    organization: "ATARI City Campus",
+    year: "2025",
+    category: "competition",
+    highlight:
+      "Awarded a merit scholarship based on academic excellence and creative distinction.",
+  },
+  {
+    id: "ai-robotics-icbt",
+    title: "8th Place among 500 Competitors — AI & Robotics Competition",
+    organization: "Organized by Isipathana College at ICBT Campus",
+    year: "2024",
+    category: "competition",
+    highlight:
+      "Ranked Top 8 out of 500 participants in the competitive AI & Robotics challenge hosted at ICBT Campus.",
+  },
+  {
+    id: "apeiro-21",
+    title: "Top 50 Finisher — Apeiro 21 Interschool Lecture Series",
+    organization: "ICT and Robotics Society of Isipathana College",
+    year: "2023",
+    category: "competition",
+    highlight:
+      "Recognized among the Top 50 finishers in the interschool technology & robotics series.",
+  },
+  {
+    id: "quiz-winner-2021",
+    title: "Winner — ICT & Robotics Quiz Competition",
+    organization: "ICT and Robotics Society of Isipathana College",
+    year: "2021",
+    category: "competition",
+    highlight:
+      "First-place winner in the school ICT and Robotics quiz championship.",
+  },
+  {
+    id: "chess-achievements",
+    title: "2nd Runner-Up (Rapid Chess) & 8th Place All-Island Chess",
+    organization: "DGD Chess Club Tournaments",
+    year: "2018 – 2021",
+    category: "sports",
+    highlight:
+      "2nd Runner-Up in the Overall Challenge Rapid Chess Tournament & 8th Place in the Under 11 All-Island Chess Tournament.",
+  },
+  {
+    id: "seylan-art",
+    title: "3rd Place — National Art Competition",
+    organization: "Organized by Seylan Bank",
+    year: "Awarded",
+    category: "competition",
+    highlight:
+      "Secured 3rd place recognition for visual art and creative illustration.",
+  },
+  {
+    id: "isipathana-rugby",
+    title: "College Rugby Player",
+    organization: "Isipathana College, Colombo",
+    year: "2016 – 2018",
+    category: "sports",
+    highlight:
+      "Represented Isipathana College in school rugby (2016–2018), developing high-pressure teamwork and discipline.",
+  },
+  {
+    id: "taekwondo-belt",
+    title: "1st Dan Black Belt & Junior Brown Belt in Taekwondo",
+    organization: "Martial Arts & Athletics",
+    year: "2016 – 2020+",
+    category: "sports",
+    highlight:
+      "Trained in competitive Taekwondo, earning Junior Brown Belt (2016–2020) and advancing to 1st Dan Black Belt.",
+  },
+  {
+    id: "plantara-25",
+    title: "Project 'PLANTARA'25' — Environmental Volunteering",
+    organization: "Rotaract Club of Faculty of Science, University of Colombo",
+    year: "2025",
+    category: "volunteering",
+    highlight:
+      "Contributed to a community sustainability initiative that successfully planted 300 native plants.",
   },
 ];

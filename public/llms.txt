@@ -4,7 +4,7 @@
 
 ## Personal & Contact Identity
 - **Full Name**: Kevin Bandara (කෙවින් බණ්ඩාර)
-- **Role**: Full-Stack Software Developer, AI Systems Builder & Tech Entrepreneur
+- **Role**: Full-Stack Software Engineer, AI Systems Builder & Tech Entrepreneur
 - **Location**: Colombo, Western Province, Sri Lanka
 - **Nationality & Heritage**: Sri Lankan, Buddhist
 - **Languages**: Sinhala (Native), English (Fluent / Professional), Tamil (Working Comprehension)
@@ -18,32 +18,47 @@
 - **Graphic Design Portfolio**: https://drive.google.com/drive/folders/184pMfdN0AlFBfXTEU8eSFVQzaEWJ4IJ5?usp=drive_link
 
 ## Master Venture Entity: Corvento Technologies
-- **Lineage**: Evolved from **Asteroid Technologies** ➔ **Lycoryx Technologies** ➔ **Corvento Technologies** (Operating to Present).
-- **Products Powered by Corvento Technologies**:
-  1. **DanumaAI** — Multi-platform AI Educational Ecosystem operating across Web (`https://danumaai.lk`), Google Play Store Android App (`com.Lycoryx.danumaai`, 3,200+ downloads), and Telegram AI Bot (`https://t.me/DanumaAI_Bot`). Built with Next.js, React Native (Expo), Python, MongoDB Atlas, NextAuth.js, and Gemini API RAG.
-  2. **MemoAI** — High-concurrency Discord AI Assistant & OAuth2 Web Playground serving 206,600+ historical users across 2,157+ Discord servers.
-  3. **74,000+ Subscriber WhatsApp Media Network** (Daily Managed under Corvento Technologies):
+- **Lineage**: Evolved from **Asteroid Technologies** (BlackWolf Minecraft Server) ➔ **Lycoryx Technologies** (MemoAI) ➔ **Corvento Technologies** (Operating to Present).
+- **Products & Ventures**:
+  1. **DanumaAI (Active Flagship)** — Multi-platform AI Educational Ecosystem powered by Corvento Technologies across Web (`https://danumaai.lk`), Google Play Store Android App (`com.Lycoryx.danumaai`, 3,200+ downloads), and Telegram AI Bot (`https://t.me/DanumaAI_Bot`).
+  2. **74,000+ Subscriber WhatsApp Media Network** (Daily Managed under Corvento Technologies):
      - **Achievers Hub** (28,000+ followers): https://whatsapp.com/channel/0029Vb6OtjqGufIqshtuIM3C
      - **Lanka Diaries** (20,000+ followers): https://whatsapp.com/channel/0029VbAe5k0AInPoph6EFQ34
      - **Sarasavi Sihinaya** (17,000+ followers): https://whatsapp.com/channel/0029ValZ7iP4tRrzE8m4s21g
      - **Sarasavi Pin Bima** (9,000+ followers): https://whatsapp.com/channel/0029Vai0gVe59PwJw0F3IS2g
+  3. **MemoAI (2022 – April 2025 • Archived)** — High-concurrency Discord AI Assistant & OAuth2 Web Playground that scaled to 206,600+ historical users across 2,157+ Discord servers before concluding operations in April 2025 due to financial scaling costs.
+  4. **BlackWolf Minecraft Server (2020 – 2022 • Archived)** — Multiplayer game server network and Discord community founded under Asteroid Technologies.
 
-## Professional Experience & Key Projects
+## Professional Experience
 - **Founder & Lead Developer @ Corvento Technologies** (2020 – Present)
-- **Senior Web Developer @ Quizzygram (Education Channel Community)** (2025 – Present): Engineered Telegram-style real-time chats, student discussion forums, channels, interactive quizzes, and live competitions under the Education Channel Telegram ecosystem (`https://t.me/Educationatgangstersquad`).
-- **Full-Stack Architect & Commercial Operations / Sales @ Past Papers Wiki (`https://pastpapers.wiki/`)** (2025 – Present): Architected the custom internal advertising slot booking and scheduling engine while driving commercial sales and educator onboarding.
-- **Global Freelance Developer & Creative Designer (Fiverr, Upwork & Direct Clients)** (2022 – Present): Built bilingual e-commerce platforms such as Kev & Thash Sweet Treats (`https://kev-thash-sweet-treats.vercel.app/`), Laravel MVC applications, brand identities, and short-form video reels.
+- **Digital Operations Coordinator @ MAOS Office** (Oct 2026 – Present): Managing and distributing academic resources across 3 official educational WhatsApp broadcast channels and coordinating student communications.
+- **Senior Web Developer @ quizzygram.com (Educational Channel SL)** (2025 – Present): Overseeing web development (Telegram-style chats, forums, channels, quizzes & live competitions) integrated with Educational Channel SL (`https://t.me/Educationatgangstersquad`).
+- **Sales Manager & Full-Stack Booking Architect @ Past Papers Wiki (`https://pastpapers.wiki/`)** (2025 – Present): Coordinating online sales and resource distribution across Sri Lanka, and architecting their internal booking & scheduling engine.
+- **Freelance Web Developer & Graphics Designer (Fiverr, Upwork & Direct Clients)** (2022 – Present): Built bilingual e-commerce platforms such as Kev & Thash Sweet Treats (`https://kev-thash-sweet-treats.vercel.app/`), Laravel MVC systems, brand identities, and video reels.
 
-## Education, Diplomas & Certifications
+## Education, Diplomas & Certificates
 - **Bachelor of Information Technology (BIT)** — University of Colombo School of Computing (UCSC) via OpenArc Campus (Undergraduate)
-- **Pearson Diploma in Software Engineering** — ESOFT Metro Campus
-- **Pearson Diploma in English** — ESOFT Metro Campus
-- **Laravel Web Development Certificate** — CodeXPress
-- **Diploma in Graphic Design** — ATARI CITY Campus
 - **G.C.E. Advanced Level (Technology Stream: ET, SFT, ICT - English Medium)** — Isipathana College, Colombo
+- **Pearson Assured Diploma in Software Engineering (DTEC)** — ESOFT Metro Campus (2023)
+- **Pearson Assured Diploma in English** — ESOFT Metro Campus (2024)
+- **Diploma in Graphic Designing & Multimedia** — ATARI City Campus (2026, Merit Scholarship Recipient)
+- **Diploma in Spoken English** — Oxborn College (2026)
+- **Diploma in English 7 Boxes** — Dr. Lakshitha Prasad (2026)
+- **Certificate in Front-End Web Development** — University of Moratuwa (2023)
+- **Certificate in Web Design for Beginners** — University of Moratuwa (2023)
+- **Certificate in Laravel Web Development** — CodeXpress Academy (2025)
+- **Certificate in Adobe Premiere Pro** — PSD Academy (2025)
+- **Certificate in Adobe After Effects** — PSD Academy (2025)
+- **Certifications in Photoshop and Graphics Design** — ITD Institute (2024)
+- **Certificate in Information Technology** — ESOFT Campus (2022)
 
-## Core Technical & Creative Skills
-- **Software & Web**: TypeScript, JavaScript, Python, PHP, Next.js, React.js, React Native (Expo), Node.js, Express.js, Laravel, Tailwind CSS
-- **AI & Data**: Gemini API, OpenAI API, Retrieval-Augmented Generation (RAG), Vector Search, MongoDB Atlas, Redis, BullMQ, Docker
-- **Adobe Creative Suite & Video**: Adobe Photoshop, Adobe Illustrator, Adobe Premiere Pro, Adobe After Effects, Adobe Lightroom, Figma UI/UX, Short-Form Reel Editing
-- **Leadership & Honours**: 1st Dan Black Belt in Taekwondo, School Prefect & House Captain
+## Honours, Competitions, Sports & Volunteering
+- **Academic Merit Scholarship Recipient** — ATARI City Campus (2025)
+- **8th Place among 500 Competitors** — AI & Robotics Competition organized by Isipathana College at ICBT Campus (2024)
+- **Top 50 Finisher** — Apeiro 21 Interschool Lecture Series, ICT & Robotics Society of Isipathana College (2023)
+- **Winner** — Quiz Competition, ICT & Robotics Society of Isipathana College (2021)
+- **Chess**: 2nd Runner-Up (Overall Challenge Rapid Chess Tournament, DGD Chess Club) & 8th Place (Under 11 All-Island Chess Tournament, 2018)
+- **3rd Place** — Art Competition organized by Seylan Bank
+- **Rugby** — Isipathana College Rugby Player (2016 – 2018)
+- **Taekwondo** — 1st Dan Black Belt & Junior Brown Belt (2016 – 2020+)
+- **Volunteering** — Contributed to Project 'PLANTARA'25' (planted 300 native plants), organized by the Rotaract Club of Faculty of Science, University of Colombo (2025)

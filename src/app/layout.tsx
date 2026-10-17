@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
 });
 
 const inter = Inter({
@@ -205,9 +205,14 @@ const jsonLd = {
         "Digital Media & Entrepreneurship",
       ],
       award: [
+        "Academic Merit Scholarship Recipient — ATARI City Campus (2025)",
+        "8th Place among 500 — AI & Robotics Competition at ICBT Campus (2024)",
+        "Top 50 Finisher — Apeiro 21 Interschool Lecture Series (2023)",
+        "Winner — ICT & Robotics Quiz Competition, Isipathana College (2021)",
+        "2nd Runner-Up (Rapid Chess) & 8th Place All-Island Chess Tournament",
+        "3rd Place — Seylan Bank Art Competition",
         "1st Dan Black Belt in Taekwondo",
         "School Prefect & House Captain",
-        "Pearson Diploma in Software Engineering & English",
       ],
       alumniOf: [
         {
@@ -216,16 +221,33 @@ const jsonLd = {
           sameAs: "https://ucsc.cmb.ac.lk/",
         },
         {
+          "@type": "CollegeOrUniversity",
+          name: "University of Moratuwa",
+          sameAs: "https://uom.lk/",
+        },
+        {
           "@type": "EducationalOrganization",
           name: "ESOFT Metro Campus",
         },
         {
           "@type": "EducationalOrganization",
-          name: "ATARI CITY Campus",
+          name: "ATARI City Campus",
         },
         {
           "@type": "EducationalOrganization",
-          name: "CodeXPress",
+          name: "CodeXpress Academy",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "PSD Academy",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "ITD Institute",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "Oxborn College",
         },
         {
           "@type": "EducationalOrganization",
@@ -276,7 +298,7 @@ const jsonLd = {
         "@id": "https://kevinbandara.is-a.dev/#person",
       },
       description:
-        "Master technology and digital media venture founded by Kevin Bandara in Colombo, Sri Lanka, powering DanumaAI, MemoAI, @corventotech YouTube/Reels, and a 74,000+ subscriber WhatsApp channel network.",
+        "Master technology and digital media venture founded by Kevin Bandara in Colombo, Sri Lanka, powering DanumaAI, @corventotech YouTube/Reels, and a 74,000+ subscriber WhatsApp channel network (and formerly MemoAI & BlackWolf MC).",
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+94-71-851-1165",
@@ -315,7 +337,7 @@ const jsonLd = {
           name: "Who is Kevin Bandara?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Kevin Bandara is a Full-Stack Software Developer, AI Systems Builder, Creative Designer, and Tech Entrepreneur based in Colombo, Sri Lanka. He is the Founder of Corvento Technologies (formerly Lycoryx Technologies and Asteroid Technologies), creator of DanumaAI and MemoAI, Senior Web Developer at Quizzygram, Full-Stack Architect at Past Papers Wiki, and an undergraduate reading for the Bachelor of Information Technology (BIT) at the University of Colombo School of Computing (UCSC).",
+            text: "Kevin Bandara is a Full-Stack Software Developer, AI Systems Builder, Creative Designer, and Tech Entrepreneur based in Colombo, Sri Lanka. He is the Founder of Corvento Technologies (formerly Lycoryx Technologies and Asteroid Technologies), creator of DanumaAI and MemoAI, Senior Web Developer at Quizzygram, Sales Manager & Booking System Architect at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and a BIT undergraduate at the University of Colombo School of Computing (UCSC).",
           },
         },
         {
@@ -356,7 +378,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} dark`}
+      className={`${plusJakarta.variable} ${inter.variable} ${jetbrainsMono.variable} dark`}
     >
       <head>
         <link
