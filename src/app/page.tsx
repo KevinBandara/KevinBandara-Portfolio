@@ -1251,7 +1251,7 @@ export default function PortfolioPage() {
                 Education, Diplomas &amp; Achievements
               </h2>
               <p className="text-base sm:text-lg text-slate-300 mt-2 max-w-2xl">
-                Organized clearly across University Degrees, 5 Diplomas, 7 Professional Certificates, and National/School Competitions &amp; Sports.
+                Organized clearly across University Degrees, 6 Accredited Diplomas, 8 Professional Certificates, and 45+ Documented Honours, Transcripts, Competitions &amp; Sports.
               </p>
             </div>
 

@@ -153,6 +153,8 @@ const jsonLd = {
       familyName: "Bandara",
       alternateName: [
         "R.M. Kevin Sharada Bandara",
+        "R.M. Kevin Sharadha Bandara",
+        "R.M.K.S. Bandara",
         "Rathnayaka Mudiyanselage Kevin Sharada Bandara",
         "Kevin Sharada Bandara",
         "කෙවින් බණ්ඩාර",
@@ -214,12 +216,14 @@ const jsonLd = {
       award: [
         "Academic Merit Scholarship Recipient — ATARI City Campus (2025)",
         "8th Place among 500 — AI & Robotics Competition at ICBT Campus (2024)",
-        "Top 50 Finisher — Apeiro 21 Interschool Lecture Series (2023)",
-        "Winner — ICT & Robotics Quiz Competition, Isipathana College (2021)",
-        "2nd Runner-Up (Rapid Chess) & 8th Place All-Island Chess Tournament",
-        "3rd Place — Seylan Bank Art Competition",
-        "1st Dan Black Belt in Taekwondo",
-        "School Prefect & House Captain",
+        "Winner — FUTURA '23 ICT & Robotics Quiz Competition, Isipathana College (2023)",
+        "Top 50 Finisher — Apeiro '21 Quiz (Kingswood Research Unit) & Interschool Series",
+        "Stellata 3.0 Article Writing Competition — Rotaract (RY 2025/26)",
+        "New Media Workshop — Ada Derana & Isipathana College (09-Aug-2023)",
+        "1st Poom Black Belt & 1st RTC Open Taekwondo Championship — Kukkiwon & Sri Lanka Taekwondo Federation (2016–2020)",
+        "2nd Runner-Up (Rapid Chess Challenge), 8th Place & Coaching Award in Chess — DGD Chess Club (2018)",
+        "3rd Place — Seylan Bank Art Competition (2018) & Little Picasso Art Competition (BOC & Ministry of Education, 2018)",
+        "School Prefect, House Captain & College Rugby Player — Isipathana College",
       ],
       alumniOf: [
         {
@@ -229,12 +233,12 @@ const jsonLd = {
         },
         {
           "@type": "CollegeOrUniversity",
-          name: "University of Moratuwa",
+          name: "University of Moratuwa (CODL)",
           sameAs: "https://uom.lk/",
         },
         {
           "@type": "EducationalOrganization",
-          name: "ESOFT Metro Campus",
+          name: "Pearson / ESOFT Metro Campus",
         },
         {
           "@type": "EducationalOrganization",
@@ -250,11 +254,15 @@ const jsonLd = {
         },
         {
           "@type": "EducationalOrganization",
-          name: "ITD Institute",
+          name: "ITD Institute SL",
         },
         {
           "@type": "EducationalOrganization",
           name: "Oxborn College",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "Institute of Western Music & Speech (IWMS)",
         },
         {
           "@type": "EducationalOrganization",

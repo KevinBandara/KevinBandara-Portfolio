@@ -39,29 +39,33 @@
 - **Sales Manager & Full-Stack Booking Architect @ Past Papers Wiki (`https://pastpapers.wiki/`)** (2025 – Present): Coordinating online sales and resource distribution across Sri Lanka, and architecting their internal booking & scheduling engine.
 - **Freelance Web Developer & Graphics Designer (Fiverr, Upwork & Direct Clients)** (2022 – Present): Built bilingual e-commerce platforms such as Kev & Thash Sweet Treats (`https://kev-thash-sweet-treats.vercel.app/`), Laravel MVC systems, brand identities, and video reels.
 
-## Education, Diplomas & Certificates
+## Education, Diplomas & Certificates (45+ Verified Credentials & Transcripts)
 - **Bachelor of Information Technology (BIT)** — University of Colombo School of Computing (UCSC) via OpenArc Campus (Undergraduate)
 - **G.C.E. Advanced Level (Technology Stream: ET, SFT, ICT - English Medium)** — Isipathana College, Colombo
-- **Pearson Assured Diploma in Software Engineering (DTEC)** — ESOFT Metro Campus (2023)
-- **Pearson Assured Diploma in English** — ESOFT Metro Campus (2024)
-- **Diploma in Graphic Designing & Multimedia** — ATARI City Campus (2026, Merit Scholarship Recipient)
-- **Diploma in Spoken English** — Oxborn College (2026)
+- **Pearson Assured Diploma in Information Technology (DITEC) & Software Engineering + Academic Transcript** — Pearson / ESOFT Metro Campus (08-Oct-2023)
+- **Pearson Assured Diploma in English** — ESOFT Metro Campus (28-Feb-2024)
+- **1-Year Graphic Designing & Multimedia Diploma + Level 02 Academic Transcript** — ATARI City Campus (06-Apr-2026, Academic Merit Scholarship Recipient)
+- **Diploma & Certificate Course in Spoken English** — Oxborn College
 - **Diploma in English 7 Boxes** — Dr. Lakshitha Prasad (2026)
-- **Certificate in Front-End Web Development** — University of Moratuwa (2023)
-- **Certificate in Web Design for Beginners** — University of Moratuwa (2023)
+- **Graded Spoken & Written English Examinations (11 Certificates & Marksheets: Preliminary 2016, Elementary 2017, Graded 2018, Transitional 2019, Written Grade 1 2019)** — Institute of Western Music & Speech (IWMS)
+- **Certificate in Front-End Web Development** — CODL, University of Moratuwa (2023)
+- **Certificate in Python for Beginners** — CODL, University of Moratuwa (2023)
+- **Certificate in Web Design for Beginners** — CODL, University of Moratuwa (2023)
 - **Certificate in Laravel Web Development** — CodeXpress Academy (2025)
-- **Certificate in Adobe Premiere Pro** — PSD Academy (2025)
-- **Certificate in Adobe After Effects** — PSD Academy (2025)
-- **Certifications in Photoshop and Graphics Design** — ITD Institute (2024)
-- **Certificate in Information Technology** — ESOFT Campus (2022)
+- **Certificate & Official Academic Transcript in Video Editing (Adobe Premiere Pro)** — PSD Academy (23-Aug-2025)
+- **Certificate & Official Academic Transcript in Adobe After Effects** — PSD Academy (13-Dec-2025)
+- **Certificate in Photoshop and Graphic Design** — ITD Institute SL (2024)
+- **Certificate in Information Technology** — ESOFT Metro Campus (25-Dec-2022)
 
 ## Honours, Competitions, Sports & Volunteering
-- **Academic Merit Scholarship Recipient** — ATARI City Campus (2025)
+- **Certificate of Academic Merit Scholarship** — ATARI City Campus (2025)
 - **8th Place among 500 Competitors** — AI & Robotics Competition organized by Isipathana College at ICBT Campus (2024)
-- **Top 50 Finisher** — Apeiro 21 Interschool Lecture Series, ICT & Robotics Society of Isipathana College (2023)
-- **Winner** — Quiz Competition, ICT & Robotics Society of Isipathana College (2021)
-- **Chess**: 2nd Runner-Up (Overall Challenge Rapid Chess Tournament, DGD Chess Club) & 8th Place (Under 11 All-Island Chess Tournament, 2018)
-- **3rd Place** — Art Competition organized by Seylan Bank
-- **Rugby** — Isipathana College Rugby Player (2016 – 2018)
-- **Taekwondo** — 1st Dan Black Belt & Junior Brown Belt (2016 – 2020+)
+- **Winner** — FUTURA '23 ICT & Robotics Quiz Competition, Isipathana College (2023) & 2021 ICT Quiz Winner
+- **Top 50 Finisher** — Apeiro '21 Quiz (Kingswood Research Unit) & Interschool Series (2021–2023)
+- **Stellata 3.0 Article Writing Competition** — Rotaract (RY 2025/26)
+- **New Media Workshop** — Ada Derana & Isipathana College (09-Aug-2023)
+- **Taekwondo (7 Official Certificates, 2016–2020)** — Kukkiwon (World Taekwondo HQ) & Sri Lanka Taekwondo Federation: 1st Poom Black Belt (19-Jan-2020), 1st Gup (04-Aug-2019), 1st RTC Open Taekwondo Championship (16-Sep-2018), Red Belt (24-Jun-2018), Blue Belt (17-Dec-2017), Green Belt (18-Jun-2017), Yellow Belt (03-Dec-2016)
+- **Chess (5 Official Certificates, 2018)** — DGD Chess Club: 2nd Runner-Up (Rapid Chess Challenge, 24-Oct-2018), 8th Place (Rapid Chess Tournament, 2018), and Chess Coaching Award (2018)
+- **Visual Arts** — 3rd Place in Seylan Bank Art Competition (06-Oct-2018), Little Picasso Art Competition (BOC & Ministry of Education, 2018), and Isiwara Siththam Art Exhibition (Isipathana College, 2013)
+- **Rugby & Athletics** — Isipathana College Rugby Player (2016–2018) & Inter-House Sports Meet Honours (17-Feb-2017)
 - **Volunteering** — Contributed to Project 'PLANTARA'25' (planted 300 native plants), organized by the Rotaract Club of Faculty of Science, University of Colombo (2025)
