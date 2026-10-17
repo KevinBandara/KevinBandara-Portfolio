@@ -24,13 +24,16 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://kevinbandara.is-a.dev"),
   title: {
     default:
-      "Kevin Bandara — Full-Stack Software Developer, AI Systems Builder & Founder of Corvento Technologies",
+      "Kevin Bandara (R.M. Kevin Sharada Bandara) — Full-Stack Software Engineer, AI Systems Builder & Founder of Corvento Technologies",
     template: "%s | Kevin Bandara",
   },
   description:
-    "Official portfolio of Kevin Bandara (කෙවින් බණ්ඩාර) — Full-Stack Software Developer, AI Systems Builder, Creative Designer, and Founder of Corvento Technologies in Colombo, Sri Lanka. Creator of DanumaAI (Web, Play Store, Telegram Bot) and MemoAI (206K+ users), Senior Web Developer at Quizzygram, and operator of a 74K+ subscriber WhatsApp media network. Contact: +94 71 851 1165.",
+    "Official portfolio of Kevin Bandara (R.M. Kevin Sharada Bandara / කෙවින් බණ්ඩාර) — Full-Stack Software Engineer, AI Systems Builder, Creative Designer, and Founder of Corvento Technologies in Colombo, Sri Lanka. Creator of DanumaAI (Web, Play Store, Telegram Bot) and MemoAI (206K+ users), Senior Web Developer at Quizzygram, Digital Operations Coordinator at MAOS Office, and operator of a 74K+ subscriber WhatsApp media network. Contact: +94 71 851 1165.",
   keywords: [
     "Kevin Bandara",
+    "R.M. Kevin Sharada Bandara",
+    "Rathnayaka Mudiyanselage Kevin Sharada Bandara",
+    "Kevin Sharada Bandara",
     "කෙවින් බණ්ඩාර",
     "Kevin Bandara Sri Lanka",
     "Kevin Bandara Colombo",
@@ -45,14 +48,18 @@ export const metadata: Metadata = {
     "MemoAI Creator",
     "Lycoryx Technologies",
     "Asteroid Technologies",
+    "BlackWolf Minecraft Server",
     "Quizzygram Senior Web Developer",
+    "MAOS Office Digital Operations Coordinator",
     "Education Channel Telegram Sri Lanka",
     "Past Papers Wiki Booking System",
     "Full-Stack Software Developer Sri Lanka",
     "AI Systems Builder Sri Lanka",
     "Next.js Developer Colombo",
     "UCSC BIT",
+    "University of Moratuwa Web Development",
     "ESOFT Pearson Diploma Software Engineering",
+    "ATARI City Campus Graphic Design Scholarship",
     "Isipathana College Colombo",
     "Achievers Hub WhatsApp Channel",
     "Lanka Diaries WhatsApp Channel",
@@ -60,11 +67,14 @@ export const metadata: Metadata = {
     "Sarasavi Pin Bima WhatsApp Channel",
   ],
   authors: [
-    { name: "Kevin Bandara", url: "https://kevinbandara.is-a.dev" },
+    {
+      name: "Kevin Bandara (R.M. Kevin Sharada Bandara)",
+      url: "https://kevinbandara.is-a.dev",
+    },
     { name: "Kevin Bandara", url: "https://kevinbandara.vercel.app" },
     { name: "Kevin Bandara", url: "https://github.com/KevinBandara" },
   ],
-  creator: "Kevin Bandara",
+  creator: "Kevin Bandara (R.M. Kevin Sharada Bandara)",
   publisher: "Kevin Bandara",
   category: "technology",
   alternates: {
@@ -92,7 +102,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Kevin Bandara — Full-Stack Software Developer, AI Systems Builder & Tech Entrepreneur",
+      "Kevin Bandara — Full-Stack Software Engineer, AI Systems Builder & Founder of Corvento Technologies",
     description:
       "Founder of Corvento Technologies, creator of DanumaAI (Web, Play Store & Telegram Bot) and MemoAI (206K+ users), Senior Web Developer at Quizzygram, and operator of a 74K+ subscriber digital media network in Colombo, Sri Lanka.",
     url: "https://kevinbandara.is-a.dev",
@@ -104,27 +114,20 @@ export const metadata: Metadata = {
     username: "KevinBandara",
     images: [
       {
-        url: "/opengraph-image",
+        url: "https://kevinbandara.is-a.dev/og-landscape.jpg",
         width: 1200,
         height: 630,
-        type: "image/png",
-        alt: "Kevin Bandara — Full-Stack Software Developer, AI Systems Builder & Founder of Corvento Technologies",
-      },
-      {
-        url: "/KevinPortrait.jpg",
-        width: 1344,
-        height: 1680,
         type: "image/jpeg",
-        alt: "Kevin Bandara — Official Portrait",
+        alt: "Kevin Bandara (R.M. Kevin Sharada Bandara) — Full-Stack Software Engineer, AI Systems Builder & Founder of Corvento Technologies",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kevin Bandara | Full-Stack Developer, AI Builder & Founder of Corvento",
+    title: "Kevin Bandara | Full-Stack Engineer, AI Builder & Founder of Corvento",
     description:
       "Founder of Corvento Technologies, creator of DanumaAI & MemoAI, and Full-Stack Software Engineer in Colombo, Sri Lanka. Direct: +94 71 851 1165.",
-    images: ["/twitter-image"],
+    images: ["https://kevinbandara.is-a.dev/og-landscape.jpg"],
   },
 };
 
@@ -135,7 +138,7 @@ const jsonLd = {
       "@type": "ProfilePage",
       "@id": "https://kevinbandara.is-a.dev/#profilepage",
       url: "https://kevinbandara.is-a.dev",
-      name: "Kevin Bandara — Official Portfolio & Engineering Dossier",
+      name: "Kevin Bandara (R.M. Kevin Sharada Bandara) — Official Portfolio",
       inLanguage: "en",
       mainEntity: {
         "@id": "https://kevinbandara.is-a.dev/#person",
@@ -146,20 +149,24 @@ const jsonLd = {
       "@id": "https://kevinbandara.is-a.dev/#person",
       name: "Kevin Bandara",
       givenName: "Kevin",
+      additionalName: "Sharada",
       familyName: "Bandara",
       alternateName: [
+        "R.M. Kevin Sharada Bandara",
+        "Rathnayaka Mudiyanselage Kevin Sharada Bandara",
+        "Kevin Sharada Bandara",
         "කෙවින් බණ්ඩාර",
         "KevinBandara",
-        "Kevin Bandara Sri Lanka",
       ],
+      birthDate: "2007-11-06",
       jobTitle:
-        "Full-Stack Software Developer, AI Systems Builder & Technology Entrepreneur",
+        "Full-Stack Software Engineer, AI Systems Builder & Technology Entrepreneur",
       description:
-        "Kevin Bandara is a Sri Lankan Full-Stack Software Developer, AI Systems Builder, Creative Designer, and Founder of Corvento Technologies based in Colombo, Sri Lanka. He is the creator of DanumaAI (Web, Google Play Store Android App, and Telegram AI Bot) and MemoAI (206,000+ users), Senior Web Developer at Quizzygram, Full-Stack Architect at Past Papers Wiki, and operator of a 74,000+ subscriber WhatsApp media network.",
+        "Kevin Bandara (Rathnayaka Mudiyanselage Kevin Sharada Bandara, born November 6, 2007) is a Sri Lankan Full-Stack Software Engineer, AI Systems Builder, Creative Designer, and Founder of Corvento Technologies based in Colombo, Sri Lanka. He is the creator of DanumaAI (Web, Google Play Store Android App, and Telegram AI Bot) and MemoAI (206,600+ users), Senior Web Developer at Quizzygram, Sales Manager & Full-Stack Architect at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and operator of a 74,000+ subscriber WhatsApp media network.",
       url: "https://kevinbandara.is-a.dev",
       image: [
+        "https://kevinbandara.is-a.dev/og-landscape.jpg",
         "https://kevinbandara.is-a.dev/KevinPortrait.jpg",
-        "https://kevinbandara.is-a.dev/MyPic.png",
       ],
       email: "mailto:kevinbandara0000@gmail.com",
       telephone: "+94718511165",
@@ -298,7 +305,7 @@ const jsonLd = {
         "@id": "https://kevinbandara.is-a.dev/#person",
       },
       description:
-        "Master technology and digital media venture founded by Kevin Bandara in Colombo, Sri Lanka, powering DanumaAI, @corventotech YouTube/Reels, and a 74,000+ subscriber WhatsApp channel network (and formerly MemoAI & BlackWolf MC).",
+        "Master technology and digital media venture founded by Kevin Bandara (R.M. Kevin Sharada Bandara) in Colombo, Sri Lanka, powering DanumaAI, @corventotech YouTube/Reels, and a 74,000+ subscriber WhatsApp channel network (and formerly MemoAI & BlackWolf MC).",
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+94-71-851-1165",
@@ -334,10 +341,10 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "Who is Kevin Bandara?",
+          name: "Who is Kevin Bandara (R.M. Kevin Sharada Bandara)?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Kevin Bandara is a Full-Stack Software Developer, AI Systems Builder, Creative Designer, and Tech Entrepreneur based in Colombo, Sri Lanka. He is the Founder of Corvento Technologies (formerly Lycoryx Technologies and Asteroid Technologies), creator of DanumaAI and MemoAI, Senior Web Developer at Quizzygram, Sales Manager & Booking System Architect at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and a BIT undergraduate at the University of Colombo School of Computing (UCSC).",
+            text: "Kevin Bandara (Rathnayaka Mudiyanselage Kevin Sharada Bandara, born November 6, 2007) is a Full-Stack Software Engineer, AI Systems Builder, Creative Designer, and Tech Entrepreneur based in Colombo, Sri Lanka. He is the Founder of Corvento Technologies (formerly Lycoryx Technologies and Asteroid Technologies), creator of DanumaAI and MemoAI, Senior Web Developer at Quizzygram, Sales Manager & Booking System Architect at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and a BIT undergraduate at the University of Colombo School of Computing (UCSC).",
           },
         },
         {

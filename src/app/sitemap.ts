@@ -10,9 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1.0,
       images: [
+        `${baseUrl}/og-landscape.jpg`,
         `${baseUrl}/KevinPortrait.jpg`,
-        `${baseUrl}/MyPic.png`,
+        `${baseUrl}/MyPic-opt.jpg`,
         `${baseUrl}/CorventoTechLogo.jpg`,
+        `${baseUrl}/AsteroidTechLogo.jpg`,
+        `${baseUrl}/MAOS-OfficeLogo.jpg`,
         `${baseUrl}/DanumaAI.jpg`,
       ],
     },

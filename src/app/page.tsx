@@ -383,10 +383,15 @@ export default function PortfolioPage() {
               </div>
 
               {/* Clean, Executive Personal Headline */}
-              <div className="space-y-3">
-                <p className="text-sky-400 font-medium text-base sm:text-lg tracking-wide">
-                  {HERO_DATA.greeting}
-                </p>
+              <div className="space-y-2.5">
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <p className="text-sky-400 font-medium text-base sm:text-lg tracking-wide">
+                    {HERO_DATA.greeting}
+                  </p>
+                  <span className="text-xs font-medium text-slate-400 px-2.5 py-0.5 rounded-md bg-white/[0.03] border border-white/10">
+                    {HERO_DATA.fullName}
+                  </span>
+                </div>
                 <h1 className="font-display text-4xl sm:text-6xl lg:text-[64px] font-extrabold tracking-tight text-white leading-[1.05]">
                   {HERO_DATA.name}
                 </h1>
@@ -418,23 +423,41 @@ export default function PortfolioPage() {
 
               {/* Quick Identity Highlights */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1">
-                <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/10">
-                  <span className="text-[11px] text-slate-400 block">
-                    University Degree
-                  </span>
-                  <span className="text-xs sm:text-sm font-semibold text-white mt-0.5 block">
-                    BIT @ UCSC
-                  </span>
+                <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center gap-2.5">
+                  <img
+                    src="/uoc-logo.png"
+                    alt="UCSC / University of Colombo"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-8 h-8 rounded-lg object-contain bg-white/95 p-0.5 flex-shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <span className="text-[11px] text-slate-400 block truncate">
+                      University Degree
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-white block truncate">
+                      BIT @ UCSC
+                    </span>
+                  </div>
                 </div>
-                <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/10">
-                  <span className="text-[11px] text-slate-400 block">
-                    Founded Venture
-                  </span>
-                  <span className="text-xs sm:text-sm font-semibold text-white mt-0.5 block">
-                    Corvento Technologies
-                  </span>
+                <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center gap-2.5">
+                  <img
+                    src="/CorventoTechLogo.jpg"
+                    alt="Corvento Technologies"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-8 h-8 rounded-lg object-cover border border-white/15 flex-shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <span className="text-[11px] text-slate-400 block truncate">
+                      Founded Venture
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-white block truncate">
+                      Corvento Tech
+                    </span>
+                  </div>
                 </div>
-                <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/10">
+                <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/10 col-span-2 sm:col-span-1">
                   <span className="text-[11px] text-slate-400 block">
                     Global Freelance
                   </span>
@@ -587,12 +610,16 @@ export default function PortfolioPage() {
                         <img
                           src={exp.logo}
                           alt={exp.company}
+                          loading="lazy"
+                          decoding="async"
                           className="w-13 h-13 rounded-2xl object-cover bg-slate-900 border border-white/15 flex-shrink-0"
                         />
                         {exp.secondaryLogo && (
                           <img
                             src={exp.secondaryLogo}
                             alt="Organization Logo"
+                            loading="lazy"
+                            decoding="async"
                             className="w-10 h-10 rounded-xl object-cover bg-white border-2 border-[#0B0E17] flex-shrink-0"
                           />
                         )}
@@ -727,12 +754,16 @@ export default function PortfolioPage() {
                         <img
                           src={project.logo}
                           alt={project.title}
+                          loading="lazy"
+                          decoding="async"
                           className="w-14 h-14 rounded-2xl object-cover border border-white/15 bg-slate-900 flex-shrink-0"
                         />
                         {project.secondaryLogo && (
                           <img
                             src={project.secondaryLogo}
                             alt="Parent / Community Logo"
+                            loading="lazy"
+                            decoding="async"
                             className="w-11 h-11 rounded-xl object-cover border-2 border-[#0B0E17] bg-white flex-shrink-0"
                           />
                         )}
@@ -898,15 +929,19 @@ export default function PortfolioPage() {
             {/* Brand Identity Evolution Logos */}
             <div className="flex items-center gap-2.5 self-start lg:self-auto glass-panel p-3 rounded-2xl">
               <img
-                src="/BlackWolfMC-Logo.jpg"
-                alt="Asteroid Technologies / BlackWolf MC"
-                className="w-11 h-11 rounded-xl object-cover border border-white/10 opacity-75"
-                title="Origin: Asteroid Technologies & BlackWolf MC"
+                src="/AsteroidTechLogo.jpg"
+                alt="Asteroid Technologies"
+                loading="lazy"
+                decoding="async"
+                className="w-11 h-11 rounded-xl object-cover border border-white/10 opacity-85"
+                title="Origin: Asteroid Technologies"
               />
               <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
               <img
                 src="/LycoryxTech.jpg"
                 alt="Lycoryx Technologies"
+                loading="lazy"
+                decoding="async"
                 className="w-11 h-11 rounded-xl object-cover border border-white/10 opacity-85"
                 title="Expansion: Lycoryx Technologies"
               />
@@ -914,6 +949,8 @@ export default function PortfolioPage() {
               <img
                 src="/CorventoTechLogo.jpg"
                 alt="Corvento Technologies"
+                loading="lazy"
+                decoding="async"
                 className="w-14 h-14 rounded-xl object-cover border-2 border-sky-400/50 shadow-lg shadow-sky-500/20"
                 title="Present Master Entity: Corvento Technologies"
               />
@@ -933,11 +970,24 @@ export default function PortfolioPage() {
               >
                 <div className="flex items-center justify-between gap-3 mb-4">
                   <div className="flex items-center gap-3">
-                    <img
-                      src={step.logo}
-                      alt={step.name}
-                      className="w-11 h-11 rounded-xl object-cover border border-white/15"
-                    />
+                    <div className="flex items-center -space-x-2">
+                      <img
+                        src={step.logo}
+                        alt={step.name}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-11 h-11 rounded-xl object-cover border border-white/15"
+                      />
+                      {"secondaryLogo" in step && step.secondaryLogo && (
+                        <img
+                          src={step.secondaryLogo}
+                          alt="Secondary Brand Logo"
+                          loading="lazy"
+                          decoding="async"
+                          className="w-9 h-9 rounded-lg object-cover border-2 border-[#0B0E17]"
+                        />
+                      )}
+                    </div>
                     <span className="text-xs font-semibold text-sky-400">
                       {step.era}
                     </span>
@@ -991,6 +1041,8 @@ export default function PortfolioPage() {
                       <img
                         src={channel.logo}
                         alt={channel.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-16 h-16 rounded-2xl object-cover border border-white/15 shadow-md group-hover:scale-105 transition-transform"
                       />
                       <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
@@ -1261,10 +1313,21 @@ export default function PortfolioPage() {
                     }`}
                   >
                     <div>
-                      <div className="flex items-center justify-between gap-2 mb-3">
-                        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-400/15 text-sky-300 border border-sky-400/30">
-                          {edu.badge}
-                        </span>
+                      <div className="flex items-center justify-between gap-2 mb-3.5">
+                        <div className="flex items-center gap-2.5">
+                          {edu.logo && (
+                            <img
+                              src={edu.logo}
+                              alt={edu.institution}
+                              loading="lazy"
+                              decoding="async"
+                              className="w-9 h-9 rounded-lg object-contain bg-white p-1 border border-white/20 flex-shrink-0"
+                            />
+                          )}
+                          <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-400/15 text-sky-300 border border-sky-400/30">
+                            {edu.badge}
+                          </span>
+                        </div>
                         <span className="text-xs font-medium text-slate-400">
                           {edu.year}
                         </span>
@@ -1302,10 +1365,21 @@ export default function PortfolioPage() {
                     className="rounded-2xl p-5 bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 transition-all flex flex-col justify-between"
                   >
                     <div>
-                      <div className="flex items-center justify-between gap-2 mb-2.5">
-                        <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
-                          {cert.badge}
-                        </span>
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <div className="flex items-center gap-2.5">
+                          {cert.logo && (
+                            <img
+                              src={cert.logo}
+                              alt={cert.institution}
+                              loading="lazy"
+                              decoding="async"
+                              className="w-8 h-8 rounded-lg object-contain bg-white p-1 border border-white/20 flex-shrink-0"
+                            />
+                          )}
+                          <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                            {cert.badge}
+                          </span>
+                        </div>
                         <span className="text-xs font-medium text-slate-400">
                           {cert.year}
                         </span>
@@ -1358,12 +1432,23 @@ export default function PortfolioPage() {
                       className="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/10"
                     >
                       <div>
-                        <div className="flex items-center justify-between gap-2 mb-3">
-                          <span
-                            className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-full border ${badgeStyle}`}
-                          >
-                            {categoryLabel}
-                          </span>
+                        <div className="flex items-center justify-between gap-2 mb-3.5">
+                          <div className="flex items-center gap-2.5">
+                            {item.logo && (
+                              <img
+                                src={item.logo}
+                                alt={item.organization}
+                                loading="lazy"
+                                decoding="async"
+                                className="w-8 h-8 rounded-lg object-contain bg-white p-1 border border-white/20 flex-shrink-0"
+                              />
+                            )}
+                            <span
+                              className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-full border ${badgeStyle}`}
+                            >
+                              {categoryLabel}
+                            </span>
+                          </div>
                           <span className="text-xs font-medium text-slate-400">
                             {item.year}
                           </span>
@@ -1668,7 +1753,7 @@ export default function PortfolioPage() {
               KB
             </div>
             <span className="text-xs text-slate-400">
-              © {new Date().getFullYear()} Kevin Bandara •{" "}
+              © {new Date().getFullYear()} Kevin Bandara ({HERO_DATA.fullName}) •{" "}
               <a
                 href="https://kevinbandara.is-a.dev"
                 className="text-slate-300 hover:text-sky-300"

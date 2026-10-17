@@ -80,6 +80,7 @@ export interface EducationItem {
   year: string;
   category: "degree" | "diploma" | "certificate";
   badge: string;
+  logo?: string;
   details: string[];
 }
 
@@ -89,11 +90,15 @@ export interface AchievementItem {
   organization: string;
   year: string;
   category: "competition" | "sports" | "volunteering";
+  logo?: string;
   highlight: string;
 }
 
 export const HERO_DATA = {
   name: "Kevin Bandara",
+  fullName: "R.M. Kevin Sharada Bandara",
+  legalName: "Rathnayaka Mudiyanselage Kevin Sharada Bandara",
+  birthDate: "2007-11-06",
   greeting: "Hello, I'm",
   title: "Full-Stack Software Engineer, AI Systems Builder & Tech Entrepreneur",
   tagline:
@@ -123,7 +128,7 @@ export const HERO_DATA = {
       objectPosition: "center 24%",
     },
     {
-      src: "/MyPic.png",
+      src: "/MyPic-opt.jpg",
       title: "Kevin Bandara — BMICH Colombo",
       caption: "Academic & Professional Recognition Ceremony",
       objectPosition: "28% 20%",
@@ -164,7 +169,8 @@ export const CORVENTO_ECOSYSTEM = {
     {
       era: "Phase 01 • Origin Studio",
       name: "Asteroid Technologies",
-      logo: "/BlackWolfMC-Logo.jpg",
+      logo: "/AsteroidTechLogo.jpg",
+      secondaryLogo: "/BlackWolfMC-Logo.jpg",
       status: "Evolved",
       desc: "Initial technology studio identity created to launch the BlackWolf Minecraft Server, gaming communities, and early web utilities.",
     },
@@ -675,6 +681,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     statusTone: "archived",
     category: "Archived Ventures",
     logo: "/BlackWolfMC-Logo.jpg",
+    secondaryLogo: "/AsteroidTechLogo.jpg",
     poweredBy: "Asteroid Technologies Origin",
     accentColor: "#F59E0B",
     metrics: [
@@ -716,6 +723,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     location: "Colombo, Sri Lanka",
     type: "Venture & Product Engineering",
     logo: "/CorventoTechLogo.jpg",
+    secondaryLogo: "/AsteroidTechLogo.jpg",
     description:
       "Founded and scaled the single master technology entity powering DanumaAI (Web, Play Store, Telegram Bot), @corventotech YouTube/Reels, and a 74,000+ subscriber WhatsApp digital media network. Evolved the company from Asteroid Technologies (BlackWolf MC) to Lycoryx Technologies (MemoAI — 206K+ users, sunset Apr 2025), and now Corvento Technologies.",
     achievements: [
@@ -743,11 +751,11 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
     id: "maos-office",
     role: "Digital Operations Coordinator",
-    company: "MAOS Office",
+    company: "MAOS Office (Magical Accounting Online School)",
     period: "Oct 2026 – Present",
     location: "Remote • Part-Time",
     type: "Digital Operations",
-    logo: "/AchieversHub.jpg",
+    logo: "/MAOS-OfficeLogo.jpg",
     description:
       "Managing digital academic resource distribution, student communications, and broadcast channel optimization for online learning programs.",
     achievements: [
@@ -823,7 +831,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     period: "2022 – Present",
     location: "Remote • Self-Employed",
     type: "Global Freelance",
-    logo: "/LycoryxTech.jpg",
+    logo: "/CorventoTechLogo.jpg",
     description:
       "Delivering custom full-stack web applications, bilingual e-commerce storefronts, brand identities, graphic design, and short-form video/reel edits on Fiverr, Upwork, and direct client contracts.",
     achievements: [
@@ -861,6 +869,7 @@ export const EDUCATION_DATA: EducationItem[] = [
     year: "Present",
     category: "degree",
     badge: "University Undergraduate",
+    logo: "/uoc-logo.png",
     details: [
       "Reading for the Bachelor of Information Technology (BIT) degree at the University of Colombo School of Computing (UCSC).",
       "Core focus on Software Engineering, Full-Stack Systems, Database Management, and Network Architecture.",
@@ -873,6 +882,7 @@ export const EDUCATION_DATA: EducationItem[] = [
     year: "Completed",
     category: "degree",
     badge: "Alma Mater",
+    logo: "/isipathana-logo.png",
     details: [
       "Engineering Technology (ET), Science for Technology (SFT), and Information & Communication Technology (ICT — English Medium).",
       "Active member of the ICT and Robotics Society, School Rugby Player (2016–2018), Prefect, and House Captain.",
@@ -887,6 +897,7 @@ export const EDUCATION_DATA: EducationItem[] = [
     year: "2023",
     category: "diploma",
     badge: "Pearson Assured",
+    logo: "/esoft-logo.jpg",
     details: [
       "Comprehensive diploma in Software Engineering lifecycles, object-oriented programming, relational databases, and system design.",
     ],
@@ -898,6 +909,7 @@ export const EDUCATION_DATA: EducationItem[] = [
     year: "2024",
     category: "diploma",
     badge: "Pearson Assured",
+    logo: "/esoft-logo.jpg",
     details: [
       "Advanced academic and professional English communication, business writing, and presentation mastery.",
     ],
@@ -944,6 +956,7 @@ export const EDUCATION_DATA: EducationItem[] = [
     year: "2023",
     category: "certificate",
     badge: "University of Moratuwa",
+    logo: "/uom-logo.png",
     details: [
       "Modern front-end architecture, responsive UI engineering, JavaScript DOM, and web standards.",
     ],
@@ -955,6 +968,7 @@ export const EDUCATION_DATA: EducationItem[] = [
     year: "2023",
     category: "certificate",
     badge: "University of Moratuwa",
+    logo: "/uom-logo.png",
     details: [
       "Foundations of web design, HTML5/CSS3 layout systems, and user interface design principles.",
     ],
@@ -1006,10 +1020,11 @@ export const EDUCATION_DATA: EducationItem[] = [
   {
     id: "esoft-it-cert",
     degree: "Certificate in Information Technology",
-    institution: "ESOFT Campus",
+    institution: "ESOFT Metro Campus",
     year: "2022",
     category: "certificate",
     badge: "IT Foundations",
+    logo: "/esoft-logo.jpg",
     details: [
       "Core computing fundamentals, software applications, networking basics, and information systems.",
     ],
@@ -1032,6 +1047,7 @@ export const ACHIEVEMENTS_DATA: AchievementItem[] = [
     organization: "Organized by Isipathana College at ICBT Campus",
     year: "2024",
     category: "competition",
+    logo: "/isipathana-logo.png",
     highlight:
       "Ranked Top 8 out of 500 participants in the competitive AI & Robotics challenge hosted at ICBT Campus.",
   },
@@ -1041,6 +1057,7 @@ export const ACHIEVEMENTS_DATA: AchievementItem[] = [
     organization: "ICT and Robotics Society of Isipathana College",
     year: "2023",
     category: "competition",
+    logo: "/isipathana-logo.png",
     highlight:
       "Recognized among the Top 50 finishers in the interschool technology & robotics series.",
   },
@@ -1050,6 +1067,7 @@ export const ACHIEVEMENTS_DATA: AchievementItem[] = [
     organization: "ICT and Robotics Society of Isipathana College",
     year: "2021",
     category: "competition",
+    logo: "/isipathana-logo.png",
     highlight:
       "First-place winner in the school ICT and Robotics quiz championship.",
   },
@@ -1077,6 +1095,7 @@ export const ACHIEVEMENTS_DATA: AchievementItem[] = [
     organization: "Isipathana College, Colombo",
     year: "2016 – 2018",
     category: "sports",
+    logo: "/isipathana-logo.png",
     highlight:
       "Represented Isipathana College in school rugby (2016–2018), developing high-pressure teamwork and discipline.",
   },
@@ -1095,6 +1114,7 @@ export const ACHIEVEMENTS_DATA: AchievementItem[] = [
     organization: "Rotaract Club of Faculty of Science, University of Colombo",
     year: "2025",
     category: "volunteering",
+    logo: "/uoc-logo.png",
     highlight:
       "Contributed to a community sustainability initiative that successfully planted 300 native plants.",
   },

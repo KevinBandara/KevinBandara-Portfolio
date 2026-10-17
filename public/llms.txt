@@ -1,9 +1,12 @@
-# Kevin Bandara (කෙවින් බණ්ඩාර) — Official AI & Search Knowledge Profile
+# Kevin Bandara (R.M. Kevin Sharada Bandara / කෙවින් බණ්ඩාර) — Official AI & Search Knowledge Profile
 
 > Full-Stack Software Developer, AI Systems Builder, Creative Designer, and Founder of Corvento Technologies in Colombo, Sri Lanka.
 
 ## Personal & Contact Identity
-- **Full Name**: Kevin Bandara (කෙවින් බණ්ඩාර)
+- **Preferred Name**: Kevin Bandara (කෙවින් බණ්ඩාර)
+- **Full Name with Initials**: R.M. Kevin Sharada Bandara (Kevin Sharada Bandara)
+- **Full Legal Name**: Rathnayaka Mudiyanselage Kevin Sharada Bandara
+- **Date of Birth**: November 6, 2007 (`2007-11-06`)
 - **Role**: Full-Stack Software Engineer, AI Systems Builder & Tech Entrepreneur
 - **Location**: Colombo, Western Province, Sri Lanka
 - **Nationality & Heritage**: Sri Lankan, Buddhist
