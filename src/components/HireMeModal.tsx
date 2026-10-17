@@ -15,6 +15,7 @@ import {
   Send,
   ExternalLink,
   CheckCircle2,
+  FileDown,
 } from "lucide-react";
 import { HERO_DATA } from "@/data/portfolioData";
 
@@ -89,21 +90,22 @@ export default function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
     ENGAGEMENT_OPTIONS.find((o) => o.id === selectedId) || ENGAGEMENT_OPTIONS[0];
 
   const handleCopyRecruiterBrief = () => {
-    const summary = `Candidate: Kevin Bandara
+    const summary = `Candidate: Kevin Sharada Bandara (R.M. Kevin Sharada Bandara)
 Role: Full-Stack Software Developer, AI Systems Builder & Tech Entrepreneur
 Location: Colombo, Sri Lanka (Open to Onsite, Hybrid & Remote)
 Phone / WhatsApp: ${HERO_DATA.phoneIntl} (${HERO_DATA.phone})
 Email: ${HERO_DATA.email}
-Portfolio: https://kevinbandara.is-a.dev | https://kevinbandara.vercel.app
+Portfolio: https://kevinbandara.is-a.dev | Resume PDF: https://kevinbandara.is-a.dev/Kevin-Bandara-Resume.pdf
 LinkedIn: ${HERO_DATA.linkedin}
 GitHub: ${HERO_DATA.github}
 
 Key Highlights:
-- Founder & Lead Developer @ Corvento Technologies: Built DanumaAI (Web, Google Play Store Android App, Telegram Bot) powered by Corvento Technologies with Next.js, Expo, Python, MongoDB Atlas & Gemini API RAG; created MemoAI (206,000+ historical users across 2,157+ Discord servers); operates 4 WhatsApp channels with 74,000+ subscribers.
-- Senior Web Developer @ Quizzygram (Education Channel Community): Engineered Telegram-style chats, forums, channels, quizzes & live competitions.
-- Full-Stack Architect & Commercial Ops @ Past Papers Wiki (140K+ users): Engineered custom internal booking & scheduling engine.
-- Global Freelancer & Creative Director (Fiverr, Upwork & Direct): Delivered bilingual e-commerce platforms, Laravel MVC systems, Adobe Creative Suite graphic design & video reels.
-- Education: BIT Undergraduate @ UCSC | Pearson Diploma in Software Engineering (ESOFT) | Pearson Diploma in English (ESOFT) | Laravel Certificate (CodeXPress) | Diploma in Graphic Design (ATARI CITY Campus) | G.C.E. A/L Tech Stream (Isipathana College).`;
+- Founder & Lead Developer @ Corvento Technologies: Built DanumaAI (Web, Google Play Store Android App with 5,000+ downloads, Telegram Bot serving 2,000+ active students); created MemoAI (250,000+ community members across 2,157+ Discord servers); operates 116,000+ subscriber WhatsApp (74K+) & Telegram (42K+) educational networks.
+- Senior Web Developer @ Quizzygram (Educational Channel SL): Engineered Telegram-style chats, forums, channels, quizzes & live competitions.
+- Sales & Operations Manager + Booking Architect @ Past Papers Wiki (140K+ users): Engineered custom internal booking & scheduling engine.
+- Digital Operations Coordinator @ MAOS Office: Managing academic resource broadcasts across 3 official WhatsApp channels.
+- Global Freelancer (Fiverr, Upwork & Direct): Delivered bilingual e-commerce platforms, Laravel MVC systems, Adobe Creative Suite graphic design & video reels.
+- Education: BIT Undergraduate @ UCSC (2026-2029) | Pearson Assured Diplomas in Software Engineering (DTEC) & IT (DITEC) + English (ESOFT) | 3 UoM CODL Certificates (Python, Front-End, Web Design) | Laravel Certificate (CodeXpress) | Diploma in Graphic Design (ATARI City Campus).`;
 
     navigator.clipboard.writeText(summary);
     setCopiedSummary(true);
@@ -229,7 +231,7 @@ Key Highlights:
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-300">
             <div className="p-2.5 rounded-xl bg-black/40 border border-white/5">
               <strong className="text-white block">Core Engineering:</strong>
-              Next.js, React, TypeScript, Node.js, Python, MongoDB, Laravel
+              Next.js, React, TypeScript, Node.js, Python, MongoDB, PostgreSQL, Laravel
             </div>
             <div className="p-2.5 rounded-xl bg-black/40 border border-white/5">
               <strong className="text-white block">AI &amp; Production:</strong>
@@ -237,7 +239,7 @@ Key Highlights:
             </div>
             <div className="p-2.5 rounded-xl bg-black/40 border border-white/5">
               <strong className="text-white block">Academic &amp; Creative:</strong>
-              UCSC BIT + Pearson SE &amp; English Diplomas + Adobe Creative Cloud Suite
+              UCSC BIT + Pearson SE/IT &amp; English Diplomas + Adobe Creative Suite
             </div>
           </div>
         </div>
@@ -245,10 +247,21 @@ Key Highlights:
         {/* Instant Action Buttons */}
         <div className="space-y-3">
           <div className="font-mono text-xs uppercase tracking-widest text-sky-400">
-            2. Instant Connect &amp; Recruiter Actions:
+            2. Instant Connect, Resume &amp; Recruiter Actions:
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <a
+              href={HERO_DATA.resumeUrl}
+              download="Kevin-Sharada-Bandara-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-3.5 px-4 rounded-xl font-mono text-xs sm:text-sm font-semibold bg-white hover:bg-slate-200 text-slate-950 transition-all shadow-lg flex items-center justify-center gap-2"
+            >
+              <FileDown className="w-4 h-4" />
+              <span>Download CV (PDF)</span>
+            </a>
+
             <button
               type="button"
               onClick={handleInstantWhatsApp}
@@ -280,7 +293,7 @@ Key Highlights:
               ) : (
                 <>
                   <Copy className="w-4 h-4" />
-                  <span>Copy Recruiter Brief</span>
+                  <span>Copy Brief</span>
                 </>
               )}
             </button>

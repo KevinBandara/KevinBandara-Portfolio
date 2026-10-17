@@ -31,6 +31,7 @@ import {
   Trophy,
   HeartHandshake,
   ShieldCheck,
+  FileDown,
 } from "lucide-react";
 import ThreeHeroCanvas, { ThreeSceneMode } from "@/components/ThreeHeroCanvas";
 import TiltCard from "@/components/TiltCard";
@@ -227,6 +228,16 @@ export default function PortfolioPage() {
             >
               <Linkedin className="w-4 h-4" />
             </a>
+            <a
+              href={HERO_DATA.resumeUrl}
+              download="Kevin-Sharada-Bandara-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white/[0.07] hover:bg-white/15 text-white border border-white/15 transition-all flex items-center gap-1.5"
+            >
+              <FileDown className="w-3.5 h-3.5 text-sky-400" />
+              <span>CV / Resume</span>
+            </a>
             <button
               type="button"
               onClick={() => setHireModalOpen(true)}
@@ -265,7 +276,7 @@ export default function PortfolioPage() {
                 {item.label}
               </a>
             ))}
-            <div className="pt-3 flex items-center gap-3 border-t border-white/10">
+            <div className="pt-3 flex flex-wrap items-center gap-2.5 border-t border-white/10">
               <button
                 type="button"
                 onClick={() => {
@@ -274,8 +285,17 @@ export default function PortfolioPage() {
                 }}
                 className="flex-1 py-2.5 rounded-xl text-center text-xs font-semibold bg-sky-400 text-slate-950 cursor-pointer"
               >
-                Hire Kevin (Fast-Track)
+                Hire Kevin
               </button>
+              <a
+                href={HERO_DATA.resumeUrl}
+                download="Kevin-Sharada-Bandara-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 py-2.5 rounded-xl text-center text-xs font-semibold bg-white/10 text-white border border-white/15"
+              >
+                Download CV
+              </a>
               <a
                 href={HERO_DATA.whatsappUrl}
                 target="_blank"
@@ -413,7 +433,7 @@ export default function PortfolioPage() {
                 <strong className="text-sky-300 font-semibold">DanumaAI</strong>{" "}
                 &amp; a{" "}
                 <strong className="text-emerald-300 font-semibold">
-                  74,000+ subscriber media network
+                  116,000+ subscriber WhatsApp &amp; Telegram media network
                 </strong>
                 ), Senior Web Developer at{" "}
                 <strong className="text-white font-semibold">Quizzygram</strong>
@@ -479,6 +499,17 @@ export default function PortfolioPage() {
                 </button>
 
                 <a
+                  href={HERO_DATA.resumeUrl}
+                  download="Kevin-Sharada-Bandara-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-sm font-semibold bg-white hover:bg-slate-200 text-slate-950 transition-all shadow-lg"
+                >
+                  <FileDown className="w-4 h-4" />
+                  <span>Download Resume (PDF)</span>
+                </a>
+
+                <a
                   href={HERO_DATA.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -486,14 +517,6 @@ export default function PortfolioPage() {
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>WhatsApp: {HERO_DATA.phone}</span>
-                </a>
-
-                <a
-                  href="#projects"
-                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-sm font-medium bg-white/[0.06] hover:bg-white/12 text-white border border-white/15 hover:border-sky-400/40 transition-all"
-                >
-                  <Layers className="w-4 h-4 text-sky-400" />
-                  <span>Explore Work</span>
                 </a>
 
                 <button
@@ -1488,18 +1511,30 @@ export default function PortfolioPage() {
                 Looking to hire a Full-Stack / AI Engineer or Creative Technologist?
               </h3>
               <p className="text-sm sm:text-base text-slate-300 mt-1">
-                Open the 1-click Hiring Fast-Track to message on WhatsApp, copy a formatted candidate summary, or launch a pre-filled role/project inquiry.
+                Download Kevin&apos;s official Resume (PDF) or open the 1-click Hiring Fast-Track to message on WhatsApp, copy a candidate brief, or launch a pre-filled role inquiry.
               </p>
             </div>
-            <button
-              type="button"
-              onClick={() => setHireModalOpen(true)}
-              className="px-6 py-4 rounded-2xl text-sm font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all shadow-xl shadow-sky-500/25 flex items-center gap-2 whitespace-nowrap cursor-pointer"
-            >
-              <Briefcase className="w-4 h-4" />
-              <span>Open Hiring Fast-Track</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </button>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href={HERO_DATA.resumeUrl}
+                download="Kevin-Sharada-Bandara-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-4 rounded-2xl text-sm font-semibold bg-white hover:bg-slate-200 text-slate-950 transition-all shadow-lg flex items-center gap-2 whitespace-nowrap"
+              >
+                <FileDown className="w-4 h-4" />
+                <span>Download Resume (PDF)</span>
+              </a>
+              <button
+                type="button"
+                onClick={() => setHireModalOpen(true)}
+                className="px-6 py-4 rounded-2xl text-sm font-semibold bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all shadow-xl shadow-sky-500/25 flex items-center gap-2 whitespace-nowrap cursor-pointer"
+              >
+                <Briefcase className="w-4 h-4" />
+                <span>Open Hiring Fast-Track</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -1764,6 +1799,15 @@ export default function PortfolioPage() {
           </div>
 
           <div className="flex items-center gap-5 text-xs text-slate-400 flex-wrap justify-center">
+            <a
+              href={HERO_DATA.resumeUrl}
+              download="Kevin-Sharada-Bandara-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky-300 hover:text-white font-semibold transition-colors"
+            >
+              Resume (PDF)
+            </a>
             <a
               href={HERO_DATA.github}
               target="_blank"

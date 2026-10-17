@@ -20,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ],
     },
     {
+      url: `${baseUrl}/Kevin-Bandara-Resume.pdf`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/llms.txt`,
       lastModified: new Date(),
       changeFrequency: "weekly",

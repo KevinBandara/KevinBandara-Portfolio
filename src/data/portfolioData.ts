@@ -120,6 +120,7 @@ export const HERO_DATA = {
   domainPrimary: "https://kevinbandara.is-a.dev",
   domainVercel: "https://kevinbandara.vercel.app",
   repoUrl: "https://github.com/KevinBandara/KevinBandara-Portfolio",
+  resumeUrl: "/Kevin-Bandara-Resume.pdf",
   portraits: [
     {
       src: "/KevinPortrait.jpg",
@@ -136,17 +137,17 @@ export const HERO_DATA = {
   ],
   telemetry: [
     {
-      value: "206K+",
+      value: "250K+",
       label: "Cumulative Software Users",
       detail: "Across MemoAI, DanumaAI & Web Platforms",
     },
     {
-      value: "74K+",
-      label: "Owned Media Subscribers",
-      detail: "4 Active WhatsApp Channels under Corvento",
+      value: "116K+",
+      label: "Digital Community Reach",
+      detail: "74K+ WhatsApp & 42K+ Telegram Networks",
     },
     {
-      value: "3,200+",
+      value: "5,000+",
       label: "DanumaAI App Installs",
       detail: "Google Play Store, Web & Telegram Bot",
     },
@@ -179,14 +180,14 @@ export const CORVENTO_ECOSYSTEM = {
       name: "Lycoryx Technologies",
       logo: "/LycoryxTech.jpg",
       status: "Rebranded",
-      desc: "Expanded into high-concurrency AI products — scaling MemoAI to 206,600+ users across 2,157+ Discord servers and launching the first release of DanumaAI.",
+      desc: "Expanded into high-concurrency AI products — scaling MemoAI to 250,000+ community members across 2,157+ Discord servers and launching the first release of DanumaAI.",
     },
     {
       era: "Phase 03 • Master Entity (Present)",
       name: "Corvento Technologies",
       logo: "/CorventoTechLogo.jpg",
       status: "Active Master Entity",
-      desc: "The unified parent company powering DanumaAI (Web, Play Store & Telegram Bot), @corventotech YouTube/Reels, and a 74,000+ subscriber WhatsApp media network.",
+      desc: "The unified parent company powering DanumaAI (Web, Play Store & Telegram Bot), @corventotech YouTube/Reels, and a 116,000+ subscriber WhatsApp & Telegram educational media ecosystem.",
     },
   ],
   channels: [
@@ -240,8 +241,8 @@ export const ABOUT_DATA = {
   headline:
     "Bridging Full-Stack Software Engineering, AI Systems, and Digital Entrepreneurship.",
   paragraphs: [
-    "I am a software developer, creative designer, and entrepreneur from Colombo, Sri Lanka with hands-on experience taking digital products from architecture to live production. Currently reading for my Bachelor of Information Technology (BIT) at the University of Colombo School of Computing (UCSC), I specialize in full-stack web engineering (Next.js, React, Node.js, Laravel, MongoDB) and applied AI workflows (RAG, Gemini API, OpenAI).",
-    "Beyond writing code, I founded Corvento Technologies (evolved from Asteroid Technologies and Lycoryx Technologies) to build products like DanumaAI and operate a 74,000+ subscriber WhatsApp educational & media network. I also serve as Senior Web Developer for Quizzygram, Sales Manager & Booking System Architect at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and an international freelancer on Fiverr and Upwork.",
+    "I am a software developer, creative designer, and entrepreneur from Colombo, Sri Lanka with hands-on experience taking digital products from architecture to live production. Currently reading for my Bachelor of Information Technology (BIT) at the University of Colombo School of Computing (UCSC), I specialize in full-stack web engineering (Next.js, React, Node.js, Laravel, MongoDB, PostgreSQL) and applied AI workflows (RAG, Gemini API, OpenAI).",
+    "Beyond writing code, I founded Corvento Technologies (evolved from Asteroid Technologies and Lycoryx Technologies) to build products like DanumaAI (5,000+ downloads, 2,000+ active students) and operate a 74,000+ WhatsApp & 42,000+ Telegram educational media network. I also serve as Senior Web Developer for Quizzygram, Sales & Operations Manager at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and an international freelancer on Fiverr and Upwork.",
   ],
   pillars: [
     {
@@ -252,9 +253,9 @@ export const ABOUT_DATA = {
     },
     {
       code: "Ventures & Media",
-      title: "Corvento Ecosystem & 74K+ Audience",
+      title: "Corvento Ecosystem & 116K+ Audience",
       description:
-        "Operating proprietary software products, contextual educator ad engines, and daily WhatsApp broadcast channels reaching 74,000+ followers.",
+        "Operating proprietary software products, contextual educator ad engines, and daily WhatsApp/Telegram networks reaching 116,000+ learners.",
     },
     {
       code: "Creative & Global",
@@ -281,7 +282,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
       { name: "React Native (Expo)", highlight: true },
       { name: "Node.js & Express.js", highlight: true },
       { name: "PHP & Laravel", highlight: true },
-      { name: "Tailwind CSS", highlight: true },
+      { name: "Tailwind CSS & Bootstrap", highlight: true },
       { name: "HTML5 & CSS3" },
     ],
   },
@@ -325,12 +326,12 @@ export const SKILL_GROUPS: SkillGroup[] = [
     accent: "#F472B6",
     skills: [
       { name: "MongoDB & MongoDB Atlas", highlight: true },
+      { name: "PostgreSQL & MySQL (SQL)", highlight: true },
       { name: "NextAuth.js", highlight: true },
       { name: "JWT", highlight: true },
       { name: "Google OAuth 2.0", highlight: true },
       { name: "Telegram OAuth", highlight: true },
       { name: "Discord OAuth2" },
-      { name: "MySQL / Relational SQL" },
     ],
   },
   {
@@ -345,7 +346,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
       { name: "Google Play Console", highlight: true },
       { name: "Postman", highlight: true },
       { name: "Cloudflare" },
-      { name: "Linux Server Basics" },
+      { name: "Linux CLI & Server Admin" },
     ],
   },
   {
@@ -359,9 +360,9 @@ export const SKILL_GROUPS: SkillGroup[] = [
       { name: "Adobe Illustrator", highlight: true },
       { name: "Adobe Premiere Pro (Certified)", highlight: true },
       { name: "Adobe After Effects (Certified)", highlight: true },
-      { name: "Adobe Lightroom" },
       { name: "Figma (UI/UX Prototyping)", highlight: true },
-      { name: "Short-Form Reel & Video Editing", highlight: true },
+      { name: "CapCut & Short-Form Reels", highlight: true },
+      { name: "Adobe Lightroom" },
       { name: "Brand Identity & Logo Design", highlight: true },
     ],
   },
@@ -374,7 +375,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     title: "DanumaAI — AI-Powered Educational Ecosystem",
     subtitle:
       "Powered by Corvento Technologies • Web App, Google Play Store App & Telegram AI Bot",
-    role: "Founder & Lead Developer",
+    role: "Founder, Lead Architect & Developer",
     period: "2026 – Present",
     statusBadge: "Active Flagship • Live",
     statusTone: "active",
@@ -385,8 +386,8 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     poweredBy: "Powered by Corvento Technologies",
     accentColor: "#38BDF8",
     metrics: [
-      { label: "Play Store Downloads", value: "3,200+" },
-      { label: "Active Students", value: "1,500+" },
+      { label: "Play Store Downloads", value: "5,000+" },
+      { label: "Active Students", value: "2,000+" },
       { label: "3-Platform Ecosystem", value: "Web • Play Store • TG Bot" },
       { label: "Parent Entity", value: "Corvento Tech" },
     ],
@@ -401,10 +402,10 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
       "RAG & Vector Search",
     ],
     overview:
-      "Flagship AI educational ecosystem powered by Corvento Technologies, operating seamlessly across a full-featured Web App (danumaai.lk), an official Google Play Store Android App (3,200+ downloads), and an interactive Telegram AI Bot (@DanumaAI_Bot). Assists Sri Lankan students with automated syllabus explanations, step-by-step past-paper analysis, mind-map generation, and trilingual (Sinhala, Tamil, English) learning workflows.",
+      "Flagship AI educational ecosystem powered by Corvento Technologies, operating seamlessly across a full-featured Web App (danumaai.lk), an official Google Play Store Android App (5,000+ downloads), and an interactive Telegram AI Bot (@DanumaAI_Bot) serving 2,000+ active students with automated study note generation, step-by-step past-paper QA, and bilingual/trilingual learning workflows.",
     highlights: [
-      "Powered and operated by Corvento Technologies across 3 synchronized platforms: Web App, Google Play Store Android App, and interactive Telegram Bot.",
-      "Architected Retrieval-Augmented Generation (RAG) workflows and multimodal image-based problem solving for Technology-stream (ET, SFT, ICT) and national curricula.",
+      "Powered and operated by Corvento Technologies across 3 synchronized platforms: Web App, Google Play Store Android App (5,000+ downloads), and interactive Telegram Bot.",
+      "Architected Retrieval-Augmented Generation (RAG) workflows, automated study note generation, and multimodal image-based problem solving for 2,000+ active students.",
       "Built a custom contextual ad-placement engine enabling tuition educators to integrate targeted promotional material directly into the student learning experience.",
     ],
     links: [
@@ -616,8 +617,8 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     index: "05",
     title: "MemoAI — Scalable Community AI Bot & Web Playground",
     subtitle:
-      "Scaled to 206,600+ Users Across 2,157+ Discord Servers (Discontinued April 2025)",
-    role: "Creator & Backend Developer",
+      "Scaled to 250,000+ Community Members Across 2,157+ Discord Servers (Discontinued April 2025)",
+    role: "Founder & Lead Developer",
     period: "2022 – Apr 2025",
     statusBadge: "Sunset Apr 2025 (Financial Scaling Costs)",
     statusTone: "archived",
@@ -627,7 +628,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     poweredBy: "Corvento / Lycoryx Archive",
     accentColor: "#C084FC",
     metrics: [
-      { label: "Historical Users", value: "206,600+" },
+      { label: "Community Members", value: "250,000+" },
       { label: "Discord Servers", value: "2,157+" },
       { label: "Status", value: "Sunset Apr 2025" },
     ],
@@ -640,9 +641,9 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
       "Discord OAuth2",
     ],
     overview:
-      "An AI assistant bot and Discord OAuth2 web management dashboard built under Lycoryx / Corvento Technologies that scaled to over 206,600 users across 2,157+ servers. Discontinued in April 2025 due to high LLM API and financial hosting costs at scale.",
+      "A high-throughput AI assistant bot and Discord OAuth2 web management dashboard built under Lycoryx / Corvento Technologies that scaled conversational text and image generation pipelines to over 250,000+ community members across 2,157+ servers. Discontinued in April 2025 due to high LLM API and financial hosting costs at scale.",
     highlights: [
-      "Engineered asynchronous request pipelines and rate-limiting middleware across 2,157+ connected Discord servers reaching 206,600+ users.",
+      "Engineered asynchronous request pipelines and rate-limiting middleware across 2,157+ connected Discord servers supporting 250,000+ community members.",
       "Built Discord OAuth2 authentication workflows, prompt sandboxing, and web management dashboards before concluding operations in April 2025 due to financial scaling constraints.",
     ],
     links: [
@@ -725,11 +726,11 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     logo: "/CorventoTechLogo.jpg",
     secondaryLogo: "/AsteroidTechLogo.jpg",
     description:
-      "Founded and scaled the single master technology entity powering DanumaAI (Web, Play Store, Telegram Bot), @corventotech YouTube/Reels, and a 74,000+ subscriber WhatsApp digital media network. Evolved the company from Asteroid Technologies (BlackWolf MC) to Lycoryx Technologies (MemoAI — 206K+ users, sunset Apr 2025), and now Corvento Technologies.",
+      "Founded and scaled the single master technology entity powering DanumaAI (Web, Play Store, Telegram Bot), @corventotech YouTube/Reels, and a 116,000+ subscriber WhatsApp & Telegram educational digital media network. Evolved the company from Asteroid Technologies (BlackWolf MC) to Lycoryx Technologies (MemoAI — 250K+ users, sunset Apr 2025), and now Corvento Technologies.",
     achievements: [
-      "Architected and launched DanumaAI (Powered by Corvento Technologies) across Web, Google Play Store (3,200+ downloads), and Telegram Bot with Gemini RAG workflows.",
-      "Grew and manage 4 daily-updated WhatsApp broadcast channels (Achievers Hub, Lanka Diaries, Sarasavi Sihinaya, Sarasavi Pin Bima) reaching 74,000+ subscribers.",
-      "Previously built and scaled MemoAI to 206,600+ users across 2,157+ Discord servers before concluding operations in April 2025 due to financial scaling costs.",
+      "Architected and launched DanumaAI (Powered by Corvento Technologies) across Web, Google Play Store (5,000+ downloads), and Telegram Bot serving 2,000+ active students.",
+      "Grew and manage 4 daily-updated WhatsApp broadcast channels (74,000+ subscribers) and educational Telegram broadcast/discussion infrastructure (42,000+ active students).",
+      "Previously built and scaled MemoAI to 250,000+ community members across 2,157+ Discord servers before concluding operations in April 2025 due to financial scaling costs.",
     ],
     technologies: [
       "Next.js",
@@ -759,8 +760,8 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     description:
       "Managing digital academic resource distribution, student communications, and broadcast channel optimization for online learning programs.",
     achievements: [
-      "Manage and distribute academic resources across 3 official educational WhatsApp broadcast channels.",
-      "Coordinate student communications, announcements, and optimize broadcast reach for online learning programs.",
+      "Manage and schedule daily academic resource broadcasts across 3 official educational WhatsApp broadcast channels.",
+      "Coordinate critical exam notices, study resources, and student communications while maintaining structured channel moderation.",
     ],
     technologies: [
       "Digital Operations",
@@ -779,10 +780,10 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     logo: "/QuzziygramLogo.png",
     secondaryLogo: "/eduChannel-circleLogo.png",
     description:
-      "Overseeing web development for Quizzygram, a social-learning platform integrated with one of Sri Lanka's prominent educational Telegram communities (Educational Channel SL).",
+      "Spearheading full-stack web development and core feature architecture for Quizzygram, an online social-learning platform integrated with one of Sri Lanka's prominent educational Telegram communities (Educational Channel SL — 42,000+ students).",
     achievements: [
-      "Engineered Telegram-style real-time chat workflows, structured student forums, and educational channel feeds.",
-      "Developed interactive quiz engines, timed assessments, and live competition leaderboards.",
+      "Engineered Telegram-style real-time chat workflows, structured student forums, educational channel feeds, and interactive quiz competitions.",
+      "Optimize platform responsiveness and database queries to ensure seamless real-time access during peak study traffic.",
     ],
     technologies: [
       "Next.js",
@@ -801,20 +802,20 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
   },
   {
     id: "paperwikipedia",
-    role: "Sales Manager & Full-Stack Booking Architect",
+    role: "Sales & Operations Manager + Booking Architect",
     company: "Past Papers Wiki (pastpapers.wiki)",
     period: "2025 – Present",
     location: "Remote • Part-Time",
     type: "Sales & System Architecture",
     logo: "/paperwiki logo.jpeg",
     description:
-      "Coordinating the distribution and online sales of past examination papers and educational resources for students across Sri Lanka, while architecting the custom internal booking system.",
+      "Directing online distribution pipelines and digital sales workflows for national examination past papers and academic materials nationwide, while architecting the custom internal booking system.",
     achievements: [
-      "Coordinate online sales, partner outreach, and nationwide educational resource distribution for Past Papers Wiki.",
+      "Direct online distribution pipelines, student customer support, and order fulfillment for Past Papers Wiki across Sri Lanka.",
       "Architected the custom Next.js, Node.js, and MongoDB internal booking engine to automate advertising slot reservations and campaign scheduling.",
     ],
     technologies: [
-      "Online Sales & Operations",
+      "Sales & Operations",
       "Next.js",
       "Node.js",
       "MongoDB",
@@ -833,18 +834,18 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     type: "Global Freelance",
     logo: "/CorventoTechLogo.jpg",
     description:
-      "Delivering custom full-stack web applications, bilingual e-commerce storefronts, brand identities, graphic design, and short-form video/reel edits on Fiverr, Upwork, and direct client contracts.",
+      "Architecting and deploying responsive websites, custom full-stack web applications, brand identities, marketing graphics, and short-form video/reel edits for international clients on Fiverr and Upwork.",
     achievements: [
-      "Completed international and local freelance projects on Fiverr and Upwork spanning Next.js/React web platforms, Laravel MVC systems, and e-commerce sites.",
+      "Architect and deploy custom web applications for international clients on Fiverr and Upwork using Next.js, Node.js, and PHP/Laravel.",
       "Built production storefronts such as Kev & Thash Sweet Treats with English/Sinhala localization and WhatsApp ordering.",
-      "Created brand identities, social media visuals, and motion reel edits using Adobe Photoshop, Illustrator, Premiere Pro, and After Effects.",
+      "Design brand assets, marketing graphics, UI prototypes, and motion reel edits using Figma, Adobe Photoshop, Illustrator, Premiere Pro, and After Effects.",
     ],
     technologies: [
       "Fiverr & Upwork",
       "Next.js & React",
       "Laravel",
-      "Adobe Photoshop & Illustrator",
-      "Premiere Pro & After Effects",
+      "Figma & UI/UX",
+      "Adobe Creative Suite",
     ],
     links: [
       {
@@ -865,26 +866,26 @@ export const EDUCATION_DATA: EducationItem[] = [
     id: "ucsc-bit",
     degree: "Bachelor of Information Technology (BIT)",
     institution:
-      "University of Colombo School of Computing (UCSC) via OpenArc Campus",
-    year: "Present",
+      "University of Colombo School of Computing (UCSC)",
+    year: "2026 – 2029 (Expected)",
     category: "degree",
     badge: "University Undergraduate",
     logo: "/uoc-logo.png",
     details: [
-      "Reading for the Bachelor of Information Technology (BIT) degree at the University of Colombo School of Computing (UCSC).",
+      "Reading for the Bachelor of Information Technology (BIT) degree at the University of Colombo School of Computing (UCSC) — 2026 to 2029 (Expected).",
       "Core focus on Software Engineering, Full-Stack Systems, Database Management, and Network Architecture.",
     ],
   },
   {
     id: "isipathana-al",
-    degree: "G.C.E. Advanced Level (Technology Stream)",
+    degree: "G.C.E. Advanced Level (Tech Stream) & G.C.E. O/L (4A, 4B)",
     institution: "Isipathana College, Colombo",
     year: "Completed",
     category: "degree",
-    badge: "Alma Mater",
+    badge: "Secondary Education",
     logo: "/isipathana-logo.png",
     details: [
-      "Engineering Technology (ET), Science for Technology (SFT), and Information & Communication Technology (ICT — English Medium).",
+      "G.C.E. A/L (Technology Stream: ICT English Medium, SFT, ET) & G.C.E. O/L with 4 Distinctions (A) including ICT (English Medium) and 4 Very Good Passes (B) including Mathematics & Science.",
       "Active member of the ICT and Robotics Society, School Rugby Player (2016–2018), Prefect, and House Captain.",
     ],
   },
@@ -892,14 +893,14 @@ export const EDUCATION_DATA: EducationItem[] = [
   // Diplomas (6)
   {
     id: "esoft-se-diploma",
-    degree: "Pearson Assured Diploma in IT & Software Engineering (DITEC)",
+    degree: "Pearson Assured Diplomas in Software Engineering (DTEC) & IT (DITEC)",
     institution: "Pearson / ESOFT Metro Campus",
     year: "Oct 2023",
     category: "diploma",
-    badge: "Pearson Assured + Transcript",
+    badge: "2 Pearson Diplomas + Transcript",
     logo: "/esoft-logo.jpg",
     details: [
-      "Awarded the Pearson Assured Diploma in Information Technology (DITEC) with full Academic Transcript (08-Oct-2023), covering Software Engineering, OOP, and relational databases.",
+      "Awarded both the Pearson Assured Diploma in Software Engineering (DTEC, 2023) and the Pearson Assured Diploma in Information Technology (DITEC, Oct 2023) with full Academic Transcript.",
     ],
   },
   {
