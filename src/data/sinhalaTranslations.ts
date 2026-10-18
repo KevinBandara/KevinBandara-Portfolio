@@ -247,7 +247,7 @@ const SI_HERO_OVERRIDES = {
   status: "Software Engineering සහ Full-Stack අවස්ථා සඳහා විවෘතයි",
   location: "කොළඹ, ශ්‍රී ලංකාව",
   tagline:
-    "මම ශ්‍රී ලංකාවේ කොළඹ සිට නවීනතම Full-Stack Web Platforms, AI මත පදනම් වූ අධ්‍යාපනික යෙදුම් (EdTech Apps) සහ දැවැන්ත Digital Media ජාලයන් නිර්මාණය කරමින් මෙහෙයවන්නෙමි.",
+    "මම ශ්‍රී ලංකාවේ කොළඹ සිට සිසුන් සහ ව්‍යාපාර සඳහා නවීන වෙබ් අඩවි (Websites), ජංගම දුරකථන යෙදුම් (Mobile Apps), AI අධ්‍යාපනික මෙවලම් සහ අධ්‍යාපනික මාධ්‍ය ජාලයන් නිර්මාණය කරමි.",
   portraits: [
     {
       src: "/KevinPortrait.jpg",
@@ -265,44 +265,44 @@ const SI_HERO_OVERRIDES = {
   telemetry: [
     {
       value: "250K+",
-      label: "මුළු Software පරිශීලකයින්",
-      detail: "MemoAI, DanumaAI සහ Web Platforms හරහා",
+      label: "මුළු App සහ Bot පරිශීලකයින්",
+      detail: "MemoAI, DanumaAI සහ වෙබ් අඩවි හරහා",
     },
     {
       value: "116K+",
-      label: "අධ්‍යාපනික Media ජාලය",
-      detail: "74K+ WhatsApp සහ 42K+ Telegram සාමාජිකයින්",
+      label: "සිසු අධ්‍යාපනික ජාලය",
+      detail: "WhatsApp 74K+ සහ Telegram 42K+ සිසුන්",
     },
     {
       value: "5,000+",
       label: "DanumaAI App Downloads",
-      detail: "Google Play Store, Web සහ Telegram Bot",
+      detail: "Google Play Store, Website සහ Telegram Bot",
     },
     {
       value: "2,000+",
       label: "සක්‍රීය DanumaAI සිසුන්",
-      detail: "AI Study Notes සහ Past-Paper ප්‍රශ්නෝත්තර",
+      detail: "දිනපතා Study Notes සහ Past-Paper උදව්",
     },
     {
       value: "7+",
-      label: "උපාධි සහ පිළිගත් ඩිප්ලෝමා",
+      label: "උපාධි සහ ඩිප්ලෝමා",
       detail: "UCSC BIT, Pearson ESOFT, ATARI සහ Oxborn",
     },
     {
       value: "48",
-      label: "ලේඛනගත සහතික සහ ජයග්‍රහණ",
-      detail: "UoM CODL, CodeXpress, PSD, Kukkiwon සහ Rotaract",
+      label: "සහතික පත්‍ර සහ ජයග්‍රහණ",
+      detail: "මොරටුව සරසවිය, CodeXpress, PSD සහ ක්‍රීඩා",
     },
   ],
 };
 
 const SI_ABOUT_OVERRIDES = {
   headline:
-    "Full-Stack Software Engineering, AI පද්ධති සහ Digital ව්‍යවසායකත්වය එකට යා කරන තරුණ තාක්ෂණික නිර්මාණකරුවෙක්.",
+    "සිසුන්ට සහ සමාජයට ප්‍රයෝජනවත් මෘදුකාංග, AI අධ්‍යාපනික මෙවලම් සහ ඩිජිටල් නිර්මාණ බිහිකරන තරුණ නිර්මාණකරුවෙක්.",
   paragraphs: [
-    "මම R.M. Kevin Sharada Bandara (රත්නායක මුදියන්සේලාගේ කෙවින් ශාරද බණ්ඩාර). කොළඹ පදිංචි Full-Stack Software Developer කෙනෙක්, AI Systems නිර්මාණකරුවෙක්, Graphic/Video Designer කෙනෙක් සහ තාක්ෂණික ව්‍යවසායකයෙක්. මේ වන විට කොළඹ විශ්වවිද්‍යාලයේ පරිගණක අධ්‍යයනාංශයේ (UCSC) Bachelor of Information Technology (BIT) උපාධිය හදාරන අතර, Next.js, React, React Native (Expo), Node.js, Python, PHP/Laravel, MongoDB සහ PostgreSQL යොදාගෙන Production මට්ටමේ Web සහ Mobile Apps නිර්මාණය කිරීමත්, RAG, Gemini API සහ OpenAI හරහා AI පද්ධති ගොඩනැගීමත් මගේ ප්‍රධාන විශේෂත්වයයි.",
-    "මගේ තාක්ෂණික ගමන ආරම්භ වුණේ කොළඹ ඉසිපතන විද්‍යාලයේ අධ්‍යාපනය ලබන කාලයේදීමයි. එහිදී ICT හා Robotics සංගමයේ ක්‍රියාකාරී සාමාජිකයෙකු සහ පාසල් Rugby ක්‍රීඩකයෙකු ලෙස කටයුතු කරන අතරතුර FUTURA '23 ICT තරඟාවලියේ ප්‍රථම ස්ථානය සහ ICBT හි පැවති AI & Robotics තරඟාවලියෙන් තරඟකරුවන් 500 කින් 8 වන ස්ථානය දිනා ගැනීමටත්, ලෝක ටයිකොන්ඩෝ මූලස්ථානයෙන් (Kukkiwon) 1st Poom Black Belt එක ලබා ගැනීමටත් මට හැකි වුණා. 2020 වසරේදී Asteroid Technologies ආරම්භ කරමින් BlackWolf Minecraft Server එක ගොඩනැගූ මම, පසුව Lycoryx Technologies යටතේ MemoAI නිර්මාණය කර Discord Servers 2,157+ ක් හරහා පරිශීලකයින් 250,000+ ක් දක්වා ව්‍යාප්ත කළෙමි.",
-    "වර්තමානයේ මා විසින් පිහිටුවූ Corvento Technologies හරහා Web App, Google Play Store (5,000+ downloads) සහ Telegram Bot (සක්‍රීය සිසුන් 2,000+) යන අංශ තුනෙන්ම ක්‍රියාත්මක වන DanumaAI පද්ධතියත්, 116,000+ කට අධික සිසුන් පිරිසක් සිටින WhatsApp (74,000+) සහ Telegram (42,000+) අධ්‍යාපනික මාධ්‍ය ජාලයත් මෙහෙයවනු ලබයි. ඊට අමතරව Quizzygram හි Senior Web Developer ලෙසත්, Past Papers Wiki හි Sales & Operations Manager සහ Internal Booking Architect ලෙසත්, MAOS Office හි Digital Operations Coordinator ලෙසත්, Fiverr සහ Upwork හි ජාත්‍යන්තර Freelancer කෙනෙකු ලෙසත් කටයුතු කරමි.",
+    "මම R.M. Kevin Sharada Bandara (රත්නායක මුදියන්සේලාගේ කෙවින් ශාරද බණ්ඩාර). කොළඹ පදිංචි මෘදුකාංග නිර්මාණකරුවෙක් (Full-Stack Software Developer), AI නිර්මාණකරුවෙක්, Graphic හා Video Designer කෙනෙක් සහ තරුණ ව්‍යවසායකයෙක්. මේ වන විට කොළඹ විශ්වවිද්‍යාලයේ පරිගණක අධ්‍යයනාංශයේ (UCSC) Bachelor of Information Technology (BIT) උපාධිය හදාරන අතර, සිසුන්ට සහ ආයතනවලට ප්‍රායෝගිකව ප්‍රයෝජනවත් වන Websites, Mobile Apps සහ AI මෙවලම් නිර්මාණය කිරීම මගේ ප්‍රධාන කාර්යයයි.",
+    "මගේ තාක්ෂණික ගමන ආරම්භ වුණේ කොළඹ ඉසිපතන විද්‍යාලයේ පාසල් අධ්‍යාපනය ලබන කාලයේදීමයි. එහිදී පාසල් ICT හා Robotics සංගමයේ ක්‍රියාකාරී සාමාජිකයෙකු ලෙස කටයුතු කරමින් FUTURA '23 ICT තරඟාවලියේ ප්‍රථම ස්ථානය සහ ICBT හි පැවති AI & Robotics තරඟාවලියෙන් සිසුන් 500 කින් 8 වන ස්ථානය දිනා ගැනීමට මට හැකි වුණා. ඊට අමතරව පාසල් Rugby ක්‍රීඩකයෙකු ලෙසත්, Chess සහ චිත්‍ර තරඟ ජයග්‍රාහකයෙකු ලෙසත් කටයුතු කළ මම ලෝක ටයිකොන්ඩෝ මූලස්ථානයෙන් (Kukkiwon) 1st Poom Black Belt එකද හිමිකර ගත්තා. 2020 වසරේදී Asteroid Technologies ආරම්භ කරමින් BlackWolf Minecraft ක්‍රීඩා සර්වරය ගොඩනැගූ මම, පසුව Lycoryx Technologies යටතේ 250,000+ කට අධික පිරිසක් භාවිතා කළ MemoAI නිර්මාණය කළා.",
+    "වර්තමානයේ මා විසින් පිහිටුවූ Corvento Technologies ආයතනය හරහා ශ්‍රී ලාංකික සිසුන්ගේ අධ්‍යාපනයට උදව් වන DanumaAI පද්ධතිය (Website, Google Play Store App — 5,000+ downloads සහ Telegram Bot — සක්‍රීය සිසුන් 2,000+) මෙන්ම, සිසුන් 116,000+ ක් සිටින WhatsApp (74,000+) සහ Telegram (42,000+) අධ්‍යාපනික නාලිකා ජාලයත් මෙහෙයවනු ලබනවා. මීට අමතරව Quizzygram හි Senior Web Developer ලෙසත්, Past Papers Wiki හි Sales & Operations Manager සහ Booking System Developer ලෙසත්, MAOS Office හි Digital Operations Coordinator ලෙසත්, Fiverr සහ Upwork හි Freelance නිර්මාණකරුවෙකු ලෙසත් කටයුතු කරමි.",
   ],
   profileFacts: [
     { label: "සම්පූර්ණ නම", value: "R.M. Kevin Sharada Bandara" },
@@ -316,66 +316,66 @@ const SI_ABOUT_OVERRIDES = {
   ],
   pillars: [
     {
-      code: "01 • Engineering & AI",
-      title: "Full-Stack Web, Mobile සහ RAG පද්ධති",
+      code: "01 • Websites, Apps & AI",
+      title: "වෙබ් අඩවි, Mobile Apps සහ AI මෙවලම්",
       description:
-        "Next.js Web Apps, Google Play Store හි Android Apps (React Native/Expo), Laravel පද්ධති සහ Gemini/OpenAI RAG Bots නිර්මාණය කිරීම.",
+        "සිංහල, දෙමළ සහ ඉංග්‍රීසි භාෂාවලින් පහසුවෙන් භාවිතා කළ හැකි වෙබ් අඩවි, Google Play Store Android Apps සහ AI අධ්‍යාපනික මෙවලම් නිර්මාණය කිරීම.",
     },
     {
-      code: "02 • Ventures & Operations",
-      title: "Corvento ජාලය සහ 116K+ ප්‍රේක්ෂක පිරිස",
+      code: "02 • Education & Communities",
+      title: "Corvento සහ 116K+ සිසු ජාලය",
       description:
-        "DanumaAI, MemoAI වැනි මෘදුකාංග නිර්මාණය කිරීම සහ දිනපතා සිසුන් 116,000+ ක් වෙත ළඟා වන WhatsApp හා Telegram අධ්‍යාපනික ජාල මෙහෙයවීම.",
+        "DanumaAI පද්ධතිය සහ දිනපතා සිසුන් 116,000+ කට පාඩම් සටහන් හා විභාග තොරතුරු ලබා දෙන WhatsApp හා Telegram නාලිකා මෙහෙයවීම.",
     },
     {
-      code: "03 • Creative & Global Delivery",
-      title: "Adobe Creative Suite, Reels සහ Freelance",
+      code: "03 • Design, Video & Freelance",
+      title: "Graphic Design, Video සහ Freelance",
       description:
-        "Premiere Pro, After Effects, Photoshop, Illustrator සහ Figma හරහා Graphic Design, Video Reels සහ ජාත්‍යන්තර Fiverr/Upwork ව්‍යාපෘති සිදු කිරීම.",
+        "Photoshop, Illustrator, Premiere Pro, After Effects සහ Figma හරහා Graphic Design, Video Reels සහ ජාත්‍යන්තර Fiverr/Upwork ව්‍යාපෘති සිදු කිරීම.",
     },
   ],
   milestones: [
     {
       year: "2013 – 2020",
-      title: "මුල්කාලීන ජයග්‍රහණ, Chess, Rugby සහ Kukkiwon Taekwondo Black Belt",
+      title: "පාසල් ජයග්‍රහණ, Chess, Rugby සහ Taekwondo Black Belt",
       subtitle: "ඉසිපතන විද්‍යාලය, Kukkiwon, DGD Chess Club සහ IWMS",
       detail:
-        "IWMS Spoken & Written English විභාග 11 ක් සමත් වීම, DGD Chess තරඟාවලි ජයග්‍රහණ සහ Coaching Award දිනා ගැනීම, Seylan Bank චිත්‍ර තරඟයෙන් 3 වන ස්ථානය, ඉසිපතන විද්‍යාලයේ Rugby ක්‍රීඩා කිරීම සහ Kukkiwon 1st Poom Taekwondo Black Belt එක හිමිකර ගැනීම.",
+        "IWMS ඉංග්‍රීසි කථන හා ලිඛිත විභාග 11 ක් සමත් වීම, DGD Chess තරඟාවලි ජයග්‍රහණ සහ Coaching Award දිනා ගැනීම, Seylan Bank චිත්‍ර තරඟයෙන් 3 වන ස්ථානය, ඉසිපතන විද්‍යාලයේ Rugby ක්‍රීඩා කිරීම සහ Kukkiwon 1st Poom Taekwondo Black Belt එක හිමිකර ගැනීම.",
     },
     {
       year: "2020 – 2022",
-      title: "Asteroid Technologies සහ BlackWolf Minecraft Server ජාලය",
-      subtitle: "පළමු තාක්ෂණික ආයතනය සහ Multiplayer Game Server පද්ධතිය",
+      title: "Asteroid Technologies සහ BlackWolf Minecraft Server",
+      subtitle: "පළමු තාක්ෂණික නිර්මාණය සහ Online Gaming ප්‍රජාව",
       detail:
-        "Asteroid Technologies ආරම්භ කරමින් BlackWolf Minecraft Server එක නිර්මාණය කිරීම — Linux VPS Servers, PaperMC/Spigot Plugins, In-Game Economy සහ Discord Community පද්ධති කළමනාකරණය.",
+        "Asteroid Technologies ආරම්භ කරමින් BlackWolf Minecraft ක්‍රීඩා සර්වරය නිර්මාණය කිරීම — සර්වර් කළමනාකරණය සහ ක්‍රීඩක ප්‍රජාවක් මෙහෙයවීම පිළිබඳ මුල්ම අත්දැකීම.",
     },
     {
       year: "2022 – 2024",
       title: "Pearson ඩිප්ලෝමා, මොරටුව විශ්වවිද්‍යාලයේ සහතික සහ ICT ජයග්‍රහණ",
       subtitle: "ESOFT Metro Campus, University of Moratuwa සහ ඉසිපතන විද්‍යාලය",
       detail:
-        "ESOFT හි Pearson Assured Software Engineering (DTEC), IT (DITEC) සහ English ඩිප්ලෝමා ලබා ගැනීම; මොරටුව විශ්වවිද්‍යාලයේ (UoM CODL) Python, Front-End සහ Web Design සහතික පත්‍ර ලබා ගැනීම; FUTURA '23 ප්‍රථම ස්ථානය සහ ICBT AI & Robotics තරඟයෙන් 8 වන ස්ථානය දිනා ගැනීම.",
+        "ESOFT හි Pearson Assured Software Engineering, IT සහ English ඩිප්ලෝමා ලබා ගැනීම; මොරටුව විශ්වවිද්‍යාලයේ (UoM CODL) Python, Front-End සහ Web Design සහතික ලබා ගැනීම; FUTURA '23 ප්‍රථම ස්ථානය සහ ICBT AI & Robotics තරඟයෙන් 8 වන ස්ථානය දිනා ගැනීම.",
     },
     {
       year: "2022 – Apr 2025",
-      title: "Lycoryx Technologies සහ MemoAI පරිශීලකයින් 250,000+ දක්වා ව්‍යාප්ත කිරීම",
-      subtitle: "Discord Servers 2,157+ සහ OAuth2 Web Playground",
+      title: "Lycoryx Technologies සහ MemoAI පරිශීලකයින් 250,000+ දක්වා වර්ධනය",
+      subtitle: "Discord Communities 2,157+ සහ Web Dashboard",
       detail:
-        "Node.js, Express, Discord.js, MongoDB සහ OpenAI APIs යොදාගෙන MemoAI නිර්මාණය කර Discord Servers 2,157+ ක සාමාජිකයින් 250,000+ ක් දක්වා වර්ධනය කිරීම (අධික LLM Server පිරිවැය හේතුවෙන් 2025 අප්‍රේල් මස නතර කරන ලදී).",
+        "Lycoryx Technologies යටතේ MemoAI නිර්මාණය කර Discord සර්වර් 2,157+ ක සාමාජිකයින් 250,000+ ක් දක්වා ව්‍යාප්ත කිරීම (අධික AI සර්වර් පිරිවැය හේතුවෙන් 2025 අප්‍රේල් මස නතර කරන ලදී).",
     },
     {
       year: "2025 – වර්තමානය",
-      title: "Senior Web Developer, Booking Architect සහ Creative සහතිකකරණය",
+      title: "Senior Web Developer, Past Papers Wiki සහ නිර්මාණකරණ ඩිප්ලෝමා",
       subtitle: "Quizzygram, Past Papers Wiki, CodeXpress, PSD Academy සහ ATARI",
       detail:
-        "Quizzygram හි Senior Web Developer ලෙසත්, Past Papers Wiki හි Sales & Operations Manager සහ Internal Booking Engine Architect ලෙසත් එක්වීම; CodeXpress (Laravel), PSD Academy (Premiere Pro & After Effects) සහ ATARI City Campus (Graphic Design Merit Scholarship Diploma) සම්පූර්ණ කිරීම.",
+        "Quizzygram හි Senior Web Developer ලෙසත්, Past Papers Wiki හි Sales & Operations Manager (සහ Booking පද්ධතියේ නිර්මාතෘ) ලෙසත් එක්වීම; CodeXpress (Laravel), PSD Academy (Premiere Pro & After Effects) සහ ATARI City Campus (Graphic Design Scholarship Diploma) සම්පූර්ණ කිරීම.",
     },
     {
       year: "2026 – වර්තමානය",
       title: "Corvento Technologies, DanumaAI, MAOS Office සහ UCSC BIT උපාධිය",
-      subtitle: "5,000+ App Downloads, 116K+ Media ජාලය සහ විශ්වවිද්‍යාල අධ්‍යාපනය",
+      subtitle: "5,000+ App Downloads, 116K+ සිසු ජාලය සහ විශ්වවිද්‍යාල අධ්‍යාපනය",
       detail:
-        "Corvento Technologies යටතේ DanumaAI (Web, Play Store 5,000+ downloads සහ Telegram Bot සිසුන් 2,000+) දියත් කිරීම, WhatsApp හා Telegram අධ්‍යාපනික ජාලය 116,000+ දක්වා පුළුල් කිරීම, MAOS Office හි Digital Operations Coordinator ලෙස කටයුතු කිරීම සහ UCSC හි BIT උපාධිය හැදෑරීම.",
+        "Corvento Technologies යටතේ DanumaAI (Website, Play Store 5,000+ downloads සහ Telegram Bot සිසුන් 2,000+) දියත් කිරීම, WhatsApp හා Telegram අධ්‍යාපනික ජාලය 116,000+ දක්වා පුළුල් කිරීම, MAOS Office හි Digital Operations Coordinator ලෙස කටයුතු කිරීම සහ UCSC හි BIT උපාධිය හැදෑරීම.",
     },
   ],
 };
@@ -387,22 +387,22 @@ const SI_CORVENTO_OVERRIDES = {
       name: "Asteroid Technologies",
       logo: "/AsteroidTechLogo.jpg",
       secondaryLogo: "/BlackWolfMC-Logo.jpg",
-      status: "ආරම්භක නාමය",
-      desc: "BlackWolf Minecraft multiplayer ජාලය, gaming communities සහ මුල්කාලීන web මෙවලම් නිර්මාණය කිරීම සඳහා ආරම්භ කළ පළමු තාක්ෂණික සන්නාමය.",
+      status: "ආරම්භය",
+      desc: "2020 වසරේදී BlackWolf Minecraft ක්‍රීඩා සර්වරය සහ මුල්කාලීන වෙබ් නිර්මාණ සඳහා මා ආරම්භ කළ පළමු තාක්ෂණික නාමය.",
     },
     {
       era: "2022 – 2025 • AI ව්‍යාප්ති අවධිය",
       name: "Lycoryx Technologies",
       logo: "/LycoryxTech.jpg",
-      status: "AI ව්‍යාප්තිය",
-      desc: "Discord Servers 2,157+ ක පරිශීලකයින් 250,000+ ක් භාවිතා කළ MemoAI පද්ධතිය සහ DanumaAI හි පළමු සංස්කරණය ගොඩනැගූ අවධිය.",
+      status: "AI වර්ධනය",
+      desc: "Discord සර්වර් 2,157+ ක සාමාජිකයින් 250,000+ ක් භාවිතා කළ MemoAI පද්ධතිය සහ DanumaAI හි පළමු සංස්කරණය නිර්මාණය කළ අවධිය.",
     },
     {
       era: "2025 – වර්තමානය • ප්‍රධාන ආයතනය",
       name: "Corvento Technologies",
       logo: "/CorventoTechLogo.jpg",
-      status: "වත්මන් මව් ආයතනය",
-      desc: "DanumaAI (Web, Google Play Store සහ Telegram Bot), @corventotech YouTube/Reels සහ 116,000+ ක් සිටින WhatsApp හා Telegram අධ්‍යාපනික මාධ්‍ය ජාලය මෙහෙයවන ප්‍රධාන ආයතනය.",
+      status: "වත්මන් ප්‍රධාන ආයතනය",
+      desc: "DanumaAI (Website, Google Play Store සහ Telegram Bot), @corventotech YouTube/Reels සහ සිසුන් 116,000+ ක් සිටින WhatsApp හා Telegram අධ්‍යාපනික ජාලය මෙහෙයවන ප්‍රධාන ආයතනය.",
     },
   ],
   channels: [
@@ -413,9 +413,9 @@ const SI_CORVENTO_OVERRIDES = {
       followers: "28K+ Followers",
       url: "https://whatsapp.com/channel/0029Vb6OtjqGufIqshtuIM3C",
       logo: "/AchieversHub.jpg",
-      category: "අධ්‍යාපනික සහ තාක්ෂණික ජාලය",
+      category: "අධ්‍යාපනික සහ පාඩම් සටහන්",
       description:
-        "ශ්‍රී ලාංකික සිසුන් සඳහා දිනපතා අධ්‍යාපනික සම්පත්, තාක්ෂණික දැනුම සහ විභාග මාර්ගෝපදේශ ලබා දෙන ප්‍රධානතම නාලිකාව.",
+        "ශ්‍රී ලාංකික සිසුන්ට දිනපතා පාඩම් සටහන්, විභාග උපදෙස් සහ තාක්ෂණික දැනුම ලබා දෙන ප්‍රධාන නාලිකාව.",
     },
     {
       id: "lanka-diaries",
@@ -423,9 +423,9 @@ const SI_CORVENTO_OVERRIDES = {
       followers: "20K+ Followers",
       url: "https://whatsapp.com/channel/0029VbAe5k0AInPoph6EFQ34",
       logo: "/LankaDiaries.jpg",
-      category: "Digital Media සහ ජීවන රටා",
+      category: "සාමාන්‍ය දැනුම සහ තොරතුරු",
       description:
-        "ශ්‍රී ලංකාව පුරා විහිදුණු සුවිශේෂී තොරතුරු, සංස්කෘතික විශේෂාංග සහ දිනපතා Digital Media අන්තර්ගතයන්.",
+        "ශ්‍රී ලංකාවේ සහ ලෝකයේ වැදගත් තොරතුරු, සාමාන්‍ය දැනුම සහ දිනපතා ඩිජිටල් විශේෂාංග බෙදාගන්නා නාලිකාව.",
     },
     {
       id: "sarasavi-sihinaya",
@@ -434,9 +434,9 @@ const SI_CORVENTO_OVERRIDES = {
       followers: "17K+ Followers",
       url: "https://whatsapp.com/channel/0029ValZ7iP4tRrzE8m4s21g",
       logo: "/SarasaviSihinaya.jpg",
-      category: "උසස් අධ්‍යාපන මාර්ගෝපදේශ",
+      category: "උසස් පෙළ සහ සරසවි මාර්ගෝපදේශ",
       description:
-        "විශ්වවිද්‍යාල ප්‍රවේශය ඉලක්ක කරගත් උසස් පෙළ (A/L) සිසුන් සඳහා අධ්‍යයන උපදෙස් සහ අභිප්‍රේරණය ලබා දෙන නාලිකාව.",
+        "විශ්වවිද්‍යාල ප්‍රවේශය ඉලක්ක කරගත් උසස් පෙළ (A/L) සිසුන් සඳහා පාඩම් උපදෙස් සහ අභිප්‍රේරණය ලබා දෙන නාලිකාව.",
     },
     {
       id: "sarasavi-pin-bima",
@@ -445,9 +445,9 @@ const SI_CORVENTO_OVERRIDES = {
       followers: "9K+ Followers",
       url: "https://whatsapp.com/channel/0029Vai0gVe59PwJw0F3IS2g",
       logo: "/SarasaviPinBima.jpg",
-      category: "සරසවි ප්‍රවේශ ප්‍රජාව",
+      category: "සරසවි සිසු ප්‍රජාව",
       description:
-        "සරසවි අපේක්ෂක සිසුන් සඳහා විශ්වවිද්‍යාල තොරතුරු, ශිෂ්‍යත්ව යාවත්කාලීන කිරීම් සහ පාඩම් ක්‍රමවේද බෙදාගන්නා එකතුව.",
+        "සරසවි අපේක්ෂක සිසුන් සඳහා විශ්වවිද්‍යාල තොරතුරු, ශිෂ්‍යත්ව විස්තර සහ පාඩම් ක්‍රමවේද බෙදාගන්නා එකතුව.",
     },
   ],
 };
@@ -468,105 +468,105 @@ export function getLocalizedPortfolio(lang: Language) {
     };
   }
 
-  // Sinhala localized version with natural English technical terms preserved
+  // Sinhala localized version with natural, easy-to-understand explanations
   const siProjects: FeaturedProject[] = FEATURED_PROJECTS.map((p) => {
     if (p.id === "danuma-ai") {
       return {
         ...p,
-        title: "DanumaAI — AI මත පදනම් වූ අධ්‍යාපනික පද්ධතිය",
+        title: "DanumaAI — ශ්‍රී ලාංකික සිසුන් සඳහා AI අධ්‍යාපනික සහායකයා",
         subtitle:
-          "Corvento Technologies නිර්මාණයක් • Web App, Google Play Store App සහ Telegram AI Bot",
-        role: "නිර්මාතෘ සහ ප්‍රධාන Software Architect",
+          "Corvento Technologies නිර්මාණයක් • Website, Google Play Store App සහ Telegram Bot",
+        role: "නිර්මාතෘ සහ ප්‍රධාන Developer",
         period: "2026 – වර්තමානය",
         statusBadge: "සජීවීව ක්‍රියාත්මකයි (Live)",
         overview:
-          "Corvento Technologies යටතේ නිර්මාණය කළ ප්‍රධානතම AI අධ්‍යාපනික පද්ධතියයි. Web App (danumaai.lk), Google Play Store හි Android App (5,000+ downloads) සහ Telegram AI Bot (@DanumaAI_Bot) යන අංශ තුනෙන්ම ක්‍රියාත්මක වෙමින් සක්‍රීය සිසුන් 2,000+ කට සිංහල, දෙමළ සහ ඉංග්‍රීසි භාෂාවලින් ස්වයංක්‍රීය Study Notes සහ Past-Paper ප්‍රශ්නෝත්තර විසඳුම් ලබා දෙයි.",
+          "Corvento Technologies යටතේ ශ්‍රී ලාංකික සිසුන් වෙනුවෙන් නිර්මාණය කළ AI අධ්‍යාපනික පද්ධතියයි. වෙබ් අඩවිය (danumaai.lk), Google Play Store හි Android App එක (5,000+ downloads) සහ Telegram Bot (@DanumaAI_Bot) හරහා දැනට සක්‍රීය සිසුන් 2,000+ කට සිංහල, දෙමළ සහ ඉංග්‍රීසි භාෂාවලින් කෙටි සටහන් (Study Notes) සකසා ගැනීමටත්, පසුගිය විභාග ප්‍රශ්නවලට පියවරෙන් පියවර පිළිතුරු ලබා ගැනීමටත් උදව් කරයි.",
         highlights: [
-          "Web App, Google Play Store Android App (5,000+ downloads) සහ Telegram Bot යන අංශ තුනම එකම පද්ධතියකට සම්බන්ධ කර Corvento Technologies යටතේ ක්‍රියාත්මක වේ.",
-          "Retrieval-Augmented Generation (RAG), ස්වයංක්‍රීය Study Notes සැකසීම සහ ඡායාරූප හරහා ගැටලු විසඳීමේ (Vision OCR) පහසුකම් සක්‍රීය සිසුන් 2,000+ කට සපයයි.",
-          "ගුරුවරුන්ට තම පන්ති සහ අධ්‍යාපනික තොරතුරු අදාළ විෂය අනුව සිසුන් වෙත ඉදිරිපත් කළ හැකි Contextual Ad-Placement Engine එකක්ද මීට ඇතුළත් කර ඇත.",
+          "Website, Google Play Store Android App (5,000+ downloads) සහ Telegram Bot යන අංශ තුනෙන්ම සිසුන්ට නොමිලේ සහ පහසුවෙන් භාවිතා කළ හැක.",
+          "සිංහල, දෙමළ සහ ඉංග්‍රීසි භාෂාවලින් විෂය කරුණු විමසීමට, කෙටි සටහන් සකසා ගැනීමට සහ ප්‍රශ්න පත්‍රවල ඡායාරූප යොමු කර පිළිතුරු ලබා ගැනීමට සිසුන් 2,000+ කට උදව් කරයි.",
+          "ගුරුවරුන්ට තම පන්ති පිළිබඳ තොරතුරු අදාළ ශ්‍රේණියේ සහ විෂයයේ සිසුන් වෙත පෙන්විය හැකි විශේෂ පහසුකමක්ද ඇතුළත් කර ඇත.",
         ],
       };
     }
     if (p.id === "quizzygram") {
       return {
         ...p,
-        title: "Quizzygram — අන්තර්ක්‍රියාකාරී අධ්‍යාපනික සහ Quiz පද්ධතිය",
+        title: "Quizzygram — ඔන්ලයින් අධ්‍යාපනික සහ Quiz වෙබ් අඩවිය",
         subtitle:
-          "Telegram ආකාරයේ Real-Time Chats, Forums, Channels, Quizzes සහ තරඟාවලි",
+          "සජීවී සිසු කතාබහ (Chats), සාකච්ඡා මණ්ඩප (Forums), Channels සහ Quiz තරඟාවලි",
         role: "Senior Web Developer",
         period: "2025 – වර්තමානය",
         overview:
-          "ශ්‍රී ලංකාවේ ප්‍රමුඛතම අධ්‍යාපනික Telegram ජාලයක් වන Educational Channel SL (42,000+ සිසුන්) සමඟ සම්බන්ධිත Quizzygram (quizzygram.com) වෙබ් පද්ධතියේ Senior Web Developer ලෙස කටයුතු කරමින් Real-Time Chats, සිසු සාකච්ඡා මණ්ඩප (Forums), Channels, Quizzes සහ සජීවී තරඟාවලි (Competitions) නිර්මාණය කරන ලදී.",
+          "ලංකාවේ ප්‍රමුඛතම අධ්‍යාපනික Telegram ප්‍රජාවක් වන Educational Channel SL (සිසුන් 42,000+) සමඟ සම්බන්ධිත Quizzygram (quizzygram.com) වෙබ් අඩවියේ Senior Web Developer ලෙස කටයුතු කරමින්, සිසුන්ට එකිනෙකා සමඟ පාඩම් සාකච්ඡා කිරීමට, ප්‍රශ්න ඇසීමට සහ සජීවී Quiz තරඟාවලි සඳහා සහභාගී වීමට අවශ්‍ය පහසුකම් නිර්මාණය කරන ලදී.",
         highlights: [
-          "Telegram ආකාරයේ Real-Time Chat පහසුකම්, විෂයයන් අනුව වෙන් කළ Channels සහ සිසුන් සඳහා Discussion Forums නිර්මාණය කිරීම.",
-          "කාලය මැන බලන Quizzes (Timed Quizzes) සහ සජීවී ලකුණු පුවරු (Leaderboards) සහිත තරඟකාරී අධ්‍යාපනික අත්දැකීමක් ගොඩනැගීම.",
-          "සිසුන් විශාල පිරිසක් එකවර භාවිතා කරන අවස්ථාවලදී වේගවත්ව ක්‍රියාත්මක වන පරිදි Frontend සහ API කාර්යක්ෂමතාව ඉහළ නැංවීම.",
+          "සිසුන්ට විෂය කරුණු සාකච්ඡා කිරීම සඳහා සජීවී Chat කාමර, Channels සහ ප්‍රශ්නෝත්තර Forums නිර්මාණය කිරීම.",
+          "විභාග පෙරහුරුව වඩාත් උද්යෝගිමත් කිරීමට කාලය මැන බලන Quizzes සහ සජීවී ලකුණු පුවරු (Leaderboards) ගොඩනැගීම.",
+          "දුරකථන සහ පරිගණක දෙකෙන්ම ඉතා වේගවත්ව ක්‍රියාත්මක වන ලෙස වෙබ් අඩවිය වැඩිදියුණු කිරීම.",
         ],
       };
     }
     if (p.id === "past-papers-wiki") {
       return {
         ...p,
-        title: "Past Papers Wiki — Custom Internal Booking පද්ධතිය",
-        subtitle: "PastPapers.Wiki සඳහා නිර්මාණය කළ ස්වයංක්‍රීය Booking සහ Scheduling පද්ධතිය",
-        role: "Full-Stack Architect සහ Sales Manager",
+        title: "Past Papers Wiki — දැන්වීම් වෙන්කරවා ගැනීමේ (Booking) පද්ධතිය",
+        subtitle: "PastPapers.Wiki සඳහා නිර්මාණය කළ අභ්‍යන්තර Booking පද්ධතිය සහ ඔන්ලයින් අලෙවි කටයුතු",
+        role: "Full-Stack Developer සහ Sales Manager",
         period: "2025 – වර්තමානය",
         overview:
-          "ලංකාවේ සිසුන් 140,000+ කට අධික පිරිසක් භාවිතා කරන Past Papers Wiki (pastpapers.wiki) හි අලෙවි කටයුතු මෙහෙයවන අතරතුර, ආයතනයේ දැන්වීම් කාලසටහන් සහ ගුරුවරුන්ගේ Campaigns ස්වයංක්‍රීයව වෙන්කරවා ගැනීම සඳහා නිර්මාණය කළ අභ්‍යන්තර (Internal) Booking පද්ධතියයි.",
+          "ලංකාවේ සිසුන් 140,000+ කට අධික පිරිසක් භාවිතා කරන Past Papers Wiki (pastpapers.wiki) හි ඔන්ලයින් ප්‍රශ්න පත්‍ර අලෙවි කටයුතු මෙහෙයවන අතරතුර, ආයතනයේ ගුරුවරුන්ගේ දැන්වීම් කාලසටහන් පහසුවෙන් වෙන්කරවා ගැනීම සඳහා නිර්මාණය කළ අභ්‍යන්තර (Internal) Booking පද්ධතියයි.",
         highlights: [
-          "එකම වේලාවක දැන්වීම් දෙකක් වෙන්වීම වැළැක්වීමේ (Zero-Conflict Validation) තාක්ෂණය සහිතව අභ්‍යන්තර Booking සහ Scheduling පද්ධතිය ගොඩනැගීම.",
-          "දිවයින පුරා සිසුන් වෙත පසුගිය විභාග ප්‍රශ්න පත්‍ර සහ අධ්‍යාපනික සම්පත් බෙදාහැරීමේ හා අලෙවි කටයුතු කළමනාකරණය කිරීම.",
+          "එකම දිනයක හෝ වේලාවක දැන්වීම් දෙකක් වැරදීමකින් වෙන්වීම වළක්වන ස්වයංක්‍රීය Booking සහ Scheduling වෙබ් පද්ධතියක් නිර්මාණය කිරීම.",
+          "දිවයින පුරා සිසුන් වෙත පසුගිය විභාග ප්‍රශ්න පත්‍ර සහ අධ්‍යාපනික පොත්පත් බෙදාහැරීමේ හා පාරිභෝගික සේවා කටයුතු මෙහෙයවීම.",
         ],
       };
     }
     if (p.id === "kev-thash-sweet-treats") {
       return {
         ...p,
-        title: "Kev & Thash Sweet Treats — සිංහල/ඉංග්‍රීසි E-Commerce වෙබ් අඩවිය",
+        title: "Kev & Thash Sweet Treats — සිංහල සහ ඉංග්‍රීසි කේක් ඇණවුම් කිරීමේ වෙබ් අඩවිය",
         subtitle:
-          "සිංහල සහ ඉංග්‍රීසි භාෂා දෙකෙන්ම ක්‍රියාත්මක වන කේක් සහ රසකැවිලි ඇණවුම් කිරීමේ පද්ධතිය",
+          "සිංහල/ඉංග්‍රීසි භාෂා දෙකෙන්ම ක්‍රියාත්මක වන සහ WhatsApp හරහා ඇණවුම් කළ හැකි වෙබ් අඩවිය",
         role: "Full-Stack Developer",
         period: "2025 – වර්තමානය",
         overview:
-          "සිංහල සහ ඉංග්‍රීසි භාෂා දෙකෙන්ම (Bilingual i18n) ඉතා පහසුවෙන් මෙනු පරීක්ෂා කර එක ක්ලික් එකකින් WhatsApp හරහා ඇණවුම් යොමු කළ හැකි නවීන E-Commerce වෙබ් අඩවියකි.",
+          "සිංහල සහ ඉංග්‍රීසි භාෂා දෙකෙන්ම ඉතා පහසුවෙන් කේක් වර්ග සහ මිල ගණන් පරීක්ෂා කර, එක ක්ලික් එකකින් කෙලින්ම WhatsApp හරහා ඇණවුම් යොමු කළ හැකි නවීන ව්‍යාපාරික වෙබ් අඩවියකි.",
         highlights: [
-          "Next.js සහ TypeScript භාවිතයෙන් ජංගම දුරකථන සඳහා වඩාත් ගැළපෙන ලෙස සිංහල/ඉංග්‍රීසි භාෂා මාරු කිරීමේ පහසුකම සහිතව නිර්මාණය කර ඇත.",
-          "Schema.org LocalBusiness SEO සහ සෘජුවම WhatsApp වෙත ඇණවුම් විස්තර යැවීමේ ක්‍රමවේදය ඇතුළත් කර ඇත.",
+          "ඕනෑම පාරිභෝගිකයෙකුට ජංගම දුරකථනයෙන් ඉතා පහසුවෙන් සිංහල හෝ ඉංග්‍රීසි භාෂාවෙන් මෙනුව බැලීමට හැකි ලෙස නිර්මාණය කර ඇත.",
+          "තෝරාගත් කේක් ඇණවුම ස්වයංක්‍රීයව WhatsApp පණිවිඩයක් ලෙස ආයතනය වෙත යැවීමේ පහසුකම ඇතුළත් කර ඇත.",
         ],
       };
     }
     if (p.id === "memo-ai") {
       return {
         ...p,
-        title: "MemoAI — Discord AI Bot සහ Web Playground පද්ධතිය",
+        title: "MemoAI — Discord AI Chatbot සහ වෙබ් පද්ධතිය",
         subtitle:
-          "Discord Servers 2,157+ ක සාමාජිකයින් 250,000+ ක් දක්වා ව්‍යාප්ත වූ AI පද්ධතිය (2025 අප්‍රේල් දක්වා)",
+          "Discord සර්වර් 2,157+ ක සාමාජිකයින් 250,000+ ක් භාවිතා කළ AI පද්ධතිය (2022 – 2025 අප්‍රේල්)",
         role: "නිර්මාතෘ සහ ප්‍රධාන Developer",
         period: "2022 – 2025 අප්‍රේල්",
-        statusBadge: "2025 අප්‍රේල් මස නතර කරන ලදී (අධික Server පිරිවැය නිසා)",
+        statusBadge: "2025 අප්‍රේල් මස නතර කරන ලදී (අධික AI සර්වර් පිරිවැය නිසා)",
         overview:
-          "Lycoryx / Corvento Technologies යටතේ ගොඩනැගූ, Discord Servers 2,157+ ක සාමාජිකයින් 250,000+ කට අධික පිරිසක් භාවිතා කළ AI Text හා Image Generation Bot පද්ධතිය සහ Discord OAuth2 Web Dashboard එකයි. විශාල පරිශීලක පිරිසක් සමඟ ඇති වූ අධික LLM API සහ මූල්‍ය පිරිවැය හේතුවෙන් 2025 අප්‍රේල් මස මෙහෙයුම් අවසන් කරන ලදී.",
+          "Lycoryx / Corvento Technologies යටතේ ගොඩනැගූ, Discord සර්වර් 2,157+ ක සාමාජිකයින් 250,000+ කට අධික පිරිසක් ප්‍රශ්න ඇසීමට සහ AI පින්තූර නිර්මාණය කර ගැනීමට භාවිතා කළ AI Bot පද්ධතියයි. අධික පරිශීලක පිරිසක් සමඟ ඇති වූ ඉහළ AI සර්වර් පිරිවැය හේතුවෙන් 2025 අප්‍රේල් මස මෙහෙයුම් අවසන් කරන ලදී.",
         highlights: [
-          "Discord Servers 2,157+ ක සාමාජිකයින් 250,000+ ක් සඳහා එකවර AI පණිවිඩ හසුරුවන Asynchronous Queues සහ Rate-Limiting පද්ධතියක් නිර්මාණය කිරීම.",
-          "Discord OAuth2 හරහා ලොග් විය හැකි Web Playground එකක් නිර්මාණය කිරීම (2025 අප්‍රේල් මස මූල්‍ය පිරිවැය හේතුවෙන් නතර කරන ලදී).",
+          "සර්වර් 2,157+ ක සාමාජිකයින් 250,000+ කට එකවර AI පණිවිඩ සහ පින්තූර ලබා දිය හැකි ලෙස පද්ධතිය ගොඩනැගීම.",
+          "Discord ගිණුම හරහා ලොග් වී AI භාවිතා කළ හැකි වෙබ් අඩවියක් (Web Playground) නිර්මාණය කිරීම.",
         ],
       };
     }
     if (p.id === "blackwolf-mc") {
       return {
         ...p,
-        title: "BlackWolf Minecraft Server — Multiplayer Game Server පද්ධතිය",
+        title: "BlackWolf Minecraft Server — Multiplayer ක්‍රීඩා සර්වරය",
         subtitle:
-          "Custom Multiplayer Server Network, In-Game Economy සහ Plugin පද්ධතිය",
+          "ක්‍රීඩකයින් රැසකට එකවර ක්‍රීඩා කළ හැකි Minecraft Server ජාලය සහ Discord ප්‍රජාව",
         role: "නිර්මාතෘ සහ Server Administrator (Asteroid Technologies)",
         period: "2020 – 2022",
         statusBadge: "පෙර ක්‍රියාත්මක වූ ව්‍යාපෘතියකි",
         overview:
-          "Asteroid Technologies යුගයේදී මා විසින් ආරම්භ කර පවත්වාගෙන ගිය BlackWolf Minecraft Multiplayer Server ජාලයයි. Linux VPS Hosting, Custom Plugins, In-Game Economy සහ Discord Community සම්බන්ධතාවයන් මින් කළමනාකරණය කරන ලදී.",
+          "2020 වසරේදී Asteroid Technologies යටතේ මා විසින් ආරම්භ කළ පළමු තාක්ෂණික ව්‍යාපෘතියයි. ක්‍රීඩකයින්ට ඔන්ලයින් සම්බන්ධ වී ක්‍රීඩා කළ හැකි BlackWolf Minecraft සර්වරය සහ එහි Discord ප්‍රජාව මින් කළමනාකරණය කරන ලදී.",
         highlights: [
-          "Multiplayer Minecraft Server එකේ වේගය, Custom Plugins, Anti-Cheat ආරක්ෂාව සහ ස්වයංක්‍රීය Backups කළමනාකරණය කිරීම.",
-          "Discord හරහා ක්‍රියාකාරී ක්‍රීඩක ප්‍රජාවක් ගොඩනගමින් පසුකාලීනව Corvento Technologies දක්වා වර්ධනය වූ තාක්ෂණික පදනම සකස් කිරීම.",
+          "Linux සර්වර් සකස් කිරීම, ක්‍රීඩා Plugins එක් කිරීම සහ සර්වරයේ ආරක්ෂාව හා වේගය පවත්වා ගැනීම.",
+          "Discord හරහා ක්‍රියාකාරී ක්‍රීඩක පිරිසක් එකතු කරගනිමින් ඔන්ලයින් ආයතනයක් මෙහෙයවීමේ මුල්ම අත්දැකීම ලබා ගැනීම.",
         ],
       };
     }
@@ -581,11 +581,11 @@ export function getLocalizedPortfolio(lang: Language) {
         period: "2020 – වර්තමානය",
         location: "කොළඹ, ශ්‍රී ලංකාව",
         description:
-          "DanumaAI (Web, Play Store, Telegram Bot), @corventotech YouTube/Reels සහ 116,000+ ක් සිටින WhatsApp හා Telegram අධ්‍යාපනික මාධ්‍ය ජාලය මෙහෙයවන ප්‍රධාන තාක්ෂණික ආයතනය ආරම්භ කර පවත්වාගෙන යාම. (Asteroid Technologies -> Lycoryx Technologies -> Corvento Technologies).",
+          "DanumaAI අධ්‍යාපනික පද්ධතිය (Website, Play Store App, Telegram Bot), @corventotech YouTube/Reels සහ සිසුන් 116,000+ ක් සිටින WhatsApp හා Telegram අධ්‍යාපනික ජාලය මෙහෙයවන ප්‍රධාන ආයතනය ආරම්භ කර පවත්වාගෙන යාම.",
         achievements: [
-          "Corvento Technologies යටතේ Web, Google Play Store (5,000+ downloads) සහ Telegram Bot හරහා සක්‍රීය සිසුන් 2,000+ ක් භාවිතා කරන DanumaAI පද්ධතිය නිර්මාණය කර දියත් කිරීම.",
-          "දිනපතා යාවත්කාලීන වන නිල WhatsApp Channels 4 ක් (74,000+ subscribers) සහ අධ්‍යාපනික Telegram ජාලයන් (42,000+ සිසුන්) කළමනාකරණය කිරීම.",
-          "මීට පෙර MemoAI නිර්මාණය කර Discord Servers 2,157+ ක සාමාජිකයින් 250,000+ ක් දක්වා ව්‍යාප්ත කිරීම (2025 අප්‍රේල් මස අධික මූල්‍ය පිරිවැය හේතුවෙන් නතර කරන ලදී).",
+          "Website, Google Play Store (5,000+ downloads) සහ Telegram Bot හරහා සක්‍රීය සිසුන් 2,000+ කට පාඩම් වැඩවලට උදව් කරන DanumaAI නිර්මාණය කිරීම.",
+          "දිනපතා පාඩම් සටහන් බෙදාහරින නිල WhatsApp Channels 4 ක් (74,000+ followers) සහ Telegram අධ්‍යාපනික ජාලයන් (42,000+ සිසුන්) කළමනාකරණය කිරීම.",
+          "මීට පෙර MemoAI නිර්මාණය කර Discord සර්වර් 2,157+ ක සාමාජිකයින් 250,000+ ක් දක්වා වර්ධනය කිරීම (2022 – 2025 අප්‍රේල්).",
         ],
       };
     }
@@ -596,10 +596,10 @@ export function getLocalizedPortfolio(lang: Language) {
         period: "2026 ඔක්තෝබර් – වර්තමානය",
         location: "Remote • Part-Time",
         description:
-          "MAOS Office (Magical Accounting Online School) හි මාර්ගගත අධ්‍යාපන වැඩසටහන් සඳහා අධ්‍යාපනික සම්පත් බෙදාහැරීම, සිසු සන්නිවේදනය සහ WhatsApp Broadcast නාලිකා කළමනාකරණය කිරීම.",
+          "MAOS Office (Magical Accounting Online School) හි ගිණුම්කරණ (Accounting) සිසුන් සඳහා දිනපතා පාඩම් සටහන්, පන්ති තොරතුරු සහ විභාග නිවේදන නිල WhatsApp නාලිකා හරහා බෙදාහැරීම.",
         achievements: [
-          "නිල අධ්‍යාපනික WhatsApp Broadcast Channels 3 ක් හරහා දිනපතා පාඩම් මාලා සහ නිවේදන සිසුන් වෙත බෙදාහැරීම.",
-          "විභාග දැනුවත් කිරීම්, අධ්‍යයන සම්පත් සහ සිසුන්ගේ තොරතුරු නිසි පිළිවෙළට සම්බන්ධීකරණය කිරීම.",
+          "නිල අධ්‍යාපනික WhatsApp Channels 3 ක් හරහා දිනපතා පාඩම් සටහන් සහ පන්ති විස්තර සිසුන් වෙත යොමු කිරීම.",
+          "විභාග නිවේදන සහ අධ්‍යයන තොරතුරු නිසි වේලාවට සිසුන් වෙත ලබා දීමට සම්බන්ධීකරණය කිරීම.",
         ],
       };
     }
@@ -610,39 +610,39 @@ export function getLocalizedPortfolio(lang: Language) {
         period: "2025 – වර්තමානය",
         location: "Remote • Part-Time",
         description:
-          "ලංකාවේ ප්‍රමුඛතම අධ්‍යාපනික Telegram ජාලයක් වන Educational Channel SL (42,000+ සිසුන්) සමඟ සම්බන්ධිත Quizzygram (quizzygram.com) සමාජ අධ්‍යාපනික වෙබ් පද්ධතියේ ප්‍රධාන Web Development කටයුතු මෙහෙයවීම.",
+          "Educational Channel SL (සිසුන් 42,000+) Telegram ප්‍රජාව සමඟ සම්බන්ධිත Quizzygram (quizzygram.com) ඔන්ලයින් අධ්‍යාපනික සහ Quiz වෙබ් අඩවියේ ප්‍රධාන Web Development කටයුතු මෙහෙයවීම.",
         achievements: [
-          "Telegram ආකාරයේ Real-Time Chats, සිසු සාකච්ඡා මණ්ඩප (Forums), අධ්‍යාපනික Channels සහ සජීවී Quiz තරඟාවලි නිර්මාණය කිරීම.",
-          "විභාග කාලසීමාවන්හිදී අධික සිසු පිරිසක් පිවිසෙන විට බාධාවකින් තොරව ක්‍රියාත්මක වීමට Database සහ Frontend වේගය වැඩිදියුණු කිරීම.",
+          "සිසුන්ට පාඩම් සාකච්ඡා කිරීමට සජීවී Chat පහසුකම්, Forums, Channels සහ Quiz තරඟාවලි වෙබ් අඩවිය තුළ නිර්මාණය කිරීම.",
+          "විභාග කාලසීමාවන්හිදී සිසුන් විශාල පිරිසකට එකවර බාධාවකින් තොරව Quizzes කිරීමට හැකි ලෙස වෙබ් අඩවියේ වේගය වැඩිදියුණු කිරීම.",
         ],
       };
     }
     if (exp.id === "paperwikipedia") {
       return {
         ...exp,
-        role: "Sales & Operations Manager + Booking Architect",
+        role: "Sales & Operations Manager + Booking System Developer",
         period: "2025 – වර්තමානය",
         location: "Remote • Part-Time",
         description:
-          "දිවයින පුරා සිසුන් සඳහා පසුගිය විභාග ප්‍රශ්න පත්‍ර සහ අධ්‍යාපනික පොත්පත් බෙදාහැරීමේ හා අලෙවි කටයුතු මෙහෙයවන අතරතුර ආයතනයේ Custom Internal Booking පද්ධතිය නිර්මාණය කිරීම.",
+          "දිවයින පුරා සිසුන් සඳහා පසුගිය විභාග ප්‍රශ්න පත්‍ර ඔන්ලයින් අලෙවි කිරීමේ කටයුතු මෙහෙයවන අතරතුර, ආයතනයේ දැන්වීම් වෙන්කරවා ගැනීමේ (Booking) වෙබ් පද්ධතිය නිර්මාණය කිරීම.",
         achievements: [
-          "Past Papers Wiki හරහා දිවයින පුරා සිසුන්ගේ ඇණවුම්, පාරිභෝගික සහාය සහ බෙදාහැරීමේ ක්‍රියාවලිය මෙහෙයවීම.",
-          "දැන්වීම් කාලසටහන් සහ ගුරුවරුන්ගේ Campaigns ස්වයංක්‍රීයව වෙන්කරවා ගැනීම සඳහා Next.js, Node.js සහ MongoDB යොදාගෙන අභ්‍යන්තර Booking Engine එක නිර්මාණය කිරීම.",
+          "Past Papers Wiki හරහා දිවයින පුරා සිසුන්ගේ ප්‍රශ්න පත්‍ර ඇණවුම්, පාරිභෝගික සහාය සහ බෙදාහැරීමේ කටයුතු මෙහෙයවීම.",
+          "ගුරුවරුන්ගේ දැන්වීම් කාලසටහන් පහසුවෙන් වෙන්කරවා ගැනීම සඳහා ආයතනයේ අභ්‍යන්තර Booking වෙබ් පද්ධතිය නිර්මාණය කිරීම.",
         ],
       };
     }
     if (exp.id === "freelance") {
       return {
         ...exp,
-        role: "Freelance Web Developer සහ Graphics Designer",
+        role: "Freelance Web Developer සහ Graphic Designer",
         period: "2022 – වර්තමානය",
         location: "Remote • Self-Employed",
         description:
-          "Fiverr, Upwork සහ සෘජු සේවාදායකයින් සඳහා නවීන වෙබ් අඩවි, Full-Stack Web Apps, Brand Logos, Social Media නිර්මාණ සහ Video Reel Edits සිදු කිරීම.",
+          "Fiverr, Upwork සහ දේශීය/විදේශීය සේවාදායකයින් සඳහා නවීන වෙබ් අඩවි, Online Stores, Brand Logos, පෝස්ටර් නිර්මාණ සහ Video Reel සංස්කරණ සිදු කිරීම.",
         achievements: [
-          "Next.js, React, Node.js සහ PHP/Laravel භාවිතා කරමින් දේශීය හා විදේශීය සේවාදායකයින් සඳහා Custom Web Applications නිර්මාණය කිරීම.",
-          "Kev & Thash Sweet Treats වැනි සිංහල/ඉංග්‍රීසි E-Commerce වෙබ් අඩවි නිර්මාණය කර දියත් කිරීම.",
-          "Figma, Adobe Photoshop, Illustrator, Premiere Pro සහ After Effects භාවිතයෙන් Brand Designs, UI Prototypes සහ Reels සංස්කරණය කිරීම.",
+          "Next.js, React, Node.js සහ Laravel භාවිතා කරමින් දේශීය හා විදේශීය ආයතන සඳහා වෙබ් අඩවි නිර්මාණය කිරීම.",
+          "Kev & Thash Sweet Treats වැනි සිංහල/ඉංග්‍රීසි භාෂා දෙකෙන්ම ක්‍රියාත්මක වන ව්‍යාපාරික වෙබ් අඩවි නිර්මාණය කිරීම.",
+          "Figma, Adobe Photoshop, Illustrator, Premiere Pro සහ After Effects භාවිතයෙන් Logos, පෝස්ටර් සහ Video Reels නිර්මාණය කිරීම.",
         ],
       };
     }

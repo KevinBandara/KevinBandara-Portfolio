@@ -658,15 +658,15 @@ export default function PortfolioPage() {
                 <strong className="text-white font-semibold">
                   Corvento Technologies
                 </strong>{" "}
-                (powering{" "}
+                (creator of{" "}
                 <strong className="text-sky-300 font-semibold">DanumaAI</strong>{" "}
-                across Web, Google Play Store &amp; Telegram Bot, plus a{" "}
+                on Web, Google Play Store &amp; Telegram Bot, plus a{" "}
                 <strong className="text-emerald-300 font-semibold">
-                  116,000+ subscriber WhatsApp &amp; Telegram educational media network
+                  116,000+ student WhatsApp &amp; Telegram study network
                 </strong>
                 ), Senior Web Developer at{" "}
                 <strong className="text-white font-semibold">Quizzygram</strong>,
-                Sales &amp; Booking Architect at{" "}
+                Sales &amp; Booking System Developer at{" "}
                 <strong className="text-white font-semibold">
                   Past Papers Wiki
                 </strong>
@@ -688,7 +688,7 @@ export default function PortfolioPage() {
                 <strong className="text-sky-300 font-semibold">DanumaAI</strong>{" "}
                 සහ{" "}
                 <strong className="text-emerald-300 font-semibold">
-                  116,000+ ක් සිටින WhatsApp හා Telegram අධ්‍යාපනික මාධ්‍ය ජාලය
+                  සිසුන් 116,000+ ක් සිටින WhatsApp හා Telegram අධ්‍යාපනික ජාලය
                 </strong>
                 ),{" "}
                 <strong className="text-white font-semibold">Quizzygram</strong>{" "}
@@ -696,7 +696,7 @@ export default function PortfolioPage() {
                 <strong className="text-white font-semibold">
                   Past Papers Wiki
                 </strong>{" "}
-                හි Sales &amp; Booking Architect,{" "}
+                හි Sales &amp; Booking System Developer,{" "}
                 <strong className="text-white font-semibold">MAOS Office</strong>{" "}
                 හි Digital Operations Coordinator සහ{" "}
                 <strong className="text-white font-semibold">
@@ -1976,9 +1976,22 @@ export default function PortfolioPage() {
                       key={item.no}
                       className="p-4 rounded-2xl bg-black/40 hover:bg-white/[0.04] border border-white/[0.08] hover:border-sky-400/30 transition-all flex items-start gap-3"
                     >
-                      <span className="w-8 h-8 rounded-lg bg-sky-400/15 border border-sky-400/30 text-sky-300 font-mono text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
-                        #{String(item.no).padStart(2, "0")}
-                      </span>
+                      <div className="flex items-center gap-2 flex-shrink-0 mt-0.5">
+                        <span className="w-8 h-8 rounded-lg bg-sky-400/15 border border-sky-400/30 text-sky-300 font-mono text-xs font-bold flex items-center justify-center">
+                          #{String(item.no).padStart(2, "0")}
+                        </span>
+                        {item.logo && (
+                          <img
+                            src={item.logo}
+                            alt={item.institution}
+                            width={32}
+                            height={32}
+                            loading="lazy"
+                            decoding="async"
+                            className="w-8 h-8 rounded-lg object-contain bg-white p-1 border border-white/15"
+                          />
+                        )}
+                      </div>
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center justify-between gap-2">
                           <span className="text-[11px] font-semibold text-sky-400 truncate">
