@@ -6,7 +6,8 @@
 - **Preferred Name**: Kevin Bandara (කෙවින් බණ්ඩාර)
 - **Full Name with Initials**: R.M. Kevin Sharada Bandara (Kevin Sharada Bandara)
 - **Full Legal Name**: Rathnayaka Mudiyanselage Kevin Sharada Bandara
-- **Date of Birth**: November 6, 2007 (`2007-11-06`)
+- **Date of Birth**: November 6, 2007 (`2007-11-06`) — Currently 18 Years Old (automatically increments every November 6)
+- **Age**: 18 Years Old (Born November 6, 2007)
 - **Role**: Full-Stack Software Engineer, AI Systems Builder & Tech Entrepreneur
 - **Location**: Colombo, Western Province, Sri Lanka
 - **Nationality & Heritage**: Sri Lankan, Buddhist

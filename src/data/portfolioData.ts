@@ -94,11 +94,27 @@ export interface AchievementItem {
   highlight: string;
 }
 
+/**
+ * Automatically calculates Kevin's current age based on date of birth (2007-11-06).
+ * Safe for both Server-Side Pre-rendering (SEO / Googlebot) and Client Runtime.
+ */
+export function calculateAge(birthDateString: string = "2007-11-06"): number {
+  const today = new Date();
+  const birthDate = new Date(birthDateString);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+}
+
 export const HERO_DATA = {
   name: "Kevin Bandara",
   fullName: "R.M. Kevin Sharada Bandara",
   legalName: "Rathnayaka Mudiyanselage Kevin Sharada Bandara",
   birthDate: "2007-11-06",
+  age: calculateAge("2007-11-06"),
   greeting: "Hello, I'm",
   title: "Full-Stack Software Engineer, AI Creator & Tech Entrepreneur",
   tagline:
@@ -251,17 +267,19 @@ export const ABOUT_DATA = {
   headline:
     "Building helpful software, AI learning tools, and educational communities from Colombo, Sri Lanka.",
   paragraphs: [
-    "I am R.M. Kevin Sharada Bandara (Rathnayaka Mudiyanselage Kevin Sharada Bandara), a software developer, AI product creator, graphic & video designer, and young entrepreneur from Colombo, Sri Lanka. I am currently studying for my Bachelor of Information Technology (BIT) degree at the University of Colombo School of Computing (UCSC). I build complete websites, mobile apps, and AI tools that solve real everyday problems for students and businesses.",
+    "I am R.M. Kevin Sharada Bandara (Rathnayaka Mudiyanselage Kevin Sharada Bandara), an 18-year-old software developer, AI product creator, graphic & video designer, and young entrepreneur from Colombo, Sri Lanka (born November 6, 2007). I am currently studying for my Bachelor of Information Technology (BIT) degree at the University of Colombo School of Computing (UCSC) via OpenArc Campus. I build complete websites, mobile apps, and AI tools that solve real everyday problems for students and businesses.",
     "My interest in technology started early during my school days at Isipathana College, Colombo. At school, I was an active member of the ICT and Robotics Society — winning 1st Place in the FUTURA '23 ICT Quiz and placing 8th out of 500 students at the AI & Robotics Competition held at ICBT Campus. Alongside technology, I played school rugby for Isipathana College, won awards in chess and art competitions, and earned my 1st Poom Taekwondo Black Belt from Kukkiwon (World Taekwondo Headquarters). In 2020, I started my first online project (the BlackWolf Minecraft gaming server under Asteroid Technologies), later created the MemoAI chatbot used by 250,000+ people on Discord (under Lycoryx Technologies), and today run my main company, Corvento Technologies.",
     "Through Corvento Technologies, I created DanumaAI — an AI study assistant for Sri Lankan students available as a Website, a Google Play Store Android App (5,000+ downloads), and a Telegram Bot (used by 2,000+ active students) — and I also manage an educational network of over 116,000+ students across WhatsApp (74,000+ followers) and Telegram (42,000+ students). In addition to my own projects, I work part-time as Senior Web Developer at Quizzygram, Sales & Operations Manager and Booking System Developer at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and as a freelance web developer and graphic designer on Fiverr and Upwork.",
   ],
   profileFacts: [
     { label: "Full Legal Name", value: "R.M. Kevin Sharada Bandara" },
     { label: "Name Denoted by Initials", value: "Rathnayaka Mudiyanselage" },
+    { label: "Current Age", value: `${calculateAge("2007-11-06")} Years Old (Born Nov 06, 2007)` },
     { label: "Date of Birth", value: "November 06, 2007" },
+    { label: "Nationality & Religion", value: "Sri Lankan • Sinhala Buddhist" },
     { label: "Base Location", value: "Colombo, Sri Lanka" },
-    { label: "University Education", value: "BIT @ UCSC (University of Colombo)" },
-    { label: "Secondary School", value: "Isipathana College, Colombo" },
+    { label: "University Education", value: "BIT @ UCSC (University of Colombo via OpenArc)" },
+    { label: "Secondary School", value: "Isipathana College, Colombo (G.C.E. A/L Sat 2026 - Results Pending)" },
     { label: "Founded Company", value: "Corvento Technologies" },
     { label: "Languages", value: "English (Fluent) & Sinhala (Native)" },
   ],
@@ -931,13 +949,13 @@ export const EDUCATION_DATA: EducationItem[] = [
     id: "ucsc-bit",
     degree: "Bachelor of Information Technology (BIT)",
     institution:
-      "University of Colombo School of Computing (UCSC)",
+      "University of Colombo School of Computing (UCSC) via OpenArc Campus",
     year: "2026 – 2029 (Expected)",
     category: "degree",
     badge: "University Undergraduate",
     logo: "/uoc-logo.png",
     details: [
-      "Studying for the Bachelor of Information Technology (BIT) degree at the University of Colombo School of Computing (UCSC) — 2026 to 2029 (Expected).",
+      "Studying for the Bachelor of Information Technology (BIT) degree at the University of Colombo School of Computing (UCSC) via OpenArc Campus — 2026 to 2029 (Expected).",
       "Focusing on Software Engineering, Web & Mobile Development, Databases, and Computer Networks.",
     ],
   },
@@ -945,12 +963,14 @@ export const EDUCATION_DATA: EducationItem[] = [
     id: "isipathana-al",
     degree: "G.C.E. Advanced Level (Tech Stream) & G.C.E. O/L (4A, 4B)",
     institution: "Isipathana College, Colombo",
-    year: "Completed",
+    year: "Sat 2026 (Results Pending)",
     category: "degree",
     badge: "Secondary Education",
     logo: "/isipathana-logo.png",
     details: [
-      "G.C.E. A/L (Technology Stream: ICT English Medium, SFT, ET) & G.C.E. O/L with 4 Distinctions (A) including ICT (English Medium) and 4 Very Good Passes (B) including Mathematics & Science. Active member of the ICT & Robotics Society and School Rugby Player (2016–2018).",
+      "G.C.E. A/L Technology Stream (Information & Communication Technology in English Medium, Science for Technology - SFT, Engineering Technology - ET) — Sat 2026 with results pending.",
+      "G.C.E. O/L completed with 4 Distinctions (A) including ICT (English Medium) and 4 Very Good Passes (B) including Mathematics & Science.",
+      "Active member of the ICT & Robotics Society (FUTURA '23 Quiz Winner, Apeiro '21 Top 50, ICBT AI Competition 8th Place) and School Rugby Player (2016–2018).",
     ],
   },
 

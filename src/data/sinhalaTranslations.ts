@@ -8,6 +8,7 @@ import {
   EDUCATION_DATA,
   ACHIEVEMENTS_DATA,
   COMPLETE_CREDENTIAL_ARCHIVE,
+  calculateAge,
   FeaturedProject,
   ExperienceItem,
   EducationItem,
@@ -300,17 +301,19 @@ const SI_ABOUT_OVERRIDES = {
   headline:
     "සිසුන්ට සහ සමාජයට ප්‍රයෝජනවත් මෘදුකාංග, AI අධ්‍යාපනික මෙවලම් සහ ඩිජිටල් නිර්මාණ බිහිකරන තරුණ නිර්මාණකරුවෙක්.",
   paragraphs: [
-    "මම R.M. Kevin Sharada Bandara (රත්නායක මුදියන්සේලාගේ කෙවින් ශාරද බණ්ඩාර). කොළඹ පදිංචි මෘදුකාංග නිර්මාණකරුවෙක් (Full-Stack Software Developer), AI නිර්මාණකරුවෙක්, Graphic හා Video Designer කෙනෙක් සහ තරුණ ව්‍යවසායකයෙක්. මේ වන විට කොළඹ විශ්වවිද්‍යාලයේ පරිගණක අධ්‍යයනාංශයේ (UCSC) Bachelor of Information Technology (BIT) උපාධිය හදාරන අතර, සිසුන්ට සහ ආයතනවලට ප්‍රායෝගිකව ප්‍රයෝජනවත් වන Websites, Mobile Apps සහ AI මෙවලම් නිර්මාණය කිරීම මගේ ප්‍රධාන කාර්යයයි.",
+    "මම R.M. Kevin Sharada Bandara (රත්නායක මුදියන්සේලාගේ කෙවින් ශාරද බණ්ඩාර). කොළඹ පදිංචි වයස අවුරුදු 18 ක් වන (2007 නොවැම්බර් 06 උපන්) මෘදුකාංග නිර්මාණකරුවෙක් (Full-Stack Software Developer), AI නිර්මාණකරුවෙක්, Graphic හා Video Designer කෙනෙක් සහ තරුණ ව්‍යවසායකයෙක්. මේ වන විට කොළඹ විශ්වවිද්‍යාලයේ පරිගණක අධ්‍යයනාංශයේ (UCSC) Bachelor of Information Technology (BIT) උපාධිය (OpenArc Campus හරහා) හදාරන අතර, සිසුන්ට සහ ආයතනවලට ප්‍රායෝගිකව ප්‍රයෝජනවත් වන Websites, Mobile Apps සහ AI මෙවලම් නිර්මාණය කිරීම මගේ ප්‍රධාන කාර්යයයි.",
     "මගේ තාක්ෂණික ගමන ආරම්භ වුණේ කොළඹ ඉසිපතන විද්‍යාලයේ පාසල් අධ්‍යාපනය ලබන කාලයේදීමයි. එහිදී පාසල් ICT හා Robotics සංගමයේ ක්‍රියාකාරී සාමාජිකයෙකු ලෙස කටයුතු කරමින් FUTURA '23 ICT තරඟාවලියේ ප්‍රථම ස්ථානය සහ ICBT හි පැවති AI & Robotics තරඟාවලියෙන් සිසුන් 500 කින් 8 වන ස්ථානය දිනා ගැනීමට මට හැකි වුණා. ඊට අමතරව පාසල් Rugby ක්‍රීඩකයෙකු ලෙසත්, Chess සහ චිත්‍ර තරඟ ජයග්‍රාහකයෙකු ලෙසත් කටයුතු කළ මම ලෝක ටයිකොන්ඩෝ මූලස්ථානයෙන් (Kukkiwon) 1st Poom Black Belt එකද හිමිකර ගත්තා. 2020 වසරේදී Asteroid Technologies ආරම්භ කරමින් BlackWolf Minecraft ක්‍රීඩා සර්වරය ගොඩනැගූ මම, පසුව Lycoryx Technologies යටතේ 250,000+ කට අධික පිරිසක් භාවිතා කළ MemoAI නිර්මාණය කළා.",
     "වර්තමානයේ මා විසින් පිහිටුවූ Corvento Technologies ආයතනය හරහා ශ්‍රී ලාංකික සිසුන්ගේ අධ්‍යාපනයට උදව් වන DanumaAI පද්ධතිය (Website, Google Play Store App — 5,000+ downloads සහ Telegram Bot — සක්‍රීය සිසුන් 2,000+) මෙන්ම, සිසුන් 116,000+ ක් සිටින WhatsApp (74,000+) සහ Telegram (42,000+) අධ්‍යාපනික නාලිකා ජාලයත් මෙහෙයවනු ලබනවා. මීට අමතරව Quizzygram හි Senior Web Developer ලෙසත්, Past Papers Wiki හි Sales & Operations Manager සහ Booking System Developer ලෙසත්, MAOS Office හි Digital Operations Coordinator ලෙසත්, Fiverr සහ Upwork හි Freelance නිර්මාණකරුවෙකු ලෙසත් කටයුතු කරමි.",
   ],
   profileFacts: [
     { label: "සම්පූර්ණ නම", value: "R.M. Kevin Sharada Bandara" },
     { label: "මුලකුරුවලින් කියැවෙන නම", value: "රත්නායක මුදියන්සේලාගේ (Rathnayaka Mudiyanselage)" },
+    { label: "වත්මන් වයස", value: `අවුරුදු ${calculateAge("2007-11-06")} යි (2007 නොවැම්බර් 06 උපන්)` },
     { label: "උපන් දිනය", value: "2007 නොවැම්බර් 06" },
+    { label: "ජාතිකත්වය සහ ආගම", value: "ශ්‍රී ලාංකික • සිංහල බෞද්ධ" },
     { label: "පදිංචිය", value: "කොළඹ, ශ්‍රී ලංකාව" },
-    { label: "විශ්වවිද්‍යාල අධ්‍යාපනය", value: "BIT @ UCSC (University of Colombo)" },
-    { label: "පාසල් අධ්‍යාපනය", value: "ඉසිපතන විද්‍යාලය, කොළඹ" },
+    { label: "විශ්වවිද්‍යාල අධ්‍යාපනය", value: "BIT @ UCSC (University of Colombo via OpenArc)" },
+    { label: "පාසල් අධ්‍යාපනය", value: "ඉසිපතන විද්‍යාලය, කොළඹ (G.C.E. A/L 2026 - ප්‍රතිඵල අපේක්ෂාවෙන්)" },
     { label: "ආරම්භ කළ ආයතනය", value: "Corvento Technologies" },
     { label: "භාෂා හැකියාව", value: "සිංහල සහ ඉංග්‍රීසි (Fluent)" },
   ],
@@ -668,9 +671,9 @@ export function getLocalizedPortfolio(lang: Language) {
   const siEducation: EducationItem[] = EDUCATION_DATA.map((e) => {
     const detailsMap: Record<string, string> = {
       "ucsc-bit":
-        "කොළඹ විශ්වවිද්‍යාලයේ පරිගණක අධ්‍යයනාංශයේ (UCSC) Bachelor of Information Technology (BIT) උපාධිය හැදෑරීම (2026 – 2029).",
+        "කොළඹ විශ්වවිද්‍යාලයේ පරිගණක අධ්‍යයනාංශයේ (UCSC) Bachelor of Information Technology (BIT) උපාධිය OpenArc Campus හරහා හැදෑරීම (2026 – 2029).",
       "isipathana-al":
-        "කොළඹ ඉසිපතන විද්‍යාලයෙන් උසස් පෙළ (Technology Stream: ICT English Medium, SFT, ET) සහ සාමාන්‍ය පෙළ (ICT English Medium ඇතුළුව A සාමාර්ථ 4 ක් සහ B සාමාර්ථ 4 ක්). පාසල් Rugby ක්‍රීඩක (2016–2018) සහ ICT/Robotics සංගමයේ ක්‍රියාකාරී සාමාජික.",
+        "කොළඹ ඉසිපතන විද්‍යාලයෙන් උසස් පෙළ (Technology Stream: ICT English Medium, SFT, ET — 2026 දී විභාගයට පෙනී සිටි අතර ප්‍රතිඵල අපේක්ෂාවෙන් පසුවේ) සහ සාමාන්‍ය පෙළ (ICT English Medium ඇතුළුව A සාමාර්ථ 4 ක් සහ ගණිතය/විද්‍යාව ඇතුළුව B සාමාර්ථ 4 ක්). පාසල් Rugby ක්‍රීඩක (2016–2018) සහ ICT/Robotics සංගමයේ ක්‍රියාකාරී සාමාජික.",
       "esoft-se-diploma":
         "Pearson Assured Diploma in Software Engineering (DTEC, 2023) සහ Assured Diploma in Information Technology (DITEC, Oct 2023) යන ඩිප්ලෝමා ද්විත්වය සහ නිල Academic Transcript පත්‍රය.",
       "esoft-english-diploma":

@@ -31,6 +31,7 @@ import {
   UserCheck,
   History,
   BookOpen,
+  Calendar,
 } from "lucide-react";
 import dynamic from "next/dynamic";
 import TiltCard from "@/components/TiltCard";
@@ -616,11 +617,19 @@ export default function PortfolioPage() {
 
           {/* STEP 2 (BELOW PHOTO ON BOTH MOBILE & DESKTOP): EXECUTIVE NAME, HEADLINE, BIO & CTAs */}
           <div className="max-w-4xl mx-auto text-center mt-10 sm:mt-12 space-y-6 animate-fade-up">
-            {/* Availability & Location Pills */}
+            {/* Availability, Age & Location Pills */}
             <div className="flex flex-wrap items-center justify-center gap-2.5">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-emerald-500/12 text-emerald-300 border border-emerald-500/30">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>{hero.status}</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-sky-500/10 text-sky-300 border border-sky-400/25">
+                <Calendar className="w-3.5 h-3.5 text-sky-400" />
+                <span>
+                  {lang === "en"
+                    ? `${hero.age} Years Old (Nov 6, 2007)`
+                    : `වයස අවුරුදු ${hero.age} (2007 නොවැම්බර් 06)`}
+                </span>
               </span>
               <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-white/[0.04] text-slate-300 border border-white/10">
                 <MapPin className="w-3.5 h-3.5 text-sky-400" />

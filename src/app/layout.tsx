@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { calculateAge } from "@/data/portfolioData";
+
+const currentAge = calculateAge("2007-11-06");
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -28,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | Kevin Bandara",
   },
   description:
-    "Official portfolio of Kevin Bandara (R.M. Kevin Sharada Bandara / කෙවින් බණ්ඩාර) — Full-Stack Software Engineer, AI Systems Builder, Creative Designer, and Founder of Corvento Technologies in Colombo, Sri Lanka. Creator of DanumaAI (Web, Play Store, Telegram Bot) and MemoAI (206K+ users), Senior Web Developer at Quizzygram, Digital Operations Coordinator at MAOS Office, and operator of a 74K+ subscriber WhatsApp media network. Contact: +94 71 851 1165.",
+    `Official portfolio of Kevin Bandara (R.M. Kevin Sharada Bandara / කෙවින් බණ්ඩාර, ${currentAge} years old, born November 6, 2007) — Full-Stack Software Engineer, AI Systems Builder, Creative Designer, and Founder of Corvento Technologies in Colombo, Sri Lanka. Creator of DanumaAI (Web, Play Store, Telegram Bot) and MemoAI (206K+ users), Senior Web Developer at Quizzygram, Digital Operations Coordinator at MAOS Office, and operator of a 74K+ subscriber WhatsApp media network. Contact: +94 71 851 1165.`,
   keywords: [
     "Kevin Bandara",
     "R.M. Kevin Sharada Bandara",
@@ -164,7 +167,7 @@ const jsonLd = {
       jobTitle:
         "Full-Stack Software Engineer, AI Systems Builder & Technology Entrepreneur",
       description:
-        "Kevin Bandara (Rathnayaka Mudiyanselage Kevin Sharada Bandara, born November 6, 2007) is a Sri Lankan Full-Stack Software Engineer, AI Systems Builder, Creative Designer, and Founder of Corvento Technologies based in Colombo, Sri Lanka. He is the creator of DanumaAI (Web, Google Play Store Android App, and Telegram AI Bot) and MemoAI (206,600+ users), Senior Web Developer at Quizzygram, Sales Manager & Full-Stack Architect at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and operator of a 74,000+ subscriber WhatsApp media network.",
+        `Kevin Bandara (Rathnayaka Mudiyanselage Kevin Sharada Bandara, ${currentAge} years old, born November 6, 2007) is a Sri Lankan Full-Stack Software Engineer, AI Systems Builder, Creative Designer, and Founder of Corvento Technologies based in Colombo, Sri Lanka. He is the creator of DanumaAI (Web, Google Play Store Android App, and Telegram AI Bot) and MemoAI (206,600+ users), Senior Web Developer at Quizzygram, Sales Manager & Full-Stack Architect at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and operator of a 74,000+ subscriber WhatsApp media network.`,
       url: "https://kevinbandara.is-a.dev",
       image: [
         "https://kevinbandara.is-a.dev/og-landscape.jpg",
