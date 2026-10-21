@@ -454,8 +454,8 @@ export default function PortfolioPage() {
               <div className="hidden lg:flex flex-col gap-3 w-64 mr-8 animate-fade-up">
                 <div className="glass-panel rounded-2xl p-4 border border-white/10 flex items-center gap-3.5">
                   <img
-                    src="/uoc-logo.png"
-                    alt="University of Colombo School of Computing"
+                    src="/esoft-logo.jpg"
+                    alt="Pearson Assured Diplomas in Software Engineering & IT"
                     width={44}
                     height={44}
                     className="w-11 h-11 rounded-xl object-contain bg-white p-1 flex-shrink-0"
@@ -679,13 +679,8 @@ export default function PortfolioPage() {
                 <strong className="text-white font-semibold">
                   Past Papers Wiki
                 </strong>
-                , Digital Operations Coordinator at{" "}
-                <strong className="text-white font-semibold">MAOS Office</strong>,
-                and BIT Undergraduate at{" "}
-                <strong className="text-white font-semibold">
-                  UCSC (University of Colombo)
-                </strong>
-                .
+                , and Digital Operations Coordinator at{" "}
+                <strong className="text-white font-semibold">MAOS Office</strong>.
               </p>
             ) : (
               <p className="text-base sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
@@ -705,13 +700,9 @@ export default function PortfolioPage() {
                 <strong className="text-white font-semibold">
                   Past Papers Wiki
                 </strong>{" "}
-                හි Sales &amp; Booking System Developer,{" "}
+                හි Sales &amp; Booking System Developer, සහ{" "}
                 <strong className="text-white font-semibold">MAOS Office</strong>{" "}
-                හි Digital Operations Coordinator සහ{" "}
-                <strong className="text-white font-semibold">
-                  කොළඹ විශ්වවිද්‍යාලයේ (UCSC) BIT
-                </strong>{" "}
-                උපාධි අපේක්ෂක.
+                හි Digital Operations Coordinator.
               </p>
             )}
 
@@ -1731,7 +1722,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          {/* SUB-BLOCK A: DEGREES & DIPLOMAS */}
+          {/* SUB-BLOCK A: DIPLOMAS & SECONDARY EDUCATION */}
           {(credentialTab === "all" || credentialTab === "diplomas") && (
             <div
               key={`diplomas-${credentialTab}-${lang}`}
@@ -1754,7 +1745,7 @@ export default function PortfolioPage() {
                       } as React.CSSProperties
                     }
                     className={`glass-panel rounded-3xl p-6 flex flex-col justify-between border hover:-translate-y-0.5 reveal-on-scroll ${
-                      edu.id === "ucsc-bit"
+                      edu.id === "esoft-se-diploma"
                         ? "border-sky-400/40 bg-sky-500/[0.04]"
                         : "border-white/10"
                     }`}

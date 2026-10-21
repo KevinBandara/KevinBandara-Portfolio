@@ -173,9 +173,9 @@ export const HERO_DATA = {
       detail: "Daily AI Study Notes & Past-Paper Help",
     },
     {
-      value: "7+",
-      label: "Degree & Diplomas",
-      detail: "UCSC BIT, Pearson ESOFT, ATARI & Oxborn",
+      value: "6+",
+      label: "Diplomas & Foundations",
+      detail: "Pearson ESOFT, ATARI, Oxborn & Isipathana",
     },
     {
       value: "48",
@@ -267,7 +267,7 @@ export const ABOUT_DATA = {
   headline:
     "Building helpful software, AI learning tools, and educational communities from Colombo, Sri Lanka.",
   paragraphs: [
-    "I am R.M. Kevin Sharada Bandara (Rathnayaka Mudiyanselage Kevin Sharada Bandara), an 18-year-old software developer, AI product creator, graphic & video designer, and young entrepreneur from Colombo, Sri Lanka (born November 6, 2007). I am currently studying for my Bachelor of Information Technology (BIT) degree at the University of Colombo School of Computing (UCSC) via OpenArc Campus. I build complete websites, mobile apps, and AI tools that solve real everyday problems for students and businesses.",
+    "I am R.M. Kevin Sharada Bandara (Rathnayaka Mudiyanselage Kevin Sharada Bandara), an 18-year-old software developer, AI product creator, graphic & video designer, and young entrepreneur from Colombo, Sri Lanka (born November 6, 2007). I build complete websites, mobile apps, and AI tools that solve real everyday problems for students and businesses.",
     "My interest in technology started early during my school days at Isipathana College, Colombo. At school, I was an active member of the ICT and Robotics Society — winning 1st Place in the FUTURA '23 ICT Quiz and placing 8th out of 500 students at the AI & Robotics Competition held at ICBT Campus. Alongside technology, I played school rugby for Isipathana College, won awards in chess and art competitions, and earned my 1st Poom Taekwondo Black Belt from Kukkiwon (World Taekwondo Headquarters). In 2020, I started my first online project (the BlackWolf Minecraft gaming server under Asteroid Technologies), later created the MemoAI chatbot used by 250,000+ people on Discord (under Lycoryx Technologies), and today run my main company, Corvento Technologies.",
     "Through Corvento Technologies, I created DanumaAI — an AI study assistant for Sri Lankan students available as a Website, a Google Play Store Android App (5,000+ downloads), and a Telegram Bot (used by 2,000+ active students) — and I also manage an educational network of over 116,000+ students across WhatsApp (74,000+ followers) and Telegram (42,000+ students). In addition to my own projects, I work part-time as Senior Web Developer at Quizzygram, Sales & Operations Manager and Booking System Developer at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and as a freelance web developer and graphic designer on Fiverr and Upwork.",
   ],
@@ -278,7 +278,7 @@ export const ABOUT_DATA = {
     { label: "Date of Birth", value: "November 06, 2007" },
     { label: "Nationality & Religion", value: "Sri Lankan • Sinhala Buddhist" },
     { label: "Base Location", value: "Colombo, Sri Lanka" },
-    { label: "University Education", value: "BIT @ UCSC (University of Colombo via OpenArc)" },
+    { label: "Professional Qualifications", value: "Pearson Assured Diplomas (SE & IT), ATARI Multimedia" },
     { label: "Secondary School", value: "Isipathana College, Colombo (G.C.E. A/L Sat 2026 - Results Pending)" },
     { label: "Founded Company", value: "Corvento Technologies" },
     { label: "Languages", value: "English (Fluent) & Sinhala (Native)" },
@@ -341,10 +341,10 @@ export const ABOUT_DATA = {
     },
     {
       year: "2026 – Present",
-      title: "Corvento Technologies, DanumaAI, MAOS Office & UCSC BIT Degree",
-      subtitle: "5,000+ App Downloads, 116K+ Student Network & University Studies",
+      title: "Corvento Technologies, DanumaAI, MAOS Office & Expanding Ventures",
+      subtitle: "5,000+ App Downloads, 116K+ Student Network & Professional Ventures",
       detail:
-        "Launched DanumaAI under Corvento Technologies across Website, Google Play Store (5,000+ downloads), and Telegram Bot (2,000+ active students); grew our WhatsApp & Telegram educational channels to 116,000+ students; joined MAOS Office as Digital Operations Coordinator; and began my BIT degree at UCSC.",
+        "Launched DanumaAI under Corvento Technologies across Website, Google Play Store (5,000+ downloads), and Telegram Bot (2,000+ active students); grew our WhatsApp & Telegram educational channels to 116,000+ students; and joined MAOS Office as Digital Operations Coordinator.",
     },
   ],
 };
@@ -944,21 +944,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
 ];
 
 export const EDUCATION_DATA: EducationItem[] = [
-  // Degrees & Secondary Education
-  {
-    id: "ucsc-bit",
-    degree: "Bachelor of Information Technology (BIT)",
-    institution:
-      "University of Colombo School of Computing (UCSC) via OpenArc Campus",
-    year: "2026 – 2029 (Expected)",
-    category: "degree",
-    badge: "University Undergraduate",
-    logo: "/uoc-logo.png",
-    details: [
-      "Studying for the Bachelor of Information Technology (BIT) degree at the University of Colombo School of Computing (UCSC) via OpenArc Campus — 2026 to 2029 (Expected).",
-      "Focusing on Software Engineering, Web & Mobile Development, Databases, and Computer Networks.",
-    ],
-  },
+  // Secondary Education
   {
     id: "isipathana-al",
     degree: "G.C.E. Advanced Level (Tech Stream) & G.C.E. O/L (4A, 4B)",

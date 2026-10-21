@@ -41,7 +41,6 @@
 - **Freelance Web Developer & Graphics Designer (Fiverr, Upwork & Direct Clients)** (2022 – Present): Built bilingual e-commerce platforms such as Kev & Thash Sweet Treats (`https://kev-thash-sweet-treats.vercel.app/`), Laravel MVC systems, brand identities, and video reels.
 
 ## Education, Diplomas & Certificates (45+ Verified Credentials & Transcripts)
-- **Bachelor of Information Technology (BIT)** — University of Colombo School of Computing (UCSC) via OpenArc Campus (Undergraduate)
 - **G.C.E. Advanced Level (Technology Stream: ET, SFT, ICT - English Medium)** — Isipathana College, Colombo
 - **Pearson Assured Diploma in Information Technology (DITEC) & Software Engineering + Academic Transcript** — Pearson / ESOFT Metro Campus (08-Oct-2023)
 - **Pearson Assured Diploma in English** — ESOFT Metro Campus (28-Feb-2024)

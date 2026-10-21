@@ -105,7 +105,7 @@ Key Highlights:
 - Sales & Operations Manager + Booking Architect @ Past Papers Wiki (140K+ users): Engineered custom internal booking & scheduling engine.
 - Digital Operations Coordinator @ MAOS Office: Managing academic resource broadcasts across 3 official WhatsApp channels.
 - Global Freelancer (Fiverr, Upwork & Direct): Delivered bilingual e-commerce platforms, Laravel MVC systems, Adobe Creative Suite graphic design & video reels.
-- Education: BIT Undergraduate @ UCSC (2026-2029) | Pearson Assured Diplomas in Software Engineering (DTEC) & IT (DITEC) + English (ESOFT) | 3 UoM CODL Certificates (Python, Front-End, Web Design) | Laravel Certificate (CodeXpress) | Diploma in Graphic Design (ATARI City Campus).`;
+- Qualifications: Pearson Assured Diplomas in Software Engineering (DTEC) & IT (DITEC) + English (ESOFT) | 1-Year Diploma in Graphic Design (ATARI City Campus) | 3 UoM CODL Certificates (Python, Front-End, Web Design) | Laravel Web Development (CodeXpress) | Secondary Education at Isipathana College (A/L Sat 2026 Results Pending).`;
 
     navigator.clipboard.writeText(summary);
     setCopiedSummary(true);
@@ -238,8 +238,8 @@ Key Highlights:
               Gemini &amp; OpenAI RAG, Google Play Android Apps, Telegram &amp; Discord Bots
             </div>
             <div className="p-2.5 rounded-xl bg-black/40 border border-white/5">
-              <strong className="text-white block">Academic &amp; Creative:</strong>
-              UCSC BIT + Pearson SE/IT &amp; English Diplomas + Adobe Creative Suite
+              <strong className="text-white block">Diplomas &amp; Creative:</strong>
+              Pearson SE/IT &amp; English Diplomas + ATARI Multimedia + Adobe Creative Suite
             </div>
           </div>
         </div>

@@ -40,12 +40,12 @@ export const UI_LABELS = {
     copy: "Copy",
     photoLabel: "Photo",
     heroCards: {
-      uniBadge: "Undergraduate",
-      uniTitle: "BIT @ UCSC",
-      uniSub: "University of Colombo",
+      uniBadge: "Pearson Assured",
+      uniTitle: "Software Engineering",
+      uniSub: "Pearson Assured Diplomas (ESOFT)",
       schoolBadge: "Secondary Education",
       schoolTitle: "Isipathana College",
-      schoolSub: "Prefect • House Captain • Rugby",
+      schoolSub: "Technology Stream • Rugby • ICT",
       founderBadge: "Founder & Lead Dev",
       founderTitle: "Corvento Tech",
       founderSub: "DanumaAI & 116K+ Media Network",
@@ -86,18 +86,18 @@ export const UI_LABELS = {
     videoBtn: "Watch on YouTube",
     skillsBadge: "Technical & Creative Stack",
     skillsHeading: "Skills & Technologies",
-    credBadge: "Degrees, Certifications & Honours",
+    credBadge: "Diplomas, Certifications & Honours",
     credHeading: "Education, Diplomas & Achievements",
     credSub:
-      "University undergraduate studies, Pearson Assured & accredited diplomas, university coding certificates, and national competition & athletic honours.",
+      "Pearson Assured & accredited diplomas, secondary education, university coding certificates, and national competition & athletic honours.",
     credTabs: {
       all: "All",
-      diplomas: "Degrees & Diplomas",
+      diplomas: "Diplomas & Education",
       certificates: "Certificates",
       awards: "Honours & Sports",
       registry: "Full Archive",
     },
-    diplomasHeading: "University Education & Accredited Diplomas",
+    diplomasHeading: "Professional Diplomas & Secondary Education",
     certsHeading:
       "Professional Certificates (UoM CODL, CodeXpress, PSD, ITD & ESOFT)",
     awardsHeading:
@@ -151,12 +151,12 @@ export const UI_LABELS = {
     copy: "Copy",
     photoLabel: "Photo",
     heroCards: {
-      uniBadge: "උපාධි අපේක්ෂක",
-      uniTitle: "BIT @ UCSC",
-      uniSub: "කොළඹ විශ්වවිද්‍යාලය (UCSC)",
+      uniBadge: "Pearson Assured",
+      uniTitle: "Software Engineering",
+      uniSub: "Pearson Assured ඩිප්ලෝමා (ESOFT)",
       schoolBadge: "පාසල් අධ්‍යාපනය",
       schoolTitle: "ඉසිපතන විද්‍යාලය, කොළඹ",
-      schoolSub: "ශිෂ්‍ය නායක • නිවාස නායක • Rugby",
+      schoolSub: "තාක්ෂණවේදය • Rugby • ICT",
       founderBadge: "Founder & Lead Dev",
       founderTitle: "Corvento Tech",
       founderSub: "DanumaAI සහ 116K+ Media ජාලය",
@@ -197,18 +197,18 @@ export const UI_LABELS = {
     videoBtn: "YouTube නාලිකාව බලන්න",
     skillsBadge: "තාක්ෂණික සහ නිර්මාණාත්මක කුසලතා",
     skillsHeading: "භාවිතා කරන තාක්ෂණයන් (Skills & Tech Stack)",
-    credBadge: "අධ්‍යාපන සුදුසුකම්, ඩිප්ලෝමා සහ ජයග්‍රහණ",
+    credBadge: "ඩිප්ලෝමා, සහතික පත්‍ර සහ ජයග්‍රහණ",
     credHeading: "අධ්‍යාපනය, ඩිප්ලෝමා සහ ජයග්‍රහණ",
     credSub:
-      "විශ්වවිද්‍යාල උපාධි අධ්‍යාපනය, Pearson Assured ඩිප්ලෝමා, මොරටුව විශ්වවිද්‍යාලයේ (UoM CODL) සහතික පත්‍ර, සහ ජාතික මට්ටමේ තරඟ හා ක්‍රීඩා ජයග්‍රහණ.",
+      "Pearson Assured ඩිප්ලෝමා, පාසල් අධ්‍යාපනය, මොරටුව විශ්වවිද්‍යාලයේ (UoM CODL) සහතික පත්‍ර, සහ ජාතික මට්ටමේ තරඟ හා ක්‍රීඩා ජයග්‍රහණ.",
     credTabs: {
       all: "සියල්ල",
-      diplomas: "උපාධි සහ ඩිප්ලෝමා",
+      diplomas: "ඩිප්ලෝමා සහ අධ්‍යාපනය",
       certificates: "සහතික පත්‍ර",
       awards: "තරඟ සහ ක්‍රීඩා",
       registry: "සම්පූර්ණ නාමාවලිය",
     },
-    diplomasHeading: "විශ්වවිද්‍යාල අධ්‍යාපනය සහ පිළිගත් ඩිප්ලෝමා",
+    diplomasHeading: "වෘත්තීය ඩිප්ලෝමා සහ පාසල් අධ්‍යාපනය",
     certsHeading:
       "වෘත්තීය සහතික පත්‍ර (UoM CODL, CodeXpress, PSD, ITD සහ ESOFT)",
     awardsHeading:
@@ -285,9 +285,9 @@ const SI_HERO_OVERRIDES = {
       detail: "දිනපතා Study Notes සහ Past-Paper උදව්",
     },
     {
-      value: "7+",
-      label: "උපාධි සහ ඩිප්ලෝමා",
-      detail: "UCSC BIT, Pearson ESOFT, ATARI සහ Oxborn",
+      value: "6+",
+      label: "ඩිප්ලෝමා සහ අධ්‍යාපනය",
+      detail: "Pearson ESOFT, ATARI, Oxborn සහ ඉසිපතන",
     },
     {
       value: "48",
@@ -301,7 +301,7 @@ const SI_ABOUT_OVERRIDES = {
   headline:
     "සිසුන්ට සහ සමාජයට ප්‍රයෝජනවත් මෘදුකාංග, AI අධ්‍යාපනික මෙවලම් සහ ඩිජිටල් නිර්මාණ බිහිකරන තරුණ නිර්මාණකරුවෙක්.",
   paragraphs: [
-    "මම R.M. Kevin Sharada Bandara (රත්නායක මුදියන්සේලාගේ කෙවින් ශාරද බණ්ඩාර). කොළඹ පදිංචි වයස අවුරුදු 18 ක් වන (2007 නොවැම්බර් 06 උපන්) මෘදුකාංග නිර්මාණකරුවෙක් (Full-Stack Software Developer), AI නිර්මාණකරුවෙක්, Graphic හා Video Designer කෙනෙක් සහ තරුණ ව්‍යවසායකයෙක්. මේ වන විට කොළඹ විශ්වවිද්‍යාලයේ පරිගණක අධ්‍යයනාංශයේ (UCSC) Bachelor of Information Technology (BIT) උපාධිය (OpenArc Campus හරහා) හදාරන අතර, සිසුන්ට සහ ආයතනවලට ප්‍රායෝගිකව ප්‍රයෝජනවත් වන Websites, Mobile Apps සහ AI මෙවලම් නිර්මාණය කිරීම මගේ ප්‍රධාන කාර්යයයි.",
+    "මම R.M. Kevin Sharada Bandara (රත්නායක මුදියන්සේලාගේ කෙවින් ශාරද බණ්ඩාර). කොළඹ පදිංචි වයස අවුරුදු 18 ක් වන (2007 නොවැම්බර් 06 උපන්) මෘදුකාංග නිර්මාණකරුවෙක් (Full-Stack Software Developer), AI නිර්මාණකරුවෙක්, Graphic හා Video Designer කෙනෙක් සහ තරුණ ව්‍යවසායකයෙක්. සිසුන්ට සහ ආයතනවලට ප්‍රායෝගිකව ප්‍රයෝජනවත් වන Websites, Mobile Apps සහ AI මෙවලම් නිර්මාණය කිරීම මගේ ප්‍රධාන කාර්යයයි.",
     "මගේ තාක්ෂණික ගමන ආරම්භ වුණේ කොළඹ ඉසිපතන විද්‍යාලයේ පාසල් අධ්‍යාපනය ලබන කාලයේදීමයි. එහිදී පාසල් ICT හා Robotics සංගමයේ ක්‍රියාකාරී සාමාජිකයෙකු ලෙස කටයුතු කරමින් FUTURA '23 ICT තරඟාවලියේ ප්‍රථම ස්ථානය සහ ICBT හි පැවති AI & Robotics තරඟාවලියෙන් සිසුන් 500 කින් 8 වන ස්ථානය දිනා ගැනීමට මට හැකි වුණා. ඊට අමතරව පාසල් Rugby ක්‍රීඩකයෙකු ලෙසත්, Chess සහ චිත්‍ර තරඟ ජයග්‍රාහකයෙකු ලෙසත් කටයුතු කළ මම ලෝක ටයිකොන්ඩෝ මූලස්ථානයෙන් (Kukkiwon) 1st Poom Black Belt එකද හිමිකර ගත්තා. 2020 වසරේදී Asteroid Technologies ආරම්භ කරමින් BlackWolf Minecraft ක්‍රීඩා සර්වරය ගොඩනැගූ මම, පසුව Lycoryx Technologies යටතේ 250,000+ කට අධික පිරිසක් භාවිතා කළ MemoAI නිර්මාණය කළා.",
     "වර්තමානයේ මා විසින් පිහිටුවූ Corvento Technologies ආයතනය හරහා ශ්‍රී ලාංකික සිසුන්ගේ අධ්‍යාපනයට උදව් වන DanumaAI පද්ධතිය (Website, Google Play Store App — 5,000+ downloads සහ Telegram Bot — සක්‍රීය සිසුන් 2,000+) මෙන්ම, සිසුන් 116,000+ ක් සිටින WhatsApp (74,000+) සහ Telegram (42,000+) අධ්‍යාපනික නාලිකා ජාලයත් මෙහෙයවනු ලබනවා. මීට අමතරව Quizzygram හි Senior Web Developer ලෙසත්, Past Papers Wiki හි Sales & Operations Manager සහ Booking System Developer ලෙසත්, MAOS Office හි Digital Operations Coordinator ලෙසත්, Fiverr සහ Upwork හි Freelance නිර්මාණකරුවෙකු ලෙසත් කටයුතු කරමි.",
   ],
@@ -312,7 +312,7 @@ const SI_ABOUT_OVERRIDES = {
     { label: "උපන් දිනය", value: "2007 නොවැම්බර් 06" },
     { label: "ජාතිකත්වය සහ ආගම", value: "ශ්‍රී ලාංකික • සිංහල බෞද්ධ" },
     { label: "පදිංචිය", value: "කොළඹ, ශ්‍රී ලංකාව" },
-    { label: "විශ්වවිද්‍යාල අධ්‍යාපනය", value: "BIT @ UCSC (University of Colombo via OpenArc)" },
+    { label: "වෘත්තීය සුදුසුකම්", value: "Pearson Assured Diplomas (SE & IT), ATARI Multimedia" },
     { label: "පාසල් අධ්‍යාපනය", value: "ඉසිපතන විද්‍යාලය, කොළඹ (G.C.E. A/L 2026 - ප්‍රතිඵල අපේක්ෂාවෙන්)" },
     { label: "ආරම්භ කළ ආයතනය", value: "Corvento Technologies" },
     { label: "භාෂා හැකියාව", value: "සිංහල සහ ඉංග්‍රීසි (Fluent)" },
@@ -375,10 +375,10 @@ const SI_ABOUT_OVERRIDES = {
     },
     {
       year: "2026 – වර්තමානය",
-      title: "Corvento Technologies, DanumaAI, MAOS Office සහ UCSC BIT උපාධිය",
-      subtitle: "5,000+ App Downloads, 116K+ සිසු ජාලය සහ විශ්වවිද්‍යාල අධ්‍යාපනය",
+      title: "Corvento Technologies, DanumaAI, MAOS Office සහ ව්‍යාපාර ව්‍යාප්තිය",
+      subtitle: "5,000+ App Downloads, 116K+ සිසු ජාලය සහ වෘත්තීය ව්‍යාපෘති",
       detail:
-        "Corvento Technologies යටතේ DanumaAI (Website, Play Store 5,000+ downloads සහ Telegram Bot සිසුන් 2,000+) දියත් කිරීම, WhatsApp හා Telegram අධ්‍යාපනික ජාලය 116,000+ දක්වා පුළුල් කිරීම, MAOS Office හි Digital Operations Coordinator ලෙස කටයුතු කිරීම සහ UCSC හි BIT උපාධිය හැදෑරීම.",
+        "Corvento Technologies යටතේ DanumaAI (Website, Play Store 5,000+ downloads සහ Telegram Bot සිසුන් 2,000+) දියත් කිරීම, WhatsApp හා Telegram අධ්‍යාපනික ජාලය 116,000+ දක්වා පුළුල් කිරීම සහ MAOS Office හි Digital Operations Coordinator ලෙස කටයුතු කිරීම.",
     },
   ],
 };
@@ -670,8 +670,6 @@ export function getLocalizedPortfolio(lang: Language) {
 
   const siEducation: EducationItem[] = EDUCATION_DATA.map((e) => {
     const detailsMap: Record<string, string> = {
-      "ucsc-bit":
-        "කොළඹ විශ්වවිද්‍යාලයේ පරිගණක අධ්‍යයනාංශයේ (UCSC) Bachelor of Information Technology (BIT) උපාධිය OpenArc Campus හරහා හැදෑරීම (2026 – 2029).",
       "isipathana-al":
         "කොළඹ ඉසිපතන විද්‍යාලයෙන් උසස් පෙළ (Technology Stream: ICT English Medium, SFT, ET — 2026 දී විභාගයට පෙනී සිටි අතර ප්‍රතිඵල අපේක්ෂාවෙන් පසුවේ) සහ සාමාන්‍ය පෙළ (ICT English Medium ඇතුළුව A සාමාර්ථ 4 ක් සහ ගණිතය/විද්‍යාව ඇතුළුව B සාමාර්ථ 4 ක්). පාසල් Rugby ක්‍රීඩක (2016–2018) සහ ICT/Robotics සංගමයේ ක්‍රියාකාරී සාමාජික.",
       "esoft-se-diploma":

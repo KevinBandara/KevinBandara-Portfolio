@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     "Full-Stack Software Developer Sri Lanka",
     "AI Systems Builder Sri Lanka",
     "Next.js Developer Colombo",
-    "UCSC BIT",
+    "Pearson Assured Diploma Software Engineering",
     "University of Moratuwa Web Development",
     "ESOFT Pearson Diploma Software Engineering",
     "ATARI City Campus Graphic Design Scholarship",
@@ -231,11 +231,6 @@ const jsonLd = {
       alumniOf: [
         {
           "@type": "CollegeOrUniversity",
-          name: "University of Colombo School of Computing (UCSC)",
-          sameAs: "https://ucsc.cmb.ac.lk/",
-        },
-        {
-          "@type": "CollegeOrUniversity",
           name: "University of Moratuwa (CODL)",
           sameAs: "https://uom.lk/",
         },
@@ -355,7 +350,7 @@ const jsonLd = {
           name: "Who is Kevin Bandara (R.M. Kevin Sharada Bandara)?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Kevin Bandara (Rathnayaka Mudiyanselage Kevin Sharada Bandara, born November 6, 2007) is a Full-Stack Software Engineer, AI Systems Builder, Creative Designer, and Tech Entrepreneur based in Colombo, Sri Lanka. He is the Founder of Corvento Technologies (formerly Lycoryx Technologies and Asteroid Technologies), creator of DanumaAI and MemoAI, Senior Web Developer at Quizzygram, Sales Manager & Booking System Architect at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and a BIT undergraduate at the University of Colombo School of Computing (UCSC).",
+            text: "Kevin Bandara (Rathnayaka Mudiyanselage Kevin Sharada Bandara, born November 6, 2007) is a Full-Stack Software Engineer, AI Systems Builder, Creative Designer, and Tech Entrepreneur based in Colombo, Sri Lanka. He is the Founder of Corvento Technologies (formerly Lycoryx Technologies and Asteroid Technologies), creator of DanumaAI and MemoAI, Senior Web Developer at Quizzygram, Sales Manager & Booking System Architect at Past Papers Wiki, Digital Operations Coordinator at MAOS Office, and holder of Pearson Assured Diplomas in Software Engineering and Information Technology.",
           },
         },
         {
