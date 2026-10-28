@@ -328,9 +328,10 @@ export default function PortfolioPage() {
             </button>
           </div>
 
-          {/* Mobile Language Toggle + Menu Button */}
-          <div className="flex sm:hidden items-center gap-2">
-            <div className="inline-flex items-center p-0.5 rounded-lg bg-white/[0.05] border border-white/10">
+          {/* Mobile / Tablet Menu Controls */}
+          <div className="flex lg:hidden items-center gap-2">
+            {/* Mobile Language Toggle (< sm) */}
+            <div className="inline-flex sm:hidden items-center p-0.5 rounded-lg bg-white/[0.05] border border-white/10">
               <button
                 type="button"
                 onClick={() => setLang("en")}
@@ -355,29 +356,15 @@ export default function PortfolioPage() {
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle Menu"
-              className="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-200"
+              className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-200 hover:text-white"
             >
               {mobileMenuOpen ? (
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5 text-sky-400" />
               ) : (
                 <Menu className="w-5 h-5" />
               )}
             </button>
           </div>
-
-          {/* Tablet Menu Button (sm to lg) */}
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Menu"
-            className="hidden sm:inline-flex lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-200"
-          >
-            {mobileMenuOpen ? (
-              <X className="w-5 h-5" />
-            ) : (
-              <Menu className="w-5 h-5" />
-            )}
-          </button>
         </div>
 
         {/* Mobile / Tablet Dropdown Drawer */}
@@ -450,8 +437,8 @@ export default function PortfolioPage() {
           {/* STEP 1 (FIRST ON ALL DEVICES): COMMANDING TOP PORTRAIT STAGE */}
           <div className="flex flex-col items-center justify-center">
             <div className="relative w-full max-w-5xl flex items-center justify-center">
-              {/* Left Desktop Identity Card (Floating beside top portrait on lg+) */}
-              <div className="hidden lg:flex flex-col gap-3 w-64 mr-8 animate-fade-up">
+              {/* Left Desktop Identity Card (Floating beside top portrait on xl+) */}
+              <div className="hidden xl:flex flex-col gap-3 w-64 mr-8 animate-fade-up">
                 <div className="glass-panel rounded-2xl p-4 border border-white/10 flex items-center gap-3.5">
                   <img
                     src="/esoft-logo.jpg"
@@ -568,8 +555,8 @@ export default function PortfolioPage() {
                 </TiltCard>
               </div>
 
-              {/* Right Desktop Identity Card (Floating beside top portrait on lg+) */}
-              <div className="hidden lg:flex flex-col gap-3 w-64 ml-8 animate-fade-up">
+              {/* Right Desktop Identity Card (Floating beside top portrait on xl+) */}
+              <div className="hidden xl:flex flex-col gap-3 w-64 ml-8 animate-fade-up">
                 <div className="glass-panel rounded-2xl p-4 border border-white/10 flex items-center gap-3.5">
                   <img
                     src="/CorventoTechLogo.jpg"
@@ -648,7 +635,7 @@ export default function PortfolioPage() {
                 </span>
               </div>
 
-              <h1 className="font-display text-5xl sm:text-7xl lg:text-[78px] font-extrabold tracking-tight text-white leading-[1.03]">
+              <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[78px] font-extrabold tracking-tight text-white leading-[1.05] break-words">
                 {hero.name}
               </h1>
 
@@ -707,13 +694,13 @@ export default function PortfolioPage() {
             )}
 
             {/* Primary CTA Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
+            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
               <button
                 type="button"
                 onClick={() => setHireModalOpen(true)}
-                className="inline-flex items-center gap-2 px-7 py-4 rounded-2xl text-sm sm:text-base font-semibold bg-sky-400 hover:bg-sky-300 hover:-translate-y-0.5 text-slate-950 transition-all shadow-xl shadow-sky-500/25 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base font-semibold bg-sky-400 hover:bg-sky-300 hover:-translate-y-0.5 text-slate-950 transition-all shadow-xl shadow-sky-500/25 cursor-pointer"
               >
-                <Briefcase className="w-4 h-4" />
+                <Briefcase className="w-4 h-4 flex-shrink-0" />
                 <span>{ui.workWithKevinFull}</span>
               </button>
 
@@ -722,9 +709,9 @@ export default function PortfolioPage() {
                 download="Kevin-Sharada-Bandara-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl text-sm sm:text-base font-semibold bg-white hover:bg-slate-200 hover:-translate-y-0.5 text-slate-950 transition-all shadow-lg btn-press"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base font-semibold bg-white hover:bg-slate-200 hover:-translate-y-0.5 text-slate-950 transition-all shadow-lg btn-press"
               >
-                <FileDown className="w-4 h-4" />
+                <FileDown className="w-4 h-4 flex-shrink-0" />
                 <span>{ui.downloadResumeBtn}</span>
               </a>
 
@@ -732,26 +719,26 @@ export default function PortfolioPage() {
                 href={hero.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-4 rounded-2xl text-sm sm:text-base font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 hover:-translate-y-0.5 text-emerald-300 border border-emerald-500/35 transition-all btn-press"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 hover:-translate-y-0.5 text-emerald-300 border border-emerald-500/35 transition-all btn-press"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4 flex-shrink-0" />
                 <span>WhatsApp: {hero.phone}</span>
               </a>
 
               <button
                 type="button"
                 onClick={handleCopyEmail}
-                className="inline-flex items-center gap-2 px-5 py-4 rounded-2xl text-sm sm:text-base bg-white/[0.04] hover:bg-white/[0.09] hover:-translate-y-0.5 text-slate-200 border border-white/10 transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base bg-white/[0.04] hover:bg-white/[0.09] hover:-translate-y-0.5 text-slate-200 border border-white/10 transition-all cursor-pointer"
               >
                 {copiedEmail ? (
                   <>
-                    <Check className="w-4 h-4 text-emerald-400" />
+                    <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                     <span className="text-emerald-300">{ui.emailCopied}</span>
                   </>
                 ) : (
                   <>
-                    <Copy className="w-4 h-4 text-slate-400" />
-                    <span>{hero.email}</span>
+                    <Copy className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                    <span className="truncate">{hero.email}</span>
                   </>
                 )}
               </button>
@@ -875,7 +862,7 @@ export default function PortfolioPage() {
                     <span className="text-xs font-medium text-slate-400">
                       {fact.label}
                     </span>
-                    <span className="text-xs sm:text-sm font-semibold text-white sm:text-right">
+                    <span className="text-xs sm:text-sm font-semibold text-white sm:text-right break-words min-w-0">
                       {fact.value}
                     </span>
                   </div>
@@ -1009,11 +996,11 @@ export default function PortfolioPage() {
                           />
                         )}
                       </div>
-                      <div>
-                        <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
+                      <div className="min-w-0">
+                        <h3 className="font-display text-xl sm:text-2xl font-bold text-white break-words">
                           {exp.role}
                         </h3>
-                        <p className="text-sm font-medium text-sky-300">
+                        <p className="text-sm font-medium text-sky-300 break-words">
                           {exp.company} •{" "}
                           <span className="text-slate-400">{exp.location}</span>
                         </p>
@@ -1138,7 +1125,7 @@ export default function PortfolioPage() {
               >
                 <TiltCard
                   maxTilt={4}
-                  className={`h-full glass-panel rounded-3xl p-7 sm:p-9 flex flex-col justify-between border transition-all ${
+                  className={`h-full glass-panel rounded-3xl p-5 sm:p-8 flex flex-col justify-between border transition-all ${
                     project.featured
                       ? "border-sky-400/35 bg-gradient-to-br from-[#0D121F]/90 via-[#0B0E17]/95 to-[#111324]/90"
                       : "border-white/10"
@@ -1147,8 +1134,8 @@ export default function PortfolioPage() {
                 <div>
                   {/* Top Meta Row */}
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-6">
-                    <div className="flex items-center gap-3.5">
-                      <div className="flex items-center -space-x-2">
+                    <div className="flex items-center gap-3.5 min-w-0 flex-1">
+                      <div className="flex items-center -space-x-2 flex-shrink-0">
                         <img
                           src={project.logo}
                           alt={project.title}
@@ -1166,7 +1153,7 @@ export default function PortfolioPage() {
                           />
                         )}
                       </div>
-                      <div>
+                      <div className="min-w-0 flex-1">
                         <div className="flex flex-wrap items-center gap-2">
                           <span className="text-xs font-semibold text-sky-400">
                             {project.role}
@@ -1177,7 +1164,7 @@ export default function PortfolioPage() {
                             </span>
                           )}
                         </div>
-                        <h3 className="font-display text-xl sm:text-2xl font-bold text-white mt-0.5">
+                        <h3 className="font-display text-xl sm:text-2xl font-bold text-white mt-0.5 break-words">
                           {project.title}
                         </h3>
                         <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
@@ -1204,25 +1191,31 @@ export default function PortfolioPage() {
 
                   {/* Metrics Row */}
                   <div
-                    className={`grid gap-3 mb-6 ${
+                    className={`grid gap-2.5 sm:gap-3 mb-6 ${
                       project.featured
                         ? "grid-cols-2 sm:grid-cols-4"
-                        : "grid-cols-3"
+                        : "grid-cols-1 min-[480px]:grid-cols-3"
                     }`}
                   >
                     {project.metrics.map((m, idx) => (
                       <div
                         key={idx}
-                        className="p-3.5 rounded-2xl bg-black/40 border border-white/10"
+                        className="p-3 sm:p-3.5 rounded-2xl bg-black/40 border border-white/10 min-w-0 overflow-hidden flex min-[480px]:flex-col items-center min-[480px]:items-start justify-between min-[480px]:justify-start gap-2"
                       >
-                        <div
-                          className="font-display text-base sm:text-xl font-bold"
-                          style={{ color: project.accentColor }}
-                        >
-                          {m.value}
-                        </div>
-                        <div className="text-[11px] font-medium text-slate-400 mt-0.5">
-                          {m.label}
+                        <div className="min-w-0">
+                          <div
+                            className="font-display text-sm sm:text-base lg:text-lg font-bold truncate"
+                            style={{ color: project.accentColor }}
+                            title={m.value}
+                          >
+                            {m.value}
+                          </div>
+                          <div
+                            className="text-[11px] font-medium text-slate-400 mt-0.5 truncate"
+                            title={m.label}
+                          >
+                            {m.label}
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -2302,15 +2295,20 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Floating Bottom-Right Quick Hire Pill */}
-      <div className="fixed bottom-5 right-5 z-40">
+      {/* Floating Bottom-Right Quick Hire FAB / Pill */}
+      <div className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-40">
         <button
           type="button"
           onClick={() => setHireModalOpen(true)}
-          className="flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#0B0E17]/90 hover:bg-sky-400 hover:-translate-y-0.5 text-white hover:text-slate-950 border border-sky-400/40 shadow-2xl shadow-sky-500/20 backdrop-blur-md transition-all group cursor-pointer"
+          aria-label={ui.workWithKevinFull}
+          title={ui.workWithKevinFull}
+          className="flex items-center justify-center gap-2.5 w-12 h-12 sm:w-auto sm:h-auto sm:px-4 sm:py-3 rounded-full bg-[#0B0E17]/95 hover:bg-sky-400 hover:-translate-y-0.5 text-white hover:text-slate-950 border border-sky-400/40 shadow-2xl shadow-sky-500/25 backdrop-blur-md transition-all group cursor-pointer"
         >
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 group-hover:bg-slate-950 animate-pulse" />
-          <span className="text-xs font-semibold">{ui.workWithKevinFull}</span>
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 group-hover:bg-slate-950 animate-pulse flex-shrink-0" />
+          <Briefcase className="w-4 h-4 sm:hidden text-sky-400 group-hover:text-slate-950 flex-shrink-0" />
+          <span className="hidden sm:inline text-xs font-semibold whitespace-nowrap">
+            {ui.workWithKevinFull}
+          </span>
         </button>
       </div>
 

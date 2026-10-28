@@ -147,7 +147,7 @@ Key Highlights:
       aria-labelledby="hire-modal-title"
     >
       <div
-        className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#0B0E17] border border-sky-400/30 shadow-2xl text-slate-100 p-6 sm:p-8"
+        className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#0B0E17] border border-sky-400/30 shadow-2xl text-slate-100 p-4 sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}

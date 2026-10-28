@@ -551,9 +551,9 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     poweredBy: "Educational Channel SL (Telegram Community)",
     accentColor: "#34D399",
     metrics: [
-      { label: "Main Features", value: "Chats • Forums • Quizzes" },
-      { label: "Competitions", value: "Live Scoreboards" },
-      { label: "Student Community", value: "42,000+ on Telegram" },
+      { label: "Main Features", value: "Chats & Quizzes" },
+      { label: "Competitions", value: "Live Contests" },
+      { label: "Community", value: "42,000+ Students" },
     ],
     stack: [
       "Next.js",

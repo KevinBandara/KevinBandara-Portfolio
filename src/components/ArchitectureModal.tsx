@@ -69,7 +69,7 @@ export default function ArchitectureModal({
       aria-labelledby="arch-modal-title"
     >
       <div
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl bg-[#0B0D14] border border-white/15 shadow-2xl text-slate-100 p-6 sm:p-8"
+        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl bg-[#0B0D14] border border-white/15 shadow-2xl text-slate-100 p-4 sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top bar */}
