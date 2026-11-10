@@ -1133,9 +1133,9 @@ export default function PortfolioPage() {
                 >
                 <div>
                   {/* Top Meta Row */}
-                  <div className="flex flex-wrap items-start justify-between gap-3 mb-6">
-                    <div className="flex items-center gap-3.5 min-w-0 flex-1">
-                      <div className="flex items-center -space-x-2 flex-shrink-0">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
+                    <div className="flex items-start sm:items-center gap-3.5 min-w-0">
+                      <div className="flex items-center -space-x-2 flex-shrink-0 pt-0.5 sm:pt-0">
                         <img
                           src={project.logo}
                           alt={project.title}
@@ -1164,7 +1164,7 @@ export default function PortfolioPage() {
                             </span>
                           )}
                         </div>
-                        <h3 className="font-display text-xl sm:text-2xl font-bold text-white mt-0.5 break-words">
+                        <h3 className="font-display text-xl sm:text-2xl font-bold text-white mt-1 break-words">
                           {project.title}
                         </h3>
                         <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
@@ -1173,7 +1173,7 @@ export default function PortfolioPage() {
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-2 flex-shrink-0 self-start">
                       {project.statusBadge && (
                         <span
                           className={`text-xs font-semibold px-3 py-1 rounded-full border ${getStatusBadgeStyle(
