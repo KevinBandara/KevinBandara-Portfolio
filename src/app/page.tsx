@@ -1134,7 +1134,7 @@ export default function PortfolioPage() {
                 <div>
                   {/* Top Meta Row */}
                   <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
-                    <div className="flex items-start sm:items-center gap-3.5 min-w-0">
+                    <div className="flex items-start sm:items-center gap-3.5 min-w-0 w-full sm:w-auto">
                       <div className="flex items-center -space-x-2 flex-shrink-0 pt-0.5 sm:pt-0">
                         <img
                           src={project.logo}
